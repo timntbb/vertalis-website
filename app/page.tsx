@@ -353,6 +353,7 @@ function Section({
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = React.useState(false);
 
   const navItems: Array<[string, string]> = [
     ["Home", "#top"],
@@ -376,8 +377,9 @@ export function Header() {
   const ctaPy = scaled(8, 6);
   const ctaTextSize = scaled(14, 12);
 
-  const mobileLinks: Array<[string, string]> = [
-    ...navItems,
+  const mobileLinks: Array<[string, string]> = [...navItems];
+
+  const mobileCapabilityLinks: Array<[string, string]> = [
     ["Founders", "/about/founders"],
     ["Governance", "/about/governance"],
     ["Investors", "/about/investors"],
@@ -388,6 +390,7 @@ export function Header() {
   const onMobileLinkClick = (href: string): React.MouseEventHandler<HTMLAnchorElement> => {
     return (e) => {
       setMobileOpen(false);
+      setMobileCapabilitiesOpen(false);
 
       if (!href.startsWith("#")) return;
       if (pathname !== "/") return;
@@ -472,7 +475,13 @@ export function Header() {
               type="button"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
-              onClick={() => setMobileOpen((prev) => !prev)}
+              onClick={() => {
+                setMobileOpen((prev) => {
+                  const next = !prev;
+                  if (!next) setMobileCapabilitiesOpen(false);
+                  return next;
+                });
+              }}
               className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/12 bg-white/[0.03] text-neutral-200 transition-colors hover:bg-white/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -497,6 +506,36 @@ export function Header() {
                 {label}
               </a>
             ))}
+
+            <div className="rounded-lg border border-white/10 bg-white/[0.02]">
+              <button
+                type="button"
+                onClick={() => setMobileCapabilitiesOpen((prev) => !prev)}
+                aria-expanded={mobileCapabilitiesOpen}
+                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                <span>Capabilities</span>
+                <ArrowRight
+                  className={cx(
+                    "h-4 w-4 transition-transform duration-200",
+                    mobileCapabilitiesOpen ? "rotate-90" : "rotate-0"
+                  )}
+                />
+              </button>
+
+              <div className={cx("grid gap-1 px-2 pb-2", mobileCapabilitiesOpen ? "block" : "hidden")}>
+                {mobileCapabilityLinks.map(([label, href]) => (
+                  <a
+                    key={`mobile-cap-${href}`}
+                    href={toHref(href)}
+                    onClick={onMobileLinkClick(href)}
+                    className="rounded-md px-3 py-2 text-sm text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </nav>
 
           <div className="mt-4">
