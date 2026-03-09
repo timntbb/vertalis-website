@@ -3,7 +3,7 @@ import React from "react";
 type VertalisWordProps = {
   className?: string;
   style?: React.CSSProperties;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   children?: React.ReactNode;
 };
 
@@ -20,11 +20,11 @@ export default function VertalisWord({
   as = "div",
   children,
 }: VertalisWordProps) {
-  const Tag = as as keyof JSX.IntrinsicElements;
+  const Component = as || "div";
 
   return (
-    <Tag className={className} style={{ ...baseStyle, ...style }}>
+    <Component className={className} style={{ ...baseStyle, ...style }}>
       {children ?? "Vertalis"}
-    </Tag>
+    </Component>
   );
 }
