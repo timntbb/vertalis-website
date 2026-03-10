@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   description: "Founder-side legal counsel for modern companies.",
   icons: {
     icon: [
+      { url: "/icon.png", type: "image/png" },
       { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/logo.png", type: "image/png" },
     ],
-    shortcut: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/logo.png" }],
+    shortcut: [{ url: "/icon.png" }],
+    apple: [{ url: "/icon.png" }],
   },
 };
 
