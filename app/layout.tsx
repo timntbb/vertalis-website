@@ -16,12 +16,9 @@ export const metadata: Metadata = {
   title: "Vertalis Legal Counsel",
   description: "Founder-side legal counsel for modern companies.",
   icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/favicon.ico", type: "image/x-icon" },
-    ],
-    shortcut: [{ url: "/icon.png" }],
-    apple: [{ url: "/icon.png" }],
+    icon: [{ url: "/icon.png?v=2", type: "image/png" }],
+    shortcut: [{ url: "/icon.png?v=2" }],
+    apple: [{ url: "/icon.png?v=2" }],
   },
 };
 
