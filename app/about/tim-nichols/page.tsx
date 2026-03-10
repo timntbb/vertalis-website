@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/app/page";
+import VertalisWord from "@/components/VertalisWord";
 
 export default function TimNicholsPage() {
   return (
@@ -17,7 +18,14 @@ export default function TimNicholsPage() {
         <div className="relative mx-auto w-full max-w-5xl px-6">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-7 shadow-[0_28px_90px_-46px_rgba(0,0,0,0.82)] md:p-10">
             <p className="text-[0.78rem] uppercase tracking-[0.25em] text-neutral-400">
-              The attorney behind Vertalis
+              The attorney behind{" "}
+              <VertalisWord
+                as="span"
+                className="inline-block align-baseline font-semibold tracking-tight normal-case"
+                style={{ fontSize: "156.25%", lineHeight: "inherit" }}
+              >
+                Vertalis
+              </VertalisWord>
             </p>
 
             <h1 className="mt-3 text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
