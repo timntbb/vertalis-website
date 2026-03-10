@@ -28,9 +28,23 @@ export default function TimNicholsPage() {
               Founder-side legal counsel for companies building with urgency, ambition, and modern AI exposure.
             </p>
 
-            <p className="mt-6 max-w-3xl text-[1.02rem] leading-8 text-neutral-300">
-              Vertalis is built around a simple principle: legal should improve decision quality and execution speed, not introduce drag. Tim advises founders and leadership teams on the structural choices that shape long-term leverage—capital, governance, contracts, people, and ownership.
-            </p>
+            <div className="mt-6 max-w-3xl space-y-6 text-[1.02rem] leading-8 text-neutral-300">
+              <p>
+                Tim Nichols is the founder of Vertalis Legal Counsel, where he advises founders and growing companies on the legal architecture behind durable businesses. His work focuses on helping entrepreneurs structure ownership, governance, and contracts in ways that support disciplined growth and long-term alignment.
+              </p>
+
+              <p>
+                Tim’s approach to advising companies is shaped by a background that spans military leadership, business operations, and legal practice. He served as a Non-Commissioned Officer in the United States Air Force supporting global operations during the post-9/11 era, an experience that instilled the accountability and strategic discipline that continue to guide his work today.
+              </p>
+
+              <p>
+                Before entering the legal profession, Tim worked in high-growth corporate environments where he managed complex operational initiatives and cross-functional teams. That experience gave him a practical understanding of how companies actually operate, allowing him to approach legal problems with a business-first perspective rather than a purely academic one.
+              </p>
+
+              <p>
+                Today, Tim represents businesses and executives in commercial matters while building Vertalis as a founder-focused advisory practice. His work often sits at the intersection of law, strategy, and operations, helping founders design the legal systems that allow companies to scale responsibly.
+              </p>
+            </div>
 
             <div className="mt-9 grid gap-5 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
