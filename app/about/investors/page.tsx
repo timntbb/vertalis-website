@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AboutNodeRail from "../components/AboutNodeRail";
 import { Header } from "../../page";
+import VertalisCapTableCard from "@/components/VertalisCapTableCard";
 
 export default function InvestorsPage() {
   return (
@@ -8,9 +9,11 @@ export default function InvestorsPage() {
       <Header />
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
         <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
-          <AboutNodeRail current="investors" />
+          <div className="lg:-translate-x-[50px]">
+            <AboutNodeRail current="investors" />
+          </div>
 
-          <div>
+          <div className="lg:-translate-x-[50px]">
         <header className="max-w-3xl">
           <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Investors</h1>
           <p className="mt-3 text-xl text-neutral-200">
@@ -22,6 +25,12 @@ export default function InvestorsPage() {
             the difference between optionality and expensive concessions.
           </p>
         </header>
+
+        <section className="py-24">
+          <div className="max-w-7xl lg:w-[calc(100%+350px)]">
+            <VertalisCapTableCard />
+          </div>
+        </section>
 
         <section className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
           <h2 className="text-xl font-semibold">What this means</h2>
