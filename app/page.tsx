@@ -148,13 +148,16 @@ export function Button({
   const finalHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   if (variant === "primary") {
-    const hasGradientClass = className?.includes("bg-gradient");
     return (
       <a
         href={finalHref}
         onClick={onClickScroll}
-        className={cx(base, "bg-accent text-white hover:bg-[#b85b1b]", className)}
-        style={{ ...(hasGradientClass ? {} : { backgroundColor: tokens.accent }), ...style }}
+        className={cx(
+          base,
+          "relative overflow-hidden text-white bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-[transform,background,box-shadow] duration-200 ease-out hover:-translate-y-[2px] hover:bg-[linear-gradient(180deg,rgba(218,140,84,1)_0%,rgba(199,104,30,1)_100%)] hover:shadow-[0_16px_32px_-18px_rgba(191,96,23,0.62),inset_0_1px_0_rgba(255,255,255,0.3)] before:pointer-events-none before:absolute before:left-[8%] before:right-[8%] before:top-0 before:h-px before:bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.42),rgba(255,255,255,0))] before:content-['']",
+          className
+        )}
+        style={style}
       >
         <span>{children}</span>
       </a>
@@ -296,7 +299,7 @@ function CapabilitiesNavItem() {
               key={href}
               href={href}
               role="menuitem"
-              className="block rounded-xl px-3 py-2.5 text-sm text-neutral-300 transition-colors hover:bg-white/5 hover:text-[#e9b18a] focus:outline-none focus-visible:bg-white/5 focus-visible:text-[#e9b18a]"
+              className="block rounded-xl px-3 py-2.5 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c] hover:[text-shadow:0_0_12px_rgba(226,106,44,0.38)] focus:outline-none focus-visible:text-[#e26a2c] focus-visible:[text-shadow:0_0_12px_rgba(226,106,44,0.38)]"
             >
               {label}
             </a>
@@ -465,7 +468,7 @@ export function Header() {
           <div className="ml-2 hidden shrink-0 lg:block">
             <Button
               href="#contact"
-              className="ml-6 px-6 py-2 rounded-full bg-gradient-to-r from-[#ff7a2c] to-[#d35400] text-white text-sm tracking-[0.12em] shadow-[0_6px_18px_rgba(255,120,40,0.25)] hover:shadow-[0_10px_24px_rgba(255,120,40,0.35)] hover:-translate-y-[1px] transition-all duration-200"
+              className="ml-6 rounded-full px-6 py-2 text-sm tracking-[0.12em]"
             >
               Let’s talk
             </Button>
@@ -530,7 +533,7 @@ export function Header() {
                       key={`mobile-cap-${href}`}
                       href={toHref(href)}
                       onClick={onMobileLinkClick(href)}
-                      className="rounded-md px-3 py-2 text-sm text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c]"
                     >
                       {label}
                     </a>
@@ -1142,6 +1145,7 @@ the business down.
     .contact-linkedin svg {
       width: 22px;
       height: 22px;
+      transform: translateX(1px);
     }
 
     .contact-links-title {

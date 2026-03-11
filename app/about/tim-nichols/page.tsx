@@ -73,7 +73,7 @@ export default function TimNicholsPage() {
             <div className="mt-9">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#c06020] px-6 py-3 text-sm font-medium text-white transition-colors duration-150 hover:bg-[#b85b1b]"
+                className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-3 text-sm font-medium text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-[transform,background,box-shadow] duration-200 ease-out hover:-translate-y-[2px] hover:bg-[linear-gradient(180deg,rgba(218,140,84,1)_0%,rgba(199,104,30,1)_100%)] hover:shadow-[0_16px_32px_-18px_rgba(191,96,23,0.62),inset_0_1px_0_rgba(255,255,255,0.3)] before:pointer-events-none before:absolute before:left-[8%] before:right-[8%] before:top-0 before:h-px before:bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.42),rgba(255,255,255,0))] before:content-['']"
               >
                 Start the conversation
                 <ArrowRight className="h-4 w-4" />
