@@ -148,12 +148,13 @@ export function Button({
   const finalHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   if (variant === "primary") {
+    const hasGradientClass = className?.includes("bg-gradient");
     return (
       <a
         href={finalHref}
         onClick={onClickScroll}
         className={cx(base, "bg-accent text-white hover:bg-[#b85b1b]", className)}
-        style={{ backgroundColor: tokens.accent, ...style }}
+        style={{ ...(hasGradientClass ? {} : { backgroundColor: tokens.accent }), ...style }}
       >
         <span>{children}</span>
       </a>
@@ -213,6 +214,7 @@ export function NavLink({ href, label }: { href: string; label: string }) {
   };
 
   const finalHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+  const isActive = !href.startsWith("#") && pathname === href;
 
   return (
     <a
@@ -221,18 +223,16 @@ export function NavLink({ href, label }: { href: string; label: string }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cx(
-        "relative inline-block px-2.5 py-2 text-[0.95rem] tracking-widest uppercase text-neutral-500 transition-colors duration-150",
-        "hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15"
+        "relative focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15",
+        isActive
+          ? "text-[15px] font-medium tracking-[0.08em] text-white hover:text-[#e26a2c] transition-all duration-300 ease-out"
+          : "text-[15px] font-medium tracking-[0.08em] text-white/70 hover:text-[#e26a2c] hover:-translate-y-[1px] transition-all duration-300 ease-out"
       )}
-      style={{
-        backgroundImage: `linear-gradient(${tokens.accent}, ${tokens.accent})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "0 100%",
-        backgroundSize: isHovered ? "100% 2px" : "0% 2px",
-        transition: "color 150ms ease-out, background-size 300ms ease-out",
-      }}
     >
       {label}
+      {(isHovered || isActive) ? (
+        <div className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-[#e26a2c] to-[#c7521e] shadow-[0_0_8px_rgba(226,106,44,0.5)]"></div>
+      ) : null}
     </a>
   );
 }
@@ -270,18 +270,16 @@ function CapabilitiesNavItem() {
         aria-expanded={showMenu}
         aria-haspopup="menu"
         className={cx(
-          "relative inline-block px-2.5 py-2 text-[0.95rem] tracking-widest uppercase text-neutral-500 transition-colors duration-150",
-          "hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15"
+          "relative focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15",
+          showMenu
+            ? "text-[15px] font-medium tracking-[0.08em] text-white hover:text-[#e26a2c] transition-all duration-300 ease-out"
+            : "text-[15px] font-medium tracking-[0.08em] text-white/70 hover:text-[#e26a2c] hover:-translate-y-[1px] transition-all duration-300 ease-out"
         )}
-        style={{
-          backgroundImage: `linear-gradient(${tokens.accent}, ${tokens.accent})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "0 100%",
-          backgroundSize: showMenu ? "100% 2px" : "0% 2px",
-          transition: "color 150ms ease-out, background-size 300ms ease-out",
-        }}
       >
         Capabilities
+        {showMenu ? (
+          <div className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-[#e26a2c] to-[#c7521e] shadow-[0_0_8px_rgba(226,106,44,0.5)]"></div>
+        ) : null}
       </button>
 
       <div
@@ -414,26 +412,30 @@ export function Header() {
   const toHref = (href: string) => (href.startsWith("#") && pathname !== "/" ? `/${href}` : href);
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b border-neutral-800 shadow-sm"
-      style={{ backgroundColor: "#0a0a0c", height: headerHeight }}
-    >
-      <Container>
-        <div className="relative flex h-full items-center justify-between">
+    <>
+      <header
+        className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/70 border-b border-white/5 shadow-[0_6px_24px_rgba(0,0,0,0.45)]"
+        style={{ height: headerHeight }}
+      >
+        <Container>
+          <div className="relative flex h-full items-center justify-between">
           <a
             href="/"
-            className="flex shrink-0 items-center transition-opacity duration-150 hover:opacity-90"
+            className="flex shrink-0 items-center transition-all duration-200 hover:opacity-90"
             style={{ gap: brandGap }}
           >
-            <Image
-              src="/logo.png"
-              alt="Vertalis logo"
-              width={72}
-              height={72}
-              priority
-              className="w-auto"
-              style={{ height: logoSize }}
-            />
+            <div className="relative flex items-center">
+              <div className="absolute -z-10 w-[120px] h-[120px] bg-[radial-gradient(circle,rgba(255,122,44,0.25)_0%,rgba(255,122,44,0.05)_40%,transparent_70%)] blur-xl"></div>
+              <Image
+                src="/logo.png"
+                alt="Vertalis logo"
+                width={72}
+                height={72}
+                priority
+                className="w-auto scale-[1.1]"
+                style={{ height: logoSize }}
+              />
+            </div>
             <div className="leading-tight">
               <VertalisWord
                 className="font-semibold tracking-tight"
@@ -451,8 +453,8 @@ export function Header() {
           </a>
 
           <nav
-            className="absolute left-1/2 hidden -translate-x-1/2 transform items-center whitespace-nowrap lg:flex"
-            style={{ gap: navGap, marginLeft: navOffset }}
+            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
+            style={{ marginLeft: navOffset }}
           >
             {navItems.map(([label, href]) => (
               <NavLink key={href} href={href} label={label} />
@@ -463,8 +465,7 @@ export function Header() {
           <div className="ml-2 hidden shrink-0 lg:block">
             <Button
               href="#contact"
-              className="leading-none"
-              style={{ padding: `${ctaPy} ${ctaPx}`, fontSize: ctaTextSize } as React.CSSProperties}
+              className="ml-6 px-6 py-2 rounded-full bg-gradient-to-r from-[#ff7a2c] to-[#d35400] text-white text-sm tracking-[0.12em] shadow-[0_6px_18px_rgba(255,120,40,0.25)] hover:shadow-[0_10px_24px_rgba(255,120,40,0.35)] hover:-translate-y-[1px] transition-all duration-200"
             >
               Let’s talk
             </Button>
@@ -487,65 +488,67 @@ export function Header() {
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
-        </div>
-
-        <div
-          className={cx(
-            "absolute left-0 right-0 top-full border-b border-neutral-800 bg-[#0a0a0c]/98 px-6 pb-5 pt-3 backdrop-blur-md lg:hidden",
-            mobileOpen ? "block" : "hidden"
-          )}
-        >
-          <nav className="grid gap-1">
-            {mobileLinks.map(([label, href]) => (
-              <a
-                key={`mobile-${href}`}
-                href={toHref(href)}
-                onClick={onMobileLinkClick(href)}
-                className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                {label}
-              </a>
-            ))}
-
-            <div className="rounded-lg border border-white/10 bg-white/[0.02]">
-              <button
-                type="button"
-                onClick={() => setMobileCapabilitiesOpen((prev) => !prev)}
-                aria-expanded={mobileCapabilitiesOpen}
-                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                <span>Capabilities</span>
-                <ArrowRight
-                  className={cx(
-                    "h-4 w-4 transition-transform duration-200",
-                    mobileCapabilitiesOpen ? "rotate-90" : "rotate-0"
-                  )}
-                />
-              </button>
-
-              <div className={cx("grid gap-1 px-2 pb-2", mobileCapabilitiesOpen ? "block" : "hidden")}>
-                {mobileCapabilityLinks.map(([label, href]) => (
-                  <a
-                    key={`mobile-cap-${href}`}
-                    href={toHref(href)}
-                    onClick={onMobileLinkClick(href)}
-                    className="rounded-md px-3 py-2 text-sm text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
-                  >
-                    {label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </nav>
-
-          <div className="mt-4">
-            <Button href="#contact" className="w-full">
-              Let’s talk
-            </Button>
           </div>
-        </div>
-      </Container>
-    </header>
+
+          <div
+            className={cx(
+              "absolute left-0 right-0 top-full border-b border-neutral-800 bg-[#0a0a0c]/98 px-6 pb-5 pt-3 backdrop-blur-md lg:hidden",
+              mobileOpen ? "block" : "hidden"
+            )}
+          >
+            <nav className="grid gap-1">
+              {mobileLinks.map(([label, href]) => (
+                <a
+                  key={`mobile-${href}`}
+                  href={toHref(href)}
+                  onClick={onMobileLinkClick(href)}
+                  className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  {label}
+                </a>
+              ))}
+
+              <div className="rounded-lg border border-white/10 bg-white/[0.02]">
+                <button
+                  type="button"
+                  onClick={() => setMobileCapabilitiesOpen((prev) => !prev)}
+                  aria-expanded={mobileCapabilitiesOpen}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  <span>Capabilities</span>
+                  <ArrowRight
+                    className={cx(
+                      "h-4 w-4 transition-transform duration-200",
+                      mobileCapabilitiesOpen ? "rotate-90" : "rotate-0"
+                    )}
+                  />
+                </button>
+
+                <div className={cx("grid gap-1 px-2 pb-2", mobileCapabilitiesOpen ? "block" : "hidden")}>
+                  {mobileCapabilityLinks.map(([label, href]) => (
+                    <a
+                      key={`mobile-cap-${href}`}
+                      href={toHref(href)}
+                      onClick={onMobileLinkClick(href)}
+                      className="rounded-md px-3 py-2 text-sm text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </nav>
+
+            <div className="mt-4">
+              <Button href="#contact" className="w-full">
+                Let’s talk
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </header>
+      <div aria-hidden="true" style={{ height: headerHeight }} />
+    </>
   );
 }
 
