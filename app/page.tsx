@@ -287,23 +287,24 @@ function CapabilitiesNavItem() {
 
       <div
         className={cx(
-          "absolute left-1/2 top-full z-50 mt-2 w-56 -translate-x-1/2 rounded-2xl border border-white/12",
-          "bg-[linear-gradient(180deg,rgba(18,18,22,0.94),rgba(10,10,13,0.96))] shadow-[0_20px_55px_-32px_rgba(0,0,0,0.95)] backdrop-blur-xl",
+          "absolute left-1/2 top-full z-50 mt-0 w-56 -translate-x-1/2 pt-2",
           "transition-all duration-150",
           showMenu ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
         )}
       >
-        <div className="p-2" role="menu" aria-label="Capabilities">
-          {items.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              role="menuitem"
-              className="block rounded-xl px-3 py-2.5 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c] hover:[text-shadow:0_0_12px_rgba(226,106,44,0.38)] focus:outline-none focus-visible:text-[#e26a2c] focus-visible:[text-shadow:0_0_12px_rgba(226,106,44,0.38)]"
-            >
-              {label}
-            </a>
-          ))}
+        <div className="rounded-2xl border border-white/12 bg-[linear-gradient(180deg,rgba(18,18,22,0.94),rgba(10,10,13,0.96))] shadow-[0_20px_55px_-32px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+          <div className="p-2" role="menu" aria-label="Capabilities">
+            {items.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                role="menuitem"
+                className="block rounded-xl px-3 py-2.5 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c] hover:[text-shadow:0_0_12px_rgba(226,106,44,0.38)] focus:outline-none focus-visible:text-[#e26a2c] focus-visible:[text-shadow:0_0_12px_rgba(226,106,44,0.38)]"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>
