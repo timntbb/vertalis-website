@@ -669,7 +669,7 @@ export default function Home() {
 </p>
 
 <h1 className="mt-8 text-4xl font-semibold tracking-[-0.03em] text-white md:text-5xl md:leading-[1.02]">
-  Legal that moves at founder speed, without founder mistakes.
+  Structure behind companies that are starting to move.
 </h1>
 
 <p className="mt-7 max-w-[40rem] text-[1.15rem] leading-8 text-neutral-300">

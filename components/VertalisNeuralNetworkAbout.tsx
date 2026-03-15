@@ -172,8 +172,8 @@ export default function VertalisNeuralNetworkAbout() {
         <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
           What is <VertalisWord as="span">Vertalis</VertalisWord>?
         </h2>
-        <p className="mt-3 max-w-xl text-sm leading-7 text-white/62 md:text-base">
-          Hover each node to reveal the legal infrastructure surrounding founder growth. Vertalis sits at the center, aligning capital, people, ownership, governance, and founder decision-making into one coherent operating layer.
+        <p className="mt-3 max-w-xl text-base leading-7 text-white/62 md:text-lg">
+          Vertalis is legal architecture for growing companies. We design the structure behind ownership, governance, capital, and teams. So founders can scale what they are building with clarity and control.
         </p>
       </div>
 
