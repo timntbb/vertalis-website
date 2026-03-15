@@ -8,9 +8,9 @@ type AboutNodeRailProps = {
 const items: Array<{ slug: AboutNodeRailProps["current"]; label: string }> = [
   { slug: "founders", label: "Founders" },
   { slug: "governance", label: "Governance" },
-  { slug: "investors", label: "Investors" },
+  { slug: "investors", label: "Capital Strategy" },
   { slug: "employees", label: "Employees" },
-  { slug: "ip", label: "IP" },
+  { slug: "ip", label: "Intellectual Property" },
 ];
 
 export default function AboutNodeRail({ current }: AboutNodeRailProps) {

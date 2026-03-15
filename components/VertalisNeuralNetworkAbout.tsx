@@ -46,8 +46,8 @@ export default function VertalisNeuralNetworkAbout() {
     {
       id: "investors",
       slug: "investors",
-      label: "Investors",
-      title: "Capital strategy",
+      label: "Capital Strategy",
+      title: "Capital Strategy",
       subtitle: "Positioning companies for disciplined growth.",
       details: ["Fundraising structure", "Investor readiness", "Term sheet risk", "Dilution awareness"],
       x: 82,
@@ -68,8 +68,8 @@ export default function VertalisNeuralNetworkAbout() {
     {
       id: "ip",
       slug: "ip",
-      label: "IP",
-      title: "Ownership",
+      label: "Intellectual Property",
+      title: "Intellectual Property",
       subtitle: "Protecting the assets that create leverage.",
       details: ["Assignment hygiene", "Brand protection", "IP ownership", "Commercial rights"],
       x: 76,
@@ -264,7 +264,26 @@ export default function VertalisNeuralNetworkAbout() {
                     onBlur={handleNodeLeave}
                     className="relative flex h-[136px] w-[136px] cursor-pointer items-center justify-center rounded-full border border-white/14 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.14),rgba(255,255,255,0.045)_38%,rgba(255,255,255,0.01)_72%,rgba(0,0,0,0.38)_100%)] shadow-[0_18px_40px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-[10px] transition focus:outline-none focus-visible:border-[#c06020]/55 focus-visible:ring-2 focus-visible:ring-[#c06020]/35 group-hover:border-[#c06020]/45 group-hover:shadow-[0_18px_44px_rgba(192,96,32,0.14),inset_0_1px_0_rgba(255,255,255,0.16)] group-focus-within:border-[#c06020]/55 group-focus-within:shadow-[0_18px_48px_rgba(192,96,32,0.18),inset_0_1px_0_rgba(255,255,255,0.18)]"
                   >
-                    <div className="text-[18px] font-semibold tracking-[-0.03em] text-white">{node.label}</div>
+                    <div
+                      className={[
+                        "text-center font-semibold tracking-[-0.03em] text-white leading-[1.08] text-[18px]",
+                        node.id === "ip" ? "max-w-[110px]" : "",
+                      ].join(" ")}
+                    >
+                      {node.id === "investors" ? (
+                        <>
+                          <span className="block">Capital</span>
+                          <span className="block">Strategy</span>
+                        </>
+                      ) : node.id === "ip" ? (
+                        <>
+                          <span className="block">Intellectual</span>
+                          <span className="block">Property</span>
+                        </>
+                      ) : (
+                        node.label
+                      )}
+                    </div>
                     <div className="absolute inset-0 rounded-full border border-white/10 opacity-0 transition duration-500 group-hover:opacity-100 group-hover:scale-[1.03] group-focus-within:opacity-100 group-focus-within:scale-[1.03]" />
                   </Link>
                 </div>

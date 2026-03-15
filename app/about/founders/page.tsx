@@ -92,7 +92,7 @@ function SectionHeading({
   desc?: string;
 }) {
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-[1100px]">
       {eyebrow ? (
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
           <span
@@ -103,12 +103,12 @@ function SectionHeading({
         </div>
       ) : null}
 
-      <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-[2.35rem]">
+      <h2 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.03em] text-white md:text-[2.35rem]">
         {title}
       </h2>
 
       {desc ? (
-        <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-neutral-300">
+        <p className="mt-4 max-w-4xl text-[1.02rem] leading-8 text-neutral-300">
           {desc}
         </p>
       ) : null}
@@ -277,9 +277,9 @@ export default function FoundersPage() {
                       {[
                         ["Founders", "/about/founders"],
                         ["Governance", "/about/governance"],
-                        ["Investors", "/about/investors"],
+                        ["Capital Strategy", "/about/investors"],
                         ["Employees", "/about/employees"],
-                        ["IP", "/about/ip"],
+                        ["Intellectual Property", "/about/ip"],
                       ].map(([label, href], i) => (
                         <a
                           key={href}

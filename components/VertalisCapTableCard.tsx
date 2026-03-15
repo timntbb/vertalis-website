@@ -801,16 +801,14 @@ export default function VertalisCapTableCard() {
                 </div>
               </div>
 
-              <div
-                className="legend"
-                style={{
-                  gridTemplateColumns: `repeat(${Math.min(displayBars.length, 5)}, minmax(0, 1fr))`,
-                }}
-              >
+              <div className="legend w-full max-w-full overflow-hidden flex flex-wrap gap-3">
                 {displayBars.map((bar) => (
-                  <div className="legend-item" key={`${bar.key}-legend`}>
+                  <div
+                    className="legend-item flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm min-w-0 shrink"
+                    key={`${bar.key}-legend`}
+                  >
                     <span className="legend-swatch" style={{ background: bar.swatch }} />
-                    <div className="legend-text">
+                    <div className="legend-text min-w-0 break-words">
                       <div className="t">{bar.name}</div>
                       <div className="s">{formatWholeShares(bar.shares)}</div>
                     </div>
@@ -831,13 +829,11 @@ export default function VertalisCapTableCard() {
 
         <style jsx>{`
           .page-shell {
-            min-height: 100vh;
             width: 100%;
-            background: #070708;
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 1160px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 10px 8px;
           }
 
           .vertalis-cap-card {
@@ -851,9 +847,8 @@ export default function VertalisCapTableCard() {
             --ease: cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
             overflow: hidden;
-            width: min(1200px, 100%);
-            min-height: 780px;
-            border-radius: 28px;
+            width: 100%;
+            border-radius: 24px;
             border: 1px solid var(--border);
             background:
               radial-gradient(900px 520px at 18% 20%, rgba(192, 96, 32, 0.16), transparent 55%),
@@ -977,9 +972,8 @@ export default function VertalisCapTableCard() {
             z-index: 2;
             display: grid;
             grid-template-columns: 1.02fr 0.98fr;
-            gap: 28px;
-            padding: 34px;
-            min-height: 780px;
+            gap: 20px;
+            padding: 24px;
           }
 
           .left,
@@ -990,13 +984,13 @@ export default function VertalisCapTableCard() {
           .eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 9px 13px;
+            gap: 8px;
+            padding: 7px 11px;
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.09);
             background: rgba(255, 255, 255, 0.03);
             color: rgba(244, 239, 232, 0.78);
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -1011,37 +1005,37 @@ export default function VertalisCapTableCard() {
           }
 
           .headline {
-            margin: 18px 0 10px;
-            font-size: clamp(21px, 2.5vw, 36px);
+            margin: 14px 0 8px;
+            font-size: clamp(18px, 2.1vw, 28px);
             line-height: 0.97;
             letter-spacing: -0.05em;
             font-weight: 650;
-            max-width: 560px;
+            max-width: 500px;
           }
 
           .sub {
             margin: 0;
-            max-width: 530px;
-            font-size: 16px;
-            line-height: 1.68;
+            max-width: 500px;
+            font-size: 15px;
+            line-height: 1.58;
             color: var(--muted);
           }
 
           .status-row {
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-top: 24px;
+            gap: 10px;
+            margin-top: 18px;
             flex-wrap: wrap;
           }
 
           .pill {
-            padding: 10px 14px;
-            border-radius: 14px;
+            padding: 8px 11px;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.035);
             border: 1px solid rgba(255, 255, 255, 0.07);
             color: rgba(244, 239, 232, 0.84);
-            font-size: 13px;
+            font-size: 12px;
           }
 
           .pill.accent {
@@ -1057,12 +1051,12 @@ export default function VertalisCapTableCard() {
 
           .builder-toggle,
           .add-holder {
-            padding: 11px 16px;
-            border-radius: 14px;
+            padding: 9px 13px;
+            border-radius: 12px;
             border: 1px solid rgba(224, 176, 135, 0.22);
             background: linear-gradient(180deg, rgba(192, 96, 32, 0.22), rgba(192, 96, 32, 0.08));
             color: #fff4ea;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
           }
@@ -1074,37 +1068,37 @@ export default function VertalisCapTableCard() {
           }
 
           .builder-panel {
-            margin-top: 22px;
-            padding: 18px;
-            border-radius: 22px;
+            margin-top: 18px;
+            padding: 14px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.018));
           }
 
           .builder-head {
-            margin-bottom: 14px;
+            margin-bottom: 10px;
           }
 
           .builder-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 650;
             color: #f4efe8;
           }
 
           .builder-sub {
-            margin-top: 6px;
-            font-size: 13px;
+            margin-top: 4px;
+            font-size: 12px;
             color: rgba(244, 239, 232, 0.58);
           }
 
           .builder-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
+            gap: 10px;
           }
 
           .builder-grid-top {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
           }
 
           .builder-span-2 {
@@ -1115,32 +1109,32 @@ export default function VertalisCapTableCard() {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
           }
 
           .builder-actions-right {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
           }
 
           .mode-toggle {
             display: inline-flex;
-            padding: 4px;
-            border-radius: 14px;
+            padding: 3px;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            gap: 4px;
+            gap: 3px;
           }
 
           .mode-btn,
           .ghost-btn {
             cursor: pointer;
-            border-radius: 10px;
-            padding: 10px 14px;
-            font-size: 12px;
+            border-radius: 9px;
+            padding: 8px 11px;
+            font-size: 11px;
             font-weight: 600;
             transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
           }
@@ -1169,50 +1163,50 @@ export default function VertalisCapTableCard() {
           }
 
           .builder-card {
-            padding: 14px;
-            border-radius: 16px;
+            padding: 12px;
+            border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, 0.07);
             background: rgba(255, 255, 255, 0.025);
           }
 
           .builder-card-top {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
           }
 
           .remove-holder {
-            width: 40px;
-            min-width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 34px;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 9px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(255, 255, 255, 0.04);
             color: #fff4ea;
-            font-size: 22px;
+            font-size: 19px;
             line-height: 1;
           }
 
           .builder-card input {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(8, 8, 10, 0.65);
             color: #f4efe8;
-            padding: 10px 12px;
+            padding: 9px 10px;
             outline: none;
           }
 
           .builder-financials {
             display: grid;
-            gap: 10px;
+            gap: 8px;
           }
 
           .builder-row {
-            margin-top: 10px;
+            margin-top: 8px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 8px;
           }
 
           .builder-row-single {
@@ -1222,15 +1216,15 @@ export default function VertalisCapTableCard() {
           .builder-row label,
           .builder-financials label {
             display: grid;
-            gap: 6px;
-            font-size: 12px;
+            gap: 5px;
+            font-size: 11px;
             color: rgba(244, 239, 232, 0.62);
           }
 
           .summary {
-            margin-top: 28px;
-            padding: 20px;
-            border-radius: 22px;
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 40px rgba(0, 0, 0, 0.16);
@@ -1239,13 +1233,13 @@ export default function VertalisCapTableCard() {
           .custom-summary-banner {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 12px;
-            margin-bottom: 18px;
+            gap: 10px;
+            margin-bottom: 14px;
           }
 
           .custom-summary-item {
-            padding: 12px 14px;
-            border-radius: 16px;
+            padding: 10px 11px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.07);
             background: rgba(255, 255, 255, 0.025);
           }
@@ -1253,39 +1247,39 @@ export default function VertalisCapTableCard() {
           .summary-head {
             display: flex;
             justify-content: space-between;
-            gap: 18px;
-            margin-bottom: 18px;
+            gap: 12px;
+            margin-bottom: 14px;
             align-items: end;
           }
 
           .label {
             color: var(--muted);
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
           }
 
           .value {
-            font-size: 34px;
+            font-size: 28px;
             font-weight: 650;
             line-height: 1;
             letter-spacing: -0.04em;
           }
 
           .value.small {
-            font-size: 24px;
+            font-size: 20px;
           }
 
           .metric-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 10px;
           }
 
           .metric {
-            padding: 14px;
-            border-radius: 16px;
+            padding: 11px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.07);
             background: rgba(255, 255, 255, 0.025);
             transition: transform 450ms var(--ease), background 350ms ease;
@@ -1298,24 +1292,24 @@ export default function VertalisCapTableCard() {
 
           .metric .k {
             color: var(--muted);
-            font-size: 12px;
-            margin-bottom: 8px;
+            font-size: 11px;
+            margin-bottom: 6px;
           }
 
           .metric .v {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             letter-spacing: -0.02em;
           }
 
           .chart-shell {
             position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 28px 70px rgba(0, 0, 0, 0.22);
-            padding: 20px 20px 18px;
-            min-height: 640px;
+            padding: 14px 14px 12px;
+            min-height: 500px;
             overflow: hidden;
           }
 
@@ -1324,29 +1318,29 @@ export default function VertalisCapTableCard() {
             justify-content: space-between;
             gap: 14px;
             align-items: flex-start;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
             position: relative;
             z-index: 2;
           }
 
           .chart-title {
-            font-size: 14px;
+            font-size: 13px;
             color: rgba(244, 239, 232, 0.84);
             letter-spacing: 0.02em;
           }
 
           .chart-phase {
             margin-top: 6px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 650;
             letter-spacing: -0.04em;
             line-height: 1;
           }
 
           .chart-badge {
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 11px;
             color: rgba(244, 239, 232, 0.72);
             background: rgba(255, 255, 255, 0.035);
             border: 1px solid rgba(255, 255, 255, 0.07);
@@ -1355,8 +1349,8 @@ export default function VertalisCapTableCard() {
 
           .graph-frame {
             position: relative;
-            height: 430px;
-            padding: 22px 14px 18px 56px;
+            height: 340px;
+            padding: 16px 10px 12px 46px;
             border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.07);
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
@@ -1367,10 +1361,10 @@ export default function VertalisCapTableCard() {
 
           .y-axis {
             position: absolute;
-            left: 14px;
-            top: 22px;
-            bottom: 18px;
-            width: 32px;
+            left: 10px;
+            top: 16px;
+            bottom: 12px;
+            width: 28px;
             z-index: 2;
           }
 
@@ -1378,7 +1372,7 @@ export default function VertalisCapTableCard() {
             position: absolute;
             right: 0;
             transform: translateY(50%);
-            font-size: 11px;
+            font-size: 10px;
             color: rgba(244, 239, 232, 0.38);
           }
 
@@ -1404,10 +1398,10 @@ export default function VertalisCapTableCard() {
 
           .plot-area {
             position: absolute;
-            left: 56px;
-            right: 14px;
-            top: 22px;
-            bottom: 18px;
+            left: 46px;
+            right: 10px;
+            top: 16px;
+            bottom: 12px;
             z-index: 1;
           }
 
@@ -1462,8 +1456,8 @@ export default function VertalisCapTableCard() {
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            gap: 18px;
-            padding: 0 6px;
+            gap: 12px;
+            padding: 0 4px;
             z-index: 3;
           }
 
@@ -1475,7 +1469,7 @@ export default function VertalisCapTableCard() {
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
           }
 
           .bar-track {
@@ -1489,7 +1483,7 @@ export default function VertalisCapTableCard() {
 
           .bar {
             width: 100%;
-            max-width: 92px;
+            max-width: 78px;
             height: 100%;
             min-height: 12px;
             border-radius: 6px 6px 0 0;
@@ -1567,14 +1561,14 @@ export default function VertalisCapTableCard() {
           }
 
           .pct {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 650;
             letter-spacing: -0.03em;
             color: #fff6ed;
           }
 
           .name {
-            font-size: 12px;
+            font-size: 11px;
             color: rgba(244, 239, 232, 0.58);
             white-space: nowrap;
             overflow: hidden;
@@ -1582,25 +1576,30 @@ export default function VertalisCapTableCard() {
           }
 
           .legend {
-            margin-top: 18px;
-            display: grid;
-            gap: 10px;
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
           }
 
           .legend-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: 12px;
+            gap: 8px;
+            padding: 8px 9px;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.028);
             border: 1px solid rgba(255, 255, 255, 0.06);
             min-width: 0;
+            flex-shrink: 1;
           }
 
           .legend-swatch {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 2px;
             flex: 0 0 auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
@@ -1608,10 +1607,11 @@ export default function VertalisCapTableCard() {
 
           .legend-text {
             min-width: 0;
+            overflow-wrap: anywhere;
           }
 
           .legend-text .t {
-            font-size: 12px;
+            font-size: 11px;
             color: rgba(244, 239, 232, 0.86);
             white-space: nowrap;
             overflow: hidden;
@@ -1619,19 +1619,19 @@ export default function VertalisCapTableCard() {
           }
 
           .legend-text .s {
-            font-size: 11px;
+            font-size: 10px;
             color: rgba(244, 239, 232, 0.5);
-            margin-top: 2px;
+            margin-top: 1px;
           }
 
           .footer-outside {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 18px;
-            margin-top: 16px;
+            gap: 12px;
+            margin-top: 12px;
             color: rgba(244, 239, 232, 0.44);
-            font-size: 12px;
+            font-size: 11px;
             padding: 0 2px;
           }
 
@@ -1704,10 +1704,20 @@ export default function VertalisCapTableCard() {
           @media (max-width: 980px) {
             .content {
               grid-template-columns: 1fr;
+              gap: 16px;
+              padding: 18px;
             }
 
             .vertalis-cap-card {
               min-height: auto;
+            }
+
+            .chart-shell {
+              min-height: 460px;
+            }
+
+            .graph-frame {
+              height: 300px;
             }
 
             .custom-summary-banner {
@@ -1717,15 +1727,15 @@ export default function VertalisCapTableCard() {
 
           @media (max-width: 700px) {
             .page-shell {
-              padding: 18px;
+              padding: 6px;
             }
 
             .content {
-              padding: 18px;
+              padding: 14px;
             }
 
             .headline {
-              font-size: 36px;
+              font-size: 28px;
             }
 
             .metric-grid,
@@ -1736,10 +1746,6 @@ export default function VertalisCapTableCard() {
 
             .builder-span-2 {
               grid-column: span 1;
-            }
-
-            .legend {
-              grid-template-columns: 1fr 1fr !important;
             }
 
             .bar {

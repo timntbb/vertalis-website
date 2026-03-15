@@ -250,9 +250,9 @@ function CapabilitiesNavItem() {
   const items: Array<[string, string]> = [
     ["Founders", "/about/founders"],
     ["Governance", "/about/governance"],
-    ["Investors", "/about/investors"],
+    ["Capital Strategy", "/about/investors"],
     ["Employees", "/about/employees"],
-    ["IP", "/about/ip"],
+    ["Intellectual Property", "/about/ip"],
   ];
 
   return (
@@ -384,9 +384,9 @@ export function Header() {
   const mobileCapabilityLinks: Array<[string, string]> = [
     ["Founders", "/about/founders"],
     ["Governance", "/about/governance"],
-    ["Investors", "/about/investors"],
+    ["Capital Strategy", "/about/investors"],
     ["Employees", "/about/employees"],
-    ["IP", "/about/ip"],
+    ["Intellectual Property", "/about/ip"],
   ];
 
   const onMobileLinkClick = (href: string): React.MouseEventHandler<HTMLAnchorElement> => {
@@ -590,7 +590,7 @@ export default function Home() {
 
   <motion.div
     className="absolute inset-0 flex items-center justify-center"
-    style={{ opacity: 0.08 }}
+    style={{ opacity: 0.11 }}
     animate={
       reduce
         ? undefined
@@ -612,7 +612,7 @@ export default function Home() {
     <img
       src="/logo-final.png"
       alt=""
-      className="object-contain blur-[0.3px]"
+      className="object-contain blur-[0.2px]"
       style={{ width: 780, height: 780 }}
     />
   </motion.div>
@@ -645,7 +645,7 @@ export default function Home() {
 
 <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/6" />
 
-<div className="grid gap-12 md:grid-cols-12">
+<div className="grid items-center gap-12 md:grid-cols-12">
 
 {/* ================= LEFT SIDE ================= */}
 
@@ -653,7 +653,7 @@ export default function Home() {
 
 <FadeIn>
 
-<div className="max-w-4xl pt-0 md:pt-1.5">
+<div className="max-w-[38rem] pt-0 md:pt-1.5">
 
 <VertalisWord
   className="font-semibold leading-none tracking-tight"
@@ -665,16 +665,17 @@ export default function Home() {
 </VertalisWord>
 
 <p className="mt-5 text-[0.9rem] uppercase tracking-[0.28em] text-neutral-400">
-  Founder-side counsel for companies built to move
+  Founder-side legal architecture for companies built to scale
 </p>
 
-<h1 className="mt-8 text-4xl font-semibold tracking-[-0.03em] text-white md:text-5xl md:leading-[1.02]">
-  Structure behind companies that are starting to move.
+<h1 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl md:leading-[0.98]">
+  Founders build the company. Vertalis designs the structure behind it.
 </h1>
 
-<p className="mt-7 max-w-[40rem] text-[1.15rem] leading-8 text-neutral-300">
-  Vertalis helps early-stage teams build clean governance, raise capital
-  intelligently, and contract confidently in an AI-centric world.
+<p className="mt-7 max-w-[38rem] text-[1.15rem] leading-8 text-neutral-300">
+  Vertalis helps founders install the legal systems that support scale, from
+  governance and capital structure to hiring, operational risk, and ownership
+  of what the company is building.
 </p>
 
 <div className="mt-10 flex flex-wrap gap-3">
@@ -691,36 +692,36 @@ About the practice
 
 {/* FEATURE TILES */}
 
-<div className="mt-14 grid gap-4 sm:grid-cols-2">
+<div className="mt-14 grid max-w-[520px] gap-4 sm:grid-cols-2">
 
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-7 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
+<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
 
-<div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+<div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
 <BadgeCheck className="h-4 w-4" style={{ color: tokens.accent }} />
 </div>
 
-<div className="text-[1.05rem] font-semibold text-white">
-Capital mechanics fluency
+<div className="text-sm font-semibold text-white">
+Founder alignment
 </div>
 
-<div className="mt-2 text-sm leading-7 text-neutral-300">
-SAFE, seed, dilution, control, terms, board dynamics.
+<div className="mt-2 text-[0.8rem] leading-6 text-neutral-300">
+Roles, equity, authority, and vesting before misalignment compounds.
 </div>
 
 </Card>
 
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-7 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
+<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
 
-<div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+<div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
 <Lock className="h-4 w-4" style={{ color: tokens.accent }} />
 </div>
 
-<div className="text-[1.05rem] font-semibold text-white">
-Operational AI governance
+<div className="text-sm font-semibold text-white">
+Capital strategy
 </div>
 
-<div className="mt-2 text-sm leading-7 text-neutral-300">
-Policies and contracts that operators actually follow.
+<div className="mt-2 text-[0.8rem] leading-6 text-neutral-300">
+SAFE, seed, dilution, investor leverage, and control clarity.
 </div>
 
 </Card>
@@ -735,22 +736,22 @@ Policies and contracts that operators actually follow.
 
 {/* ================= RIGHT PANEL ================= */}
 
-<div className="md:col-span-5">
+<div className="md:col-span-5 lg:mt-6">
 
 <FadeIn delay={0.08}>
 
-<Card className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(152deg,#26232b_0%,#21262f_45%,#171b23_100%)] p-8 shadow-[0_30px_90px_-46px_rgba(0,0,0,0.85)] md:p-10">
+<Card className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(152deg,#211e25_0%,#1b2028_45%,#13171f_100%)] p-8 shadow-[0_22px_56px_-34px_rgba(0,0,0,0.9)] md:p-10">
 
 <div className="pointer-events-none absolute inset-0">
 
 <div
-className="absolute left-[-12%] top-[-12%] h-[260px] w-[260px] rounded-full blur-3xl"
-style={{ background: "rgba(192,96,32,0.16)" }}
+className="absolute left-[-12%] top-[-12%] h-[240px] w-[240px] rounded-full blur-2xl"
+style={{ background: "rgba(192,96,32,0.13)" }}
 />
 
 <div
-className="absolute right-[-10%] bottom-[-16%] h-[220px] w-[220px] rounded-full blur-3xl"
-style={{ background: "rgba(72,90,120,0.14)" }}
+className="absolute right-[-10%] bottom-[-16%] h-[210px] w-[210px] rounded-full blur-2xl"
+style={{ background: "rgba(72,90,120,0.11)" }}
 />
 
 
@@ -759,49 +760,49 @@ style={{ background: "rgba(72,90,120,0.14)" }}
 <div className="relative z-10">
 
 <div className="text-[1.9rem] leading-none font-semibold tracking-[-0.03em] text-white md:text-[2.15rem]">
-  Start here
+  Where Vertalis fits
 </div>
 
 <p className="mt-3 text-[1rem] leading-7 text-neutral-300">
-If you are raising, scaling, or shipping AI features, this is the
-fastest way to get aligned.
+If you are raising, scaling, or operating under pressure, this is where
+Vertalis installs structure before legal gaps compound.
 </p>
 
 <div className="mt-7 grid gap-4">
 
-<Card tone="dark" className="rounded-[1.5rem] border-white/8 bg-[#121318]/90 p-5">
+<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
 
 <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
 <ScrollText className="h-4 w-4" />
-Typical engagements
+COMMON STARTING POINTS
 </div>
 
 <ul className="mt-3 space-y-2 text-sm text-neutral-300">
 
 <li className="flex gap-2">
 <Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Fractional GC, weekly founder cadence
+Founder alignment and governance cleanup
 </li>
 
 <li className="flex gap-2">
 <Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-SAFE cleanup and seed readiness
+SAFE, seed, and dilution readiness
 </li>
 
 <li className="flex gap-2">
 <Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-AI vendor contracts and risk controls
+Hiring, IP, and contract risk controls
 </li>
 
 </ul>
 
 </Card>
 
-<Card tone="dark" className="rounded-[1.5rem] border-white/8 bg-[#121318]/90 p-5">
+<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
 
 <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
 <FileText className="h-4 w-4" />
-Response style
+THE VERTALIS APPROACH
 </div>
 
 <ul className="mt-3 space-y-2 text-sm text-neutral-300">
@@ -813,12 +814,12 @@ Plain English, business-first
 
 <li className="flex gap-2">
 <Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Clear risk levels, clear next steps
+Structural clarity before problems compound
 </li>
 
 <li className="flex gap-2">
 <Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-No legal theater, just execution
+Systems built to scale with the company
 </li>
 
 </ul>
@@ -828,8 +829,8 @@ No legal theater, just execution
 </div>
 
 <p className="mt-6 text-sm text-neutral-400">
-Built for founders who need practical legal guidance without slowing
-the business down.
+Built for founders who need real legal structure before growth exposes
+the gaps.
 </p>
 
 </div>

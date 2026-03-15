@@ -1,73 +1,487 @@
-import Link from "next/link";
-import AboutNodeRail from "../components/AboutNodeRail";
-import { Header } from "../../page";
+"use client";
+
+import Image from "next/image";
+import { Header, Button } from "../../page";
+import VertalisWord from "@/components/VertalisWord";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  Users,
+  BadgeDollarSign,
+  ShieldCheck,
+  FileCheck,
+  Sparkles,
+} from "lucide-react";
+
+const tokens = {
+  bg: "#0a0a0c",
+  accent: "#c06020",
+};
+
+function cx(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function Container({ children }: { children: React.ReactNode }) {
+  return <div className="mx-auto w-full max-w-[1320px] px-6">{children}</div>;
+}
+
+function Card({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cx(
+        "relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.82)]",
+        className
+      )}
+    >
+      <div className="pointer-events-none absolute inset-0 rounded-[1.9rem] ring-1 ring-inset ring-white/6" />
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+}
+
+function StatPill({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
+      {children}
+    </div>
+  );
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+  desc,
+}: {
+  eyebrow?: string;
+  title: string;
+  desc?: string;
+}) {
+  return (
+    <div className="max-w-[1100px]">
+      {eyebrow ? (
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
+          <span
+            className="h-2 w-2 rounded-full"
+            style={{ backgroundColor: tokens.accent }}
+          />
+          {eyebrow}
+        </div>
+      ) : null}
+
+      <h2 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.03em] text-white md:text-[2.2rem]">
+        {title}
+      </h2>
+
+      {desc ? (
+        <p className="mt-4 max-w-4xl text-[1.02rem] leading-8 text-neutral-300">
+          {desc}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+const pillars = [
+  {
+    title: "Hiring Structure",
+    desc: "Build clean employment systems before growth turns informal decisions into long-term liabilities.",
+    icon: <Users className="h-5 w-5" />,
+  },
+  {
+    title: "Compensation",
+    desc: "Create clear frameworks for salary, incentives, and equity participation across the team.",
+    icon: <BadgeDollarSign className="h-5 w-5" />,
+  },
+  {
+    title: "Protection",
+    desc: "Secure confidentiality, invention assignment, and ownership of what employees help build.",
+    icon: <ShieldCheck className="h-5 w-5" />,
+  },
+  {
+    title: "Scalability",
+    desc: "Install people systems that support growth without creating operational drag or legal confusion.",
+    icon: <Sparkles className="h-5 w-5" />,
+  },
+];
+
+const troublePoints = [
+  "Early hires are brought on informally, with unclear terms around compensation, role scope, and expectations.",
+  "Equity promises are discussed casually without consistent documentation or structural discipline.",
+  "Contractors and employees are treated interchangeably without enough attention to classification risk.",
+  "Invention assignment and confidentiality protections are missing or added too late.",
+  "Hiring moves quickly, but the legal infrastructure around the team never catches up.",
+];
 
 export default function EmployeesPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0c] text-white">
+    <main
+      className="min-h-screen overflow-x-hidden text-neutral-100"
+      style={{ backgroundColor: tokens.bg }}
+    >
       <Header />
-      <div className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
-          <AboutNodeRail current="employees" />
 
-          <div>
-        <header className="max-w-3xl">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Employees</h1>
-          <p className="mt-3 text-xl text-neutral-200">
-            People systems that protect culture, velocity, and legal integrity.
-          </p>
-          <p className="mt-4 leading-7 text-neutral-300">
-            Team growth creates legal complexity fast. Hiring standards, incentive
-            design, offer-letter discipline, and contractor classification choices
-            all shape execution risk and long-term retention.
-          </p>
-        </header>
+      <section className="relative isolate overflow-hidden pt-2 md:pt-4">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[#0a0a0c]" />
 
-        <section className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-          <h2 className="text-xl font-semibold">What this means</h2>
-          <p className="mt-3 leading-7 text-neutral-300">
-            Employment architecture aligns documentation, incentives, and
-            classification standards so teams scale without creating avoidable
-            legal exposure.
-          </p>
-        </section>
+          <div
+            className="absolute left-[-8%] top-[8%] h-[460px] w-[460px] rounded-full blur-3xl"
+            style={{ background: "rgba(192,96,32,0.16)" }}
+          />
 
-        <section className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-          <h2 className="text-xl font-semibold">Where founders get into trouble</h2>
-          <p className="mt-3 leading-7 text-neutral-300">
-            Risk appears when offers and role terms drift over time, equity
-            incentives are loosely documented, or contractors are treated like
-            employees without compliant classification controls.
-          </p>
-        </section>
+          <div
+            className="absolute right-[-5%] top-[18%] h-[420px] w-[420px] rounded-full blur-3xl"
+            style={{ background: "rgba(72,90,120,0.10)" }}
+          />
 
-        <section className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-          <h2 className="text-xl font-semibold">How Vertalis helps</h2>
-          <p className="mt-3 leading-7 text-neutral-300">
-            Vertalis helps leadership build practical hiring and compensation
-            frameworks, tighten core employment documentation, and reduce
-            misclassification exposure before it becomes operational or investor
-            risk.
-          </p>
-        </section>
-
-        <div className="mt-8 flex flex-wrap gap-5">
-          <Link
-            href="/#about"
-            className="text-sm font-medium text-[#d59a73] transition-colors hover:text-[#e9b18a]"
-          >
-            ← Back to About
-          </Link>
-          <Link
-            href="/#contact"
-            className="text-sm font-medium text-[#d59a73] transition-colors hover:text-[#e9b18a]"
-          >
-            Contact Vertalis
-          </Link>
-        </div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.055]">
+            <img
+              src="/logo-final.png"
+              alt=""
+              className="object-contain blur-[0.2px]"
+              style={{ width: 700, height: 700 }}
+            />
           </div>
+
+          <div
+            className="absolute inset-0 opacity-[0.035]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+              maskImage:
+                "radial-gradient(circle at center, black 35%, transparent 100%)",
+              WebkitMaskImage:
+                "radial-gradient(circle at center, black 35%, transparent 100%)",
+            }}
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0d]/10 via-transparent to-[#0b0b0d]/80" />
         </div>
-      </div>
+
+        <Container>
+          <div className="relative z-10 py-8 md:py-12">
+            <Card className="px-6 py-8 md:px-10 md:py-10">
+              <div className="grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)]">
+                <aside className="rounded-[1.7rem] border border-white/8 bg-[linear-gradient(160deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] p-6 shadow-[0_22px_60px_-38px_rgba(0,0,0,0.75)]">
+                  <div className="relative">
+                    <div
+                      className="absolute -left-8 -top-10 h-24 w-24 rounded-full blur-2xl"
+                      style={{ background: "rgba(192,96,32,0.18)" }}
+                    />
+                    <div className="relative z-10">
+                      <Image
+                        src="/logo.png"
+                        alt="Vertalis shield"
+                        width={56}
+                        height={56}
+                        className="h-auto w-[52px] opacity-90"
+                      />
+
+                      <div className="mt-4">
+                        <VertalisWord
+                          className="font-semibold tracking-tight"
+                          style={{
+                            fontSize: "34pt",
+                            filter:
+                              "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
+                          }}
+                        >
+                          Vertalis
+                        </VertalisWord>
+
+                        <div className="mt-1 text-[0.76rem] uppercase tracking-[0.22em] text-neutral-500">
+                          Legal Counsel
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-neutral-400">
+                    Navigate
+                  </div>
+
+                  <nav className="mt-4 flex flex-col gap-3 text-[1rem]">
+                    {[
+                      ["Founders", "/about/founders"],
+                      ["Capital Strategy", "/about/investors"],
+                      ["Governance", "/about/governance"],
+                      ["Employees", "/about/employees"],
+                      ["Intellectual Property", "/about/ip"],
+                    ].map(([label, href], i) => (
+                      <a
+                        key={href}
+                        href={href}
+                        className={cx(
+                          "inline-flex items-center justify-between rounded-xl px-3 py-2.5 transition-all duration-200",
+                          i === 3
+                            ? "bg-white/[0.06] text-white"
+                            : "text-neutral-400 hover:bg-white/[0.04] hover:text-white"
+                        )}
+                      >
+                        <span>{label}</span>
+                        <ArrowRight className="h-4 w-4 opacity-70" />
+                      </a>
+                    ))}
+                  </nav>
+
+                  <div className="mt-8">
+                    <Button href="#contact" className="w-full rounded-full">
+                      Contact
+                    </Button>
+                  </div>
+                </aside>
+
+                <div className="min-w-0">
+                  <header className="max-w-4xl">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
+                      <Users
+                        className="h-4 w-4"
+                        style={{ color: tokens.accent }}
+                      />
+                      Employees
+                    </div>
+
+                    <h1 className="mt-5 text-5xl font-semibold tracking-[-0.04em] text-white md:text-[4.35rem] md:leading-[0.98]">
+                      Employees
+                    </h1>
+
+                    <p className="mt-5 max-w-3xl text-[1.28rem] leading-9 text-neutral-200">
+                      Building the human infrastructure that allows the company
+                      to grow without hidden risk.
+                    </p>
+
+                    <div className="mt-6 max-w-[58rem] space-y-5 text-[1.05rem] leading-8 text-neutral-300">
+                      <p>
+                        Startups scale through people, but hiring introduces
+                        legal, operational, and cultural complexity much faster
+                        than most founders expect.
+                      </p>
+                      <p>
+                        Early team decisions often shape the company for years,
+                        especially when compensation, incentives, IP ownership,
+                        and role expectations are handled informally.
+                      </p>
+                      <p>
+                        Vertalis helps founders install employment systems that
+                        support growth while reducing the risk of structural
+                        breakdown later.
+                      </p>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </Card>
+
+            <section className="py-8 md:py-10">
+              <Card className="p-6 md:p-8">
+                <SectionHeading
+                  eyebrow="What this means"
+                  title="Employees are part of the company’s operating architecture."
+                  desc="Every hire changes how the business functions. Compensation, classification, ownership protections, incentives, and expectations all shape how stable the company becomes as it grows."
+                />
+
+                <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-neutral-300">
+                  Strong employment structure helps founders build a team that
+                  is aligned, protected, and scalable, rather than one held
+                  together by assumptions and scattered documents.
+                </p>
+              </Card>
+            </section>
+
+            <section className="py-8 md:py-10">
+              <Card className="p-7 md:p-9">
+                <SectionHeading
+                  eyebrow="What disciplined team-building looks like"
+                  title="Growth hiring should strengthen the company, not create future friction."
+                  desc="A strong people system protects the business while giving founders the flexibility to recruit, retain, and scale effectively."
+                />
+
+                <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                  {pillars.map((item) => (
+                    <div
+                      key={item.title}
+                      className="rounded-[1.45rem] border border-white/10 bg-white/[0.03] p-5"
+                    >
+                      <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white">
+                        <span style={{ color: tokens.accent }}>{item.icon}</span>
+                      </div>
+
+                      <div className="text-[1.02rem] font-semibold text-white">
+                        {item.title}
+                      </div>
+
+                      <p className="mt-3 text-sm leading-7 text-neutral-300">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-8 max-w-4xl text-[1rem] leading-8 text-neutral-300">
+                  The goal is not just compliance. It is to build a team
+                  structure that preserves clarity, ownership, and momentum as
+                  the company expands.
+                </p>
+              </Card>
+            </section>
+
+            <section className="py-8 md:py-10">
+              <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+                <Card className="p-7 md:p-8">
+                  <SectionHeading
+                    eyebrow="Where founders get into trouble"
+                    title="People systems often break where growth happens fastest."
+                    desc="Most employment risk begins with speed, optimism, and informality."
+                  />
+
+                  <div className="mt-8 space-y-4">
+                    {troublePoints.map((point) => (
+                      <div
+                        key={point}
+                        className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-neutral-300"
+                      >
+                        <Check
+                          className="mt-0.5 h-5 w-5 shrink-0"
+                          style={{ color: tokens.accent }}
+                        />
+                        <span className="text-sm leading-7">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="mt-8 text-[1rem] leading-8 text-neutral-300">
+                    These issues rarely seem urgent in the beginning. They
+                    become expensive later, often during fundraising, conflict,
+                    turnover, or diligence.
+                  </p>
+                </Card>
+
+                <Card className="p-7 md:p-8">
+                  <SectionHeading
+                    eyebrow="How Vertalis helps"
+                    title="Employment architecture for founder-led companies."
+                    desc="Vertalis helps founders design people systems that protect the company while supporting growth."
+                  />
+
+                  <div className="mt-8 space-y-4 text-[1rem] leading-8 text-neutral-300">
+                    <p>
+                      That includes helping founders structure hiring,
+                      compensation, incentive plans, contractor relationships,
+                      confidentiality protections, and invention assignment
+                      frameworks.
+                    </p>
+
+                    <p>
+                      It also means anticipating where employment decisions will
+                      affect ownership, IP, team dynamics, and future capital
+                      events, before those risks become embedded in the company.
+                    </p>
+
+                    <p>
+                      The result is a more durable team structure, one that gives
+                      founders the ability to hire aggressively without creating
+                      hidden liabilities behind the growth story.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 rounded-[1.45rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.045),rgba(255,255,255,0.02))] p-5">
+                    <div className="text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                      Vertalis employment lens
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-neutral-300">
+                      Build the team with clear hiring structure, aligned
+                      incentives, protected ownership, and the legal systems
+                      needed to scale people without structural drag.
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </section>
+
+            <section id="contact" className="py-10 md:py-14">
+              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(152deg,#242129_0%,#21262f_48%,#171b23_100%)] shadow-[0_28px_82px_-46px_rgba(0,0,0,0.8)]">
+                <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
+                  <div className="border-b border-white/10 p-7 lg:border-b-0 lg:border-r lg:p-9">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
+                      <span
+                        className="h-2 w-2 rounded-full"
+                        style={{ backgroundColor: tokens.accent }}
+                      />
+                      Start the conversation
+                    </div>
+
+                    <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-white md:text-[2.65rem]">
+                      If the team is growing, the legal structure around it
+                      should be growing too.
+                    </h2>
+
+                    <p className="mt-5 max-w-xl text-[1.03rem] leading-8 text-neutral-300">
+                      Vertalis helps founders build hiring and team systems that
+                      support momentum without leaving ownership, incentives, and
+                      risk management to chance.
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <StatPill>Hiring structure</StatPill>
+                      <StatPill>Equity incentives</StatPill>
+                      <StatPill>Classification</StatPill>
+                      <StatPill>Confidentiality</StatPill>
+                      <StatPill>Invention assignment</StatPill>
+                    </div>
+                  </div>
+
+                  <div className="p-7 lg:p-9">
+                    <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-6">
+                      <h3 className="text-2xl font-semibold tracking-[-0.03em] text-white">
+                        Contact Vertalis
+                      </h3>
+
+                      <p className="mt-4 max-w-xl text-[0.98rem] leading-8 text-neutral-300">
+                        Tell me how your team is currently structured, what kind
+                        of hires you are making, and where you need more clarity
+                        before growth compounds the risk.
+                      </p>
+
+                      <a
+                        href="mailto:tim@vertalislegal.com?subject=Employees%20Consult%20Request"
+                        className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-medium text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
+                      >
+                        <span>Email Vertalis</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+
+                      <p className="mt-5 text-sm leading-7 text-neutral-400">
+                        Best for founders who need support around hiring,
+                        incentives, classification, confidentiality, and
+                        protecting the company as the team expands.
+                      </p>
+
+                      <div className="mt-8">
+                        <a
+                          href="/about"
+                          className="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"
+                        >
+                          <ArrowLeft className="h-4 w-4" />
+                          Back to About
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </Container>
+      </section>
     </main>
   );
 }
