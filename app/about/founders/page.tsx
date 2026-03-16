@@ -629,7 +629,7 @@ export default function FoundersPage() {
 
                     <a
                       href="mailto:tim@vertalislegal.com?subject=Founders%20Consult%20Request"
-                      className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-medium text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
+                      className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-bold text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
                     >
                       <span>Email Vertalis</span>
                       <ArrowRight className="h-4 w-4" />

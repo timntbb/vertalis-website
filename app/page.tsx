@@ -124,7 +124,7 @@ export function Button({
   const pathname = usePathname();
 
   const base =
-    "group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition-colors duration-150 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20";
+    "group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold transition-colors duration-150 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20";
 
   const onClickScroll: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
     if (!href.startsWith("#")) return;
@@ -933,13 +933,12 @@ the gaps.
 
       <h2>Let’s talk</h2>
       <p>
-        If you're raising capital, structuring contracts, or shipping AI features,
-        start the conversation.
+        If the company is starting to move, this is where the structure behind it gets installed.
       </p>
     </div>
 
     <div className="contact-shell">
-      <aside className="contact-rail flex flex-col justify-start">
+      <aside className="contact-rail bg-neutral-900/60 backdrop-blur-sm flex flex-col justify-start">
         <Image
           src="/logo.png"
           alt="Vertalis shield"
@@ -983,9 +982,9 @@ the gaps.
         </div>
       </aside>
 
-      <div className="contact-panel">
+      <div className="contact-panel transition-all duration-300 hover:translate-y-[-3px] hover:shadow-xl">
         <div className="contact-panel-inner">
-          <h3>Start the conversation</h3>
+          <h3 className="tracking-[-0.02em]">Start the conversation</h3>
 
           <p className="contact-panel-copy">
             Tell me what you're building, where the friction is, and what kind
@@ -994,13 +993,15 @@ the gaps.
             and AI risk.
           </p>
 
-          <a
-            href="mailto:tim@vertalislegal.com?subject=Vertalis%20Consult%20Request"
-            className="contact-cta"
-          >
-            <span>Email Vertalis</span>
-            <ArrowRight size={18} />
-          </a>
+          <div className="mt-6">
+            <a
+              href="mailto:tim@vertalislegal.com?subject=Vertalis%20Consult%20Request"
+              className="contact-cta"
+            >
+              <span>Email Vertalis</span>
+              <ArrowRight size={18} />
+            </a>
+          </div>
 
           <p className="contact-panel-note">
             Best for founders who need sharp legal guidance on contracts,
@@ -1074,7 +1075,7 @@ the gaps.
 
     .contact-intro p {
       margin: 0.75rem 0 0;
-      max-width: 42rem;
+      max-width: 48rem;
       color: #c4c4c9;
       line-height: 1.7;
     }
@@ -1093,8 +1094,10 @@ the gaps.
       border: 1px solid rgba(255,255,255,0.04);
       border-radius: 1.75rem;
       background:
-        radial-gradient(circle at 20% 85%, rgba(192,96,32,0.12), transparent 70%),
-        rgba(0,0,0,0.16);
+        radial-gradient(circle at 20% 85%, rgba(192,96,32,0.08), transparent 72%),
+        rgba(23,23,26,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       padding: 1.9rem 1.3rem 2rem;
     }
 
@@ -1257,7 +1260,7 @@ the gaps.
       color: rgba(224,230,240,0.76);
       font-size: 1.1rem;
       line-height: 1.72;
-      max-width: 42rem;
+      max-width: 48rem;
     }
 
     .contact-cta {
@@ -1265,7 +1268,7 @@ the gaps.
       overflow: hidden;
       display: inline-flex;
       width: auto;
-      margin-top: 2.4rem;
+      margin-top: 0;
       margin-inline: 0;
       align-items: center;
       justify-content: center;
@@ -1275,7 +1278,7 @@ the gaps.
       text-decoration: none;
       color: white;
       font-size: 1.05rem;
-      font-weight: 500;
+      font-weight: 700;
       background: linear-gradient(180deg, rgba(210,132,78,1) 0%, rgba(191,96,23,1) 100%);
       box-shadow: 0 12px 28px -18px rgba(191,96,23,0.55), 0 1px 0 rgba(255,255,255,0.26) inset;
       transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
@@ -1315,9 +1318,9 @@ the gaps.
     .contact-chips span {
       padding: 0.7rem 0.9rem;
       border-radius: 0.8rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-      color: rgba(231,236,245,0.82);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+      color: #d4d4d8;
       font-size: 0.88rem;
       font-weight: 450;
       letter-spacing: 0.01em;

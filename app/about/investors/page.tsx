@@ -148,15 +148,6 @@ export default function InvestorsPage() {
             style={{ background: "rgba(72,90,120,0.10)" }}
           />
 
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.055]">
-            <img
-              src="/logo-final.png"
-              alt=""
-              className="object-contain blur-[0.2px]"
-              style={{ width: 700, height: 700 }}
-            />
-          </div>
-
           <div
             className="absolute inset-0 opacity-[0.035]"
             style={{
@@ -175,7 +166,15 @@ export default function InvestorsPage() {
         <Container>
         <div className="relative z-10 py-8 md:py-12">
           <Card className="px-6 py-8 md:px-10 md:py-10">
-            <div className="grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)]">
+            <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.06]">
+              <img
+                src="/logo-final.png"
+                alt=""
+                className="h-[560px] w-[560px] object-contain blur-[0.2px]"
+              />
+            </div>
+
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)]">
               <aside className="rounded-[1.7rem] border border-white/8 bg-[linear-gradient(160deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] p-6 shadow-[0_22px_60px_-38px_rgba(0,0,0,0.75)]">
               <div className="relative">
                 <div
@@ -475,7 +474,7 @@ export default function InvestorsPage() {
 
                       <a
                         href="mailto:tim@vertalislegal.com?subject=Investors%20Consult%20Request"
-                        className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-medium text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
+                        className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-bold text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
                       >
                         <span>Email Vertalis</span>
                         <ArrowRight className="h-4 w-4" />
