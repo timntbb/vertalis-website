@@ -914,7 +914,7 @@ the gaps.
                     as="span"
                     className="inline-block align-baseline font-semibold tracking-tight normal-case"
                     style={{
-                      fontSize: "inherit",
+                      fontSize: "1.35em",
                       lineHeight: "inherit",
                       filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
                     }}
