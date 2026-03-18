@@ -653,7 +653,7 @@ export default function Home() {
 
 <FadeIn>
 
-<div className="max-w-[38rem] pt-0 md:pt-1.5">
+<div className="max-w-[840px] pt-0 md:pt-1.5">
 
 <VertalisWord
   className="font-semibold leading-none tracking-tight"
@@ -664,15 +664,30 @@ export default function Home() {
   Vertalis
 </VertalisWord>
 
-<p className="mt-5 text-[0.9rem] uppercase tracking-[0.28em] text-neutral-400">
+<p className="mt-6 mb-10 text-[0.9rem] uppercase tracking-[0.28em] text-neutral-400">
   Founder-side legal architecture for companies built to scale
 </p>
 
-<h1 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl md:leading-[0.98]">
-  Founders build the company. Vertalis designs the structure behind it.
+<h1 className="max-w-[840px] text-3xl md:text-[40px] lg:text-[42px] font-semibold leading-[1.08] tracking-[-0.025em] text-white">
+  <span className="block whitespace-nowrap">Founders build the company.</span>
+  <span className="block">
+    <VertalisWord
+      as="span"
+      className="inline-block align-baseline font-semibold tracking-tight normal-case"
+      style={{
+        fontSize: "inherit",
+        lineHeight: "inherit",
+        filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
+      }}
+    >
+      Vertalis
+    </VertalisWord>{" "}
+    designs the
+  </span>
+  <span className="block">structure behind it.</span>
 </h1>
 
-<p className="mt-7 max-w-[38rem] text-[1.15rem] leading-8 text-neutral-300">
+<p className="mt-14 max-w-[42rem] text-[1.15rem] leading-8 text-neutral-300">
   Vertalis helps founders install the legal systems that support scale, from
   governance and capital structure to hiring, operational risk, and ownership
   of what the company is building.
@@ -760,7 +775,19 @@ style={{ background: "rgba(72,90,120,0.11)" }}
 <div className="relative z-10">
 
 <div className="text-[1.9rem] leading-none font-semibold tracking-[-0.03em] text-white md:text-[2.15rem]">
-  Where Vertalis fits
+  Where{" "}
+  <VertalisWord
+    as="span"
+    className="inline-block align-baseline font-semibold tracking-tight normal-case"
+    style={{
+      fontSize: "inherit",
+      lineHeight: "inherit",
+      filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
+    }}
+  >
+    Vertalis
+  </VertalisWord>{" "}
+  fits
 </div>
 
 <p className="mt-3 text-[1rem] leading-7 text-neutral-300">
