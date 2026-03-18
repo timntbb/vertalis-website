@@ -13,8 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vertalislegal.com"),
   title: "Vertalis Legal Counsel",
   description: "Founder-side legal counsel for modern companies.",
+  openGraph: {
+    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
+  },
   icons: {
     icon: [{ url: "/icon.png?v=2", type: "image/png" }],
     shortcut: [{ url: "/icon.png?v=2" }],
