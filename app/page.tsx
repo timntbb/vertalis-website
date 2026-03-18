@@ -869,7 +869,15 @@ the gaps.
                   className="absolute -left-8 -top-10 h-24 w-24 rounded-full blur-2xl"
                   style={{ background: "rgba(192,96,32,0.20)" }}
                 />
-                <div className="relative h-[190px] rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.015)_40%,rgba(0,0,0,0.28)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]" />
+                <div className="relative h-[190px] overflow-hidden rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.015)_40%,rgba(0,0,0,0.28)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
+                  <Image
+                    src="/Tim%20Nichols%20Portrait.png"
+                    alt="Portrait of Tim Nichols"
+                    fill
+                    className="object-cover"
+                    sizes="210px"
+                  />
+                </div>
               </div>
 
               <div>
