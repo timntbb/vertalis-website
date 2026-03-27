@@ -640,9 +640,9 @@ export default function Home() {
 
 <Container>
 
-<div className="relative z-10 py-7 md:py-10">
+<div className="relative z-10 max-w-full overflow-hidden py-7 md:py-10">
 
-<div className="relative overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.015] px-6 py-10 shadow-[0_30px_90px_-50px_rgba(0,0,0,0.8)] md:px-10">
+<div className="relative max-w-full overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.015] px-6 py-10 shadow-[0_30px_90px_-50px_rgba(0,0,0,0.8)] md:px-10">
 
 <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/6" />
 
@@ -650,11 +650,11 @@ export default function Home() {
 
 {/* ================= LEFT SIDE ================= */}
 
-<div className="md:col-span-7 md:pr-10 lg:pr-14">
+<div className="min-w-0 md:col-span-7 md:pr-10 lg:pr-14">
 
 <FadeIn>
 
-<div className="max-w-[840px] pt-0 md:pt-1.5">
+<div className="min-w-0 max-w-[840px] pt-0 md:pt-1.5">
 
 <VertalisWord
   className="font-semibold leading-none tracking-tight"
@@ -669,7 +669,7 @@ export default function Home() {
   Founder-side legal architecture for companies built to scale
 </p>
 
-<h1 className="max-w-[840px] text-[1.9rem] font-semibold leading-[1.05] tracking-[-0.025em] text-white sm:text-3xl md:text-[40px] md:leading-[1.08] lg:text-[42px]">
+<h1 className="max-w-[840px] text-3xl font-semibold leading-tight tracking-tight text-white [overflow-wrap:anywhere] sm:text-5xl lg:text-6xl">
   <span className="block md:whitespace-nowrap">Founders build the company.</span>
   <span className="block">
     <VertalisWord
@@ -688,7 +688,7 @@ export default function Home() {
   <span className="block">structure behind it.</span>
 </h1>
 
-<p className="mt-10 max-w-[42rem] text-[1rem] leading-7 text-neutral-300 sm:text-[1.15rem] sm:leading-8 md:mt-14">
+<p className="mt-10 max-w-[42rem] text-[1rem] leading-7 text-neutral-300 [overflow-wrap:anywhere] sm:text-[1.15rem] sm:leading-8 md:mt-14">
   Vertalis helps founders install the legal systems that support scale, from
   governance and capital structure to hiring, operational risk, and ownership
   of what the company is building.
@@ -710,7 +710,7 @@ About the practice
 
 <div className="mt-14 grid max-w-[520px] gap-4 sm:grid-cols-2">
 
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
+<Card className="min-w-0 overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
 
 <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
 <BadgeCheck className="h-4 w-4" style={{ color: tokens.accent }} />
@@ -726,7 +726,7 @@ Roles, equity, authority, and vesting before misalignment compounds.
 
 </Card>
 
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
+<Card className="min-w-0 overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
 
 <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
 <Lock className="h-4 w-4" style={{ color: tokens.accent }} />
@@ -752,7 +752,7 @@ SAFE, seed, dilution, investor leverage, and control clarity.
 
 {/* ================= RIGHT PANEL ================= */}
 
-<div className="md:col-span-5 lg:mt-6">
+<div className="min-w-0 md:col-span-5 lg:mt-6">
 
 <FadeIn delay={0.08}>
 
@@ -773,7 +773,7 @@ style={{ background: "rgba(72,90,120,0.11)" }}
 
 </div>
 
-<div className="relative z-10">
+<div className="relative z-10 min-w-0">
 
 <div className="text-[1.9rem] leading-none font-semibold tracking-[-0.03em] text-white md:text-[2.15rem]">
   Where{" "}
@@ -798,7 +798,7 @@ Vertalis installs structure before legal gaps compound.
 
 <div className="mt-7 grid gap-4">
 
-<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
+<Card tone="dark" className="min-w-0 rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
 
 <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
 <ScrollText className="h-4 w-4" />
@@ -826,7 +826,7 @@ Hiring, IP, and contract risk controls
 
 </Card>
 
-<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
+<Card tone="dark" className="min-w-0 rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
 
 <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
 <FileText className="h-4 w-4" />
