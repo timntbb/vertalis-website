@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout";
 import VertalisWord from "@/components/VertalisWord";
@@ -423,7 +424,7 @@ export function Header() {
       >
         <Container>
           <div className="relative flex h-full items-center justify-between">
-          <a
+          <Link
             href="/"
             className="flex shrink-0 items-center transition-all duration-200 hover:opacity-90"
             style={{ gap: brandGap }}
@@ -454,7 +455,7 @@ export function Header() {
                 Legal Counsel, PLLC
               </div>
             </div>
-          </a>
+          </Link>
 
           <nav
             className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
@@ -658,18 +659,18 @@ export default function Home() {
 <VertalisWord
   className="font-semibold leading-none tracking-tight"
   style={{
-    fontSize: "34pt",
+    fontSize: "clamp(2rem, 10vw, 34pt)",
   }}
 >
   Vertalis
 </VertalisWord>
 
-<p className="mt-6 mb-10 text-[0.9rem] uppercase tracking-[0.28em] text-neutral-400">
+<p className="mb-8 mt-6 text-[0.78rem] uppercase tracking-[0.2em] text-neutral-400 sm:mb-10 sm:text-[0.9rem] sm:tracking-[0.28em]">
   Founder-side legal architecture for companies built to scale
 </p>
 
-<h1 className="max-w-[840px] text-3xl md:text-[40px] lg:text-[42px] font-semibold leading-[1.08] tracking-[-0.025em] text-white">
-  <span className="block whitespace-nowrap">Founders build the company.</span>
+<h1 className="max-w-[840px] text-[1.9rem] font-semibold leading-[1.05] tracking-[-0.025em] text-white sm:text-3xl md:text-[40px] md:leading-[1.08] lg:text-[42px]">
+  <span className="block md:whitespace-nowrap">Founders build the company.</span>
   <span className="block">
     <VertalisWord
       as="span"
@@ -687,7 +688,7 @@ export default function Home() {
   <span className="block">structure behind it.</span>
 </h1>
 
-<p className="mt-14 max-w-[42rem] text-[1.15rem] leading-8 text-neutral-300">
+<p className="mt-10 max-w-[42rem] text-[1rem] leading-7 text-neutral-300 sm:text-[1.15rem] sm:leading-8 md:mt-14">
   Vertalis helps founders install the legal systems that support scale, from
   governance and capital structure to hiring, operational risk, and ownership
   of what the company is building.
@@ -1022,7 +1023,7 @@ the gaps.
           <h3 className="tracking-[-0.02em]">Start the conversation</h3>
 
           <p className="contact-panel-copy">
-            Tell me what you're building, where the friction is, and what kind
+            Tell me what you&apos;re building, where the friction is, and what kind
             of legal support you need. Vertalis is built for founders who want
             practical guidance on contracts, governance, capital readiness,
             and AI risk.
