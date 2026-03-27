@@ -19,7 +19,7 @@ export function Header() {
   const navItems: Array<[string, string]> = [
     ["Services", "#services"],
     ["Packages", "#packages"],
-    ["Insights", "/blog"],
+    ["Insights", "/insights"],
     ["FAQ", "#faq"],
     ["Contact", "#contact"],
   ];

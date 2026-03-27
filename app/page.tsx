@@ -361,7 +361,7 @@ export function Header() {
   const navItems: Array<[string, string]> = [
     ["Home", "#top"],
     ["About", "#about"],
-    ["Insights", "/blog"],
+    ["Insights", "/insights"],
     ["Contact", "#contact"],
     ["Attorney", "/about/tim-nichols"],
   ];
@@ -1013,7 +1013,7 @@ the gaps.
         <div className="contact-links">
           <a href="#top">Home <ArrowRight size={16} /></a>
           <a href="#about">About <ArrowRight size={16} /></a>
-          <a href="/blog">Insights <ArrowRight size={16} /></a>
+          <a href="/insights">Insights <ArrowRight size={16} /></a>
           <a href="#contact">Contact <ArrowRight size={16} /></a>
         </div>
       </aside>
