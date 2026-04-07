@@ -670,7 +670,7 @@ export default function Home() {
 </p>
 
 <h1 className="max-w-[840px] text-3xl md:text-[40px] lg:text-[42px] font-semibold leading-[1.08] tracking-[-0.025em] text-white">
-  <span className="block whitespace-nowrap">Founders build the company.</span>
+  <span className="block whitespace-normal md:whitespace-nowrap">Founders build the company.</span>
   <span className="block">
     <VertalisWord
       as="span"
@@ -1013,7 +1013,7 @@ the gaps.
         <div className="contact-links">
           <a href="#top">Home <ArrowRight size={16} /></a>
           <a href="#about">About <ArrowRight size={16} /></a>
-          <a href="/insights">Insights <ArrowRight size={16} /></a>
+          <Link href="/insights">Insights <ArrowRight size={16} /></Link>
           <a href="#contact">Contact <ArrowRight size={16} /></a>
         </div>
       </aside>
