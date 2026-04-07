@@ -10,14 +10,14 @@ export default function InsightsPage() {
 
       <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(circle_at_top_left,rgba(192,96,32,0.22),transparent_34%),linear-gradient(180deg,#0d0d10_0%,#09090b_100%)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 md:py-24">
-          <div className="max-w-4xl">
+          <div className="w-full max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-neutral-400">
               Insights
             </p>
-            <h1 className="mt-4 max-w-5xl whitespace-nowrap text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">
+            <h1 className="mt-4 w-full max-w-5xl text-4xl font-semibold tracking-[-0.04em] text-white [overflow-wrap:anywhere] md:whitespace-nowrap md:text-6xl">
               Clarity for founders building under pressure.
             </h1>
-            <p className="mt-6 max-w-3xl whitespace-nowrap text-base leading-8 text-neutral-300 md:text-lg">
+            <p className="mt-6 w-full max-w-3xl text-base leading-8 text-neutral-300 [overflow-wrap:anywhere] md:whitespace-nowrap md:text-lg">
               Practical insight on governance, structure, capital readiness, and
               the legal decisions that shape real companies.
             </p>
@@ -27,7 +27,7 @@ export default function InsightsPage() {
 
       <section className="py-10 md:py-12">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="max-w-3xl">
+          <div className="w-full max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c06020]">
               Framework
             </p>
@@ -63,7 +63,7 @@ export default function InsightsPage() {
 
       <section className="py-12 md:py-16">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="mb-10 max-w-2xl">
+          <div className="mb-10 w-full max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c06020]">
               Latest Insights
             </p>
