@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Header, Button } from "../../page";
+import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
 import {
   ArrowLeft,
@@ -407,76 +408,7 @@ export default function EmployeesPage() {
             </section>
 
             <section id="contact" className="py-10 md:py-14">
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(152deg,#242129_0%,#21262f_48%,#171b23_100%)] shadow-[0_28px_82px_-46px_rgba(0,0,0,0.8)]">
-                <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-                  <div className="border-b border-white/10 p-7 lg:border-b-0 lg:border-r lg:p-9">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300">
-                      <span
-                        className="h-2 w-2 rounded-full"
-                        style={{ backgroundColor: tokens.accent }}
-                      />
-                      Start the conversation
-                    </div>
-
-                    <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-white md:text-[2.65rem]">
-                      If the team is growing, the legal structure around it
-                      should be growing too.
-                    </h2>
-
-                    <p className="mt-5 max-w-xl text-[1.03rem] leading-8 text-neutral-300">
-                      Vertalis helps founders build hiring and team systems that
-                      support momentum without leaving ownership, incentives, and
-                      risk management to chance.
-                    </p>
-
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <StatPill>Hiring structure</StatPill>
-                      <StatPill>Equity incentives</StatPill>
-                      <StatPill>Classification</StatPill>
-                      <StatPill>Confidentiality</StatPill>
-                      <StatPill>Invention assignment</StatPill>
-                    </div>
-                  </div>
-
-                  <div className="p-7 lg:p-9">
-                    <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-6">
-                      <h3 className="text-2xl font-semibold tracking-[-0.03em] text-white">
-                        Contact Vertalis
-                      </h3>
-
-                      <p className="mt-4 max-w-xl text-[0.98rem] leading-8 text-neutral-300">
-                        Tell me how your team is currently structured, what kind
-                        of hires you are making, and where you need more clarity
-                        before growth compounds the risk.
-                      </p>
-
-                      <a
-                        href="mailto:tim@vertalislegal.com?subject=Employees%20Consult%20Request"
-                        className="mt-7 inline-flex items-center gap-2 rounded-[1rem] bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-4 text-[1rem] font-bold text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-all duration-200 hover:-translate-y-[2px]"
-                      >
-                        <span>Email Vertalis</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
-
-                      <p className="mt-5 text-sm leading-7 text-neutral-400">
-                        Best for founders who need support around hiring,
-                        incentives, classification, confidentiality, and
-                        protecting the company as the team expands.
-                      </p>
-
-                      <div className="mt-8">
-                        <a
-                          href="/about"
-                          className="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"
-                        >
-                          <ArrowLeft className="h-4 w-4" />
-                          Back to About
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <VertalisTextBox />
             </section>
           </div>
         </Container>

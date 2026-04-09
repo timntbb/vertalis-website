@@ -1,3 +1,5 @@
+import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
+
 export type InsightPost = {
   slug: string;
   category: string;
@@ -6,6 +8,7 @@ export type InsightPost = {
   date?: string;
   readTime?: string;
   content?: React.ReactNode;
+  fullWidthTool?: boolean;
   subtitle: string;
   sections: Array<{
     heading?: string;
@@ -16,6 +19,138 @@ export type InsightPost = {
 };
 
 export const insightPosts: InsightPost[] = [
+  {
+    slug: "post-money-safe-ownership-dilution",
+    category: "Capital Strategy",
+    title: "Post-Money SAFEs: Ownership, Dilution, and the Structure Founders Get Wrong",
+    excerpt:
+      "A clear, founder-focused breakdown of how post-money SAFEs actually work, how dilution really happens, and how to structure a SAFE round intentionally.",
+    date: "April 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    fullWidthTool: true,
+    content: (
+      <div className="space-y-10 md:space-y-12">
+        <div className="not-prose">
+          <VertalisSAFETableCard />
+        </div>
+
+        <article className="mx-auto max-w-4xl text-neutral-300">
+          <h2 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
+            Post-Money SAFEs: Ownership, Dilution, and the Structure Founders Get Wrong
+          </h2>
+
+          <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            I. The Post-Money SAFE and the Shift to Ownership Clarity
+          </h3>
+          <p className="mt-4 leading-8">
+            The post-money SAFE changed early-stage financing by making ownership
+            visible. Under pre-money SAFEs, founders were navigating dilution through
+            variables they could not control, including future fundraising, option
+            pool adjustments, and the interaction between multiple SAFEs. The result
+            was a structure where capital could be raised without clearly
+            understanding what had been sold.
+          </p>
+          <p className="mt-4 leading-8">
+            The post-money SAFE corrected that by anchoring everything to a single
+            concept, the post-money valuation cap. Because this valuation reflects
+            the company immediately after the investment, ownership can be calculated
+            directly at the time of the transaction. In practice, this reduces to a
+            simple equation: the amount raised divided by the post-money valuation
+            cap.
+          </p>
+          <p className="mt-4 leading-8">
+            This was not just a technical improvement, but a structural correction
+            that allows ownership to be immediately transparent and calculable.
+          </p>
+
+          <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            II. SAFEs as Independent Financing Events
+          </h3>
+          <p className="mt-4 leading-8">
+            Many founders still treat SAFEs as temporary instruments that defer real
+            consequences until a priced round. That is no longer accurate. The
+            post-money SAFE functions as its own financing event, one that
+            establishes ownership before institutional capital enters the business.
+          </p>
+          <p className="mt-4 leading-8">
+            If a company raises $1 million on a $5 million cap, it has sold 20
+            percent. That ownership exists before the Series A and becomes the
+            baseline for every future financing.
+          </p>
+          <p className="mt-4 leading-8">
+            The implication is straightforward. Founders cannot think in terms of
+            dollars alone. Every raise is an ownership decision.
+          </p>
+
+          <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            III. Where Dilution Actually Happens
+          </h3>
+          <p className="mt-4 leading-8">
+            While SAFEs determine initial ownership, most dilution occurs at the
+            first priced round. At that point, SAFEs convert, new investors purchase
+            preferred stock, and the option pool is expanded.
+          </p>
+          <p className="mt-4 leading-8">
+            A defining feature of the post-money SAFE is that SAFEs do not dilute
+            each other. Each investor’s ownership is calculated independently and
+            aggregated into a fixed block prior to the priced round.
+          </p>
+          <p className="mt-4 leading-8">
+            During the priced round, new investors typically take 20 to 30 percent of
+            the company. At the same time, the option pool is often increased, which
+            is usually borne by founders.
+          </p>
+          <p className="mt-4 leading-8">
+            Pro rata rights further increase dilution by allowing SAFE investors to
+            maintain their ownership in the priced round.
+          </p>
+
+          <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            IV. Designing a SAFE Round with Intent
+          </h3>
+          <p className="mt-4 leading-8">
+            A properly structured SAFE round begins with ownership, not capital.
+            Founders should first determine how much of the company they are willing
+            to sell, then work backward to the valuation cap.
+          </p>
+          <p className="mt-4 leading-8">
+            For example, if a founder is willing to sell 15 percent and plans to
+            raise $750,000, the implied post-money cap is $5 million.
+          </p>
+          <p className="mt-4 leading-8">
+            This ensures the raise aligns with long-term control rather than
+            short-term funding.
+          </p>
+          <p className="mt-4 leading-8">
+            We built a SAFE dilution simulator to allow founders to model these
+            outcomes in real time and understand ownership before committing to
+            terms.
+          </p>
+
+          <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            V. The Vertalis Perspective
+          </h3>
+          <p className="mt-4 leading-8">
+            At Vertalis, SAFEs are not documents, they are structural decisions. The
+            SAFE round is often the first meaningful allocation of ownership outside
+            the founding team, and it sets the trajectory for every financing event
+            that follows.
+          </p>
+          <p className="mt-4 leading-8">
+            The post-money SAFE delivers clarity. Founders who use that clarity
+            intentionally retain control. Those who do not often realize the
+            consequences later.
+          </p>
+          <p className="mt-4 leading-8">
+            Vertalis designs the legal architecture behind the company so each
+            financing decision supports long-term control and scalability.
+          </p>
+        </article>
+      </div>
+    ),
+  },
   {
     slug: "operating-agreement-backbone-of-your-company",
     category: "Governance",

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout";
+import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
 import {
   ArrowRight,
@@ -961,113 +962,7 @@ the gaps.
 
       <section id="contact" className="contact-section">
   <Container>
-    <div className="contact-intro">
-      <div className="contact-eyebrow">
-        <span className="contact-dot" />
-        Direct line
-      </div>
-
-      <h2>Let’s talk</h2>
-      <p>
-        If the company is starting to move, this is where the structure behind it gets installed.
-      </p>
-    </div>
-
-    <div className="contact-shell">
-      <aside className="contact-rail bg-neutral-900/60 backdrop-blur-sm flex flex-col justify-start">
-        <Image
-          src="/logo.png"
-          alt="Vertalis shield"
-          width={48}
-          height={48}
-          className="contact-brand-mark"
-        />
-
-        <VertalisWord
-  className="font-semibold leading-[0.95] tracking-[-0.035em] select-none"
-  style={{
-    fontSize: "42pt",
-    filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
-            marginLeft: "-10px",
-  }}
->
-  Vertalis
-        </VertalisWord>
-
-        <div className="contact-brand-sub">LEGAL COUNSEL</div>
-
-        <a
-          href="https://www.linkedin.com/in/timntbb/"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-linkedin"
-          aria-label="LinkedIn"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.8-2.18 4.06 0 4.82 2.67 4.82 6.14V24h-4v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24h-4V8Z" />
-          </svg>
-        </a>
-
-        <div className="contact-links-title">Navigate</div>
-
-        <div className="contact-links">
-          <a href="#top">Home <ArrowRight size={16} /></a>
-          <a href="#about">About <ArrowRight size={16} /></a>
-          <Link href="/insights">Insights <ArrowRight size={16} /></Link>
-          <a href="#contact">Contact <ArrowRight size={16} /></a>
-        </div>
-      </aside>
-
-      <div className="contact-panel transition-all duration-300 hover:translate-y-[-3px] hover:shadow-xl">
-        <div className="contact-panel-inner">
-          <h3 className="tracking-[-0.02em]">Start the conversation</h3>
-
-          <p className="contact-panel-copy">
-            Tell me what you&apos;re building, where the friction is, and what kind
-            of legal support you need. Vertalis is built for founders who want
-            practical guidance on contracts, governance, capital readiness,
-            and AI risk.
-          </p>
-
-          <div className="mt-6">
-            <a
-              href="mailto:tim@vertalislegal.com?subject=Vertalis%20Consult%20Request"
-              className="contact-cta"
-            >
-              <span>Email Vertalis</span>
-              <ArrowRight size={18} />
-            </a>
-          </div>
-
-          <p className="contact-panel-note">
-            Best for founders who need sharp legal guidance on contracts,
-            governance, capital readiness, and AI risk.
-          </p>
-
-          <div className="contact-chips">
-            <span>Contracts</span>
-            <span>Governance</span>
-            <span>AI + Capital Readiness</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer className="contact-footer">
-      <div className="contact-footer-row">
-        <div>© {new Date().getFullYear()} Vertalis Legal Counsel, PLLC</div>
-        <div className="contact-footer-links">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <span>Built in DFW</span>
-        </div>
-      </div>
-
-      <div className="contact-footer-note">
-        This website provides general information, and does not create an
-        attorney-client relationship.
-      </div>
-    </footer>
+    <VertalisTextBox />
   </Container>
 
   <style jsx>{`
