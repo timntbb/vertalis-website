@@ -1,10 +1,13 @@
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
+import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 
 export type InsightPost = {
   slug: string;
   category: string;
   title: string;
   excerpt: string;
+  seoTitle?: string;
+  seoDescription?: string;
   date?: string;
   readTime?: string;
   content?: React.ReactNode;
@@ -226,7 +229,7 @@ export const insightPosts: InsightPost[] = [
   },
   {
     slug: "intellectual-property-risks-startups",
-    category: "Governance",
+    category: "Intellectual Property",
     title: "Intellectual Property Risks in Startups: Five Ways IP Quietly Breaks a Company",
     excerpt:
       "Most founders assume their company owns what it builds. In reality, intellectual property issues quietly derail startups through ownership gaps, founder misalignment, and weak agreements.",
@@ -566,6 +569,185 @@ export const insightPosts: InsightPost[] = [
           If that answer is uncertain, it is worth addressing early, while the
           company still has flexibility and leverage.
         </p>
+      </article>
+    ),
+  },
+  {
+    slug: "llc-vs-c-corp",
+    category: "Founders",
+    title: "LLC vs C-Corp",
+    excerpt:
+      "Choosing between an LLC and a C-Corporation is one of the earliest structural decisions a founder makes. The right choice affects ownership, capital, governance, and how the company scales.",
+    seoTitle: "LLC vs C-Corp | How to Choose the Right Business Entity for Your Startup",
+    seoDescription:
+      "Learn how founders should decide between an LLC and a C-Corporation based on ownership, capital strategy, governance, and long-term scalability.",
+    date: "April 2026",
+    readTime: "6 min read",
+    subtitle: "How to Choose the Right Business Entity for Your Startup",
+    sections: [],
+    content: <LLCVsCCorpArticle />,
+  },
+  {
+    slug: "employee-vs-contractor-structure",
+    category: "Governance",
+    title: "Employee vs. Independent Contractor: Structure, Not Labels",
+    excerpt:
+      "Worker classification is a structural allocation of cost, control, and risk. What begins as a handshake can turn into tax exposure, liability, and regulatory friction.",
+    date: "April 2026",
+    readTime: "5 min read",
+    subtitle:
+      "Classification is not a compliance box. It is part of your company's legal architecture.",
+    sections: [],
+    content: (
+      <article className="text-neutral-300 leading-relaxed">
+        <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
+          Employee vs. Independent Contractor: Structure, Not Labels
+        </h1>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          The Cost of Informality
+        </h2>
+        <p className="mt-4">
+          Founders move fast. Early hires come through networks, introductions, and
+          "we'll figure it out later" conversations. A developer on a short-term
+          build, a marketer from Upwork, a friend helping with operations, it all
+          starts informally. But worker classification is one of those areas where
+          informality doesn't scale. What begins as a handshake can quickly turn
+          into tax exposure, liability, and regulatory friction that hits at
+          exactly the wrong time.
+        </p>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          Structure, Not Paperwork
+        </h2>
+        <p className="mt-4">
+          At its core, employee vs. contractor is not a paperwork distinction, it is
+          a structural allocation of cost, control, and risk. Employees sit inside
+          your company. You control how the work is performed, and in exchange, you
+          take on payroll taxes, unemployment obligations, and compliance with wage
+          and hour laws. Contractors sit outside your company. You pay for outcomes,
+          not process, and they carry their own taxes, benefits, and operational
+          risk. That flexibility is why early-stage companies lean heavily on
+          contractors, but it only works if the relationship actually reflects
+          independence.
+        </p>
+        <p className="mt-4">
+          The distinction matters because the law does not care what you call
+          someone. It looks at how the relationship functions. If a contractor
+          starts to look embedded, taking direction, working set hours, relying on
+          your business as a primary income source, the classification begins to
+          collapse. And when it collapses, it does not do so gradually. It converts
+          into back taxes, penalties, wage claims, and compliance obligations, often
+          all at once.
+        </p>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          How the Law Actually Sees It
+        </h2>
+        <p className="mt-4">
+          There is no single form or contract that determines classification. At the
+          federal level, under Internal Revenue Code § 3121(d), the analysis reduces
+          to control, who directs the work, who carries financial risk, and whether
+          the relationship reflects a business or a job.
+        </p>
+        <p className="mt-4">
+          Texas follows the same logic. Under the Texas Unemployment Compensation
+          Act, a worker is presumed to be an employee when three elements exist:
+          service, wages, and the right of direction and control. The key word is
+          "right." You do not need to actively control the work. If you have the
+          ability to, that is enough.
+        </p>
+        <p className="mt-4">
+          What is often described as a "20-factor test" is better understood as a
+          control analysis across three categories:
+        </p>
+        <ul className="mt-4 ml-6 list-disc space-y-2">
+          <li>
+            <strong className="text-white">Behavioral control:</strong> Are you
+            directing how the work gets done, instructions, training, timing,
+            reporting?
+          </li>
+          <li>
+            <strong className="text-white">Financial control:</strong> Who bears the
+            cost structure, tools, expenses, and profit or loss?
+          </li>
+          <li>
+            <strong className="text-white">Independence and integration:</strong> Is
+            this person operating a separate business, or are they embedded in
+            yours?
+          </li>
+        </ul>
+        <p className="mt-4">
+          These are not checklists. They are signals. And they all point to a single
+          question: is this person building their own business, or helping you run
+          yours?
+        </p>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          Why Founders Get This Wrong
+        </h2>
+        <p className="mt-4">
+          Most misclassification does not come from bad intent. It comes from
+          informality.
+        </p>
+        <p className="mt-4">
+          Early-stage companies rely on speed. Roles are loosely defined.
+          Expectations evolve in real time. A contractor becomes "part of the team."
+          They join Slack, attend meetings, take direction, and suddenly, without
+          anyone realizing it, they are no longer operating independently.
+        </p>
+        <p className="mt-4">
+          Handshake deals make this worse. Without clear agreements, there is no
+          defined scope, no boundary on control, no allocation of risk. The
+          relationship defaults to how it functions day-to-day, and that is exactly
+          what regulators analyze. You cannot contract around a bad structure, and
+          you cannot fix it after the fact without cost.
+        </p>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          The Real Risk: It Breaks When You Scale
+        </h2>
+        <p className="mt-4">
+          Misclassification rarely causes problems when everything is small. It shows
+          up when something changes:
+        </p>
+        <ul className="mt-4 ml-6 list-disc space-y-1">
+          <li>A contractor files for unemployment</li>
+          <li>A relationship ends poorly</li>
+          <li>You raise capital and undergo diligence</li>
+          <li>You grow and start formalizing operations</li>
+        </ul>
+        <p className="mt-4">
+          At that point, classification is no longer theoretical. It becomes a line
+          item, often with retroactive consequences.
+        </p>
+        <p className="mt-4">
+          Unexpected tax liability, back unemployment contributions, wage claims,
+          and potential penalties can all stack quickly. More importantly, it
+          creates friction in the exact moments your company needs to be clean,
+          scalable, and defensible.
+        </p>
+
+        <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+          The Vertalis View
+        </h2>
+        <p className="mt-4">
+          Classification is not a compliance box. It is part of your company's legal
+          architecture.
+        </p>
+        <p className="mt-4">
+          Employees are infrastructure. Contractors are external operators. The
+          distinction should be intentional, designed into the role from the
+          beginning, not inferred later based on convenience.
+        </p>
+        <p className="mt-4">
+          If you want flexibility, structure for independence. If you want control,
+          build for employment. But do not blur the two.
+        </p>
+        <p className="mt-4">
+          Because in the early days, informality feels like speed.
+        </p>
+        <p className="mt-4">Later, it becomes cost.</p>
       </article>
     ),
   },

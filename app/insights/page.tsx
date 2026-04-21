@@ -4,16 +4,23 @@ import { Header } from "../page";
 import { insightPosts } from "./data";
 
 export default function InsightsPage() {
-  const sortedPosts = [...insightPosts].sort((a, b) => {
-    const aTime = a.date ? Date.parse(a.date) : Number.NaN;
-    const bTime = b.date ? Date.parse(b.date) : Number.NaN;
+  const sortedPosts = insightPosts
+    .map((post, index) => ({ post, index }))
+    .sort((a, b) => {
+      const aTime = a.post.date ? Date.parse(a.post.date) : Number.NaN;
+      const bTime = b.post.date ? Date.parse(b.post.date) : Number.NaN;
 
-    if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
-    if (Number.isNaN(aTime)) return 1;
-    if (Number.isNaN(bTime)) return -1;
+      if (Number.isNaN(aTime) && Number.isNaN(bTime)) {
+        return b.index - a.index;
+      }
 
-    return bTime - aTime;
-  });
+      if (Number.isNaN(aTime) || Number.isNaN(bTime) || aTime === bTime) {
+        return b.index - a.index;
+      }
+
+      return bTime - aTime;
+    })
+    .map(({ post }) => post);
 
   const newestPosts = sortedPosts.slice(0, 3);
   const archivePosts = sortedPosts.slice(3);

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Home } from "lucide-react";
@@ -16,6 +17,49 @@ export function generateStaticParams() {
   return insightPosts.map((post) => ({ slug: post.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: InsightPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getInsightPost(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalis.com").replace(
+    /\/$/,
+    "",
+  );
+  const canonical = `${siteUrl}/insights/${post.slug}`;
+  const seoPost = post as typeof post & {
+    seoTitle?: string;
+    seoDescription?: string;
+  };
+  const title = seoPost.seoTitle ?? `${post.title} | Vertalis Insights`;
+  const description = seoPost.seoDescription ?? post.excerpt;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: canonical,
+      siteName: "Vertalis",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
 export default async function InsightPostPage({ params }: InsightPostPageProps) {
   const { slug } = await params;
   const post = getInsightPost(slug);
@@ -30,9 +74,43 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     : insightPosts;
   const sidebarPosts = recentPosts.slice(0, 5);
   const heroSummary = post.subtitle || post.excerpt;
+  const seoPost = post as typeof post & {
+    seoDescription?: string;
+  };
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalis.com").replace(
+    /\/$/,
+    "",
+  );
+  const articleUrl = `${siteUrl}/insights/${post.slug}`;
+  const parsedPublished = post.date ? Date.parse(post.date) : Number.NaN;
+  const publishedIso = Number.isNaN(parsedPublished)
+    ? undefined
+    : new Date(parsedPublished).toISOString();
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: articleUrl,
+    headline: post.title,
+    description: seoPost.seoDescription ?? post.excerpt,
+    datePublished: publishedIso,
+    dateModified: publishedIso,
+    author: {
+      "@type": "Organization",
+      name: "Vertalis",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Vertalis",
+    },
+  };
 
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       <Header />
 
       <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(circle_at_top_left,rgba(192,96,32,0.16),transparent_26%),linear-gradient(180deg,#0d0d10_0%,#09090b_100%)]">
