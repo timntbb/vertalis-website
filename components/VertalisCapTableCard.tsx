@@ -1635,6 +1635,14 @@ export default function VertalisCapTableCard() {
             padding: 0 2px;
           }
 
+          .tool-disclaimer {
+            margin: 14px 18px 16px;
+            color: rgba(244, 239, 232, 0.46);
+            font-size: 11px;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+          }
+
           .live {
             display: inline-flex;
             align-items: center;
@@ -1758,6 +1766,12 @@ export default function VertalisCapTableCard() {
             }
           }
         `}</style>
+
+        <p className="tool-disclaimer">
+          This tool is provided for educational purposes only and does not
+          constitute legal or financial advice. Results are illustrative and
+          should not be relied upon without consulting a qualified attorney.
+        </p>
       </section>
     </div>
   );

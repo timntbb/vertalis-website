@@ -357,6 +357,26 @@ export default function VertalisTextBox() {
           </div>
         </div>
       </div>
+
+      <div className="border-t border-white/10 bg-black/25 px-6 py-5 md:px-8 md:py-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/65">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <Link href="/insights" className="transition-colors hover:text-white">
+              Insights
+            </Link>
+            <Link href="/terms-of-use" className="transition-colors hover:text-white">
+              Terms of Use
+            </Link>
+          </nav>
+
+          <p className="text-xs tracking-[0.08em] text-white/50 md:text-sm">
+            © 2026, Vertalis Legal Counsel, PLLC
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
