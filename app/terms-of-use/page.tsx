@@ -330,7 +330,7 @@ function RocketGame() {
     let velocityY = 0;
     let frame = 0;
     let currentDistance = 0;
-    let isSpaceDown = false;
+    let isInputDown = false;
     let gameState: "ready" | "running" | "crashed" = "ready";
 
     const rocketWidth = 10;
@@ -425,7 +425,7 @@ function RocketGame() {
 
       gameState = "crashed";
       setStatus("crashed");
-      isSpaceDown = false;
+      isInputDown = false;
 
       setBestRun((prevBest) => {
         if (prevBest && currentDistance <= prevBest.distance) return prevBest;
@@ -437,29 +437,80 @@ function RocketGame() {
       });
     };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code !== "Space") return;
-
-      e.preventDefault();
-
+    const pressInput = () => {
       if (gameState === "crashed") {
         resetGame();
         return;
       }
 
       startGame();
-      isSpaceDown = true;
+      isInputDown = true;
+    };
+
+    const releaseInput = () => {
+      isInputDown = false;
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code !== "Space") return;
+
+      e.preventDefault();
+      pressInput();
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {
       if (e.code !== "Space") return;
 
       e.preventDefault();
-      isSpaceDown = false;
+      releaseInput();
+    };
+
+    const handlePointerDown = (e: PointerEvent | MouseEvent) => {
+      e.preventDefault();
+      pressInput();
+    };
+
+    const handlePointerUp = (e: PointerEvent | MouseEvent) => {
+      e.preventDefault();
+      releaseInput();
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      e.preventDefault();
+      pressInput();
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      e.preventDefault();
+      releaseInput();
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
+    const handleWindowBlur = () => {
+      releaseInput();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        releaseInput();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener("blur", handleWindowBlur);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    canvas.addEventListener("mousedown", handlePointerDown);
+    canvas.addEventListener("mouseup", handlePointerUp);
+    canvas.addEventListener("mouseleave", handlePointerUp);
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd, { passive: false });
+    canvas.addEventListener("touchcancel", handleTouchEnd, { passive: false });
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     const drawPixelText = (text: string, x: number, y: number, size = 12) => {
       ctx.font = `${size}px monospace`;
@@ -513,7 +564,7 @@ function RocketGame() {
     };
 
     const drawFlame = () => {
-      if (!isSpaceDown || gameState !== "running") return;
+      if (!isInputDown || gameState !== "running") return;
 
       const originX = rocketX + rocketWidth / 2;
       const originY = rocketY + rocketHeight + 1;
@@ -655,7 +706,7 @@ function RocketGame() {
         const maxRiseSpeed = -2.15 - difficulty * 0.5;
         const speed = 2.25 + difficulty * 1.55;
 
-        if (isSpaceDown) {
+        if (isInputDown) {
           velocityY += thrust;
         }
 
@@ -709,7 +760,7 @@ function RocketGame() {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         drawPixelText("VERTALIS ROCKET RUN", canvas.width / 2 - 92, canvas.height / 2 - 10, 16);
-        drawPixelText("HOLD SPACE TO LAUNCH", canvas.width / 2 - 84, canvas.height / 2 + 18, 12);
+        drawPixelText("HOLD SPACE OR TOUCH TO LAUNCH", canvas.width / 2 - 132, canvas.height / 2 + 18, 12);
         drawPixelText(
           bestRunRef.current
             ? `BEST RUN - ${bestRunRef.current.distance}`
@@ -737,6 +788,16 @@ function RocketGame() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener("blur", handleWindowBlur);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+
+      canvas.removeEventListener("mousedown", handlePointerDown);
+      canvas.removeEventListener("mouseup", handlePointerUp);
+      canvas.removeEventListener("mouseleave", handlePointerUp);
+      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("touchcancel", handleTouchEnd);
+      canvas.removeEventListener("touchmove", handleTouchMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -752,7 +813,7 @@ function RocketGame() {
         ref={canvasRef}
         width={900}
         height={330}
-        className="block w-full bg-[#0a0a0c]"
+        className="block w-full touch-none bg-[#0a0a0c]"
       />
     </div>
   );
