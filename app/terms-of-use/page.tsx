@@ -430,13 +430,7 @@ function RocketGame() {
       setBestRun((prevBest) => {
         if (prevBest && currentDistance <= prevBest.distance) return prevBest;
 
-        const enteredName = window.prompt(
-          "New best run! Enter your name:",
-          prevBest?.name ?? "Best Run!"
-        );
-
-        const trimmedName = enteredName?.trim().slice(0, 12) || "Best Run!";
-        const nextBest = { name: trimmedName, distance: currentDistance };
+        const nextBest = { name: "Best Run!", distance: currentDistance };
         window.localStorage.setItem("vertalisRocketBest", JSON.stringify(nextBest));
         bestRunRef.current = nextBest;
         return nextBest;
