@@ -337,6 +337,7 @@ function RocketGame() {
     const rocketHeight = 22;
     const rocketNoseHeight = 8;
     const terrainStep = 24;
+    const gameSpeedMultiplier = 3;
 
     let terrain: { x: number; y: number }[] = [];
     let aliens: { x: number; y: number; size: number; drift: number }[] = [];
@@ -690,7 +691,7 @@ function RocketGame() {
     };
 
     const draw = () => {
-      frame++;
+      frame += gameState === "running" ? gameSpeedMultiplier : 1;
 
       drawBackground();
 
