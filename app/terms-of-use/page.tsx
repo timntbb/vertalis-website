@@ -299,6 +299,15 @@ function RocketGame() {
   const [bestRun, setBestRun] = useState<{ name: string; distance: number } | null>(null);
   const bestRunRef = useRef<{ name: string; distance: number } | null>(null);
   const [status, setStatus] = useState<"ready" | "running" | "crashed">("ready");
+  const [showOverlay, setShowOverlay] = useState(false);
+  const pressInputRef = useRef<(() => void) | null>(null);
+  const releaseInputRef = useRef<(() => void) | null>(null);
+  const overlayTimeoutRef = useRef<number | null>(null);
+
+  const triggerOverlayLaunch = () => {
+    pressInputRef.current?.();
+    releaseInputRef.current?.();
+  };
 
   useEffect(() => {
     const savedBest = window.localStorage.getItem("vertalisRocketBest");
@@ -336,17 +345,21 @@ function RocketGame() {
     const rocketWidth = 10;
     const rocketHeight = 22;
     const rocketNoseHeight = 8;
-    const terrainStep = 24;
-    const gameSpeedMultiplier = 3;
+    const terrainStep = 20;
+    const simulationSpeedMultiplier = 7;
+    const difficultyMultiplier = 2.4;
+    const flightResponseMultiplier = 4.4;
 
     let terrain: { x: number; y: number }[] = [];
     let aliens: { x: number; y: number; size: number; drift: number }[] = [];
+    let explosionParticles: { x: number; y: number; vx: number; vy: number; life: number; maxLife: number; size: number; color: string }[] = [];
+    let crashTimestamp = 0;
 
     const clamp = (value: number, min: number, max: number) =>
       Math.max(min, Math.min(max, value));
 
     const difficultyRamp = (distanceValue: number) =>
-      clamp(distanceValue / 1800, 0, 1.4);
+      clamp((distanceValue / 1800) * difficultyMultiplier, 0, 1.4);
 
     const baseTerrainY = () => canvas.height - 46;
 
@@ -354,17 +367,25 @@ function RocketGame() {
       const last = terrain[terrain.length - 1];
       const ramp = difficultyRamp(currentDistance);
 
-      const variance = 10 + ramp * 22;
-      const maxTerrainRise = 55 + ramp * 115;
+      // Asymmetric cycle: 150m easy, 30m hard peak, then back to easy
+      const cyclePos = currentDistance % 180;
+      const waveFactor =
+        cyclePos < 150 ? 0 : Math.sin(((cyclePos - 150) / 30) * Math.PI); // 0 during easy, 0→1→0 during hard
+
+      const variance = 8 + ramp * 14 + waveFactor * 10;
+      const maxTerrainRise = Math.min(
+        55 + ramp * 80 + waveFactor * 55,
+        canvas.height * 0.52,
+      );
       const minY = canvas.height - maxTerrainRise;
-      const maxY = canvas.height - 24;
+      const maxY = canvas.height - 28;
 
       let nextY =
         (last?.y ?? baseTerrainY()) +
         (Math.random() * 2 - 1) * variance;
 
-      if (Math.random() < 0.10 + ramp * 0.12) {
-        nextY -= Math.random() * (10 + ramp * 30);
+      if (Math.random() < 0.10 + ramp * 0.10 + waveFactor * 0.06) {
+        nextY -= Math.random() * (8 + ramp * 20 + waveFactor * 12);
       }
 
       nextY = clamp(nextY, minY, maxY);
@@ -402,12 +423,19 @@ function RocketGame() {
     };
 
     const resetGame = () => {
+      if (overlayTimeoutRef.current !== null) {
+        window.clearTimeout(overlayTimeoutRef.current);
+        overlayTimeoutRef.current = null;
+      }
+      setShowOverlay(false);
       rocketY = canvas.height * 0.42;
       velocityY = 0;
       frame = 0;
       currentDistance = 0;
       terrain = [];
       aliens = [];
+      explosionParticles = [];
+      crashTimestamp = 0;
       seedTerrain();
       gameState = "ready";
       setDistance(0);
@@ -427,6 +455,35 @@ function RocketGame() {
       gameState = "crashed";
       setStatus("crashed");
       isInputDown = false;
+      crashTimestamp = Date.now();
+
+      const ex = rocketX + rocketWidth / 2;
+      const ey = rocketY + rocketHeight / 2;
+      explosionParticles = [];
+      for (let i = 0; i < 55; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const spd = Math.random() * 4.5 + 0.5;
+        const life = Math.floor(Math.random() * 30 + 35);
+        const roll = Math.random();
+        const color =
+          roll < 0.3
+            ? "#ff2222"
+            : roll < 0.6
+              ? "#ff8800"
+              : roll < 0.85
+                ? "#ffe066"
+                : "#ffffff";
+        explosionParticles.push({
+          x: ex + (Math.random() - 0.5) * 8,
+          y: ey + (Math.random() - 0.5) * 8,
+          vx: Math.cos(angle) * spd,
+          vy: Math.sin(angle) * spd - 1.5,
+          life,
+          maxLife: life,
+          size: Math.random() * 5 + 2,
+          color,
+        });
+      }
 
       setBestRun((prevBest) => {
         if (prevBest && currentDistance <= prevBest.distance) return prevBest;
@@ -436,11 +493,15 @@ function RocketGame() {
         bestRunRef.current = nextBest;
         return nextBest;
       });
+      overlayTimeoutRef.current = window.setTimeout(() => setShowOverlay(true), 1500);
     };
 
     const pressInput = () => {
       if (gameState === "crashed") {
+        if (Date.now() - crashTimestamp < 1500) return;
         resetGame();
+        startGame();
+        isInputDown = true;
         return;
       }
 
@@ -448,9 +509,13 @@ function RocketGame() {
       isInputDown = true;
     };
 
-    const releaseInput = () => {
+  pressInputRef.current = pressInput;
+
+  const releaseInput = () => {
       isInputDown = false;
     };
+
+    releaseInputRef.current = releaseInput;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.code !== "Space") return;
@@ -466,13 +531,17 @@ function RocketGame() {
       releaseInput();
     };
 
-    const handlePointerDown = (e: PointerEvent | MouseEvent) => {
+    const handlePointerDown = (e: PointerEvent) => {
       e.preventDefault();
       pressInput();
     };
 
-    const handlePointerUp = (e: PointerEvent | MouseEvent) => {
+    const handlePointerUp = (e: PointerEvent) => {
       e.preventDefault();
+      releaseInput();
+    };
+
+    const handlePointerCancel = () => {
       releaseInput();
     };
 
@@ -503,11 +572,14 @@ function RocketGame() {
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
     window.addEventListener("blur", handleWindowBlur);
+    window.addEventListener("pointerup", handlePointerCancel);
+    window.addEventListener("pointercancel", handlePointerCancel);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    canvas.addEventListener("mousedown", handlePointerDown);
-    canvas.addEventListener("mouseup", handlePointerUp);
-    canvas.addEventListener("mouseleave", handlePointerUp);
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    canvas.addEventListener("pointerup", handlePointerUp);
+    canvas.addEventListener("pointercancel", handlePointerCancel);
+    canvas.addEventListener("pointerleave", handlePointerCancel);
     canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
     canvas.addEventListener("touchend", handleTouchEnd, { passive: false });
     canvas.addEventListener("touchcancel", handleTouchEnd, { passive: false });
@@ -520,12 +592,15 @@ function RocketGame() {
     };
 
     const drawBackground = () => {
+      const motionFrame =
+        frame * (gameState === "running" ? simulationSpeedMultiplier : 1);
+
       ctx.fillStyle = "#0a0a0c";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = "#ffffff18";
       for (let i = 0; i < 45; i++) {
-        const x = (i * 61 - frame * 0.35) % canvas.width;
+        const x = (i * 61 - motionFrame * 0.8) % canvas.width;
         const y = (i * 31) % canvas.height;
         ctx.fillRect(x < 0 ? x + canvas.width : x, y, 2, 2);
       }
@@ -533,8 +608,8 @@ function RocketGame() {
       ctx.strokeStyle = "#c060201f";
       for (let x = 0; x < canvas.width; x += 34) {
         ctx.beginPath();
-        ctx.moveTo(x - ((frame * 0.18) % 34), 0);
-        ctx.lineTo(x - ((frame * 0.18) % 34), canvas.height);
+        ctx.moveTo(x - ((motionFrame * 0.45) % 34), 0);
+        ctx.lineTo(x - ((motionFrame * 0.45) % 34), canvas.height);
         ctx.stroke();
       }
     };
@@ -655,6 +730,24 @@ function RocketGame() {
       });
     };
 
+    const drawExplosion = () => {
+      explosionParticles.forEach((p) => {
+        const alpha = Math.max(0, p.life / p.maxLife);
+        ctx.globalAlpha = alpha;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 6;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(
+          Math.round(p.x - p.size / 2),
+          Math.round(p.y - p.size / 2),
+          Math.round(p.size),
+          Math.round(p.size),
+        );
+      });
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+    };
+
     const checkCollisions = () => {
       const rocketLeft = rocketX;
       const rocketRight = rocketX + rocketWidth;
@@ -691,28 +784,29 @@ function RocketGame() {
     };
 
     const draw = () => {
-      frame += gameState === "running" ? gameSpeedMultiplier : 1;
+      frame++;
 
       drawBackground();
 
       if (gameState === "running") {
-        currentDistance = Math.floor(frame / 8);
+        currentDistance = Math.floor((frame * simulationSpeedMultiplier) / 10);
         setDistance(currentDistance);
 
         const difficulty = difficultyRamp(currentDistance);
 
-        const gravity = 0.09 + difficulty * 0.042;
-        const thrust = -0.145 - difficulty * 0.025;
-        const maxFallSpeed = 2.6 + difficulty * 0.8;
-        const maxRiseSpeed = -2.15 - difficulty * 0.5;
-        const speed = 2.25 + difficulty * 1.55;
+         const gravity = (0.09 + difficulty * 0.042) * flightResponseMultiplier * 2;
+        const thrust = (-0.145 - difficulty * 0.025) * flightResponseMultiplier * 3;
+        const maxFallSpeed = (2.6 + difficulty * 0.8) * flightResponseMultiplier;
+        const maxRiseSpeed = (-2.15 - difficulty * 0.5) * flightResponseMultiplier;
+        const speedBoost = Math.pow(1.15, Math.min(Math.floor(currentDistance / 250), 4));
+        const speed = (2.25 + difficulty * 1.55) * simulationSpeedMultiplier * speedBoost;
 
         if (isInputDown) {
           velocityY += thrust;
         }
 
         velocityY += gravity;
-        velocityY *= 0.992;
+        velocityY *= 0.996;
         velocityY = clamp(velocityY, maxRiseSpeed, maxFallSpeed);
         rocketY += velocityY;
 
@@ -729,13 +823,16 @@ function RocketGame() {
         }
 
         if (
-          currentDistance > 70 &&
-          frame % Math.max(145 - Math.floor(difficulty * 45), 72) === 0
+          currentDistance > 40 &&
+          frame % Math.max(
+            Math.floor((145 - Math.floor(difficulty * 45)) * 1.18 / simulationSpeedMultiplier),
+            21,
+          ) === 0
         ) {
           aliens.push({
             x: canvas.width + 80,
             y: Math.random() * (canvas.height * 0.45) + 35,
-            size: Math.random() * 8 + 42,
+            size: Math.random() * 46 + 10,
             drift: Math.random() * 0.45 + 0.2,
           });
         }
@@ -743,7 +840,10 @@ function RocketGame() {
         const alienSpeed = speed + 0.45;
         aliens.forEach((alien) => {
           alien.x -= alienSpeed;
-          alien.y += Math.sin(frame * 0.035) * alien.drift;
+          alien.y +=
+            Math.sin(frame * 0.035 * simulationSpeedMultiplier) *
+            alien.drift *
+            1.5;
         });
 
         aliens = aliens.filter((alien) => alien.x > -alien.size * 2);
@@ -753,34 +853,23 @@ function RocketGame() {
 
       drawTerrain();
       drawAliens();
-      drawFlame();
-      drawRocket();
-
-      if (gameState === "ready") {
-        ctx.fillStyle = "rgba(0,0,0,0.45)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        drawPixelText("VERTALIS ROCKET RUN", canvas.width / 2 - 92, canvas.height / 2 - 10, 16);
-        drawPixelText("HOLD SPACE OR TOUCH TO LAUNCH", canvas.width / 2 - 132, canvas.height / 2 + 18, 12);
-        drawPixelText(
-          bestRunRef.current
-            ? `BEST RUN - ${bestRunRef.current.distance}`
-            : "BEST RUN - NO RUNS YET",
-          bestRunRef.current ? canvas.width / 2 - 76 : canvas.width / 2 - 92,
-          canvas.height / 2 + 58,
-          12
-        );
+      if (gameState !== "crashed") {
+        drawFlame();
+        drawRocket();
       }
 
       if (gameState === "crashed") {
-        ctx.fillStyle = "rgba(0,0,0,0.65)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        explosionParticles.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.12;
+          p.life--;
+        });
+        explosionParticles = explosionParticles.filter((p) => p.life > 0);
+        drawExplosion();
+  }
 
-        drawPixelText("MISSION RESET", canvas.width / 2 - 68, canvas.height / 2 - 10, 16);
-        drawPixelText("PRESS SPACE TO TRY AGAIN", canvas.width / 2 - 102, canvas.height / 2 + 18, 12);
-      }
-
-      animationFrameId = requestAnimationFrame(draw);
+  animationFrameId = requestAnimationFrame(draw);
     };
 
     seedTerrain();
@@ -790,15 +879,21 @@ function RocketGame() {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
       window.removeEventListener("blur", handleWindowBlur);
+      window.removeEventListener("pointerup", handlePointerCancel);
+      window.removeEventListener("pointercancel", handlePointerCancel);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
 
-      canvas.removeEventListener("mousedown", handlePointerDown);
-      canvas.removeEventListener("mouseup", handlePointerUp);
-      canvas.removeEventListener("mouseleave", handlePointerUp);
+      canvas.removeEventListener("pointerdown", handlePointerDown);
+      canvas.removeEventListener("pointerup", handlePointerUp);
+      canvas.removeEventListener("pointercancel", handlePointerCancel);
+      canvas.removeEventListener("pointerleave", handlePointerCancel);
       canvas.removeEventListener("touchstart", handleTouchStart);
       canvas.removeEventListener("touchend", handleTouchEnd);
       canvas.removeEventListener("touchcancel", handleTouchEnd);
       canvas.removeEventListener("touchmove", handleTouchMove);
+      if (overlayTimeoutRef.current !== null) {
+        window.clearTimeout(overlayTimeoutRef.current);
+      }
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -810,12 +905,162 @@ function RocketGame() {
         <span className="text-[#d87a3b]">Distance: {distance}</span>
       </div>
 
-      <canvas
-        ref={canvasRef}
-        width={900}
-        height={330}
-        className="block w-full touch-none bg-[#0a0a0c]"
-      />
+      <div className="relative">
+        <canvas
+          ref={canvasRef}
+          width={900}
+          height={330}
+          className="block w-full touch-none bg-[#0a0a0c]"
+        />
+        {(showOverlay || status === "ready") && (
+        <>
+          <style jsx global>{`
+            @keyframes vrPulseGlow {
+              0%, 100% { box-shadow: 0 0 18px rgba(196,106,43,0.55), 0 0 36px rgba(196,106,43,0.25); }
+              50% { box-shadow: 0 0 32px rgba(244,123,32,0.9), 0 0 64px rgba(244,123,32,0.5), 0 0 90px rgba(244,123,32,0.18); }
+            }
+            @keyframes vrPanelFlicker {
+              0%, 93%, 100% { opacity: 1; }
+              95% { opacity: 0.75; }
+              96% { opacity: 1; }
+              98% { opacity: 0.88; }
+            }
+            @keyframes vrRadarPulse {
+              0%, 100% { opacity: 0.07; transform: translate(-50%, -50%) scale(1); }
+              50% { opacity: 0.17; transform: translate(-50%, -50%) scale(1.03); }
+            }
+            @keyframes vrFadeIn {
+              from { opacity: 0; transform: translateY(10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes vrStarFloat {
+              0%, 100% { transform: translateX(0) translateY(0); }
+              33% { transform: translateX(-7px) translateY(4px); }
+              66% { transform: translateX(5px) translateY(-4px); }
+            }
+            .vr-restart-btn:hover {
+              background: #f47b20 !important;
+              transform: translateY(-1px);
+            }
+          `}</style>
+          <div
+            onClick={triggerOverlayLaunch}
+            style={{
+              position: 'absolute', inset: 0,
+              background: 'rgba(5,5,6,0.94)',
+              display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center',
+              fontFamily: "'Press Start 2P', monospace",
+              cursor: 'pointer', overflow: 'hidden',
+            }}
+          >
+            {/* Grid */}
+            <div style={{
+              position: 'absolute', inset: 0, pointerEvents: 'none',
+              backgroundImage: 'linear-gradient(rgba(196,106,43,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(196,106,43,0.04) 1px, transparent 1px)',
+              backgroundSize: '38px 38px',
+            }} />
+            {/* Drifting stars */}
+            <div style={{
+              position: 'absolute', inset: 0, pointerEvents: 'none',
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px), radial-gradient(circle, rgba(255,255,255,0.32) 1px, transparent 1px), radial-gradient(circle, rgba(255,255,255,0.44) 1px, transparent 1px)',
+              backgroundSize: '130px 90px, 85px 110px, 175px 65px',
+              backgroundPosition: '12px 18px, 42px 35px, 72px 8px',
+              animation: 'vrStarFloat 9s ease-in-out infinite',
+            }} />
+            {/* Radar rings */}
+            <div style={{
+              position: 'absolute', left: '50%', top: '50%',
+              width: 240, height: 240,
+              border: '1px solid rgba(196,106,43,0.13)',
+              borderRadius: '50%',
+              animation: 'vrRadarPulse 3.5s ease-in-out infinite',
+              pointerEvents: 'none',
+            }} />
+            <div style={{
+              position: 'absolute', left: '50%', top: '50%',
+              width: 460, height: 460,
+              border: '1px solid rgba(196,106,43,0.07)',
+              borderRadius: '50%',
+              animation: 'vrRadarPulse 3.5s ease-in-out infinite 1.1s',
+              pointerEvents: 'none',
+            }} />
+            {/* Scanlines */}
+            <div style={{
+              position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 10,
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.13) 3px, rgba(0,0,0,0.13) 4px)',
+            }} />
+            {/* Content */}
+            <div style={{
+              position: 'relative', zIndex: 5,
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+              animation: 'vrFadeIn 0.45s ease-out',
+              padding: '0 24px', maxWidth: 560, width: '100%',
+            }}>
+              <div style={{ fontSize: 'clamp(7px, 1vw, 9px)', color: '#c46a2b', letterSpacing: '0.3em', marginBottom: 10, opacity: 0.8 }}>
+                // VERTALIS ARCADE //
+              </div>
+              <div style={{
+                fontSize: 'clamp(16px, 2.8vw, 26px)', color: '#f47b20',
+                letterSpacing: '0.18em', textAlign: 'center',
+                textShadow: '0 0 24px rgba(244,123,32,0.65), 0 0 50px rgba(244,123,32,0.28)',
+                marginBottom: 10, lineHeight: 1.3,
+              }}>
+                {status === "ready" ? "VERTALIS ROCKET RUN" : "Nice Crash!"}
+              </div>
+              <div style={{
+                fontFamily: 'monospace', fontSize: 'clamp(9px, 1.3vw, 12px)',
+                color: '#8a8a8a', letterSpacing: '0.16em', marginBottom: 20, textAlign: 'center',
+              }}>
+                {status === "ready"
+                  ? "Systems calibrated. Awaiting launch input."
+                  : "Structure broke under pressure."}
+              </div>
+              <div style={{
+                background: '#101012', border: '1px solid rgba(196,106,43,0.3)',
+                padding: '14px 28px', marginBottom: 20, width: '100%', maxWidth: 290,
+                boxShadow: '0 0 16px rgba(196,106,43,0.09), inset 0 0 20px rgba(0,0,0,0.5)',
+                animation: 'vrPanelFlicker 7s ease-in-out infinite',
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 9, alignItems: 'center' }}>
+                  <span style={{ fontSize: 'clamp(7px, 1vw, 9px)', color: '#8a8a8a', letterSpacing: '0.14em' }}>CURRENT RUN</span>
+                  <span style={{ fontSize: 'clamp(8px, 1.1vw, 10px)', color: '#e8e1d5', letterSpacing: '0.1em' }}>{distance}</span>
+                </div>
+                <div style={{ height: 1, background: 'rgba(196,106,43,0.2)', marginBottom: 9 }} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: 'clamp(7px, 1vw, 9px)', color: '#8a8a8a', letterSpacing: '0.14em' }}>BEST RUN</span>
+                  <span style={{ fontSize: 'clamp(8px, 1.1vw, 10px)', color: '#f47b20', letterSpacing: '0.1em' }}>{bestRun?.distance ?? distance}</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                className="vr-restart-btn"
+                onClick={(e) => { e.stopPropagation(); triggerOverlayLaunch(); }}
+                style={{
+                  fontFamily: "'Press Start 2P', monospace",
+                  fontSize: 'clamp(8px, 1.4vw, 11px)',
+                  background: '#c46a2b', color: '#050506',
+                  border: '2px solid #f47b20', padding: '12px 32px',
+                  letterSpacing: '0.16em', cursor: 'pointer',
+                  animation: 'vrPulseGlow 2.2s ease-in-out infinite',
+                  marginBottom: 14, transition: 'background 0.15s, transform 0.1s',
+                }}
+              >
+                {status === "ready" ? "LAUNCH RUN" : "RESTART RUN"}
+              </button>
+              <div style={{
+                fontFamily: 'monospace', fontSize: 'clamp(7px, 1vw, 9px)',
+                color: '#8a8a8a', letterSpacing: '0.12em', textAlign: 'center', opacity: 0.65,
+              }}>
+                {status === "ready"
+                  ? "PRESS SPACE OR TAP TO LAUNCH"
+                  : "PRESS SPACE OR TAP TO LAUNCH AGAIN"}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+      </div>
     </div>
   );
 }
