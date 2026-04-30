@@ -346,9 +346,9 @@ function RocketGame() {
     const rocketHeight = 22;
     const rocketNoseHeight = 8;
     const terrainStep = 20;
-    const simulationSpeedMultiplier = 7;
+    const simulationSpeedMultiplier = 1.75;
     const difficultyMultiplier = 2.4;
-    const flightResponseMultiplier = 4.4;
+    const flightResponseMultiplier = 2.2;
 
     let terrain: { x: number; y: number }[] = [];
     let aliens: { x: number; y: number; size: number; drift: number }[] = [];
@@ -794,8 +794,8 @@ function RocketGame() {
 
         const difficulty = difficultyRamp(currentDistance);
 
-         const gravity = (0.09 + difficulty * 0.042) * flightResponseMultiplier * 2;
-        const thrust = (-0.145 - difficulty * 0.025) * flightResponseMultiplier * 3;
+         const gravity = (0.09 + difficulty * 0.042) * flightResponseMultiplier * 1.1;
+        const thrust = (-0.145 - difficulty * 0.025) * flightResponseMultiplier * 1.9;
         const maxFallSpeed = (2.6 + difficulty * 0.8) * flightResponseMultiplier;
         const maxRiseSpeed = (-2.15 - difficulty * 0.5) * flightResponseMultiplier;
         const speedBoost = Math.pow(1.15, Math.min(Math.floor(currentDistance / 250), 4));
@@ -832,7 +832,7 @@ function RocketGame() {
           aliens.push({
             x: canvas.width + 80,
             y: Math.random() * (canvas.height * 0.45) + 35,
-            size: Math.random() * 46 + 10,
+            size: Math.random() * 23 + 10,
             drift: Math.random() * 0.45 + 0.2,
           });
         }
