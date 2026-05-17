@@ -1,5 +1,6 @@
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
+import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
 
 export type InsightPost = {
   slug: string;
@@ -750,6 +751,19 @@ export const insightPosts: InsightPost[] = [
         <p className="mt-4">Later, it becomes cost.</p>
       </article>
     ),
+  },
+  {
+    slug: "fractional-general-counsel",
+    category: "Legal Strategy",
+    title: "What Exactly Is Fractional General Counsel?",
+    excerpt:
+      "Why fractional general counsel matters for startups, how it differs from traditional outside counsel, and when founders should integrate legal guidance into the business.",
+    date: "May 2026",
+    readTime: "8 min read",
+    subtitle:
+      "Instead of hiring a lawyer only when problems arise, founders gain ongoing access to legal guidance from someone who already understands the company.",
+    sections: [],
+    content: <FractionalGeneralCounselArticle />,
   },
 ];
 
