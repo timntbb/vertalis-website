@@ -346,7 +346,7 @@ function RocketGame() {
     const rocketHeight = 22;
     const rocketNoseHeight = 8;
     const terrainStep = 20;
-    const simulationSpeedMultiplier = 3.125;
+    const simulationSpeedMultiplier = 1.5625;
     const difficultyMultiplier = 2.4;
     const flightResponseMultiplier = 2.2;
 
