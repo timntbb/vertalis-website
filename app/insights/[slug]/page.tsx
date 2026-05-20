@@ -73,7 +73,8 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     ? [...insightPosts].sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!))
     : insightPosts;
   const sidebarPosts = recentPosts.slice(0, 5);
-  const heroSummary = post.subtitle || post.excerpt;
+  const hideHeroSummary = post.slug === "contract-chaos";
+  const heroSummary = hideHeroSummary ? "" : post.subtitle || post.excerpt;
   const seoPost = post as typeof post & {
     seoDescription?: string;
   };

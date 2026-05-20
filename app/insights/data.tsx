@@ -1,6 +1,7 @@
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
+import ContractChaosArticle from "./content/ContractChaosArticle";
 
 export type InsightPost = {
   slug: string;
@@ -764,6 +765,19 @@ export const insightPosts: InsightPost[] = [
       "Instead of hiring a lawyer only when problems arise, founders gain ongoing access to legal guidance from someone who already understands the company.",
     sections: [],
     content: <FractionalGeneralCounselArticle />,
+  },
+  {
+    slug: "contract-chaos",
+    category: "Contract Strategy",
+    title: "Contract Chaos",
+    excerpt:
+      "Contract chaos occurs when contracts are created in isolation instead of functioning as part of a unified business structure. As companies grow, disconnected agreements across employment, sales, governance, intellectual property, and operations can create hidden legal risk, compliance failures, and structural instability.",
+    date: "May 2026",
+    readTime: "9 min read",
+    subtitle:
+      "How Poor Contract Management Creates Legal Risk and Structural Instability for Growing Companies",
+    sections: [],
+    content: <ContractChaosArticle />,
   },
 ];
 
