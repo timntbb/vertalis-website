@@ -570,6 +570,7 @@ export default function TestCarouselArticle() {
         slides?: Slide[];
         error?: string;
         details?: string;
+        warning?: string;
       };
 
       if (!response.ok || !Array.isArray(data.slides) || data.slides.length === 0) {
@@ -581,7 +582,11 @@ export default function TestCarouselArticle() {
 
       setSlides(data.slides);
       setActive(0);
-      setStatus(`Generated ${data.slides.length}-slide carousel from your prompt.`);
+      if (data.warning) {
+        setStatus(`${data.warning} Generated ${data.slides.length}-slide carousel.`);
+      } else {
+        setStatus(`Generated ${data.slides.length}-slide carousel from your prompt.`);
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : "Generation failed";
       setStatus(`OpenAI generation failed: ${message}. Verify OPENAI_API_KEY on the server and restart.`);

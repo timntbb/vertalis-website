@@ -21,6 +21,8 @@ type SlideSourceBlock = {
   lines: string[];
 };
 
+const DEFAULT_FOOTER = "STRATEGY. STRUCTURE. PROTECTION.";
+
 const ALLOWED_TYPES: SlideType[] = ["hook", "breakdown", "diagram", "quote", "cta"];
 
 function asString(value: unknown) {
@@ -90,6 +92,69 @@ function splitSentences(value: string) {
     .split(/(?<=[.!?])\s+/)
     .map((part) => cleanInline(part))
     .filter(Boolean);
+}
+
+function inferFallbackType(index: number, total: number): SlideType {
+  if (index === 0) return "hook";
+  if (index === total - 1) return "cta";
+  if (index === Math.floor(total / 2)) return "diagram";
+  if (index === Math.floor(total / 2) + 1) return "quote";
+  return "breakdown";
+}
+
+function buildSlideFromLines(lines: string[], index: number, total: number): Slide {
+  const cleaned = lines.map((line) => cleanInline(line)).filter(Boolean);
+  const first = cleaned[0] || `Key founder insight ${index + 1}`;
+  const support = cleaned.slice(1);
+  const type = inferFallbackType(index, total);
+
+  const bullets = type === "breakdown"
+    ? (support.length > 0 ? support : cleaned.slice(0, 4)).slice(0, 4)
+    : undefined;
+
+  const nodes = type === "diagram"
+    ? (cleaned.length > 0 ? cleaned : ["Growth", "Friction", "Exposure", "Dispute", "Cost"])
+        .slice(0, 5)
+        .map((item) => shortenWords(item.replace(/[.!?]+$/, ""), 4))
+    : undefined;
+
+  const bodySource = support.slice(0, 2).join(" ") || first;
+
+  return {
+    type,
+    eyebrow: normalizeEyebrow(first, `SLIDE ${index + 1}`),
+    headline: shortenWords(first, 14),
+    body: cleanInline(bodySource),
+    footer: DEFAULT_FOOTER,
+    bullets,
+    nodes,
+  };
+}
+
+function chunkByCount(items: string[], count: number) {
+  const safeCount = Math.max(1, count);
+  const chunks: string[][] = Array.from({ length: safeCount }, () => []);
+  items.forEach((item, index) => {
+    chunks[Math.min(index, safeCount - 1)].push(item);
+  });
+  return chunks;
+}
+
+function buildFallbackSlides(prompt: string, targetCount: number, slideBlocks: SlideSourceBlock[]) {
+  if (slideBlocks.length > 0) {
+    return slideBlocks
+      .slice(0, targetCount)
+      .map((block, index) => buildSlideFromLines(block.lines, index, targetCount))
+      .map((slide, index) => postProcessSlide(slide, index));
+  }
+
+  const sentences = splitSentences(prompt);
+  const lines = sentences.length > 0 ? sentences : [cleanInline(prompt) || "Founder-focused legal strategy."];
+  const chunks = chunkByCount(lines, targetCount);
+
+  return chunks
+    .map((chunk, index) => buildSlideFromLines(chunk, index, targetCount))
+    .map((slide, index) => postProcessSlide(slide, index));
 }
 
 function postProcessSlide(slide: Slide, index: number): Slide {
@@ -185,17 +250,19 @@ export async function POST(req: Request) {
     }
 
     const apiKey = process.env.OPENAI_API_KEY?.trim();
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "OPENAI_API_KEY is not configured on the server environment." },
-        { status: 500 },
-      );
-    }
-
-    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
     const slideBlocks = parseNumberedSlideBlocks(prompt);
     const requestedSlideCount = countNumberedSlides(prompt);
     const targetCount = slideBlocks.length > 0 ? slideBlocks.length : requestedSlideCount > 0 ? requestedSlideCount : 7;
+
+    if (!apiKey) {
+      const fallbackSlides = buildFallbackSlides(prompt, targetCount, slideBlocks);
+      return NextResponse.json({
+        slides: fallbackSlides,
+        warning: "OPENAI_API_KEY is not configured. Used built-in formatter fallback.",
+      });
+    }
+
+    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
 
     const systemPrompt = `You generate a founder-focused legal carousel for Vertalis.
 Return ONLY valid JSON matching this shape:
@@ -274,9 +341,13 @@ Source-mapping requirements for numbered input:
 
     if (!openAiResponse.ok) {
       const details = await openAiResponse.text();
+      const fallbackSlides = buildFallbackSlides(prompt, targetCount, slideBlocks);
       return NextResponse.json(
-        { error: "OpenAI request failed.", details },
-        { status: 502 },
+        {
+          slides: fallbackSlides,
+          warning: "OpenAI request failed. Used built-in formatter fallback.",
+          details,
+        },
       );
     }
 
@@ -289,9 +360,12 @@ Source-mapping requirements for numbered input:
     try {
       parsed = JSON.parse(content);
     } catch {
+      const fallbackSlides = buildFallbackSlides(prompt, targetCount, slideBlocks);
       return NextResponse.json(
-        { error: "Model response was not valid JSON." },
-        { status: 502 },
+        {
+          slides: fallbackSlides,
+          warning: "Model response was invalid JSON. Used built-in formatter fallback.",
+        },
       );
     }
 
@@ -306,11 +380,12 @@ Source-mapping requirements for numbered input:
       .map((slide, index) => postProcessSlide(slide, index));
 
     if (slides.length !== targetCount) {
+      const fallbackSlides = buildFallbackSlides(prompt, targetCount, slideBlocks);
       return NextResponse.json(
         {
-          error: `Model did not return the expected slide count (${targetCount}).`,
+          slides: fallbackSlides,
+          warning: `Model returned an unexpected slide count. Used built-in formatter fallback (${targetCount}).`,
         },
-        { status: 502 },
       );
     }
 
