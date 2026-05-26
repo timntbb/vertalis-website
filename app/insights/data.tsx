@@ -2,6 +2,7 @@ import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
 import ContractChaosArticle from "./content/ContractChaosArticle";
+import TestCarouselArticle from "./content/TestCarouselArticle";
 
 export type InsightPost = {
   slug: string;
@@ -14,6 +15,7 @@ export type InsightPost = {
   readTime?: string;
   content?: React.ReactNode;
   fullWidthTool?: boolean;
+  hiddenFromListings?: boolean;
   subtitle: string;
   sections: Array<{
     heading?: string;
@@ -778,6 +780,19 @@ export const insightPosts: InsightPost[] = [
       "How Poor Contract Management Creates Legal Risk and Structural Instability for Growing Companies",
     sections: [],
     content: <ContractChaosArticle />,
+  },
+  {
+    slug: "test",
+    category: "Tooling",
+    title: "Test",
+    excerpt: "Interactive Vertalis carousel preview and export tool.",
+    date: "May 2026",
+    readTime: "Interactive",
+    subtitle: "",
+    sections: [],
+    fullWidthTool: true,
+    hiddenFromListings: true,
+    content: <TestCarouselArticle />,
   },
 ];
 

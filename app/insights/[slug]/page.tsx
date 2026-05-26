@@ -68,10 +68,11 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     notFound();
   }
 
-  const hasDates = insightPosts.every((item) => Boolean(item.date));
+  const listedPosts = insightPosts.filter((item) => !item.hiddenFromListings);
+  const hasDates = listedPosts.every((item) => Boolean(item.date));
   const recentPosts = hasDates
-    ? [...insightPosts].sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!))
-    : insightPosts;
+    ? [...listedPosts].sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!))
+    : listedPosts;
   const sidebarPosts = recentPosts.slice(0, 5);
   const hideHeroSummary = post.slug === "contract-chaos";
   const heroSummary = hideHeroSummary ? "" : post.subtitle || post.excerpt;

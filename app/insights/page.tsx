@@ -4,7 +4,9 @@ import { Header } from "../page";
 import { insightPosts } from "./data";
 
 export default function InsightsPage() {
-  const sortedPosts = insightPosts
+  const listedPosts = insightPosts.filter((post) => !post.hiddenFromListings);
+
+  const sortedPosts = listedPosts
     .map((post, index) => ({ post, index }))
     .sort((a, b) => {
       const aTime = a.post.date ? Date.parse(a.post.date) : Number.NaN;
