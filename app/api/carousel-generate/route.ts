@@ -29,13 +29,23 @@ function asString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function stripStructuralNoise(value: string) {
+  return value
+    .replace(/\bslide\s*\d+\b[:\-]?/gi, "")
+    .replace(/^[-*•]\s*/g, "")
+    .replace(/^o\s+/gi, "")
+    .replace(/^\s*/u, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function countNumberedSlides(prompt: string) {
   const matches = prompt.match(/(?:^|\n)\s*[-*]?\s*slide\s*\d+/gi);
   return matches ? matches.length : 0;
 }
 
 function cleanInline(value: string) {
-  return value.replace(/\s+/g, " ").trim();
+  return stripStructuralNoise(value).replace(/\s+/g, " ").trim();
 }
 
 function parseNumberedSlideBlocks(prompt: string): SlideSourceBlock[] {
@@ -45,7 +55,7 @@ function parseNumberedSlideBlocks(prompt: string): SlideSourceBlock[] {
 
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-*•]\s*/, "").trim();
-    const slideMatch = line.match(/^slide\s*(\d+)\s*$/i);
+    const slideMatch = line.match(/^slide\s*(\d+)\b\s*[:\-]?\s*$/i);
 
     if (slideMatch) {
       if (current && current.lines.length > 0) {
@@ -281,6 +291,7 @@ Return ONLY valid JSON matching this shape:
 }
 Rules:
 - If the prompt includes numbered sections like "Slide 1", "Slide 2", etc., keep that exact slide count and sequence.
+- Never include literal structural labels like "Slide 1", "Slide 2", or bullet marker symbols in eyebrow, headline, body, bullets, or nodes.
 - If no numbered slides are provided, default to 7 slides with this type sequence:
   1 hook
   2 breakdown
