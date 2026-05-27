@@ -11,7 +11,6 @@ import {
   Layers,
   Plus,
   RotateCcw,
-  Sparkles,
   Trash2,
 } from "lucide-react";
 
@@ -21,6 +20,15 @@ const SLIDE_SIZE = 1080;
 const PREVIEW_SCALE = 0.62;
 
 type SlideType = "hook" | "breakdown" | "diagram" | "quote" | "cta";
+type TextSizeLevel = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+
+type SlideTextSizes = {
+  eyebrow?: TextSizeLevel;
+  headline?: TextSizeLevel;
+  body?: TextSizeLevel;
+  supporting?: TextSizeLevel;
+  footer?: TextSizeLevel;
+};
 
 type Slide = {
   type: SlideType;
@@ -30,11 +38,13 @@ type Slide = {
   footer: string;
   bullets?: string[];
   nodes?: string[];
+  textSizes?: SlideTextSizes;
 };
 
 type SlideFrameProps = {
   children: React.ReactNode;
   footer?: string;
+  footerSize?: TextSizeLevel;
   index: number;
   total: number;
 };
@@ -54,6 +64,26 @@ type FieldProps = {
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "solid" | "outline";
+};
+
+const TEXT_SIZE_LEVELS: Array<{ value: TextSizeLevel; label: string }> = [
+  { value: "xs", label: "XS" },
+  { value: "sm", label: "SM" },
+  { value: "md", label: "MD" },
+  { value: "lg", label: "LG" },
+  { value: "xl", label: "XL" },
+  { value: "xxl", label: "XXL" },
+  { value: "xxxl", label: "XXXL" },
+];
+
+const TEXT_SIZE_MULTIPLIER: Record<TextSizeLevel, number> = {
+  xs: 0.8,
+  sm: 0.9,
+  md: 1,
+  lg: 1.1,
+  xl: 1.2,
+  xxl: 1.3,
+  xxxl: 1.4,
 };
 
 const initialSlides: Slide[] = [
@@ -143,20 +173,30 @@ function getHeadlineClass(type: SlideType, text: string) {
   const chars = String(text || "").length;
 
   if (type === "hook") {
-    if (words <= 6) return "text-[112px] leading-[0.88] tracking-[-0.075em]";
-    if (words <= 10) return "text-[94px] leading-[0.9] tracking-[-0.068em]";
-    return "text-[76px] leading-[0.94] tracking-[-0.058em]";
+    if (words <= 6) return "text-[95px] leading-[0.88] tracking-[-0.075em]";
+    if (words <= 10) return "text-[80px] leading-[0.9] tracking-[-0.068em]";
+    return "text-[65px] leading-[0.94] tracking-[-0.058em]";
   }
 
   if (type === "quote") {
-    if (chars > 100) return "text-[58px] leading-[0.98] tracking-[-0.052em]";
-    if (chars > 72) return "text-[70px] leading-[0.95] tracking-[-0.058em]";
-    return "text-[86px] leading-[0.92] tracking-[-0.065em]";
+    if (chars > 100) return "text-[49px] leading-[0.98] tracking-[-0.052em]";
+    if (chars > 72) return "text-[60px] leading-[0.95] tracking-[-0.058em]";
+    return "text-[73px] leading-[0.92] tracking-[-0.065em]";
   }
 
-  if (chars > 92) return "text-[60px] leading-[0.98] tracking-[-0.052em]";
-  if (chars > 64) return "text-[74px] leading-[0.94] tracking-[-0.06em]";
-  return "text-[88px] leading-[0.91] tracking-[-0.066em]";
+  if (chars > 92) return "text-[51px] leading-[0.98] tracking-[-0.052em]";
+  if (chars > 64) return "text-[63px] leading-[0.94] tracking-[-0.06em]";
+  return "text-[75px] leading-[0.91] tracking-[-0.066em]";
+}
+
+function getScaledPx(basePx: number, level?: TextSizeLevel) {
+  const scale = TEXT_SIZE_MULTIPLIER[level ?? "md"];
+  return Math.round(basePx * scale);
+}
+
+function extractPxFromClass(value: string, fallback: number) {
+  const match = value.match(/text-\[(\d+)px\]/);
+  return match ? Number(match[1]) : fallback;
 }
 
 function highlight(text: string) {
@@ -229,7 +269,7 @@ function Background() {
   );
 }
 
-function SlideFrame({ children, footer, index, total }: SlideFrameProps) {
+function SlideFrame({ children, footer, footerSize, index, total }: SlideFrameProps) {
   return (
     <div
       className="relative h-[1080px] w-[1080px] overflow-hidden rounded-[10px] bg-black text-white shadow-2xl"
@@ -239,7 +279,10 @@ function SlideFrame({ children, footer, index, total }: SlideFrameProps) {
       <div className="absolute left-[74px] top-[66px] h-[7px] w-[92px]" style={{ backgroundColor: ACCENT }} />
       <div className="relative z-10 flex h-full flex-col px-[74px] pb-[58px] pt-[116px]">
         <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
-        <div className="flex h-[58px] shrink-0 items-end justify-between border-t border-white/10 pt-5 text-[12px] uppercase tracking-[0.34em] text-white/50">
+        <div
+          className="flex h-[58px] shrink-0 items-end justify-between border-t border-white/10 pt-5 text-[12px] uppercase tracking-[0.34em] text-white/50"
+          style={{ fontSize: `${getScaledPx(12, footerSize)}px` }}
+        >
           <div className="max-w-[760px] truncate">{footer || "STRATEGY. STRUCTURE. PROTECTION."}</div>
           <div className="text-white/35">
             {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
@@ -250,31 +293,43 @@ function SlideFrame({ children, footer, index, total }: SlideFrameProps) {
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children, size }: { children: React.ReactNode; size?: TextSizeLevel }) {
   return (
-    <div className="mb-8 text-[14px] font-black uppercase tracking-[0.48em]" style={{ color: ACCENT }}>
+    <div
+      className="mb-8 text-[14px] font-black uppercase tracking-[0.48em]"
+      style={{ color: ACCENT, fontSize: `${getScaledPx(14, size)}px` }}
+    >
       {children}
     </div>
   );
 }
 
-function Body({ children, className }: { children: React.ReactNode; className?: string }) {
+function Body({ children, className, baseSize = 34, size }: { children: React.ReactNode; className?: string; baseSize?: number; size?: TextSizeLevel }) {
   return (
-    <div className={cx("max-w-[810px] text-[34px] font-extrabold leading-[1.14] tracking-[-0.04em] text-white/78", className)}>
+    <div
+      className={cx("max-w-[810px] text-[34px] font-extrabold leading-[1.14] tracking-[-0.04em] text-white/78", className)}
+      style={{ fontSize: `${getScaledPx(baseSize, size)}px` }}
+    >
       {children}
     </div>
   );
 }
 
 function HookSlide({ slide, index, total }: SlideRenderProps) {
+  const headlineClass = getHeadlineClass("hook", slide.headline);
+  const headlineBasePx = extractPxFromClass(headlineClass, 75);
+
   return (
-    <SlideFrame footer={slide.footer} index={index} total={total}>
+    <SlideFrame footer={slide.footer} footerSize={slide.textSizes?.footer} index={index} total={total}>
       <div className="flex h-full flex-col justify-center pb-[34px]">
-        <Eyebrow>{slide.eyebrow}</Eyebrow>
-        <h1 className={cx("max-w-[875px] font-black uppercase text-[#f4f4f2]", getHeadlineClass("hook", slide.headline))}>
+        <Eyebrow size={slide.textSizes?.eyebrow}>{slide.eyebrow}</Eyebrow>
+        <h1
+          className={cx("max-w-[875px] font-black uppercase text-[#f4f4f2]", headlineClass)}
+          style={{ fontSize: `${getScaledPx(headlineBasePx, slide.textSizes?.headline)}px` }}
+        >
           {highlight(slide.headline)}
         </h1>
-        <Body className="mt-11 max-w-[770px]">{highlight(slide.body)}</Body>
+        <Body className="mt-11 max-w-[770px]" baseSize={34} size={slide.textSizes?.body}>{highlight(slide.body)}</Body>
       </div>
     </SlideFrame>
   );
@@ -282,25 +337,45 @@ function HookSlide({ slide, index, total }: SlideRenderProps) {
 
 function BreakdownSlide({ slide, index, total }: SlideRenderProps) {
   const bullets = (slide.bullets || []).slice(0, 4);
+  const hasDenseCopy =
+    wordCount(slide.body) > 14 || bullets.some((bullet) => wordCount(bullet) > 5);
+  const headlineClass = getHeadlineClass("breakdown", slide.headline);
+  const headlineBasePx = extractPxFromClass(headlineClass, 63);
 
   return (
-    <SlideFrame footer={slide.footer} index={index} total={total}>
+    <SlideFrame footer={slide.footer} footerSize={slide.textSizes?.footer} index={index} total={total}>
       <div className="grid h-full grid-rows-[auto_auto_1fr_auto] pb-[18px]">
-        <Eyebrow>{slide.eyebrow}</Eyebrow>
-        <h2 className={cx("max-w-[890px] font-black uppercase text-white", getHeadlineClass("breakdown", slide.headline))}>
+        <Eyebrow size={slide.textSizes?.eyebrow}>{slide.eyebrow}</Eyebrow>
+        <h2
+          className={cx("max-w-[890px] font-black uppercase text-white", headlineClass)}
+          style={{ fontSize: `${getScaledPx(headlineBasePx, slide.textSizes?.headline)}px` }}
+        >
           {highlight(slide.headline)}
         </h2>
-        <div className="mt-8 grid grid-cols-2 content-center gap-4">
+        <div className={cx("grid grid-cols-2 content-center gap-4", hasDenseCopy ? "mt-6" : "mt-8")}>
           {bullets.map((bullet, i) => (
-            <div key={i} className="min-h-[130px] rounded-md border border-white/10 bg-white/[0.045] p-5 shadow-lg backdrop-blur-sm">
+            <div
+              key={i}
+              className={cx(
+                "rounded-md border border-white/10 bg-white/[0.045] p-5 shadow-lg backdrop-blur-sm",
+                hasDenseCopy ? "min-h-[116px]" : "min-h-[130px]",
+              )}
+            >
               <div className="mb-4 text-[12px] font-black tracking-[0.28em]" style={{ color: ACCENT }}>
                 0{i + 1}
               </div>
-              <div className="text-[28px] font-black leading-[1.04] tracking-[-0.04em] text-white/92">{highlight(bullet)}</div>
+              <div
+                className={cx("font-black leading-[1.04] tracking-[-0.04em] text-white/92", hasDenseCopy ? "text-[24px]" : "text-[28px]")}
+                style={{ fontSize: `${getScaledPx(hasDenseCopy ? 24 : 28, slide.textSizes?.supporting)}px` }}
+              >
+                {highlight(bullet)}
+              </div>
             </div>
           ))}
         </div>
-        <Body className="mt-8 max-w-[840px] text-[30px]">{highlight(slide.body)}</Body>
+        <Body className={cx("max-w-[840px]", hasDenseCopy ? "mt-6 text-[24px] leading-[1.1]" : "mt-8 text-[30px]")} baseSize={hasDenseCopy ? 24 : 30} size={slide.textSizes?.body}>
+          {highlight(slide.body)}
+        </Body>
       </div>
     </SlideFrame>
   );
@@ -308,37 +383,57 @@ function BreakdownSlide({ slide, index, total }: SlideRenderProps) {
 
 function DiagramSlide({ slide, index, total }: SlideRenderProps) {
   const nodes = (slide.nodes || []).slice(0, 5);
+  const headlineClass = getHeadlineClass("diagram", slide.headline);
+  const headlineBasePx = extractPxFromClass(headlineClass, 63);
 
   return (
-    <SlideFrame footer={slide.footer} index={index} total={total}>
+    <SlideFrame footer={slide.footer} footerSize={slide.textSizes?.footer} index={index} total={total}>
       <div className="grid h-full grid-rows-[auto_auto_1fr_auto] pb-[18px]">
-        <Eyebrow>{slide.eyebrow}</Eyebrow>
-        <h2 className={cx("max-w-[830px] font-black text-white", getHeadlineClass("diagram", slide.headline))}>{highlight(slide.headline)}</h2>
+        <Eyebrow size={slide.textSizes?.eyebrow}>{slide.eyebrow}</Eyebrow>
+        <h2
+          className={cx("max-w-[830px] font-black text-white", headlineClass)}
+          style={{ fontSize: `${getScaledPx(headlineBasePx, slide.textSizes?.headline)}px` }}
+        >
+          {highlight(slide.headline)}
+        </h2>
         <div className="my-8 grid grid-cols-5 content-center gap-3">
           {nodes.map((node, i) => (
             <div key={i} className="min-h-[166px] rounded-lg border bg-black/40 p-5 shadow-xl backdrop-blur-sm" style={{ borderColor: `${ACCENT_DARK}AA` }}>
               <div className="mb-7 text-[12px] font-black tracking-[0.24em]" style={{ color: ACCENT }}>
                 0{i + 1}
               </div>
-              <div className="text-[24px] font-black leading-[1.05] tracking-[-0.04em] text-white">{highlight(node)}</div>
+              <div
+                className="text-[27px] font-black leading-[1.05] tracking-[-0.04em] text-white"
+                style={{ fontSize: `${getScaledPx(27, slide.textSizes?.supporting)}px` }}
+              >
+                {highlight(node)}
+              </div>
             </div>
           ))}
         </div>
-        <Body className="max-w-[840px] text-[30px]">{highlight(slide.body)}</Body>
+        <Body className="max-w-[840px] text-[30px]" baseSize={30} size={slide.textSizes?.body}>{highlight(slide.body)}</Body>
       </div>
     </SlideFrame>
   );
 }
 
 function QuoteSlide({ slide, index, total }: SlideRenderProps) {
+  const headlineClass = getHeadlineClass("quote", slide.headline);
+  const headlineBasePx = extractPxFromClass(headlineClass, 60);
+
   return (
-    <SlideFrame footer={slide.footer} index={index} total={total}>
+    <SlideFrame footer={slide.footer} footerSize={slide.textSizes?.footer} index={index} total={total}>
       <div className="flex h-full flex-col justify-center pb-[28px]">
-        <Eyebrow>{slide.eyebrow}</Eyebrow>
-        <div className={cx("max-w-[875px] font-black text-white", getHeadlineClass("quote", slide.headline))}>"{highlight(slide.headline)}"</div>
+        <Eyebrow size={slide.textSizes?.eyebrow}>{slide.eyebrow}</Eyebrow>
+        <div
+          className={cx("max-w-[875px] font-black text-white", headlineClass)}
+          style={{ fontSize: `${getScaledPx(headlineBasePx, slide.textSizes?.headline)}px` }}
+        >
+          "{highlight(slide.headline)}"
+        </div>
         <div className="mt-11 flex max-w-[850px] gap-7">
           <div className="w-[5px] shrink-0 rounded-sm" style={{ backgroundColor: ACCENT }} />
-          <Body className="text-[32px]">{highlight(slide.body)}</Body>
+          <Body className="text-[32px]" baseSize={32} size={slide.textSizes?.body}>{highlight(slide.body)}</Body>
         </div>
       </div>
     </SlideFrame>
@@ -346,12 +441,20 @@ function QuoteSlide({ slide, index, total }: SlideRenderProps) {
 }
 
 function CtaSlide({ slide, index, total }: SlideRenderProps) {
+  const headlineClass = getHeadlineClass("cta", slide.headline);
+  const headlineBasePx = extractPxFromClass(headlineClass, 63);
+
   return (
-    <SlideFrame footer={slide.footer} index={index} total={total}>
+    <SlideFrame footer={slide.footer} footerSize={slide.textSizes?.footer} index={index} total={total}>
       <div className="flex h-full flex-col justify-center pb-[34px]">
-        <Eyebrow>{slide.eyebrow}</Eyebrow>
-        <h2 className={cx("max-w-[850px] font-black uppercase text-white", getHeadlineClass("cta", slide.headline))}>{highlight(slide.headline)}</h2>
-        <Body className="mt-11 max-w-[800px]">{highlight(slide.body)}</Body>
+        <Eyebrow size={slide.textSizes?.eyebrow}>{slide.eyebrow}</Eyebrow>
+        <h2
+          className={cx("max-w-[850px] font-black uppercase text-white", headlineClass)}
+          style={{ fontSize: `${getScaledPx(headlineBasePx, slide.textSizes?.headline)}px` }}
+        >
+          {highlight(slide.headline)}
+        </h2>
+        <Body className="mt-11 max-w-[800px]" baseSize={34} size={slide.textSizes?.body}>{highlight(slide.body)}</Body>
         <div className="mt-12 inline-flex w-fit rounded-sm border px-6 py-3 text-sm font-black uppercase tracking-[0.25em]" style={{ borderColor: `${ACCENT_DARK}88`, backgroundColor: `${ACCENT_DARK}28`, color: ACCENT }}>
           VERTALIS
         </div>
@@ -399,6 +502,33 @@ function Field({ label, value, onChange, multiline = false }: FieldProps) {
   );
 }
 
+function SizeField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value?: TextSizeLevel;
+  onChange: (value: TextSizeLevel) => void;
+}) {
+  return (
+    <label className="block">
+      <div className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-white/70">{label}</div>
+      <select
+        value={value ?? "md"}
+        onChange={(event) => onChange(event.target.value as TextSizeLevel)}
+        className="h-10 w-full rounded-sm border border-white/10 bg-black/40 px-3 text-sm text-white outline-none transition focus:border-[#ff7a2f]"
+      >
+        {TEXT_SIZE_LEVELS.map((option) => (
+          <option key={option.value} value={option.value} className="bg-[#090909]">
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
 function makeSlide(type: SlideType = "hook"): Slide {
   return {
     type,
@@ -409,34 +539,6 @@ function makeSlide(type: SlideType = "hook"): Slide {
     nodes: ["Input", "Pressure", "Friction", "Exposure", "Cost"],
     footer: "STRATEGY. STRUCTURE. PROTECTION.",
   };
-}
-
-function getFirstSentence(value: string, fallback: string) {
-  const text = cleanText(value);
-  const match = text.match(/^(.+?[.!?])\s/);
-  return match ? match[1] : text || fallback;
-}
-
-function buildPressurePoints(value: string) {
-  const lower = cleanText(value).toLowerCase();
-  const points: string[] = [];
-
-  if (lower.includes("contract")) points.push("Contracts drift out of alignment");
-  if (lower.includes("employee") || lower.includes("employment")) points.push("Employment obligations expand");
-  if (lower.includes("ip") || lower.includes("intellectual")) points.push("IP ownership becomes unclear");
-  if (lower.includes("vendor")) points.push("Vendor liability increases");
-  if (lower.includes("founder")) points.push("Founder authority gets blurred");
-  if (lower.includes("investor") || lower.includes("capital")) points.push("Investor diligence exposes gaps");
-  if (lower.includes("litigation") || lower.includes("lawsuit")) points.push("Disputes become more expensive");
-  if (lower.includes("compliance")) points.push("Compliance failures compound");
-
-  return [
-    ...points,
-    "Contracts are created in isolation",
-    "Decision authority becomes unclear",
-    "Risk becomes harder to trace",
-    "Execution slows under pressure",
-  ].slice(0, 4);
 }
 
 function fileSafe(value: string) {
@@ -450,11 +552,7 @@ function fileSafe(value: string) {
 export default function TestCarouselArticle() {
   const [slides, setSlides] = useState<Slide[]>(initialSlides);
   const [active, setActive] = useState(0);
-  const [brief, setBrief] = useState(
-    "Contracts created in isolation create operational chaos as the company scales. Sales, employment, vendor, IP, and founder obligations begin pointing in different directions, and the risk becomes visible during funding, disputes, hiring, or litigation.",
-  );
   const [status, setStatus] = useState("");
-  const [isGenerating, setIsGenerating] = useState(false);
   const exportRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const current = slides[active];
@@ -466,6 +564,15 @@ export default function TestCarouselArticle() {
 
   function updateList(key: "bullets" | "nodes", raw: string) {
     updateSlide({ [key]: raw.split("\n").map((item) => item.trim()).filter(Boolean) });
+  }
+
+  function updateTextSize(field: keyof SlideTextSizes, value: TextSizeLevel) {
+    updateSlide({
+      textSizes: {
+        ...(current.textSizes || {}),
+        [field]: value,
+      },
+    });
   }
 
   function addSlide() {
@@ -483,116 +590,6 @@ export default function TestCarouselArticle() {
     if (slides.length === 1) return;
     setSlides((prev) => prev.filter((_, index) => index !== active));
     setActive((prev) => Math.max(0, prev - 1));
-  }
-
-  function generateFromBriefLocal() {
-    const source = cleanText(brief);
-    if (!source) return;
-
-    const opening = getFirstSentence(source, "The company keeps growing, but the structure underneath it starts pulling apart.");
-    const bullets = buildPressurePoints(source);
-
-    setSlides([
-      {
-        type: "hook",
-        eyebrow: "FOUNDER INTELLIGENCE",
-        headline: "THE COMPANY BREAKS WHERE THE STRUCTURE IS WEAKEST.",
-        body: opening,
-        footer: "STRATEGY. STRUCTURE. PROTECTION.",
-      },
-      {
-        type: "breakdown",
-        eyebrow: "THE HIDDEN PROBLEM",
-        headline: "Growth exposes the systems founders forgot to build.",
-        bullets,
-        body: "The issue is rarely growth itself. The issue is whether the company has the structure to survive it.",
-        footer: "VERTALIS / STRUCTURAL COUNSEL FOR FOUNDERS",
-      },
-      {
-        type: "breakdown",
-        eyebrow: "WHERE IT STARTS",
-        headline: "Operational pressure rarely appears all at once.",
-        bullets: ["Contracts evolve separately", "Obligations spread quietly", "Authority becomes informal", "Risk hides inside operations"],
-        body: "By the time the problem is visible, the company has usually been misaligned for months or years.",
-        footer: "SYSTEMS BEFORE SCALING",
-      },
-      {
-        type: "diagram",
-        eyebrow: "HOW CHAOS COMPOUNDS",
-        headline: "Small misalignments become expensive disputes.",
-        nodes: ["Growth", "Pressure", "Friction", "Exposure", "Dispute"],
-        body: "The issue is not one bad document. It is the lack of a unified company structure.",
-        footer: "STRUCTURAL THINKING",
-      },
-      {
-        type: "quote",
-        eyebrow: "VERTALIS PRINCIPLE",
-        headline: "Legal structure should operate like infrastructure, not paperwork.",
-        body: "Founders do not need more disconnected documents. They need systems capable of surviving pressure.",
-        footer: "VERTALIS",
-      },
-      {
-        type: "breakdown",
-        eyebrow: "THE CONSEQUENCE",
-        headline: "The cost of misalignment grows as the company scales.",
-        bullets: ["Founder disputes", "Compliance failures", "Investor hesitation", "Litigation exposure"],
-        body: "Most companies do not collapse because they grew. They collapse because their structure did not grow with them.",
-        footer: "RISK ACCELERATES WITH SCALE",
-      },
-      {
-        type: "cta",
-        eyebrow: "THE TAKEAWAY",
-        headline: "Structure must scale before growth exposes the cracks.",
-        body: "The strongest companies build systems capable of surviving pressure before pressure arrives.",
-        footer: "STRATEGY. STRUCTURE. PROTECTION.",
-      },
-    ]);
-    setActive(0);
-  }
-
-  async function generateFromBrief() {
-    const source = cleanText(brief);
-    if (!source || isGenerating) return;
-
-    try {
-      setIsGenerating(true);
-      setStatus("Generating carousel with OpenAI...");
-
-      const response = await fetch("/api/carousel-generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt: source }),
-      });
-
-      const data = (await response.json()) as {
-        slides?: Slide[];
-        error?: string;
-        details?: string;
-        warning?: string;
-      };
-
-      if (!response.ok || !Array.isArray(data.slides) || data.slides.length === 0) {
-        const detail = typeof data.details === "string" && data.details.trim()
-          ? ` (${data.details.slice(0, 180)})`
-          : "";
-        throw new Error((data.error || "Generation failed") + detail);
-      }
-
-      setSlides(data.slides);
-      setActive(0);
-      if (data.warning) {
-        setStatus(`${data.warning} Generated ${data.slides.length}-slide carousel.`);
-      } else {
-        setStatus(`Generated ${data.slides.length}-slide carousel from your prompt.`);
-      }
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Generation failed";
-      setStatus(`OpenAI generation failed: ${message}. Verify OPENAI_API_KEY on the server and restart.`);
-    } finally {
-      setIsGenerating(false);
-    }
   }
 
   async function copyJson() {
@@ -685,6 +682,17 @@ export default function TestCarouselArticle() {
               {current.type === "breakdown" && <Field label="Bullets, one per line" value={(current.bullets || []).join("\n")} onChange={(value) => updateList("bullets", value)} multiline />}
               {current.type === "diagram" && <Field label="Diagram nodes, one per line" value={(current.nodes || []).join("\n")} onChange={(value) => updateList("nodes", value)} multiline />}
               <Field label="Footer" value={current.footer} onChange={(value) => updateSlide({ footer: value })} />
+
+              <div className="rounded-sm border border-white/10 bg-white/[0.02] p-3">
+                <div className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-white/65">Text size controls</div>
+                <div className="grid grid-cols-2 gap-3">
+                  <SizeField label="Eyebrow size" value={current.textSizes?.eyebrow} onChange={(value) => updateTextSize("eyebrow", value)} />
+                  <SizeField label="Headline size" value={current.textSizes?.headline} onChange={(value) => updateTextSize("headline", value)} />
+                  <SizeField label="Body size" value={current.textSizes?.body} onChange={(value) => updateTextSize("body", value)} />
+                  <SizeField label="Supporting size" value={current.textSizes?.supporting} onChange={(value) => updateTextSize("supporting", value)} />
+                  <SizeField label="Footer size" value={current.textSizes?.footer} onChange={(value) => updateTextSize("footer", value)} />
+                </div>
+              </div>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
@@ -721,7 +729,7 @@ export default function TestCarouselArticle() {
             <div className="mt-5 flex items-center justify-center gap-3">
               <Button disabled={active === 0} onClick={() => setActive((prev) => Math.max(0, prev - 1))} variant="outline" className="text-white hover:bg-white/10">
                 <ChevronLeft className="h-4 w-4" />
-              </Button>
+              </Button> 
               <div className="text-sm font-bold text-white/50">Slide {active + 1} of {slides.length}</div>
               <Button disabled={active === slides.length - 1} onClick={() => setActive((prev) => Math.min(slides.length - 1, prev + 1))} variant="outline" className="text-white hover:bg-white/10">
                 <ChevronRight className="h-4 w-4" />
@@ -732,22 +740,11 @@ export default function TestCarouselArticle() {
 
         <div className="space-y-5">
           <div className="rounded-[8px] border border-white/10 bg-[#0a0a0a] p-5">
-            <div className="mb-3 text-lg font-black tracking-[-0.03em]">Auto-build carousel</div>
-            <p className="mb-4 text-sm leading-relaxed text-white/60">Paste a raw Vertalis idea or numbered format like Slide 1, Slide 2, Slide 3. The engine preserves your slide count and builds the carousel.</p>
-            <textarea
-              value={brief}
-              onChange={(event) => setBrief(event.target.value)}
-              className="min-h-[320px] w-full resize-y rounded-md border border-white/10 bg-black/50 p-4 text-sm leading-relaxed text-white outline-none transition focus:border-[#ff7a2f]"
-            />
-            <Button
-              onClick={generateFromBrief}
-              disabled={isGenerating}
-              className="mt-4 h-12 w-full font-black text-black hover:opacity-90"
-              style={{ backgroundColor: ACCENT }}
-            >
-              <Sparkles className="mr-2 h-4 w-4" />
-              {isGenerating ? "Generating..." : "Generate Carousel"}
-            </Button>
+            <div className="mb-3 text-lg font-black tracking-[-0.03em]">Manual Workflow</div>
+            <p className="text-sm leading-relaxed text-white/60">
+              Build each slide manually using the editor panel. Use Add, Duplicate,
+              and Delete to shape the deck, then export all JPGs.
+            </p>
           </div>
 
           <div className="rounded-[8px] border border-white/10 bg-[#0a0a0a] p-5">

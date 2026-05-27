@@ -109,17 +109,30 @@ export default function VertalisTextBox() {
             Legal Counsel
           </div>
 
-          <a
-            href="https://www.linkedin.com/in/timntbb/"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-7 flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/[0.04] text-white/85 transition-colors hover:text-white"
-            aria-label="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-6 w-6">
-              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.8-2.18 4.06 0 4.82 2.67 4.82 6.14V24h-4v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24h-4V8Z" />
-            </svg>
-          </a>
+          <div className="mt-7 flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/in/timntbb/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/[0.04] text-white/85 transition-colors hover:text-white"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-6 w-6">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.18h.05c.53-1.01 1.84-2.18 3.8-2.18 4.06 0 4.82 2.67 4.82 6.14V24h-4v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24h-4V8Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/vertalislegal/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/[0.04] text-white/85 transition-colors hover:text-white"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-6 w-6">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5A3.95 3.95 0 0 0 16.25 3.8h-8.5Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z" />
+              </svg>
+            </a>
+          </div>
 
           <div className="mt-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/82">
             Navigate
