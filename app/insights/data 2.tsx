@@ -2,7 +2,7 @@ import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
 import ContractChaosArticle from "./content/ContractChaosArticle";
-import IpEmployeesOwnershipArticle from "./content/IpEmployeesOwnershipArticle";
+import TestCarouselArticle from "./content/TestCarouselArticle";
 
 export type InsightPost = {
   slug: string;
@@ -15,7 +15,6 @@ export type InsightPost = {
   readTime?: string;
   content?: React.ReactNode;
   fullWidthTool?: boolean;
-  hiddenFromListings?: boolean;
   subtitle: string;
   sections: Array<{
     heading?: string;
@@ -782,16 +781,16 @@ export const insightPosts: InsightPost[] = [
     content: <ContractChaosArticle />,
   },
   {
-    slug: "intellectual-property-employees-ownership-problem",
-    category: "Intellectual Property",
-    title: "Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup",
-    excerpt:
-      "How employment agreements, invention assignment clauses, and contractor missteps can create IP ownership risk that derails investor due diligence.",
+    slug: "test",
+    category: "Tooling",
+    title: "Test",
+    excerpt: "Interactive Vertalis carousel preview and export tool.",
     date: "May 2026",
-    readTime: "9 min read",
+    readTime: "Interactive",
     subtitle: "",
     sections: [],
-    content: <IpEmployeesOwnershipArticle />,
+    fullWidthTool: true,
+    content: <TestCarouselArticle />,
   },
 ];
 
