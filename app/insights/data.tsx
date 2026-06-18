@@ -1,8 +1,10 @@
+import Link from "next/link";
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
 import ContractChaosArticle from "./content/ContractChaosArticle";
 import IpEmployeesOwnershipArticle from "./content/IpEmployeesOwnershipArticle";
+import FounderVestingArticle from "./content/FounderVestingArticle";
 
 export type InsightPost = {
   slug: string;
@@ -19,9 +21,9 @@ export type InsightPost = {
   subtitle: string;
   sections: Array<{
     heading?: string;
-    paragraphs?: string[];
-    emphasis?: string;
-    bullets?: string[];
+    paragraphs?: React.ReactNode[];
+    emphasis?: React.ReactNode;
+    bullets?: React.ReactNode[];
   }>;
 };
 
@@ -88,7 +90,7 @@ export const insightPosts: InsightPost[] = [
           </p>
           <p className="mt-4 leading-8">
             The implication is straightforward. Founders cannot think in terms of
-            dollars alone. Every raise is an ownership decision.
+            dollars alone. Every raise is an <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">ownership decision</Link>.
           </p>
 
           <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
@@ -152,7 +154,8 @@ export const insightPosts: InsightPost[] = [
           </p>
           <p className="mt-4 leading-8">
             Vertalis designs the legal architecture behind the company so each
-            financing decision supports long-term control and scalability.
+            financing decision supports long-term control and scalability. That
+            same structural thinking starts with choosing the right entity in <Link href="/insights/llc-vs-c-corp">LLC vs C-Corp</Link>.
           </p>
         </article>
       </div>
@@ -199,7 +202,9 @@ export const insightPosts: InsightPost[] = [
           "how ownership is structured",
           "how profits and losses are allocated",
           "what decisions require consent",
-          "what happens when a founder leaves",
+          <>
+            what happens when a founder leaves, including <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">vesting</Link>
+          </>,
           "how disputes get resolved",
           "what happens if the company winds down",
         ],
@@ -215,7 +220,9 @@ export const insightPosts: InsightPost[] = [
           "Most founders take one of three paths.",
           "Templates are cheap and fast, but usually too generic to hold up when pressure hits.",
           "Automated platforms are a better starting point, but still fall short when structure actually matters.",
-          "Attorney-built governance is where structure becomes strategy, where the document is built not just to exist, but to perform.",
+          <>
+            Attorney-built governance is where structure becomes strategy, where the document is built not just to exist, but to perform, often with the kind of embedded support described in <Link href="/insights/fractional-general-counsel">What Exactly Is Fractional General Counsel?</Link>
+          </>,
         ],
         emphasis:
           "Most operating agreements are written to exist. The right ones are built to perform under pressure.",
@@ -319,7 +326,8 @@ export const insightPosts: InsightPost[] = [
         <p className="mt-4">
           At that point, the company is forced to retroactively secure ownership,
           often giving leverage to the original creator or paying to fix something
-          that should have been structured correctly from the beginning.
+          that should have been structured correctly from the beginning, exactly
+          the kind of problem explored in <Link href="/insights/intellectual-property-employees-ownership-problem">Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup</Link>.
         </p>
         <p className="mt-4">
           This is not a paperwork issue. It is a fundamental ownership failure that
@@ -349,7 +357,7 @@ export const insightPosts: InsightPost[] = [
             or licensing
           </li>
           <li>There is no distinction between individual IP and company IP</li>
-          <li>Vesting is not tied to continued contribution</li>
+          <li><Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">Vesting</Link> is not tied to continued contribution</li>
         </ul>
         <p className="mt-4">The issue becomes visible when a founder leaves.</p>
         <p className="mt-4">
@@ -482,7 +490,7 @@ export const insightPosts: InsightPost[] = [
         <p className="mt-4">
           This is not about having documents in place. It is about having a system
           of agreements that works together to clearly establish intellectual
-          property ownership across the company.
+          property ownership across the company, which is also the core warning in <Link href="/insights/contract-chaos">Contract Chaos</Link>.
         </p>
 
         <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
@@ -571,7 +579,8 @@ export const insightPosts: InsightPost[] = [
         </p>
         <p className="mt-4">
           If that answer is uncertain, it is worth addressing early, while the
-          company still has flexibility and leverage.
+          company still has flexibility and leverage, often before investor review,
+          contractor growth, or the broader legal integration described in <Link href="/insights/fractional-general-counsel">What Exactly Is Fractional General Counsel?</Link>.
         </p>
       </article>
     ),
@@ -707,6 +716,11 @@ export const insightPosts: InsightPost[] = [
           what regulators analyze. You cannot contract around a bad structure, and
           you cannot fix it after the fact without cost.
         </p>
+        <p className="mt-4">
+          The same informality often creates ownership problems too, especially
+          when contractors are building valuable IP without the protections
+          covered in <Link href="/insights/intellectual-property-employees-ownership-problem">Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup</Link>.
+        </p>
 
         <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
           The Real Risk: It Breaks When You Scale
@@ -729,7 +743,8 @@ export const insightPosts: InsightPost[] = [
           Unexpected tax liability, back unemployment contributions, wage claims,
           and potential penalties can all stack quickly. More importantly, it
           creates friction in the exact moments your company needs to be clean,
-          scalable, and defensible.
+          scalable, and defensible, the same stage when investors also expect a
+          clean cap table and founder alignment in <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">What Is Vesting and Why Founders Should Implement It Early</Link>.
         </p>
 
         <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
@@ -792,6 +807,18 @@ export const insightPosts: InsightPost[] = [
     subtitle: "",
     sections: [],
     content: <IpEmployeesOwnershipArticle />,
+  },
+  {
+    slug: "what-is-vesting-and-why-founders-should-implement-it-early",
+    category: "Governance",
+    title: "What Is Vesting and Why Founders Should Implement It Early",
+    excerpt:
+      "Why founder vesting prevents dead equity, aligns ownership with contribution, and protects startups as they grow.",
+    date: "June 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <FounderVestingArticle />,
   },
 ];
 

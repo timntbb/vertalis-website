@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ContractChaosArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
@@ -65,10 +67,10 @@ export default function ContractChaosArticle() {
           </li>
           <li>
             Employment agreements may contain confidentiality provisions
-            inconsistent with intellectual property ownership requirements.
+            inconsistent with intellectual property ownership requirements explored in <Link href="/insights/intellectual-property-employees-ownership-problem">Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup</Link>.
           </li>
           <li>
-            Contractor agreements may create worker classification risks.
+            Contractor agreements may create worker classification risks analyzed in <Link href="/insights/employee-vs-contractor-structure">Employee vs. Independent Contractor: Structure, Not Labels</Link>.
           </li>
           <li>
             Financing documents may conflict with governance rights established
@@ -228,7 +230,8 @@ export default function ContractChaosArticle() {
 
         <p className="mt-6 leading-8">
           Strategic contract management evaluates how every agreement interacts
-          within the larger company structure.
+          within the larger company structure, including the governance rules set
+          by the <Link href="/insights/operating-agreement-backbone-of-your-company">Operating Agreement</Link>.
         </p>
 
         <p className="mt-4 leading-8">

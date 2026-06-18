@@ -201,7 +201,7 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
             <div className="min-w-0">
               <div className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(255,255,255,0.018))] p-6 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.92)] md:p-8">
                 {post.content ? (
-                  <div className="text-neutral-300 [&_article]:text-inherit [&_article_h1:first-child]:hidden [&_article_h2]:mt-12 [&_article_h2]:text-[1.7rem] [&_article_h2]:font-semibold [&_article_h2]:tracking-[-0.03em] [&_article_h2]:text-white [&_article_p]:mt-4 [&_article_ul]:mt-4 [&_article_ul]:ml-6 [&_article_ul]:list-disc [&_article_li]:mt-2 [&_article_li]:leading-8">
+                  <div className="text-neutral-300 [&_article]:text-inherit [&_article_h1:first-child]:hidden [&_article_h2]:mt-12 [&_article_h2]:text-[1.7rem] [&_article_h2]:font-semibold [&_article_h2]:tracking-[-0.03em] [&_article_h2]:text-white [&_article_p]:mt-4 [&_article_ul]:mt-4 [&_article_ul]:ml-6 [&_article_ul]:list-disc [&_article_li]:mt-2 [&_article_li]:leading-8 [&_article_a]:font-medium [&_article_a]:text-neutral-200 [&_article_a]:underline [&_article_a]:decoration-[#d37a43]/45 [&_article_a]:underline-offset-4 [&_article_a]:transition-colors [&_article_a:hover]:text-[#d37a43]">
                     {post.content}
                   </div>
                 ) : (
@@ -214,8 +214,8 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
                           </h2>
                         ) : null}
 
-                        {section.paragraphs?.map((paragraph) => (
-                          <p key={paragraph}>{paragraph}</p>
+                        {section.paragraphs?.map((paragraph, paragraphIndex) => (
+                          <p key={paragraphIndex}>{paragraph}</p>
                         ))}
 
                         {section.emphasis ? (
@@ -226,8 +226,8 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
 
                         {section.bullets ? (
                           <ul className="space-y-3 pt-1 text-neutral-200">
-                            {section.bullets.map((bullet) => (
-                              <li key={bullet} className="flex items-start gap-3">
+                            {section.bullets.map((bullet, bulletIndex) => (
+                              <li key={bulletIndex} className="flex items-start gap-3">
                                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c06020]" />
                                 <span>{bullet}</span>
                               </li>

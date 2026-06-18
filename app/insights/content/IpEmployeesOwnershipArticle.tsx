@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function IpEmployeesOwnershipArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
@@ -86,7 +88,8 @@ export default function IpEmployeesOwnershipArticle() {
         not own its own intellectual property. Even if the founder ultimately
         wins the legal argument, the mere existence of a credible ownership
         dispute can create enough risk to derail fundraising, mergers and
-        acquisitions, venture capital investment, or strategic partnerships.
+          acquisitions, venture capital investment, or strategic partnerships. For
+          the broader five-risk version of this problem, see <Link href="/insights/intellectual-property-risks-startups">Intellectual Property Risks in Startups</Link>.
       </p>
 
       <section className="mt-12">
@@ -257,7 +260,8 @@ export default function IpEmployeesOwnershipArticle() {
           Many startups rely on handshake deals or assume platform agreements from
           sites like Upwork are sufficient protection. Often they are not. If
           ownership is unclear, venture capital firms, investors, or acquirers
-          will eventually find it during due diligence.
+          will eventually find it during due diligence, especially when the same
+          contractors are also misclassified as explained in <Link href="/insights/employee-vs-contractor-structure">Employee vs. Independent Contractor: Structure, Not Labels</Link>.
         </p>
       </section>
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LLCVsCCorpArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -75,7 +77,7 @@ export default function LLCVsCCorpArticle() {
       <p className="mt-4 leading-8">
         An LLC provides a high degree of flexibility in how ownership, control,
         and economic rights are structured. That flexibility is governed by the
-        Operating Agreement, which is the core document that defines how the
+          <Link href="/insights/operating-agreement-backbone-of-your-company">Operating Agreement</Link>, which is the core document that defines how the
         company actually functions.
       </p>
 
@@ -141,7 +143,7 @@ export default function LLCVsCCorpArticle() {
         Investors want clean equity, predictable governance, and a structure they
         understand immediately. The ability to issue stock, grant options, and
         scale ownership cleanly is not optional in that environment, it is the
-        baseline.
+          baseline. That is the same world described in <Link href="/insights/post-money-safe-ownership-dilution">Post-Money SAFEs</Link>.
       </p>
 
       <p className="mt-4 leading-8">
@@ -219,7 +221,7 @@ export default function LLCVsCCorpArticle() {
         when ownership is challenged, or when capital forces a level of clarity
         that was never built into the system. At that stage, the issue is no
         longer what entity was chosen, but the fact that the underlying legal
-        architecture was never intentionally designed.
+          architecture was never intentionally designed, including issues like <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">vesting</Link> and governance.
       </p>
 
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function FractionalGeneralCounselArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
@@ -109,6 +111,10 @@ export default function FractionalGeneralCounselArticle() {
         </p>
 
         <p className="mt-4 leading-8">
+          In practice, that means helping founders prevent problems like <Link href="/insights/contract-chaos">contract chaos</Link>, contractor misclassification, and unclear <Link href="/insights/intellectual-property-employees-ownership-problem">intellectual property ownership</Link> before those issues surface in diligence or disputes.
+        </p>
+
+        <p className="mt-4 leading-8">
           The result is a model that gives startups many of the benefits of an
           in-house legal department without the financial burden of building one too
           early.
@@ -177,7 +183,7 @@ export default function FractionalGeneralCounselArticle() {
           </li>
           <li className="flex items-center gap-3">
             <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d87a3b]" />
-            <span>Raising outside capital,</span>
+            <span>Raising outside capital, including rounds that use <Link href="/insights/post-money-safe-ownership-dilution">post-money SAFEs</Link>,</span>
           </li>
           <li className="flex items-center gap-3">
             <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d87a3b]" />
@@ -228,6 +234,10 @@ export default function FractionalGeneralCounselArticle() {
           Having legal counsel integrated into the business before those problems
           emerge allows founders to make faster, more informed, and more scalable
           decisions.
+        </p>
+
+        <p className="mt-4 leading-8">
+          That includes foundational decisions like entity choice in <Link href="/insights/llc-vs-c-corp">LLC vs C-Corp</Link>, founder alignment through <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">vesting</Link>, and governance built through the <Link href="/insights/operating-agreement-backbone-of-your-company">Operating Agreement</Link>.
         </p>
 
         <p className="mt-4 leading-8">
