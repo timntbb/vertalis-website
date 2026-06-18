@@ -122,7 +122,7 @@ export default function VertalisTextBox() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/vertalislegal/"
+              href="https://www.instagram.com/tim_vertalis/"
               target="_blank"
               rel="noreferrer"
               className="flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/[0.04] text-white/85 transition-colors hover:text-white"
