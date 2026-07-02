@@ -5,6 +5,7 @@ import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselA
 import ContractChaosArticle from "./content/ContractChaosArticle";
 import IpEmployeesOwnershipArticle from "./content/IpEmployeesOwnershipArticle";
 import FounderVestingArticle from "./content/FounderVestingArticle";
+import FounderDeadlockArticle from "./content/FounderDeadlockArticle";
 
 export type InsightPost = {
   slug: string;
@@ -819,6 +820,18 @@ export const insightPosts: InsightPost[] = [
     subtitle: "",
     sections: [],
     content: <FounderVestingArticle />,
+  },
+  {
+    slug: "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+    category: "Governance",
+    title: "50/50 Founder Equity Splits: The Hidden Risk of Startup Deadlocks",
+    excerpt:
+      "Why equal founder ownership can create decision paralysis, and how deadlock provisions prevent high-stakes startup standstills.",
+    date: "June 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <FounderDeadlockArticle />,
   },
 ];
 

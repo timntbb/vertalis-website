@@ -132,6 +132,17 @@ export default function VertalisTextBox() {
                 <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5A3.95 3.95 0 0 0 16.25 3.8h-8.5Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z" />
               </svg>
             </a>
+            <a
+              href="https://www.youtube.com/channel/UCU0w5QzeDottl1T10P5kbcQ"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/[0.04] text-white/85 transition-colors hover:text-white"
+              aria-label="YouTube"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-6 w-6">
+                <path d="M23.5 6.2a2.9 2.9 0 0 0-2.04-2.05C19.66 3.67 12 3.67 12 3.67s-7.66 0-9.46.48A2.9 2.9 0 0 0 .5 6.2 30.43 30.43 0 0 0 0 12a30.4 30.4 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.04 2.05c1.8.48 9.46.48 9.46.48s7.66 0 9.46-.48a2.9 2.9 0 0 0 2.04-2.05A30.4 30.4 0 0 0 24 12a30.43 30.43 0 0 0-.5-5.8ZM9.55 15.65V8.35L16 12l-6.45 3.65Z" />
+              </svg>
+            </a>
           </div>
 
           <div className="mt-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/82">
