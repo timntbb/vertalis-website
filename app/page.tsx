@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout";
 import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
+import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
 import {
   ArrowRight,
   Check,
@@ -559,326 +560,64 @@ export function Header() {
 }
 
 export default function Home() {
-  const reduce = useReducedMotion();
-
   return (
     <main className="min-h-screen overflow-x-hidden text-neutral-100" style={{ backgroundColor: "#0a0a0c" }} id="pageRoot">
       <Header />
 
-      <section className="relative isolate overflow-hidden pt-1.5 md:pt-3" id="top">
-
-{/* ================= BACKGROUND SYSTEM ================= */}
-
-<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-
-  <div className="absolute inset-0 bg-[#0a0a0c]" />
-
-  <div
-    className="absolute left-[-6%] top-[10%] h-[520px] w-[520px] rounded-full blur-3xl"
-    style={{ background: "rgba(192,96,32,0.16)" }}
-  />
-
-  <div
-    className="absolute right-[-6%] top-[20%] h-[480px] w-[480px] rounded-full blur-3xl"
-    style={{ background: "rgba(72,90,120,0.12)" }}
-  />
-
-  <div
-    className="absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-[40%] -translate-y-1/2 rounded-full blur-3xl"
-    style={{ background: "rgba(192,96,32,0.10)" }}
-  />
-
-  {/* Shield watermark */}
-
-  <motion.div
-    className="absolute inset-0 flex items-center justify-center"
-    style={{ opacity: 0.11 }}
-    animate={
-      reduce
-        ? undefined
-        : {
-            rotate: [0, 0.6, -0.6, 0],
-            y: [0, -6, 0, 6, 0],
-          }
-    }
-    transition={
-      reduce
-        ? undefined
-        : {
-            duration: 24,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }
-    }
-  >
-    <img
-      src="/logo-final.png"
-      alt=""
-      className="object-contain blur-[0.2px]"
-      style={{ width: 780, height: 780 }}
-    />
-  </motion.div>
-
-  {/* subtle grid */}
-
-  <div
-    className="absolute inset-0 opacity-[0.04]"
-    style={{
-      backgroundImage:
-        "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-      backgroundSize: "72px 72px",
-      maskImage: "radial-gradient(circle at center, black 35%, transparent 100%)",
-      WebkitMaskImage:
-        "radial-gradient(circle at center, black 35%, transparent 100%)",
-    }}
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0d]/20 via-transparent to-[#0b0b0d]/80" />
-
-</div>
-
-{/* ================= HERO CONTENT ================= */}
-
-<Container>
-
-<div className="relative z-10 py-7 md:py-10">
-
-<div className="relative overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.015] px-6 py-10 shadow-[0_30px_90px_-50px_rgba(0,0,0,0.8)] md:px-10">
-
-<div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/6" />
-
-<div className="grid items-center gap-12 md:grid-cols-12">
-
-{/* ================= LEFT SIDE ================= */}
-
-<div className="md:col-span-7 md:pr-10 lg:pr-14">
-
-<FadeIn>
-
-<div className="max-w-[840px] pt-0 md:pt-1.5">
-
-<VertalisWord
-  className="font-semibold leading-none tracking-tight"
-  style={{
-    fontSize: "34pt",
-  }}
->
-  Vertalis
-</VertalisWord>
-
-<p className="mt-6 mb-10 text-[0.9rem] uppercase tracking-[0.28em] text-neutral-400">
-  Founder-side legal architecture for companies built to scale
-</p>
-
-<h1 className="max-w-[840px] text-3xl md:text-[40px] lg:text-[42px] font-semibold leading-[1.08] tracking-[-0.025em] text-white">
-  <span className="block whitespace-normal md:whitespace-nowrap">Founders build the company.</span>
-  <span className="block">
-    <VertalisWord
-      as="span"
-      className="inline-block align-baseline font-semibold tracking-tight normal-case"
-      style={{
-        fontSize: "inherit",
-        lineHeight: "inherit",
-        filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
-      }}
-    >
-      Vertalis
-    </VertalisWord>{" "}
-    designs the
-  </span>
-  <span className="block">structure behind it.</span>
-</h1>
-
-<p className="mt-14 max-w-[42rem] text-[1.15rem] leading-8 text-neutral-300">
-  Vertalis helps founders install the legal systems that support scale, from
-  governance and capital structure to hiring, operational risk, and ownership
-  of what the company is building.
-</p>
-
-<div className="mt-10 flex flex-wrap gap-3">
-
-<Button href="#contact">
-Let’s talk
-</Button>
-
-<Button href="#about" variant="secondary">
-About the practice
-</Button>
-
-</div>
-
-{/* FEATURE TILES */}
-
-<div className="mt-14 grid max-w-[520px] gap-4 sm:grid-cols-2">
-
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
-
-<div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
-<BadgeCheck className="h-4 w-4" style={{ color: tokens.accent }} />
-</div>
-
-<div className="text-sm font-semibold text-white">
-Founder alignment
-</div>
-
-<div className="mt-2 text-[0.8rem] leading-6 text-neutral-300">
-Roles, equity, authority, and vesting before misalignment compounds.
-</div>
-
-</Card>
-
-<Card className="overflow-hidden border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-4 py-4 shadow-[0_24px_60px_-36px_rgba(0,0,0,0.75)]">
-
-<div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5">
-<Lock className="h-4 w-4" style={{ color: tokens.accent }} />
-</div>
-
-<div className="text-sm font-semibold text-white">
-Capital strategy
-</div>
-
-<div className="mt-2 text-[0.8rem] leading-6 text-neutral-300">
-SAFE, seed, dilution, investor leverage, and control clarity.
-</div>
-
-</Card>
-
-</div>
-
-</div>
-
-</FadeIn>
-
-</div>
-
-{/* ================= RIGHT PANEL ================= */}
-
-<div className="md:col-span-5 lg:mt-6">
-
-<FadeIn delay={0.08}>
-
-<Card className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(152deg,#211e25_0%,#1b2028_45%,#13171f_100%)] p-8 shadow-[0_22px_56px_-34px_rgba(0,0,0,0.9)] md:p-10">
-
-<div className="pointer-events-none absolute inset-0">
-
-<div
-className="absolute left-[-12%] top-[-12%] h-[240px] w-[240px] rounded-full blur-2xl"
-style={{ background: "rgba(192,96,32,0.13)" }}
-/>
-
-<div
-className="absolute right-[-10%] bottom-[-16%] h-[210px] w-[210px] rounded-full blur-2xl"
-style={{ background: "rgba(72,90,120,0.11)" }}
-/>
-
-
-</div>
-
-<div className="relative z-10">
-
-<div className="text-[1.9rem] leading-none font-semibold tracking-[-0.03em] text-white md:text-[2.15rem]">
-  Where{" "}
-  <VertalisWord
-    as="span"
-    className="inline-block align-baseline font-semibold tracking-tight normal-case"
-    style={{
-      fontSize: "inherit",
-      lineHeight: "inherit",
-      filter: "drop-shadow(0 10px 26px rgba(192,96,32,0.18))",
-    }}
-  >
-    Vertalis
-  </VertalisWord>{" "}
-  fits
-</div>
-
-<p className="mt-3 text-[1rem] leading-7 text-neutral-300">
-If you are raising, scaling, or operating under pressure, this is where
-Vertalis installs structure before legal gaps compound.
-</p>
-
-<div className="mt-7 grid gap-4">
-
-<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
-
-<div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
-<ScrollText className="h-4 w-4" />
-COMMON STARTING POINTS
-</div>
-
-<ul className="mt-3 space-y-2 text-sm text-neutral-300">
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Founder alignment and governance cleanup
-</li>
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-SAFE, seed, and dilution readiness
-</li>
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Hiring, IP, and contract risk controls
-</li>
-
-</ul>
-
-</Card>
-
-<Card tone="dark" className="rounded-[1.5rem] border-white/10 bg-[#0f1014]/95 p-5">
-
-<div className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-400">
-<FileText className="h-4 w-4" />
-THE VERTALIS APPROACH
-</div>
-
-<ul className="mt-3 space-y-2 text-sm text-neutral-300">
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Plain English, business-first
-</li>
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Structural clarity before problems compound
-</li>
-
-<li className="flex gap-2">
-<Check className="h-4 w-4 mt-0.5" style={{ color: tokens.accent }} />
-Systems built to scale with the company
-</li>
-
-</ul>
-
-</Card>
-
-</div>
-
-<p className="mt-6 text-sm text-neutral-400">
-Built for founders who need real legal structure before growth exposes
-the gaps.
-</p>
-
-</div>
-
-</Card>
-
-</FadeIn>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</Container>
-
-</section>
+      <section className="relative isolate overflow-hidden" id="top">
+        <div
+          className="relative min-h-[calc(100vh-120px)] overflow-hidden md:min-h-[calc(100vh-140px)]"
+          style={{
+            background:
+              "radial-gradient(circle at 70% 42%, rgba(214,111,36,.08), transparent 32%), radial-gradient(circle at 50% 50%, rgba(255,255,255,.02), transparent 42%), #07080a",
+          }}
+        >
+          <HeroNetworkCanvas className="absolute inset-0 block h-full w-full" />
+
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(7,8,10,.18) 0%, rgba(7,8,10,.42) 56%, rgba(7,8,10,.72) 100%), linear-gradient(180deg, rgba(7,8,10,.08) 0%, rgba(7,8,10,.18) 68%, rgba(7,8,10,.78) 100%)",
+            }}
+          />
+
+          <Container>
+            <div className="relative z-10 flex min-h-[calc(100vh-120px)] items-center justify-center py-20 text-center md:min-h-[calc(100vh-140px)]">
+              <div className="w-full max-w-[900px] pt-10 md:pt-14">
+                <p className="mb-7 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#cbc5bf] md:text-[13px]">
+                  Business counsel for growing companies across North Texas
+                </p>
+
+                <h1 className="mx-auto max-w-[850px] text-[clamp(43px,5.6vw,86px)] font-bold leading-[0.94] tracking-[-0.055em] text-[#f4f1ed]">
+                  Modern Counsel for <span className="text-[#d66f24]">Growing Companies.</span>
+                </h1>
+
+                <p className="mx-auto mt-8 max-w-[720px] text-[clamp(17px,1.45vw,21px)] font-semibold leading-[1.62] text-[#b8b3ae]">
+                  Vertalis helps growing companies structure deals, navigate contracts, raise capital, resolve disputes, and make the legal decisions that shape what comes next.
+                </p>
+
+                <div className="mt-9">
+                  <a
+                    href="#contact"
+                    className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-[rgba(214,111,36,.60)] bg-[rgba(214,111,36,.12)] px-7 text-[15px] font-semibold text-white backdrop-blur-[8px] transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-[rgba(214,111,36,.20)] hover:border-[rgba(214,111,36,.90)]"
+                  >
+                    Schedule a Consultation
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Container>
+
+          <div className="pointer-events-none absolute bottom-7 left-1/2 w-[min(92%,980px)] -translate-x-1/2 text-center text-[11px] uppercase tracking-[0.18em] text-[#726e6a]">
+            Frisco · McKinney · Prosper · Plano · North Dallas · DFW
+          </div>
+
+          <div className="pointer-events-none absolute bottom-7 right-[clamp(24px,5vw,72px)] hidden text-[10px] uppercase tracking-[0.22em] text-[#716d69] [writing-mode:vertical-rl] md:block">
+            Scroll to explore
+          </div>
+        </div>
+      </section>
 
       <Divider />
 

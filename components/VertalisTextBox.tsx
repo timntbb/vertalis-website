@@ -183,17 +183,17 @@ export default function VertalisTextBox() {
 
         <div className="px-8 py-7 md:px-10 md:py-8">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-[4.4rem] leading-[0.94] tracking-[-0.055em] font-semibold text-white">
-              Start the conversation
+            <h2 className="text-4xl md:text-[3.3rem] leading-[0.94] tracking-[-0.055em] font-semibold text-white">
+              When the Next Move <span className="text-[#d66f24]">Matters.</span>
             </h2>
 
             {!isOpen && !submitted && (
               <>
                 <p className="mt-5 max-w-4xl text-[1.15rem] md:text-[1.28rem] leading-[1.76] text-white/70">
-                  Tell me what you're building, where the friction is, and what
-                  kind of legal support you need. Vertalis is built for founders
-                  who want practical guidance on contracts, governance, capital
-                  readiness, and AI risk.
+                  Whether you’re negotiating an important contract, raising
+                  capital, restructuring ownership, facing a dispute, or
+                  planning the company’s next stage, Vertalis helps you
+                  understand the legal path forward.
                 </p>
 
                 <div className="mt-6">
@@ -202,18 +202,18 @@ export default function VertalisTextBox() {
                     onClick={() => setIsOpen(true)}
                     className="inline-flex items-center gap-4 rounded-[24px] bg-gradient-to-b from-[#de8a46] to-[#c06020] px-9 py-5 text-[1.05rem] font-semibold text-white shadow-[0_14px_34px_rgba(192,96,32,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(192,96,32,0.36)]"
                   >
-                    Start the conversation
+                    Schedule a Consultation
                     <span>→</span>
                   </button>
                 </div>
 
-                <p className="mt-6 max-w-3xl text-[1.05rem] md:text-[1.15rem] leading-[1.68] text-white/46">
-                  Best for founders who need sharp legal guidance on contracts,
-                  governance, capital readiness, and AI risk.
+                <p className="mt-6 max-w-3xl text-[0.84rem] md:text-[0.92rem] leading-[1.68] text-white/46">
+                  Counsel for growing companies across Frisco, McKinney,
+                  Prosper, Plano, North Dallas, and greater DFW.
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-3">
-                  {["Contracts", "Governance", "AI + Capital Readiness"].map(
+                  {["Contracts", "Governance & Growth", "Disputes & Litigation"].map(
                     (item) => (
                       <span
                         key={item}
