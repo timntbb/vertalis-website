@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "../page";
 import { insightPosts } from "./data";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://vertalislegal.com/insights",
+  },
+};
 
 export default function InsightsPage() {
   const listedPosts = insightPosts.filter((post) => !post.hiddenFromListings);

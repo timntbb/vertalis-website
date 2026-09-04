@@ -27,7 +27,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalis.com").replace(
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalislegal.com").replace(
     /\/$/,
     "",
   );
@@ -81,7 +81,7 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
   const seoPost = post as typeof post & {
     seoDescription?: string;
   };
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalis.com").replace(
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertalislegal.com").replace(
     /\/$/,
     "",
   );
