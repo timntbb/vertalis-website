@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/app/page";
 import VertalisWord from "@/components/VertalisWord";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about/tim-nichols",
+  },
+};
 
 export default function TimNicholsPage() {
   return (

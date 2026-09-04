@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vertalislegal.com"),
   title: "Vertalis Legal Counsel",
   description: "Founder-side legal counsel for modern companies.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
