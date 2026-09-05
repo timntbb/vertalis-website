@@ -30,6 +30,8 @@ export function buildOrganizationSchema() {
 }
 
 // Person schema for Tim Nichols, linked back to the Organization via @id.
+// Only verified, visibly published information is included (no bar number,
+// address, phone number, award, rating, review, or social-media URL).
 export function buildPersonSchema() {
   return {
     "@context": "https://schema.org",
@@ -38,8 +40,22 @@ export function buildPersonSchema() {
     name: siteInfo.founder.name,
     url: siteInfo.founder.url,
     email: siteInfo.email,
-    jobTitle: "Founding Attorney",
+    jobTitle: "Business Attorney",
     worksFor: { "@id": organizationId },
+    areaServed: siteInfo.areaServed,
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Attorney License",
+      name: "Licensed to Practice Law in Texas",
+    },
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "University of Missouri–Kansas City School of Law",
+      },
+      { "@type": "CollegeOrUniversity", name: "Rockhurst University" },
+      { "@type": "CollegeOrUniversity", name: "Northern Arizona University" },
+    ],
   };
 }
 
