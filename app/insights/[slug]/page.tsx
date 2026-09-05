@@ -90,6 +90,10 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
   const publishedIso = Number.isNaN(parsedPublished)
     ? undefined
     : new Date(parsedPublished).toISOString();
+  const parsedUpdated = post.updatedDate ? Date.parse(post.updatedDate) : Number.NaN;
+  const updatedIso = Number.isNaN(parsedUpdated)
+    ? publishedIso
+    : new Date(parsedUpdated).toISOString();
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -97,7 +101,7 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     headline: post.title,
     description: seoPost.seoDescription ?? post.excerpt,
     datePublished: publishedIso,
-    dateModified: publishedIso,
+    dateModified: updatedIso,
     author: {
       "@type": "Organization",
       name: "Vertalis",

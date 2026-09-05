@@ -6,6 +6,20 @@ import ContractChaosArticle from "./content/ContractChaosArticle";
 import IpEmployeesOwnershipArticle from "./content/IpEmployeesOwnershipArticle";
 import FounderVestingArticle from "./content/FounderVestingArticle";
 import FounderDeadlockArticle from "./content/FounderDeadlockArticle";
+import CanBusinessCancelContractArticle from "./content/CanBusinessCancelContractArticle";
+import PartnerTakingMoneyArticle from "./content/PartnerTakingMoneyArticle";
+import MemberDiesArticle from "./content/MemberDiesArticle";
+import CommercialLeaseReviewArticle from "./content/CommercialLeaseReviewArticle";
+import DeveloperOwnershipArticle from "./content/DeveloperOwnershipArticle";
+import PersonalGuaranteeArticle from "./content/PersonalGuaranteeArticle";
+import OralWrittenContractsArticle from "./content/OralWrittenContractsArticle";
+import LLCOwnerPersonalLiabilityArticle from "./content/LLCOwnerPersonalLiabilityArticle";
+import ExitCommercialLeaseArticle from "./content/ExitCommercialLeaseArticle";
+import ClientWontPayArticle from "./content/ClientWontPayArticle";
+import PartnerDecisionsWithoutMeArticle from "./content/PartnerDecisionsWithoutMeArticle";
+import MemberLeaveLLCArticle from "./content/MemberLeaveLLCArticle";
+import PartnerForceMeOutArticle from "./content/PartnerForceMeOutArticle";
+import RemoveMemberLLCArticle from "./content/RemoveMemberLLCArticle";
 
 export type InsightPost = {
   slug: string;
@@ -15,6 +29,7 @@ export type InsightPost = {
   seoTitle?: string;
   seoDescription?: string;
   date?: string;
+  updatedDate?: string;
   readTime?: string;
   content?: React.ReactNode;
   fullWidthTool?: boolean;
@@ -824,14 +839,183 @@ export const insightPosts: InsightPost[] = [
   {
     slug: "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
     category: "Governance",
-    title: "50/50 Founder Equity Splits: The Hidden Risk of Startup Deadlocks",
+    title: "50/50 LLC Deadlock in Texas: What Happens When Neither Owner Can Decide?",
     excerpt:
-      "Why equal founder ownership can create decision paralysis, and how deadlock provisions prevent high-stakes startup standstills.",
+      "A 50/50 LLC deadlock occurs when two owners with equal voting power cannot agree on a decision requiring approval from both of them.",
     date: "June 2026",
+    updatedDate: "2026-09-04",
     readTime: "7 min read",
     subtitle: "",
     sections: [],
     content: <FounderDeadlockArticle />,
+  },
+  {
+    slug: "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    category: "Contract Strategy",
+    title: "Can a Business Cancel a Contract After Signing It in Texas?",
+    excerpt:
+      "A Texas business generally cannot cancel a contract simply because the owner changed their mind, found a better deal, or later decided the agreement was too expensive.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <CanBusinessCancelContractArticle />,
+  },
+  {
+    slug: "business-partner-taking-money-from-company-texas",
+    category: "Governance",
+    title: "What Can I Do If My Business Partner Is Taking Money From the Company in Texas?",
+    excerpt:
+      "If your business partner is taking money from the company without authorization, you may be able to demand records, restrict future transactions, pursue repayment, seek emergency court relief, or bring claims on behalf of the company.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <PartnerTakingMoneyArticle />,
+  },
+  {
+    slug: "what-happens-to-a-texas-llc-when-a-member-dies",
+    category: "Governance",
+    title: "What Happens to a Texas LLC When a Member Dies?",
+    excerpt:
+      "When a member of a Texas LLC dies, the company does not necessarily dissolve, and the deceased member's heir does not automatically become a full voting member.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <MemberDiesArticle />,
+  },
+  {
+    slug: "what-to-review-before-signing-a-commercial-lease-in-texas",
+    category: "Contract Strategy",
+    title: "What Texas Business Owners Should Review Before Signing a Commercial Lease",
+    excerpt:
+      "Before signing a commercial lease in Texas, a business owner should understand more than the monthly rent.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <CommercialLeaseReviewArticle />,
+  },
+  {
+    slug: "you-paid-a-developer-to-build-your-app",
+    category: "Intellectual Property",
+    title: "You Paid a Developer to Build Your App—but Does Your Company Own It?",
+    excerpt:
+      "Paying a developer to build an application does not necessarily mean your company owns the resulting code.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <DeveloperOwnershipArticle />,
+  },
+  {
+    slug: "personal-guarantee-for-a-business-loan",
+    category: "Contract Strategy",
+    title: "What Happens When You Sign a Personal Guarantee for a Business Loan?",
+    excerpt:
+      "A personal guarantee makes you individually responsible for a debt owed by your company.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <PersonalGuaranteeArticle />,
+  },
+  {
+    slug: "are-oral-email-and-text-agreements-enforceable-in-texas",
+    category: "Contract Strategy",
+    title: "Are Oral, Email, and Text Agreements Enforceable in Texas?",
+    excerpt:
+      "Yes. An oral agreement, email exchange, or series of text messages can create an enforceable contract in Texas.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <OralWrittenContractsArticle />,
+  },
+  {
+    slug: "when-can-a-texas-llc-owner-be-held-personally-liable",
+    category: "Governance",
+    title: "When Can a Texas LLC Owner Be Held Personally Liable?",
+    excerpt:
+      "A Texas LLC generally protects its members and managers from personal responsibility for the company's debts and obligations.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <LLCOwnerPersonalLiabilityArticle />,
+  },
+  {
+    slug: "can-a-business-get-out-of-a-commercial-lease-in-texas",
+    category: "Contract Strategy",
+    title: "Can a Business Get Out of a Commercial Lease in Texas?",
+    excerpt:
+      "A Texas business may be able to exit a commercial lease, but closing the location or returning the keys does not automatically end the lease.",
+    date: "September 2026",
+    readTime: "6 min read",
+    subtitle: "",
+    sections: [],
+    content: <ExitCommercialLeaseArticle />,
+  },
+  {
+    slug: "client-wont-pay-invoice-texas",
+    category: "Contract Strategy",
+    title: "A Client Won't Pay Your Invoice in Texas—What Can Your Business Do?",
+    excerpt:
+      "An unpaid invoice does not automatically mean your business should file a lawsuit.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <ClientWontPayArticle />,
+  },
+  {
+    slug: "can-my-business-partner-make-decisions-without-me",
+    category: "Governance",
+    title: "Can My Business Partner Make Decisions Without Me?",
+    excerpt:
+      "Yes. A business partner may be able to make certain decisions without your approval, even if you both own the company.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <PartnerDecisionsWithoutMeArticle />,
+  },
+  {
+    slug: "how-can-a-member-leave-a-texas-llc",
+    category: "Governance",
+    title: "How Can a Member Leave a Texas LLC—and Can They Force a Buyout?",
+    excerpt:
+      "A member of a Texas LLC cannot always resign, surrender their ownership, and require the company to pay them for it.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <MemberLeaveLLCArticle />,
+  },
+  {
+    slug: "can-my-business-partner-force-me-out-of-a-texas-llc",
+    category: "Governance",
+    title: "Can My Business Partner Force Me Out of a Texas LLC?",
+    excerpt:
+      "Your business partner may be able to remove you from employment, management, or daily operations. That does not necessarily mean they can take away your ownership.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <PartnerForceMeOutArticle />,
+  },
+  {
+    slug: "how-to-remove-a-member-from-a-texas-llc",
+    category: "Governance",
+    title: "How to Remove a Member From a Texas LLC—Even If They Refuse to Leave",
+    excerpt:
+      "A Texas LLC cannot ordinarily remove a member simply because the other owners want them gone.",
+    date: "September 2026",
+    readTime: "7 min read",
+    subtitle: "",
+    sections: [],
+    content: <RemoveMemberLLCArticle />,
   },
 ];
 

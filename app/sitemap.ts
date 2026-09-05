@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const articleRoutes: MetadataRoute.Sitemap = insightPosts.map((post) => {
-    const lastModified = parsePostDate(post.date);
+    const lastModified = parsePostDate(post.updatedDate) ?? parsePostDate(post.date);
     return {
       url: `${siteUrl}/insights/${post.slug}`,
       ...(lastModified ? { lastModified } : {}),
