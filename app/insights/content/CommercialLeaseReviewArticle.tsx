@@ -1,9 +1,6 @@
 export default function CommercialLeaseReviewArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Texas Business Owners Should Review Before Signing a Commercial Lease
-      </h1>
       <p className="mt-6 leading-8">
         Before signing a commercial lease in Texas, a business owner should understand more than the monthly rent.
       </p>

@@ -1,9 +1,6 @@
 export default function ClientWontPayArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        A Client Won’t Pay Your Invoice in Texas—What Can Your Business Do?
-      </h1>
       <p className="mt-6 leading-8">
         An unpaid invoice does not automatically mean your business should file a lawsuit.
       </p>

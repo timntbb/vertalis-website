@@ -3,10 +3,6 @@ import Link from "next/link";
 export default function FractionalGeneralCounselArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Exactly Is Fractional General Counsel?
-      </h1>
-
       <section className="mt-12">
         <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
           The Traditional General Counsel Role

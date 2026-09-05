@@ -3,9 +3,6 @@ import Link from "next/link";
 export default function FounderDeadlockArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        50/50 LLC Deadlock in Texas: What Happens When Neither Owner Can Decide?
-      </h1>
       <p className="mt-6 leading-8">
         A 50/50 LLC deadlock occurs when two owners with equal voting power cannot agree on a decision requiring approval from both of them.
       </p>

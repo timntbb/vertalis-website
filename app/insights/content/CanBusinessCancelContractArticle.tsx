@@ -1,9 +1,6 @@
 export default function CanBusinessCancelContractArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Can a Business Cancel a Contract After Signing It in Texas?
-      </h1>
       <p className="mt-6 leading-8">
         A Texas business generally cannot cancel a contract simply because the owner changed their mind, found a better deal, or later decided the agreement was too expensive.
       </p>

@@ -1,9 +1,6 @@
 export default function DeveloperOwnershipArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        You Paid a Developer to Build Your App—but Does Your Company Own It?
-      </h1>
       <p className="mt-6 leading-8">
         Paying a developer to build an application does not necessarily mean your company owns the resulting code.
       </p>

@@ -3,9 +3,6 @@ import Link from "next/link";
 export default function PartnerDecisionsWithoutMeArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Can My Business Partner Make Decisions Without Me?
-      </h1>
       <p className="mt-6 leading-8">
         Yes. A business partner may be able to make certain decisions without your approval—even if you both own the company.
       </p>

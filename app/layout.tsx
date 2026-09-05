@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vertalislegal.com"),
-  title: "Vertalis Legal Counsel",
-  description: "Founder-side legal counsel for modern companies.",
+  title: "Frisco Business Attorney for Growing Companies | Vertalis",
+  description:
+    "Vertalis Legal Counsel helps businesses across Frisco, McKinney, Prosper, Plano, and North Dallas with contracts, governance, ownership disputes, employment matters, financing, and intellectual property.",
   alternates: {
     canonical: "/",
   },

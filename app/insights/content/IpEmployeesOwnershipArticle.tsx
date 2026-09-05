@@ -3,10 +3,6 @@ import Link from "next/link";
 export default function IpEmployeesOwnershipArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup
-      </h1>
-
       <p className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         How startup IP ownership can unravel across founders, contractors, and employees before investors ever wire capital.
       </p>

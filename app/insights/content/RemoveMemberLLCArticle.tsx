@@ -1,9 +1,6 @@
 export default function RemoveMemberLLCArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        How to Remove a Member From a Texas LLC—Even If They Refuse to Leave
-      </h1>
       <p className="mt-6 leading-8">
         A Texas LLC cannot ordinarily remove a member simply because the other owners want them gone.
       </p>

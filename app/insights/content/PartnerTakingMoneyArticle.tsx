@@ -1,9 +1,6 @@
 export default function PartnerTakingMoneyArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Can I Do If My Business Partner Is Taking Money From the Company in Texas?
-      </h1>
       <p className="mt-6 leading-8">
         If your business partner is taking money from the company without authorization, you may be able to demand records, restrict future transactions, pursue repayment, seek emergency court relief, or bring claims on behalf of the company.
       </p>

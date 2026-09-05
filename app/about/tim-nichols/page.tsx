@@ -4,8 +4,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/app/page";
 import VertalisWord from "@/components/VertalisWord";
+import { JsonLd, buildPersonSchema } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
+  title: "Tim Nichols | Frisco Business Attorney | Vertalis",
+  description:
+    "Tim Nichols is the founder of Vertalis Legal Counsel, advising founders and growing companies on ownership, governance, and contract structure.",
   alternates: {
     canonical: "/about/tim-nichols",
   },
@@ -14,6 +18,7 @@ export const metadata: Metadata = {
 export default function TimNicholsPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-neutral-100">
+      <JsonLd data={buildPersonSchema()} />
       <Header />
 
       <section className="relative overflow-hidden py-14 md:py-16">

@@ -266,10 +266,6 @@ export const insightPosts: InsightPost[] = [
     sections: [],
     content: (
       <article className="text-neutral-300 leading-relaxed">
-        <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-          Intellectual Property Risks in Startups: Five Ways IP Quietly Breaks a Company
-        </h1>
-
         <p className="mt-4">
           Most founders think intellectual property is something you protect later.
         </p>
@@ -629,10 +625,6 @@ export const insightPosts: InsightPost[] = [
     sections: [],
     content: (
       <article className="text-neutral-300 leading-relaxed">
-        <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-          Employee vs. Independent Contractor: Structure, Not Labels
-        </h1>
-
         <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
           The Cost of Informality
         </h2>

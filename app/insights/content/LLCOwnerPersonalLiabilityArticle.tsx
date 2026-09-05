@@ -1,9 +1,6 @@
 export default function LLCOwnerPersonalLiabilityArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        When Can a Texas LLC Owner Be Held Personally Liable?
-      </h1>
       <p className="mt-6 leading-8">
         A Texas LLC generally protects its members and managers from personal responsibility for the company’s debts and obligations.
       </p>

@@ -1,9 +1,6 @@
 export default function MemberLeaveLLCArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        How Can a Member Leave a Texas LLC—and Can They Force a Buyout?
-      </h1>
       <p className="mt-6 leading-8">
         A member of a Texas LLC cannot always resign, surrender their ownership, and require the company to pay them for it.
       </p>

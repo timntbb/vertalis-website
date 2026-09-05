@@ -1,9 +1,6 @@
 export default function OralWrittenContractsArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Are Oral, Email, and Text Agreements Enforceable in Texas?
-      </h1>
       <p className="mt-6 leading-8">
         Yes. An oral agreement, email exchange, or series of text messages can create an enforceable contract in Texas.
       </p>

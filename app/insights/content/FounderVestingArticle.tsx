@@ -3,10 +3,6 @@ import Link from "next/link";
 export default function FounderVestingArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Is Vesting and Why Founders Should Implement It Early
-      </h1>
-
       <p className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         Vesting is not about distrust. It is about protecting the company and ensuring ownership reflects contribution over time.
       </p>

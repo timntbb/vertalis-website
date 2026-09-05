@@ -1,9 +1,6 @@
 export default function PersonalGuaranteeArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Happens When You Sign a Personal Guarantee for a Business Loan?
-      </h1>
       <p className="mt-6 leading-8">
         A personal guarantee makes you individually responsible for a debt owed by your company.
       </p>

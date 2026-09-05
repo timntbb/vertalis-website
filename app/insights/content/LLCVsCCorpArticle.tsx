@@ -3,10 +3,6 @@ import Link from "next/link";
 export default function LLCVsCCorpArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        LLC vs C-Corp
-      </h1>
-
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         How to Choose the Right Business Entity for Your Startup
       </h2>

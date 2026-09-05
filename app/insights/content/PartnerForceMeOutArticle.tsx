@@ -1,9 +1,6 @@
 export default function PartnerForceMeOutArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Can My Business Partner Force Me Out of a Texas LLC?
-      </h1>
       <p className="mt-6 leading-8">
         Your business partner may be able to remove you from employment, management, or daily operations.
       </p>

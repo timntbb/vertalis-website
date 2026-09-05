@@ -1,9 +1,6 @@
 export default function ExitCommercialLeaseArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        Can a Business Get Out of a Commercial Lease in Texas?
-      </h1>
       <p className="mt-6 leading-8">
         A Texas business may be able to exit a commercial lease, but closing the location or returning the keys does not automatically end the lease.
       </p>

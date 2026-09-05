@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-insight-h1.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:h1": "node scripts/check-insight-h1.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.35.0",

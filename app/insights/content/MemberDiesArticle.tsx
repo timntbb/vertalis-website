@@ -1,9 +1,6 @@
 export default function MemberDiesArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
-      <h1 className="text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-        What Happens to a Texas LLC When a Member Dies?
-      </h1>
       <p className="mt-6 leading-8">
         When a member of a Texas LLC dies, the company does not necessarily dissolve, and the deceased member’s heir does not automatically become a full voting member.
       </p>

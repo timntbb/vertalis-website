@@ -8,6 +8,7 @@ import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout"
 import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
 import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
+import { JsonLd, buildOrganizationSchema } from "@/components/StructuredData";
 import {
   ArrowRight,
   Check,
@@ -562,6 +563,7 @@ export function Header() {
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden text-neutral-100" style={{ backgroundColor: "#0a0a0c" }} id="pageRoot">
+      <JsonLd data={buildOrganizationSchema()} />
       <Header />
 
       <section className="relative isolate overflow-hidden" id="top">
