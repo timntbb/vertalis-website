@@ -86,7 +86,7 @@ export default function TimNicholsPage() {
               </p>
             </div>
 
-            <div className="mt-9 grid gap-5 md:grid-cols-2">
+            <div className="mt-9 grid items-start gap-5 md:grid-cols-2">
               <ExpandableCard title="Approach">
                 <p>Strategic, direct, and business-minded.</p>
                 <p>
