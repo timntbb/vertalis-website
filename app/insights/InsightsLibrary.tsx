@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Search, X } from "lucide-react";
 import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
+import VertalisTextBox from "@/components/VertalisTextBox";
 import {
   getDisplayCategoryLabel,
   insightCategories,
@@ -364,40 +365,8 @@ export default function InsightsLibrary({ posts }: InsightsLibraryProps) {
           )}
         </section>
 
-        <section
-          aria-labelledby="insights-cta-heading"
-          className="relative mt-16 overflow-hidden border border-white/12 bg-[#101114] px-7 py-9 md:mt-20 md:px-11 md:py-12"
-        >
-          <div className="absolute inset-y-0 left-0 w-1 bg-[#c06020]" aria-hidden="true" />
-          <div className="relative max-w-4xl">
-            <h2
-              id="insights-cta-heading"
-              className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-4xl"
-            >
-              A legal question usually starts as a business decision.
-            </h2>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-neutral-300 md:text-lg">
-              If you’re working through a contract, ownership issue, employee
-              decision, or another point of legal risk, let’s talk through what
-              comes next.
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/#contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[linear-gradient(180deg,#d8844b,#b95518)] px-6 py-3 text-sm font-bold text-white outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#f3a36b] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101114] motion-reduce:transform-none motion-reduce:transition-none"
-              >
-                Schedule a Consultation
-                <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </Link>
-              <a
-                href="mailto:tim@vertalislegal.com"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-white/20 px-6 py-3 text-sm font-semibold text-white outline-none transition-colors hover:border-white/35 hover:bg-white/[0.04] focus-visible:ring-2 focus-visible:ring-[#d77938] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101114]"
-              >
-                Send Us a Question
-                <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
+        <section aria-label="Contact Vertalis" className="mt-16 md:mt-20">
+          <VertalisTextBox />
         </section>
       </div>
 
