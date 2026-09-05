@@ -87,15 +87,23 @@ export default function TimNicholsPage() {
             </div>
 
             <div className="mt-9 grid items-start gap-5 md:grid-cols-2">
-              <ExpandableCard title="Approach">
-                <p>Strategic, direct, and business-minded.</p>
-                <p>
-                  Tim provides legal advice in plain language, with clear explanations of the available options, meaningful risks, and practical next steps. The objective is to give business owners the legal structure and judgment they need to move forward confidently—not layers of unnecessary complexity.
-                </p>
-                <p>
-                  Whether the issue involves negotiating an important contract, restructuring ownership, managing a partner dispute, protecting intellectual property, hiring employees and contractors, or preparing the company for its next stage, Vertalis focuses on legal solutions that fit how the business actually operates.
-                </p>
-              </ExpandableCard>
+              <div className="grid gap-5">
+                <ExpandableCard title="Approach">
+                  <p>Strategic, direct, and business-minded.</p>
+                  <p>
+                    Tim provides legal advice in plain language, with clear explanations of the available options, meaningful risks, and practical next steps. The objective is to give business owners the legal structure and judgment they need to move forward confidently—not layers of unnecessary complexity.
+                  </p>
+                  <p>
+                    Whether the issue involves negotiating an important contract, restructuring ownership, managing a partner dispute, protecting intellectual property, hiring employees and contractors, or preparing the company for its next stage, Vertalis focuses on legal solutions that fit how the business actually operates.
+                  </p>
+                </ExpandableCard>
+
+                <ExpandableCard title="Focus">
+                  <p>
+                    Business law, commercial contracts, operating agreements, ownership and governance, business disputes, employment and contractor agreements, intellectual property ownership, startup financing, and outside general counsel.
+                  </p>
+                </ExpandableCard>
+              </div>
 
               <ExpandableCard title="Serving Businesses Across North Texas">
                 <p>
@@ -103,12 +111,6 @@ export default function TimNicholsPage() {
                 </p>
                 <p>
                   Tim works with small businesses, entrepreneurs, founders, executives, and growing companies that need responsive legal counsel for important business decisions, ongoing legal needs, or commercial disputes.
-                </p>
-              </ExpandableCard>
-
-              <ExpandableCard title="Focus">
-                <p>
-                  Business law, commercial contracts, operating agreements, ownership and governance, business disputes, employment and contractor agreements, intellectual property ownership, startup financing, and outside general counsel.
                 </p>
               </ExpandableCard>
             </div>
