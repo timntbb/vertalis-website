@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "@/app/page";
 import VertalisWord from "@/components/VertalisWord";
 import { JsonLd, buildPersonSchema } from "@/components/StructuredData";
+import ExpandableCard from "./ExpandableCard";
 
 const title = "Tim Nichols | Frisco Business Attorney | Vertalis";
 const description =
@@ -86,35 +87,30 @@ export default function TimNicholsPage() {
             </div>
 
             <div className="mt-9 grid gap-5 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <h2 className="text-xl font-semibold tracking-[-0.02em] text-white">Approach</h2>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
-                  Strategic, direct, and business-minded.
-                </p>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
+              <ExpandableCard title="Approach">
+                <p>Strategic, direct, and business-minded.</p>
+                <p>
                   Tim provides legal advice in plain language, with clear explanations of the available options, meaningful risks, and practical next steps. The objective is to give business owners the legal structure and judgment they need to move forward confidently—not layers of unnecessary complexity.
                 </p>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
+                <p>
                   Whether the issue involves negotiating an important contract, restructuring ownership, managing a partner dispute, protecting intellectual property, hiring employees and contractors, or preparing the company for its next stage, Vertalis focuses on legal solutions that fit how the business actually operates.
                 </p>
-              </div>
+              </ExpandableCard>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <h2 className="text-xl font-semibold tracking-[-0.02em] text-white">Serving Businesses Across North Texas</h2>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
+              <ExpandableCard title="Serving Businesses Across North Texas">
+                <p>
                   Vertalis is based in the Frisco area and serves businesses throughout Frisco, McKinney, Prosper, Plano, North Dallas, and the broader Dallas–Fort Worth region.
                 </p>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
+                <p>
                   Tim works with small businesses, entrepreneurs, founders, executives, and growing companies that need responsive legal counsel for important business decisions, ongoing legal needs, or commercial disputes.
                 </p>
-              </div>
+              </ExpandableCard>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <h2 className="text-xl font-semibold tracking-[-0.02em] text-white">Focus</h2>
-                <p className="mt-3 text-sm leading-7 text-neutral-300">
+              <ExpandableCard title="Focus">
+                <p>
                   Business law, commercial contracts, operating agreements, ownership and governance, business disputes, employment and contractor agreements, intellectual property ownership, startup financing, and outside general counsel.
                 </p>
-              </div>
+              </ExpandableCard>
             </div>
 
             <div className="mt-9">
