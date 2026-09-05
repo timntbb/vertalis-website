@@ -262,23 +262,23 @@ export default function InsightsLibrary({ posts }: InsightsLibraryProps) {
 
             <Link
               href={`/insights/${featuredPost.slug}`}
-              className="group grid min-w-0 overflow-hidden rounded-sm border border-white/12 bg-[#101114] outline-none transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/25 hover:bg-[#121318] focus-visible:ring-2 focus-visible:ring-[#d77938] motion-reduce:transform-none motion-reduce:transition-none lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]"
+              className="group grid min-w-0 overflow-hidden rounded-sm border border-white/12 bg-[#101114] outline-none transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/25 hover:bg-[#121318] focus-visible:ring-2 focus-visible:ring-[#d77938] motion-reduce:transform-none motion-reduce:transition-none lg:grid-cols-[minmax(130px,0.24fr)_minmax(0,1.76fr)]"
             >
-              <div className="relative min-h-56 overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_25%_30%,rgba(192,96,32,0.18),transparent_30%),linear-gradient(145deg,#15161a,#090a0c)] lg:min-h-[350px] lg:border-b-0 lg:border-r">
+              <div className="relative min-h-48 overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_25%_30%,rgba(192,96,32,0.2),transparent_34%),linear-gradient(145deg,#15161a,#090a0c)] lg:min-h-[390px] lg:border-b-0 lg:border-r">
                 <HeroNetworkCanvas className="absolute inset-0 h-full w-full opacity-70" />
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,transparent_30%,rgba(8,9,11,0.74))]" />
                 <div className="pointer-events-none absolute bottom-6 left-6 h-px w-24 bg-[#c06020]" />
                 <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-px bg-[#c06020]" />
               </div>
 
-              <div className="flex min-w-0 flex-col p-6 md:p-9 lg:p-11">
+              <div className="flex min-w-0 flex-col justify-center p-6 md:p-9 lg:p-12 xl:px-14">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d77938]">
                   {getDisplayCategoryLabel(featuredPost.displayCategory)}
                 </p>
-                <h3 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.3vw,3rem)] font-semibold leading-[1.02] tracking-[-0.045em] text-white">
+                <h3 className="mt-4 max-w-4xl text-[clamp(2rem,4.2vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-white">
                   {featuredPost.title}
                 </h3>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-300">
+                <p className="mt-6 max-w-3xl text-base leading-7 text-neutral-300 md:text-lg md:leading-8">
                   {featuredPost.excerpt}
                 </p>
                 <div className="mt-7">
