@@ -12,6 +12,7 @@ function PixelTermsHeader() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/#about" },
+    { label: "Services", href: "/services" },
     { label: "Insights", href: "/insights" },
     { label: "Contact", href: "/#contact" },
     { label: "Attorney", href: "/about/tim-nichols" },

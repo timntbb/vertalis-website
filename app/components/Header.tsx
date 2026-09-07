@@ -17,7 +17,7 @@ const vertalisTitleScheme: React.CSSProperties = {
 
 export function Header() {
   const navItems: Array<[string, string]> = [
-    ["Services", "#services"],
+    ["Services", "/services"],
     ["Packages", "#packages"],
     ["Insights", "/insights"],
     ["FAQ", "#faq"],

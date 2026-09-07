@@ -364,6 +364,7 @@ export function Header() {
   const navItems: Array<[string, string]> = [
     ["Home", "#top"],
     ["About", "#about"],
+    ["Services", "/services"],
     ["Insights", "/insights"],
     ["Contact", "#contact"],
     ["Attorney", "/about/tim-nichols"],

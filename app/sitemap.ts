@@ -18,6 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/about/investors` },
     { url: `${siteUrl}/about/employees` },
     { url: `${siteUrl}/about/ip` },
+    { url: `${siteUrl}/services` },
+    ...[
+      "company-ownership",
+      "contracts-transactions",
+      "people-operations",
+      "growth-capital",
+      "disputes-litigation",
+    ].map((slug) => ({ url: `${siteUrl}/services/${slug}` })),
     { url: `${siteUrl}/insights` },
     { url: `${siteUrl}/terms-of-use` },
   ];
