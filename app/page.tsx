@@ -9,6 +9,7 @@ import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
 import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
 import { JsonLd, buildOrganizationSchema } from "@/components/StructuredData";
+import { practices } from "./services/data";
 import {
   ArrowRight,
   Check,
@@ -315,6 +316,74 @@ function CapabilitiesNavItem() {
   );
 }
 
+function ServicesNavItem() {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [isFocusedWithin, setIsFocusedWithin] = React.useState(false);
+
+  const showMenu = isHovered || isFocusedWithin;
+
+  const items: Array<[string, string]> = [
+    ["Company & Ownership", "/services/company-ownership"],
+    ["Contracts & Transactions", "/services/contracts-transactions"],
+    ["People & Operations", "/services/people-operations"],
+    ["Growth & Capital", "/services/growth-capital"],
+    ["Disputes & Litigation", "/services/disputes-litigation"],
+  ];
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsFocusedWithin(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+          setIsFocusedWithin(false);
+        }
+      }}
+    >
+      <a
+        href="/services"
+        aria-haspopup="menu"
+        className={cx(
+          "relative focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15",
+          showMenu
+            ? "text-[15px] font-medium tracking-[0.08em] text-white hover:text-[#e26a2c] transition-all duration-300 ease-out"
+            : "text-[15px] font-medium tracking-[0.08em] text-white/70 hover:text-[#e26a2c] hover:-translate-y-[1px] transition-all duration-300 ease-out"
+        )}
+      >
+        Services
+        {showMenu ? (
+          <div className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-[#e26a2c] to-[#c7521e] shadow-[0_0_8px_rgba(226,106,44,0.5)]"></div>
+        ) : null}
+      </a>
+
+      <div
+        className={cx(
+          "absolute left-1/2 top-full z-50 mt-0 w-64 -translate-x-1/2 pt-2",
+          "transition-all duration-150",
+          showMenu ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+        )}
+      >
+        <div className="rounded-2xl border border-white/12 bg-[linear-gradient(180deg,rgba(18,18,22,0.94),rgba(10,10,13,0.96))] shadow-[0_20px_55px_-32px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+          <div className="p-2" role="menu" aria-label="Services">
+            {items.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                role="menuitem"
+                className="block rounded-xl px-3 py-2.5 text-[15px] font-medium tracking-[0.04em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c] hover:[text-shadow:0_0_12px_rgba(226,106,44,0.38)] focus:outline-none focus-visible:text-[#e26a2c] focus-visible:[text-shadow:0_0_12px_rgba(226,106,44,0.38)]"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Section({
   id,
   eyebrow,
@@ -360,6 +429,7 @@ export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = React.useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
   const navItems: Array<[string, string]> = [
     ["Home", "#top"],
@@ -394,10 +464,19 @@ export function Header() {
     ["Intellectual Property", "/about/ip"],
   ];
 
+  const mobileServiceLinks: Array<[string, string]> = [
+    ["Company & Ownership", "/services/company-ownership"],
+    ["Contracts & Transactions", "/services/contracts-transactions"],
+    ["People & Operations", "/services/people-operations"],
+    ["Growth & Capital", "/services/growth-capital"],
+    ["Disputes & Litigation", "/services/disputes-litigation"],
+  ];
+
   const onMobileLinkClick = (href: string): React.MouseEventHandler<HTMLAnchorElement> => {
     return (e) => {
       setMobileOpen(false);
       setMobileCapabilitiesOpen(false);
+      setMobileServicesOpen(false);
 
       if (!href.startsWith("#")) return;
       if (pathname !== "/") return;
@@ -465,9 +544,13 @@ export function Header() {
             className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
             style={{ marginLeft: navOffset }}
           >
-            {navItems.map(([label, href]) => (
-              <NavLink key={href} href={href} label={label} />
-            ))}
+            {navItems.map(([label, href]) =>
+              label === "Services" ? (
+                <ServicesNavItem key={href} />
+              ) : (
+                <NavLink key={href} href={href} label={label} />
+              )
+            )}
             <CapabilitiesNavItem />
           </nav>
 
@@ -506,16 +589,57 @@ export function Header() {
             )}
           >
             <nav className="grid gap-1">
-              {mobileLinks.map(([label, href]) => (
-                <a
-                  key={`mobile-${href}`}
-                  href={toHref(href)}
-                  onClick={onMobileLinkClick(href)}
-                  className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
-                >
-                  {label}
-                </a>
-              ))}
+              {mobileLinks.map(([label, href]) =>
+                label === "Services" ? null : (
+                  <a
+                    key={`mobile-${href}`}
+                    href={toHref(href)}
+                    onClick={onMobileLinkClick(href)}
+                    className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    {label}
+                  </a>
+                )
+              )}
+
+              <div className="rounded-lg border border-white/10 bg-white/[0.02]">
+                <div className="flex items-center justify-between">
+                  <a
+                    href={toHref("/services")}
+                    onClick={onMobileLinkClick("/services")}
+                    className="flex-1 rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    Services
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((prev) => !prev)}
+                    aria-label="Show service links"
+                    aria-expanded={mobileServicesOpen}
+                    className="rounded-lg px-3 py-2.5 text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    <ArrowRight
+                      className={cx(
+                        "h-4 w-4 transition-transform duration-200",
+                        mobileServicesOpen ? "rotate-90" : "rotate-0"
+                      )}
+                    />
+                  </button>
+                </div>
+
+                <div className={cx("grid gap-1 px-2 pb-2", mobileServicesOpen ? "block" : "hidden")}>
+                  {mobileServiceLinks.map(([label, href]) => (
+                    <a
+                      key={`mobile-service-${href}`}
+                      href={toHref(href)}
+                      onClick={onMobileLinkClick(href)}
+                      className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[0.04em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c]"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
 
               <div className="rounded-lg border border-white/10 bg-white/[0.02]">
                 <button
@@ -628,6 +752,26 @@ export default function Home() {
         <div className="mx-auto w-full max-w-[1320px] px-6">
           <VertalisNeuralNetworkAbout />
         </div>
+      </section>
+
+      <section id="services" className="scroll-mt-28 border-y border-white/[0.07] py-12 md:scroll-mt-32 md:py-16">
+        <Container>
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">Business Legal Services</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">The work Vertalis performs for growing companies.</h2>
+            <p className="mt-4 text-base leading-7 text-neutral-300">The neural network above describes how Vertalis thinks about a business. These five service areas describe the legal work Vertalis performs for companies throughout North Texas, including ownership, contracts, employment, financing, transactions, and commercial disputes.</p>
+          </div>
+          <div className="mt-8 grid gap-3 md:grid-cols-5">
+            {practices.map((practice) => (
+              <Link key={practice.slug} href={`/services/${practice.slug}`} className="group rounded-2xl border border-white/10 bg-white/[0.025] p-4 transition hover:-translate-y-0.5 hover:border-[#d66f24]/50 hover:bg-white/[0.05]">
+                <h3 className="text-base font-semibold leading-6 text-white group-hover:text-[#e26a2c]">{practice.title}</h3>
+                <p className="mt-2 text-xs leading-5 text-neutral-400">{practice.shortDescription}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#d66f24]">Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+              </Link>
+            ))}
+          </div>
+          <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">View All Services <ArrowRight className="h-4 w-4" /></Link>
+        </Container>
       </section>
 
       <section className="py-8 md:py-10">

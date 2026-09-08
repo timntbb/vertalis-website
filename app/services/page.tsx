@@ -7,7 +7,7 @@ import { practices } from "./data";
 
 const title = "Business Legal Services | Vertalis Legal Counsel";
 const description =
-  "Counsel for the ownership, contracts, people, growth, capital, and disputes behind a growing business.";
+  "Business legal services for growing companies in Frisco, McKinney, Prosper, Plano, North Dallas, and throughout the Dallas-Fort Worth area.";
 
 export const metadata: Metadata = {
   title,
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ServicesPage() {
@@ -51,11 +52,11 @@ export default function ServicesPage() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">How we help</p>
             <h1 className="mt-3 max-w-3xl text-[2.15rem] font-bold leading-[1.02] tracking-[-0.05em] text-[#f4f1ed] sm:text-5xl">
-              Counsel for the legal issues behind a <span className="text-[#d66f24]">growing business.</span>
+              Business legal services for <span className="text-[#d66f24]">growing companies.</span>
             </h1>
           </div>
           <p className="max-w-lg text-sm font-medium leading-6 text-neutral-400 md:text-[0.95rem]">
-            From ownership and contracts to growth and disputes, Vertalis helps businesses navigate the legal decisions that shape what comes next.
+            Vertalis advises companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW on ownership, contracts, employment, financing, transactions, and commercial disputes.
           </p>
         </div>
       </section>

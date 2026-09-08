@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Home } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 import VertalisWord from "@/components/VertalisWord";
 import VertalisTextBox from "@/components/VertalisTextBox";
 import { getArticleAuthor, getArticlePublisher } from "@/components/StructuredData";
 import { Header } from "../../page";
 import { getInsightPost, insightPosts } from "../data";
+import { practices } from "../../services/data";
 
 type InsightPostPageProps = {
   params: Promise<{
@@ -106,6 +107,18 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     author: getArticleAuthor(),
     publisher: getArticlePublisher(),
   };
+  const relatedServiceSlugs = post.category === "Contract Strategy"
+    ? ["contracts-transactions"]
+    : post.category === "Intellectual Property"
+      ? ["people-operations", "contracts-transactions"]
+      : post.category === "Capital Strategy"
+        ? ["growth-capital"]
+        : post.category === "Governance"
+          ? ["company-ownership", "disputes-litigation"]
+          : ["company-ownership"];
+  const relatedServices = relatedServiceSlugs
+    .map((slug) => practices.find((practice) => practice.slug === slug))
+    .filter((practice): practice is (typeof practices)[number] => Boolean(practice));
 
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-white">
@@ -254,6 +267,20 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
           </div>
         </section>
       )}
+
+      <section className="border-y border-white/[0.07] py-10 md:py-12" aria-labelledby="related-services-heading">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d66f24]">Related Legal Services</p>
+          <h2 id="related-services-heading" className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-white md:text-3xl">Practical counsel for the next step.</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {relatedServices.map((service) => (
+              <Link key={service.slug} href={`/services/${service.slug}`} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-neutral-200 transition hover:border-[#d66f24]/50 hover:text-[#e26a2c]">
+                {service.title} <ArrowRight className="h-4 w-4" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="contact" className="py-10 md:py-14">
         <div className="mx-auto w-full max-w-7xl px-6">
