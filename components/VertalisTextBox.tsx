@@ -146,38 +146,45 @@ export default function VertalisTextBox() {
           </div>
 
           <div className="mt-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/82">
-            Navigate
+            Legal Services
           </div>
 
           <nav className="mt-4 space-y-2.5 text-[1.05rem] text-white/78">
             <Link
-              href="/"
+              href="/services/company-ownership"
               className="flex items-center justify-between border-b border-white/6 pb-3 transition-colors hover:text-white"
             >
-              <span>Home</span>
+              <span>Company &amp; Ownership</span>
               <ArrowRight className="h-4 w-4 text-white/36" />
             </Link>
             <Link
-              href="/about/tim-nichols"
+              href="/services/contracts-transactions"
               className="flex items-center justify-between border-b border-white/6 pb-3 transition-colors hover:text-white"
             >
-              <span>About</span>
+              <span>Contracts &amp; Transactions</span>
               <ArrowRight className="h-4 w-4 text-white/36" />
             </Link>
             <Link
-              href="/insights"
+              href="/services/people-operations"
               className="flex items-center justify-between border-b border-white/6 pb-3 transition-colors hover:text-white"
             >
-              <span>Insights</span>
+              <span>People &amp; Operations</span>
               <ArrowRight className="h-4 w-4 text-white/36" />
             </Link>
-            <a
-              href="mailto:tim@vertalislegal.com"
+            <Link
+              href="/services/growth-capital"
               className="flex items-center justify-between border-b border-white/6 pb-3 transition-colors hover:text-white"
             >
-              <span>Contact</span>
+              <span>Growth &amp; Capital</span>
               <ArrowRight className="h-4 w-4 text-white/36" />
-            </a>
+            </Link>
+            <Link
+              href="/services/disputes-litigation"
+              className="flex items-center justify-between border-b border-white/6 pb-3 transition-colors hover:text-white"
+            >
+              <span>Disputes &amp; Risk</span>
+              <ArrowRight className="h-4 w-4 text-white/36" />
+            </Link>
           </nav>
         </aside>
 
