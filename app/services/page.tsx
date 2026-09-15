@@ -121,7 +121,7 @@ export default function ServicesPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d66f24]">A clearer next step</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">Not sure where your issue fits?</h2>
           <p className="mt-3 text-sm leading-6 text-neutral-400">Start with the business problem. Vertalis can help identify the legal path forward.</p>
-          <Link href="/#contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(180deg,#d2844e_0%,#bf6017_100%)] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:brightness-110">
+          <Link href="/consultation" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(180deg,#d2844e_0%,#bf6017_100%)] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:brightness-110">
             Let’s talk <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

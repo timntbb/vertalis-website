@@ -556,7 +556,7 @@ export function Header() {
 
           <div className="ml-2 hidden shrink-0 lg:block">
             <Button
-              href="#contact"
+              href="/consultation"
               className="ml-6 rounded-full px-6 py-2 text-sm tracking-[0.12em]"
             >
               Let’s talk
@@ -673,7 +673,7 @@ export function Header() {
             </nav>
 
             <div className="mt-4">
-              <Button href="#contact" className="w-full">
+              <Button href="/consultation" className="w-full">
                 Let’s talk
               </Button>
             </div>
@@ -726,7 +726,7 @@ export default function Home() {
 
                 <div className="mt-9">
                   <a
-                    href="#contact"
+                    href="/consultation"
                     className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-[rgba(214,111,36,.60)] bg-[rgba(214,111,36,.12)] px-7 text-[15px] font-semibold text-white backdrop-blur-[8px] transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-[rgba(214,111,36,.20)] hover:border-[rgba(214,111,36,.90)]"
                   >
                     Schedule a Consultation
@@ -836,7 +836,7 @@ export default function Home() {
 
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Button href="/about/tim-nichols">Meet Tim Nichols</Button>
-                  <Button href="#contact" variant="secondary">Start the conversation</Button>
+                  <Button href="/consultation" variant="secondary">Start the conversation</Button>
                 </div>
               </div>
             </div>

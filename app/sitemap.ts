@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/about/employees` },
     { url: `${siteUrl}/about/ip` },
     { url: `${siteUrl}/services` },
+    { url: `${siteUrl}/consultation` },
     ...[
       "company-ownership",
       "contracts-transactions",

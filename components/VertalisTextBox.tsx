@@ -197,14 +197,13 @@ export default function VertalisTextBox() {
                 </p>
 
                 <div className="mt-6">
-                  <button
-                    type="button"
-                    onClick={() => setIsOpen(true)}
+                  <Link
+                    href="/consultation"
                     className="inline-flex items-center gap-4 rounded-[24px] bg-gradient-to-b from-[#de8a46] to-[#c06020] px-9 py-5 text-[1.05rem] font-semibold text-white shadow-[0_14px_34px_rgba(192,96,32,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(192,96,32,0.36)]"
                   >
                     Schedule a Consultation
                     <span>→</span>
-                  </button>
+                  </Link>
                 </div>
 
                 <p className="mt-6 max-w-3xl text-[0.84rem] md:text-[0.92rem] leading-[1.68] text-white/46">

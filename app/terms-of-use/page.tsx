@@ -219,7 +219,7 @@ function PixelTermsHeader() {
             {/* RIGHT: CTA */}
             <div className="hidden lg:block" style={{ marginRight: "-75px" }}>
               <Link
-                href="/#contact"
+                href="/consultation"
                 style={{
                   fontFamily: "'Press Start 2P', monospace",
                   fontSize: "0.65rem",
@@ -280,7 +280,7 @@ function PixelTermsHeader() {
             ) : null}
 
             <Link
-              href="/#contact"
+              href="/consultation"
               className="inline-flex items-center justify-center border border-[#f3a261]/60 bg-[#c06020] px-5 py-2 font-mono text-[0.66rem] font-bold uppercase tracking-[0.18em] text-black shadow-[3px_3px_0_0_#5a2b11] transition-colors duration-150 hover:bg-[#da7b3b]"
             >
               Let&apos;s talk

@@ -11,6 +11,7 @@
     "check:h1": "node scripts/check-insight-h1.mjs"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "framer-motion": "^12.35.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.577.0",
