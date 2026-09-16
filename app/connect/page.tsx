@@ -1,16 +1,13 @@
-export const metadata = {
-  title: "Connect | Vertalis Legal",
-  description: "Connect with Vertalis Legal.",
+import type { Metadata } from "next";
+import ConnectClient from "./ConnectClient";
+
+export const metadata: Metadata = {
+  title: "Tim Nichols | Vertalis Legal Counsel",
+  description:
+    "Connect with Tim Nichols, attorney and founder of Vertalis Legal Counsel.",
+  robots: { index: false, follow: false },
 };
 
 export default function ConnectPage() {
-  return (
-    <main className="mx-auto max-w-3xl px-6 py-24">
-      <h1 className="text-4xl font-semibold tracking-tight">Connect</h1>
-      <p className="mt-6 text-lg text-neutral-600">
-        This page is coming soon. Check back shortly for ways to connect with
-        Vertalis Legal.
-      </p>
-    </main>
-  );
+  return <ConnectClient />;
 }
