@@ -208,7 +208,7 @@ export default function VertalisTextBox() {
                     href="/consultation"
                     className="inline-flex items-center gap-4 rounded-[24px] bg-gradient-to-b from-[#de8a46] to-[#c06020] px-9 py-5 text-[1.05rem] font-semibold text-white shadow-[0_14px_34px_rgba(192,96,32,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(192,96,32,0.36)]"
                   >
-                    Schedule a Consultation
+                    Schedule a Free Consultation
                     <span>→</span>
                   </Link>
                 </div>
@@ -328,7 +328,7 @@ export default function VertalisTextBox() {
 
                   <div className="flex flex-col gap-4 pt-1 md:flex-row md:items-center md:justify-between">
                     <p className="max-w-2xl text-sm leading-7 text-white/40">
-                      No pressure, no commitment. If it makes sense, we’ll go
+                      The consultation is free. No pressure, no commitment. If it makes sense, we’ll go
                       deeper. If not, you’ll still leave with clarity.
                     </p>
 
