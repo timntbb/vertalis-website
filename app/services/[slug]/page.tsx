@@ -103,7 +103,7 @@ export default async function PracticePage({ params }: PageProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d66f24]">Common matters</p>
             <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-3xl">Practical counsel for the issues that move the business.</h2>
             <Link href="/consultation" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">
-              Discuss your situation <ArrowRight className="h-4 w-4" />
+              Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
@@ -156,7 +156,7 @@ export default async function PracticePage({ params }: PageProps) {
             <section className="border-t border-white/10 py-10 text-center" aria-labelledby="consultation-heading">
               <h2 id="consultation-heading" className="text-2xl font-semibold tracking-[-0.035em] text-white md:text-3xl">Ready to discuss your business?</h2>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-neutral-400">Talk with Vertalis about the legal issue in front of your company and the next practical step.</p>
-              <Link href="/consultation" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(180deg,#d2844e_0%,#bf6017_100%)] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:brightness-110">Discuss Your Business <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/consultation" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(180deg,#d2844e_0%,#bf6017_100%)] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:brightness-110">Schedule a Free Consultation <ArrowRight className="h-4 w-4" /></Link>
             </section>
 
             <nav className="mt-8 flex flex-col justify-between gap-4 border-t border-white/[0.07] pt-6 text-sm sm:flex-row" aria-label="Other practices">
