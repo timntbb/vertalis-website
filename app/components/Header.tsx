@@ -65,7 +65,7 @@ export function Header() {
               href="#contact"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white transition duration-200 hover:bg-white/[0.08]"
             >
-              Book a consult
+              Free consultation
             </a>
           </div>
         </div>

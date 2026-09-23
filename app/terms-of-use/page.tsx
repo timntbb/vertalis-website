@@ -227,7 +227,7 @@ function PixelTermsHeader() {
                 }}
                 className="bg-[#c06020] text-black px-6 py-2 border border-[#f3a261]/60 shadow-[3px_3px_0_#5a2b11] hover:translate-y-[-1px] hover:shadow-[4px_4px_0_#6b3212] transition-all"
               >
-                LET&apos;S TALK
+                FREE CONSULTATION
               </Link>
             </div>
           </div>
@@ -283,7 +283,7 @@ function PixelTermsHeader() {
               href="/consultation"
               className="inline-flex items-center justify-center border border-[#f3a261]/60 bg-[#c06020] px-5 py-2 font-mono text-[0.66rem] font-bold uppercase tracking-[0.18em] text-black shadow-[3px_3px_0_0_#5a2b11] transition-colors duration-150 hover:bg-[#da7b3b]"
             >
-              Let&apos;s talk
+              Free consultation
             </Link>
           </div>
         </div>
