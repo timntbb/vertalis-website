@@ -557,7 +557,7 @@ export function Header() {
           <div className="ml-2 hidden shrink-0 lg:block">
             <Button
               href="/consultation"
-              className="ml-6 rounded-full px-6 py-2 text-sm tracking-[0.12em]"
+              className="rounded-full px-4 py-2 text-[12px] tracking-[0.08em] xl:px-5 xl:text-[13px]"
             >
               Free Consultation
             </Button>
