@@ -554,7 +554,7 @@ export function Header() {
             <CapabilitiesNavItem />
           </nav>
 
-          <div className="relative left-7 hidden shrink-0 lg:block xl:left-10">
+          <div className="relative left-[78px] hidden shrink-0 lg:block xl:left-[90px]">
             <Button
               href="/consultation"
               className="rounded-full px-6 py-2 text-sm tracking-[0.12em]"
