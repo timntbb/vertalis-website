@@ -22,6 +22,7 @@ import PartnerForceMeOutArticle from "./content/PartnerForceMeOutArticle";
 import RemoveMemberLLCArticle from "./content/RemoveMemberLLCArticle";
 import TexasSeriesLLCArticle from "./content/TexasSeriesLLCArticle";
 import SeriesVsSeparateLLCsTexasArticle from "./content/SeriesVsSeparateLLCsTexasArticle";
+import VeteranOwnedBusinessTexasArticle from "./content/VeteranOwnedBusinessTexasArticle";
 
 export type InsightPost = {
   slug: string;
@@ -1043,6 +1044,23 @@ export const insightPosts: InsightPost[] = [
     sections: [],
     content: <SeriesVsSeparateLLCsTexasArticle />,
   },
+  {
+    slug: "veteran-owned-business-texas-legal-guide",
+    category: "Formation & Ownership",
+    title: "Veteran-Owned Businesses in Texas: Building the Legal Foundation Behind the Business",
+    excerpt:
+      "A practical legal guide for veteran entrepreneurs on Texas business formation, ownership, operating agreements, VetCert, contracts, and building a company for long-term growth.",
+    seoTitle: "Veteran-Owned Business Lawyer Texas | Legal Guide for Veteran Entrepreneurs",
+    seoDescription:
+      "Texas veteran business owners have unique legal considerations. Learn about LLC formation, ownership, operating agreements, VetCert, contracts, and protecting a veteran-owned business.",
+    date: "October 2026",
+    readTime: "8 min read",
+    subtitle:
+      "What veteran entrepreneurs should know about ownership, control, certification, contracts, and the legal structure behind a growing business.",
+    sections: [],
+    content: <VeteranOwnedBusinessTexasArticle />,
+  },
+
 ];
 
 export function getInsightPost(slug: string) {
