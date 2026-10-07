@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1456" height="1024" viewBox="0 0 1456 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171b1e"/>
+      <stop offset="1" stop-color="#080a0c"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#302018"/>
+      <stop offset="1" stop-color="#241811"/>
+    </linearGradient>
+  </defs>
+  <rect width="1456" height="1024" fill="url(#bg)"/>
+  <g opacity=".08" transform="translate(1130 40) scale(2.3)">
+    <path d="M55 0 L110 20 L100 105 L55 140 L10 105 L0 20 Z" fill="none" stroke="#d66f24" stroke-width="7"/>
+    <path d="M25 35 L55 95 L88 25" fill="none" stroke="#d66f24" stroke-width="11"/>
+  </g>
+
+  <image href="https://vertalislegal.com/vertalis-shield-preview.png" x="520" y="24" width="86" height="86" preserveAspectRatio="xMidYMid meet"/>
+  <text x="625" y="66" fill="#f4f1ed" font-size="42" font-family="Georgia, serif" letter-spacing="8">VERTALIS</text>
+  <text x="628" y="96" fill="#b9bdc2" font-size="16" font-family="Arial, sans-serif" letter-spacing="8">LEGAL COUNSEL</text>
+  <line x1="480" y1="136" x2="560" y2="136" stroke="#d66f24" stroke-width="2"/>
+  <text x="580" y="143" fill="#e26a2c" font-size="17" font-family="Arial, sans-serif" letter-spacing="8">DECISION MATRIX</text>
+  <line x1="890" y1="136" x2="970" y2="136" stroke="#d66f24" stroke-width="2"/>
+
+  <text x="170" y="224" fill="#f4f1ed" font-size="61" font-family="Georgia, serif">Series LLC <tspan fill="#e26a2c">vs.</tspan> Separate LLCs in Texas</text>
+  <text x="245" y="270" fill="#aeb2b7" font-size="29" font-family="Georgia, serif">A practical comparison for multiple properties and similar assets.</text>
+
+  <rect x="58" y="312" width="1340" height="520" rx="14" fill="#111518" stroke="#7b5b43" stroke-width="1.5"/>
+  <rect x="58" y="312" width="370" height="64" rx="14" fill="#1c2226"/>
+  <rect x="428" y="312" width="490" height="64" fill="url(#head)"/>
+  <rect x="918" y="312" width="480" height="64" rx="14" fill="url(#head)"/>
+  <text x="90" y="351" fill="#b8bdc3" font-size="16" font-family="Arial, sans-serif" letter-spacing="5">CONSIDERATION</text>
+  <text x="545" y="351" fill="#f4f1ed" font-size="24" font-family="Georgia, serif" letter-spacing="3">SERIES LLC</text>
+  <text x="1035" y="351" fill="#f4f1ed" font-size="24" font-family="Georgia, serif" letter-spacing="3">SEPARATE LLCs</text>
+  <text x="476" y="351" fill="#e26a2c" font-size="32" font-family="Arial, sans-serif">▰</text>
+  <text x="972" y="351" fill="#e26a2c" font-size="30" font-family="Arial, sans-serif">▥</text>
+
+  <g stroke="#3d454a" stroke-width="1">
+    <line x1="58" y1="376" x2="1398" y2="376"/>
+    <line x1="58" y1="442" x2="1398" y2="442"/>
+    <line x1="58" y1="510" x2="1398" y2="510"/>
+    <line x1="58" y1="578" x2="1398" y2="578"/>
+    <line x1="58" y1="646" x2="1398" y2="646"/>
+    <line x1="58" y1="714" x2="1398" y2="714"/>
+    <line x1="58" y1="766" x2="1398" y2="766"/>
+    <line x1="428" y1="312" x2="428" y2="832"/>
+    <line x1="918" y1="312" x2="918" y2="832"/>
+  </g>
+
+  <g fill="#f4f1ed" font-family="Georgia, serif" font-size="22">
+    <text x="90" y="418">Upfront cost</text>
+    <text x="90" y="482">Ongoing administration</text>
+    <text x="90" y="550">Liability separation</text>
+    <text x="90" y="618">Lenders and banks</text>
+    <text x="90" y="686">Selling one property or unit</text>
+    <text x="90" y="750">Multi-state use</text>
+    <text x="90" y="802">Best fit</text>
+  </g>
+
+  <g fill="#e7e7e7" font-family="Georgia, serif" font-size="20">
+    <text x="476" y="418">Lower initial formation cost</text>
+    <text x="476" y="474">Centralized, but still requires</text><text x="476" y="500">clean separation</text>
+    <text x="476" y="542">Strong if each series is properly</text><text x="476" y="568">maintained</text>
+    <text x="476" y="618">Sometimes less familiar</text>
+    <text x="476" y="674">Possible, but the structure can be</text><text x="476" y="700">more nuanced</text>
+    <text x="476" y="750">More complex outside Texas</text>
+    <text x="476" y="792">Multiple similar Texas assets</text><text x="476" y="818">with simple ownership</text>
+
+    <text x="968" y="418">Higher if each property gets its own LLC</text>
+    <text x="968" y="474">More filings and more entity</text><text x="968" y="500">maintenance</text>
+    <text x="968" y="542">Strong and more familiar to</text><text x="968" y="568">third parties</text>
+    <text x="968" y="606">Usually easier for third parties</text><text x="968" y="632">to understand</text>
+    <text x="968" y="674">Often cleaner and more</text><text x="968" y="700">straightforward</text>
+    <text x="968" y="750">More predictable across states</text>
+    <text x="968" y="792">Complex financing, different investors,</text><text x="968" y="818">or multi-state operations</text>
+  </g>
+
+  <rect x="58" y="850" width="1340" height="105" rx="16" fill="#17120f" stroke="#e26a2c" stroke-width="2"/>
+  <text x="120" y="918" fill="#e26a2c" font-size="44" font-family="Arial, sans-serif">◌</text>
+  <line x1="220" y1="870" x2="220" y2="938" stroke="#e26a2c" stroke-width="2"/>
+  <text x="260" y="885" fill="#e26a2c" font-size="15" font-family="Arial, sans-serif" font-weight="700" letter-spacing="5">KEY TAKEAWAY</text>
+  <text x="260" y="925" fill="#f4f1ed" font-size="31" font-family="Georgia, serif">Best fit depends on your assets, financing, ownership, and growth plans.</text>
+
+  <line x1="58" y1="986" x2="460" y2="986" stroke="#9a6a44"/>
+  <line x1="1002" y1="986" x2="1398" y2="986" stroke="#9a6a44"/>
+  <text x="478" y="995" fill="#aeb2b7" font-size="18" font-family="Georgia, serif">Schedule a Consultation</text>
+  <text x="730" y="995" fill="#e26a2c" font-size="18" font-family="Georgia, serif">• VertalisLegal.com</text>
+</svg>
