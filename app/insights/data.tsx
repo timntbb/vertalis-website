@@ -21,6 +21,7 @@ import MemberLeaveLLCArticle from "./content/MemberLeaveLLCArticle";
 import PartnerForceMeOutArticle from "./content/PartnerForceMeOutArticle";
 import RemoveMemberLLCArticle from "./content/RemoveMemberLLCArticle";
 import TexasSeriesLLCArticle from "./content/TexasSeriesLLCArticle";
+import SeriesVsSeparateLLCsTexasArticle from "./content/SeriesVsSeparateLLCsTexasArticle";
 
 export type InsightPost = {
   slug: string;
@@ -1025,6 +1026,22 @@ export const insightPosts: InsightPost[] = [
       "A practical guide to how Texas Series LLCs work, why owners use them, and when separate LLCs may be the better structure.",
     sections: [],
     content: <TexasSeriesLLCArticle />,
+  },
+  {
+    slug: "series-llc-vs-separate-llcs-in-texas",
+    category: "Governance",
+    title: "Should I Use a Series LLC or Separate LLCs for Multiple Properties in Texas?",
+    excerpt:
+      "A practical comparison of a Texas Series LLC and multiple standalone LLCs for rental properties and similar assets, including liability separation, financing, ownership structure, and multi-state use.",
+    seoTitle: "Series LLC vs. Separate LLCs in Texas | Vertalis Legal Counsel",
+    seoDescription:
+      "Compare a Texas Series LLC with multiple standalone LLCs for rental properties and similar assets, including liability separation, financing, administration, ownership, and multi-state considerations.",
+    date: "October 2026",
+    readTime: "6 min read",
+    subtitle:
+      "A practical comparison for multiple properties and similar assets in Texas.",
+    sections: [],
+    content: <SeriesVsSeparateLLCsTexasArticle />,
   },
 ];
 
