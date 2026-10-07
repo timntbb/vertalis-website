@@ -20,6 +20,7 @@ import PartnerDecisionsWithoutMeArticle from "./content/PartnerDecisionsWithoutM
 import MemberLeaveLLCArticle from "./content/MemberLeaveLLCArticle";
 import PartnerForceMeOutArticle from "./content/PartnerForceMeOutArticle";
 import RemoveMemberLLCArticle from "./content/RemoveMemberLLCArticle";
+import TexasSeriesLLCArticle from "./content/TexasSeriesLLCArticle";
 
 export type InsightPost = {
   slug: string;
@@ -1008,6 +1009,22 @@ export const insightPosts: InsightPost[] = [
     subtitle: "",
     sections: [],
     content: <RemoveMemberLLCArticle />,
+  },
+  {
+    slug: "what-is-a-series-llc-in-texas",
+    category: "Governance",
+    title: "What Is a Series LLC in Texas, and When Does It Make Sense?",
+    excerpt:
+      "A Texas Series LLC can separate assets, properties, or business operations into distinct liability compartments within one LLC, but the structure only works when the series are properly created and maintained.",
+    seoTitle: "Texas Series LLC: How It Works, Benefits, and When to Use One",
+    seoDescription:
+      "Learn how a Texas Series LLC works, when it makes sense, how protected and registered series differ, and what owners should know about liability, EINs, banking, and recordkeeping.",
+    date: "October 2026",
+    readTime: "9 min read",
+    subtitle:
+      "A practical guide to how Texas Series LLCs work, why owners use them, and when separate LLCs may be the better structure.",
+    sections: [],
+    content: <TexasSeriesLLCArticle />,
   },
 ];
 
