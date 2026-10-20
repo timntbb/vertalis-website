@@ -56,7 +56,7 @@ function PixelTermsHeader() {
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-[#c06020]/40 bg-black/80 shadow-[0_6px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+      <header className="sticky top-0 z-50 w-full border-b border-[#c06020]/40 bg-black/80 shadow-[0_6px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-0 opacity-30">
           <div
             className="absolute inset-0"
@@ -76,7 +76,7 @@ function PixelTermsHeader() {
         </div>
         <div className="absolute bottom-0 left-0 h-[3px] w-full bg-[linear-gradient(90deg,#6a3313_0%,#c06020_18%,#f3a261_50%,#c06020_82%,#6a3313_100%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
+        <div className="relative mx-auto max-w-[1600px] px-4 md:px-6">
           <div className="relative flex min-h-[96px] items-center justify-between gap-4">
             <style jsx global>{`
               @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee&display=swap');
@@ -86,7 +86,6 @@ function PixelTermsHeader() {
             <Link
               href="/"
               className="flex shrink-0 items-center gap-3 hover:opacity-90"
-              style={{ marginLeft: "-75px", marginRight: "75px" }}
             >
               <Image
                 src="/logo.png"
@@ -128,7 +127,7 @@ function PixelTermsHeader() {
             </Link>
 
             {/* CENTER: NAV */}
-            <nav className="absolute left-1/2 -translate-x-1/2 hidden items-center gap-7 whitespace-nowrap lg:flex" style={{ marginLeft: "75px" }}>
+            <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-5 whitespace-nowrap 2xl:flex">
               {navItems.map((item) => {
                 if (item.label === "Capabilities") {
                   return (
@@ -218,7 +217,7 @@ function PixelTermsHeader() {
             </nav>
 
             {/* RIGHT: CTA */}
-            <div className="hidden lg:block" style={{ marginRight: "-75px" }}>
+            <div className="hidden shrink-0 whitespace-nowrap 2xl:block">
               <Link
                 href="/consultation"
                 style={{
@@ -233,7 +232,7 @@ function PixelTermsHeader() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pb-4 lg:hidden">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pb-4 2xl:hidden">
             {navItems
               .filter((item) => item.label !== "Capabilities")
               .map((item) => (
@@ -290,7 +289,6 @@ function PixelTermsHeader() {
         </div>
       </header>
 
-      <div className="h-[112px] lg:h-[96px]" aria-hidden="true" />
     </>
   );
 }
