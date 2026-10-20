@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LegalContent from "./LegalContent";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -1085,11 +1086,11 @@ export default function TermsOfUsePage() {
                 </p>
 
                 <h1 className="mt-6 text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.9] tracking-[-0.05em] text-white">
-                  Terms of Use
+                  Privacy / Terms of Use
                 </h1>
 
                 <p className="mt-5 text-sm leading-7 text-neutral-400 md:text-base">
-                  Effective Date: January 1, 2026
+                  Effective Date: October 19, 2026
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-neutral-500">
@@ -1098,108 +1099,7 @@ export default function TermsOfUsePage() {
               </div>
 
               <article className="mt-10 max-w-[780px] text-left text-[1.02rem] leading-[1.9] text-neutral-300 [&_h2]:mb-4 [&_h2]:mt-14 [&_h2]:border-t [&_h2]:border-white/10 [&_h2]:pt-8 [&_h2]:text-[1.95rem] [&_h2]:font-bold [&_h2]:tracking-[-0.035em] [&_h2]:text-white [&_h2:first-of-type]:mt-12 [&_h2:first-of-type]:border-t-0 [&_h2:first-of-type]:pt-0 [&_p]:mt-5 [&_p]:leading-[1.9]">
-                <p>
-                  Welcome to Vertalis Legal Counsel, PLLC. By accessing or using
-                  this website, including its articles, insights, contact forms,
-                  calculators, and other tools, you agree to these Terms of Use.
-                  If you do not agree, you should not use this website.
-                </p>
-
-                <h2>No Attorney-Client Relationship</h2>
-                <p>
-                  Use of this website does not create an attorney-client
-                  relationship between you and Vertalis Legal Counsel, PLLC.
-                </p>
-                <p>
-                  No attorney-client relationship is formed unless and until
-                  Vertalis Legal Counsel, PLLC expressly agrees in writing to
-                  represent you through a signed engagement agreement.
-                  Contacting the firm through this website, submitting a form,
-                  sending an email, or using any calculator, tool, or
-                  interactive feature does not create an attorney-client
-                  relationship.
-                </p>
-
-                <h2>Educational Purposes Only</h2>
-                <p>
-                  All content on this website is provided for general educational
-                  and informational purposes only.
-                </p>
-                <p>
-                  This includes, without limitation, articles, insights,
-                  commentary, legal discussions, business discussions,
-                  calculators, simulations, and other materials. Nothing on this
-                  website is legal advice, tax advice, financial advice, or a
-                  substitute for advice from a qualified attorney who
-                  understands your specific facts and circumstances.
-                </p>
-                <p>
-                  You should not act, or refrain from acting, based on
-                  information found on this website without first consulting an
-                  attorney.
-                </p>
-
-                <h2>No Reliance</h2>
-                <p>
-                  The content on this website may not reflect the most current
-                  legal, regulatory, or business developments. Laws vary by
-                  jurisdiction, and outcomes depend on specific facts. Any
-                  reliance on the content of this website is solely at your own
-                  risk.
-                </p>
-
-                <h2>No Confidential Information</h2>
-                <p>
-                  You should not send confidential, sensitive, or privileged
-                  information through this website, including through any contact
-                  form or general inquiry submission.
-                </p>
-                <p>
-                  Information sent to Vertalis Legal Counsel, PLLC through this
-                  website will not be treated as confidential unless and until an
-                  attorney-client relationship has been formally established
-                  through a signed engagement agreement.
-                </p>
-
-                <h2>Third-Party Content and Tools</h2>
-                <p>
-                  This website may reference or incorporate third-party content,
-                  software, links, or tools. Vertalis Legal Counsel, PLLC does
-                  not control and is not responsible for the content, accuracy,
-                  availability, or performance of any third-party resource.
-                </p>
-
-                <h2>Limitation of Liability</h2>
-                <p>
-                  To the fullest extent permitted by law, Vertalis Legal Counsel,
-                  PLLC disclaims liability for any loss or damage arising out of
-                  or related to the use of this website or reliance on any
-                  content provided on this website.
-                </p>
-
-                <h2>Intellectual Property</h2>
-                <p>
-                  All content on this website, including text, branding,
-                  graphics, design, and original tools, is the property of
-                  Vertalis Legal Counsel, PLLC unless otherwise stated. It may
-                  not be copied, reproduced, distributed, or used without prior
-                  written permission.
-                </p>
-
-                <h2>Changes to These Terms</h2>
-                <p>
-                  Vertalis Legal Counsel, PLLC may update these Terms of Use at
-                  any time without notice. Your continued use of the website
-                  after any changes are posted constitutes your acceptance of
-                  the revised Terms.
-                </p>
-
-                <h2>Contact</h2>
-                <p>
-                  If you have questions about these Terms of Use, please contact
-                  Vertalis Legal Counsel, PLLC through the contact information
-                  provided on this website.
-                </p>
+                <LegalContent />
               </article>
             </div>
           </div>

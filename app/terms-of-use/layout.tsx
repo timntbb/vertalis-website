@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Vertalis Legal Counsel",
+  title: "Privacy / Terms of Use | Vertalis Legal Counsel",
   description:
-    "The terms and conditions governing use of the Vertalis Legal Counsel website and its content, effective January 1, 2026.",
+    "Privacy practices and terms governing use of the Vertalis Legal Counsel website, inquiries, and consultation scheduling.",
   alternates: {
     canonical: "/terms-of-use",
   },

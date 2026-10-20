@@ -398,7 +398,7 @@ export default function VertalisTextBox() {
               Insights
             </Link>
             <Link href="/terms-of-use" className="transition-colors hover:text-white">
-              Terms of Use
+              Privacy / Terms of Use
             </Link>
           </nav>
 

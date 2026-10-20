@@ -380,7 +380,7 @@ export default function InsightsLibrary({ posts }: InsightsLibraryProps) {
               Insights
             </Link>
             <Link href="/terms-of-use" className="transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d77938]">
-              Terms of Use
+              Privacy / Terms of Use
             </Link>
           </nav>
           <p className="text-xs tracking-[0.08em] text-white/50 md:text-sm">
