@@ -63,7 +63,7 @@ export default function ContractChaosArticle() {
         <ul className="mt-4 ml-6 list-disc space-y-2 leading-8">
           <li>
             Sales contracts may promise obligations the operations team cannot
-            realistically fulfill.
+            realistically fulfill. A <Link href="/insights/master-services-agreement-drafting">master services agreement</Link> is one way to establish consistent terms for recurring customer engagements.
           </li>
           <li>
             Employment agreements may contain confidentiality provisions

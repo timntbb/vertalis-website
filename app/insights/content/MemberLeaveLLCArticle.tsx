@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function MemberLeaveLLCArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -50,7 +52,7 @@ export default function MemberLeaveLLCArticle() {
         That is the default rule.
       </p>
       <p className="mt-4 leading-8">
-        An operating agreement can modify it by expressly giving members a right to withdraw. The agreement may allow withdrawal after notice, following a specified event, or after the member has owned the interest for a stated period.
+        An <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link> can modify it by expressly giving members a right to withdraw. The agreement may allow withdrawal after notice, following a specified event, or after the member has owned the interest for a stated period.
       </p>
       <p className="mt-4 leading-8">
         A withdrawal right might arise following:

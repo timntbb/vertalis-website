@@ -10,7 +10,7 @@ export default function TexasSeriesLLCArticle() {
         For a business owner or investor managing multiple assets, that can create an alternative to forming a completely separate LLC for every property or business activity. The benefit is not simply that there is one filing instead of several. The real value is the ability to create separate liability compartments inside a larger company structure while keeping those assets under one organizational umbrella.
       </p>
       <p className="mt-4 leading-8">
-        That does not mean a Series LLC is automatically the better option. Whether it makes sense depends on what the business owns, how the individual series will operate, whether financing or third-party relationships will create complications, and whether the owner is willing to maintain the separation between each series in practice.
+        That does not mean a Series LLC is automatically the better option. Our <Link href="/insights/series-llc-vs-separate-llcs-in-texas">Series LLC versus separate LLCs comparison</Link> examines that choice in more detail. Whether it makes sense depends on what the business owns, how the individual series will operate, whether financing or third-party relationships will create complications, and whether the owner is willing to maintain the separation between each series in practice.
       </p>
 
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">

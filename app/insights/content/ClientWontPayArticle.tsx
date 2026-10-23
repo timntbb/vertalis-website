@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ClientWontPayArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -37,7 +39,7 @@ export default function ClientWontPayArticle() {
         <li>The client’s acceptance or use of the work</li>
       </ul>
       <p className="mt-4 leading-8">
-        Confirm the payment terms, due date, scope of work, and any conditions that had to occur before payment became due.
+        Confirm the <Link href="/insights/customer-order-form-drafting">payment terms</Link>, due date, scope of work, and any conditions that had to occur before payment became due.
       </p>
       <p className="mt-4 leading-8">
         Also review whether the contract requires notice, an opportunity to cure, mediation, arbitration, or litigation in a particular county or state.

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function RemoveMemberLLCArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -59,7 +61,7 @@ export default function RemoveMemberLLCArticle() {
         Start With the Operating Agreement
       </h2>
       <p className="mt-6 leading-8">
-        A properly drafted Operating Agreement may identify specific events that trigger removal or a mandatory buyout.
+        A properly drafted <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link> may identify specific events that trigger removal or a mandatory buyout.
       </p>
       <p className="mt-4 leading-8">
         Those events might include:

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PartnerForceMeOutArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -69,7 +71,7 @@ export default function PartnerForceMeOutArticle() {
         Section 101.107 of the Texas Business Organizations Code provides that a member may not withdraw or be expelled from a Texas LLC.
       </p>
       <p className="mt-4 leading-8">
-        An operating agreement can modify that default rule.
+        An operating agreement can modify that default rule, as explained in our article about <Link href="/insights/how-to-remove-a-member-from-a-texas-llc">removing a member from a Texas LLC</Link>.
       </p>
       <p className="mt-4 leading-8">
         For example, the agreement may require a member to sell their interest following fraud, competition with the company, failure to make a required contribution, termination of employment, loss of a professional license, or another defined event.

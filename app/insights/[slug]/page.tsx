@@ -9,6 +9,33 @@ import { Header } from "../../page";
 import { getInsightPost, insightPosts } from "../data";
 import { practices } from "../../services/data";
 
+// Curated relationships: only show relevant published articles, never generic recent posts.
+const relatedInsightSlugs: Record<string, string[]> = {
+  "operating-agreement-backbone-of-your-company": ["50-50-founder-equity-splits-hidden-risk-startup-deadlocks", "how-to-remove-a-member-from-a-texas-llc"],
+  "50-50-founder-equity-splits-hidden-risk-startup-deadlocks": ["operating-agreement-backbone-of-your-company", "can-my-business-partner-make-decisions-without-me"],
+  "how-to-remove-a-member-from-a-texas-llc": ["operating-agreement-backbone-of-your-company", "can-my-business-partner-force-me-out-of-a-texas-llc"],
+  "can-my-business-partner-force-me-out-of-a-texas-llc": ["how-to-remove-a-member-from-a-texas-llc"],
+  "how-can-a-member-leave-a-texas-llc": ["operating-agreement-backbone-of-your-company", "how-to-remove-a-member-from-a-texas-llc"],
+  "can-my-business-partner-make-decisions-without-me": ["operating-agreement-backbone-of-your-company", "50-50-founder-equity-splits-hidden-risk-startup-deadlocks"],
+  "business-partner-taking-money-from-company-texas": ["can-my-business-partner-make-decisions-without-me"],
+  "what-happens-to-a-texas-llc-when-a-member-dies": ["operating-agreement-backbone-of-your-company"],
+  "what-is-a-series-llc-in-texas": ["series-llc-vs-separate-llcs-in-texas"],
+  "series-llc-vs-separate-llcs-in-texas": ["what-is-a-series-llc-in-texas"],
+  "when-can-a-texas-llc-owner-be-held-personally-liable": ["personal-guarantee-for-a-business-loan"],
+  "personal-guarantee-for-a-business-loan": ["when-can-a-texas-llc-owner-be-held-personally-liable"],
+  "contract-chaos": ["master-services-agreement-drafting"],
+  "client-wont-pay-invoice-texas": ["customer-order-form-drafting"],
+  "what-to-review-before-signing-a-commercial-lease-in-texas": ["can-a-business-get-out-of-a-commercial-lease-in-texas"],
+  "can-a-business-get-out-of-a-commercial-lease-in-texas": ["what-to-review-before-signing-a-commercial-lease-in-texas"],
+  "intellectual-property-risks-startups": ["you-paid-a-developer-to-build-your-app", "intellectual-property-employees-ownership-problem"],
+  "intellectual-property-employees-ownership-problem": ["you-paid-a-developer-to-build-your-app", "intellectual-property-risks-startups"],
+  "you-paid-a-developer-to-build-your-app": ["intellectual-property-employees-ownership-problem", "intellectual-property-risks-startups"],
+  "master-services-agreement-drafting": ["statement-of-work-drafting", "customer-order-form-drafting"],
+  "statement-of-work-drafting": ["master-services-agreement-drafting", "customer-order-form-drafting"],
+  "customer-order-form-drafting": ["master-services-agreement-drafting", "statement-of-work-drafting"],
+  "three-contracts-before-your-first-customer": ["master-services-agreement-drafting", "statement-of-work-drafting", "customer-order-form-drafting"],
+};
+
 type InsightPostPageProps = {
   params: Promise<{
     slug: string;
@@ -70,12 +97,11 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     notFound();
   }
 
-  const listedPosts = insightPosts.filter((item) => !item.hiddenFromListings);
-  const hasDates = listedPosts.every((item) => Boolean(item.date));
-  const recentPosts = hasDates
-    ? [...listedPosts].sort((a, b) => Date.parse(b.date!) - Date.parse(a.date!))
-    : listedPosts;
-  const sidebarPosts = recentPosts.slice(0, 5);
+  const sidebarPosts = (relatedInsightSlugs[post.slug] ?? [])
+    .filter((relatedSlug) => relatedSlug !== post.slug)
+    .map(getInsightPost)
+    .filter((relatedPost): relatedPost is NonNullable<typeof relatedPost> => Boolean(relatedPost))
+    .slice(0, 3);
   const hideHeroSummary =
     post.slug === "contract-chaos" ||
     post.slug === "intellectual-property-employees-ownership-problem";
@@ -184,12 +210,12 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
                     Vertalis
                   </VertalisWord>
                   <p className="mt-1 text-[0.68rem] uppercase tracking-[0.22em] text-neutral-500">
-                    Insight Navigation
+                    Vertalis Insights
                   </p>
                 </div>
 
                 <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-neutral-500">
-                  Navigate
+                  Explore
                 </p>
 
                 <div className="mt-3 space-y-2">
@@ -200,6 +226,17 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
                     <Home className="h-4 w-4" />
                     Home
                   </Link>
+
+                  <Link
+                    href="/insights"
+                    className="group flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.015] px-3 py-2.5 text-sm text-neutral-300 transition-colors hover:border-white/20 hover:text-white"
+                  >
+                    All Insights
+                  </Link>
+
+                  {sidebarPosts.length > 0 ? (
+                    <p className="pt-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-neutral-500">Related Articles</p>
+                  ) : null}
 
                   {sidebarPosts.map((item) => {
                     const isCurrent = item.slug === post.slug;

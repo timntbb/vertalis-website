@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DeveloperOwnershipArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -35,7 +37,7 @@ export default function DeveloperOwnershipArticle() {
         Employees and Independent Developers Are Not the Same
       </h2>
       <p className="mt-6 leading-8">
-        Software created by an employee within the scope of employment can qualify as a “work made for hire.” In that situation, the employer is generally treated as the original copyright owner under 17 U.S.C. § 201.
+        Software created by an <Link href="/insights/intellectual-property-employees-ownership-problem">employee within the scope of employment</Link> can qualify as a “work made for hire.” In that situation, the employer is generally treated as the original copyright owner under 17 U.S.C. § 201.
       </p>
       <p className="mt-4 leading-8">
         That rule does not automatically apply to freelancers, development agencies, or other independent contractors.
