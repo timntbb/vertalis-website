@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { contractArticles } from "./contractArticles";
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
 import FractionalGeneralCounselArticle from "./content/FractionalGeneralCounselArticle";
@@ -47,6 +48,7 @@ export type InsightPost = {
 };
 
 export const insightPosts: InsightPost[] = [
+  ...contractArticles,
   {
     slug: "post-money-safe-ownership-dilution",
     category: "Capital Strategy",
