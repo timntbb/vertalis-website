@@ -218,7 +218,7 @@ export default function IpEmployeesOwnershipArticle() {
 
         <ul className="mt-4 ml-6 list-disc space-y-2 leading-8">
           <li>overseas developers,</li>
-          <li>freelance software engineers,</li>
+          <li><Link href="/insights/you-paid-a-developer-to-build-your-app">freelance software engineers</Link>,</li>
           <li>independent contractors,</li>
           <li>or short-term technical contributors</li>
         </ul>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PartnerTakingMoneyArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -41,7 +43,7 @@ export default function PartnerTakingMoneyArticle() {
         Access is not the same as authorization.
       </p>
       <p className="mt-4 leading-8">
-        Bank permissions determine what a person can physically do. The operating agreement and company approvals help determine what that person is legally permitted to do.
+        Bank permissions determine what a person can physically do. The operating agreement and <Link href="/insights/can-my-business-partner-make-decisions-without-me">company approvals</Link> help determine what that person is legally permitted to do.
       </p>
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         Preserve the Financial Evidence

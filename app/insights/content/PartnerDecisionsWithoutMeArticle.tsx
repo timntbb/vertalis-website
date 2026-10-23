@@ -42,7 +42,7 @@ export default function PartnerDecisionsWithoutMeArticle() {
         A member may own a substantial part of the company without managing daily operations. A manager may control the business without owning any of it. An officer may have authority to sign certain contracts without asking every member first.
       </p>
       <p className="mt-4 leading-8">
-        The operating agreement connects those roles—or separates them.
+        The <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link> connects those roles—or separates them.
       </p>
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         Is the LLC Member-Managed or Manager-Managed?

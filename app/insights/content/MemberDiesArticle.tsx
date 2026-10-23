@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function MemberDiesArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -29,7 +31,7 @@ export default function MemberDiesArticle() {
         The deceased member’s interest must be administered through the member’s estate plan, probate proceeding, operating agreement, or an applicable buy-sell arrangement. That process determines who receives the financial value of the interest and whether the interest must be purchased by the company or surviving members.
       </p>
       <p className="mt-4 leading-8">
-        The operating agreement should provide the roadmap.
+        The <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link> should provide the roadmap.
       </p>
       <p className="mt-4 leading-8">
         Without one, the default rules under the Texas Business Organizations Code begin filling the gaps.

@@ -226,7 +226,8 @@ export const insightPosts: InsightPost[] = [
           <>
             what happens when a founder leaves, including <Link href="/insights/what-is-vesting-and-why-founders-should-implement-it-early">vesting</Link>
           </>,
-          "how disputes get resolved",
+          <>when a member may be <Link href="/insights/how-to-remove-a-member-from-a-texas-llc">removed from a Texas LLC</Link></>,
+          <>how disputes get resolved, including <Link href="/insights/50-50-founder-equity-splits-hidden-risk-startup-deadlocks">50/50 LLC deadlocks</Link></>,
           "what happens if the company winds down",
         ],
       },
@@ -313,7 +314,7 @@ export const insightPosts: InsightPost[] = [
         </p>
         <p className="mt-4">This issue commonly arises in early-stage development:</p>
         <ul className="mt-4 ml-6 list-disc">
-          <li>A developer builds the initial product before the company is formed</li>
+          <li>A developer builds the initial product before the company is formed, raising <Link href="/insights/you-paid-a-developer-to-build-your-app">software ownership questions</Link></li>
           <li>
             A contractor designs branding or writes code without a written IP
             assignment agreement

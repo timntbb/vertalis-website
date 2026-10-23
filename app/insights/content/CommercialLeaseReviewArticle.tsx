@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CommercialLeaseReviewArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -107,7 +109,7 @@ export default function CommercialLeaseReviewArticle() {
         Missing a notice deadline can eliminate an otherwise valuable renewal option.
       </p>
       <p className="mt-4 leading-8">
-        The tenant should also determine whether the lease contains any early-termination right. Many do not.
+        The tenant should also determine whether the lease contains any <Link href="/insights/can-a-business-get-out-of-a-commercial-lease-in-texas">early-termination right</Link>. Many do not.
       </p>
       <p className="mt-4 leading-8">
         Texas law generally requires a landlord to mitigate damages if a tenant abandons leased premises in violation of the lease, and that duty cannot be waived. But mitigation does not automatically release the tenant from liability. The tenant may still owe rent and other damages while the landlord attempts to relet the space. See Texas Property Code § 91.006.

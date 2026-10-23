@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LLCOwnerPersonalLiabilityArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -47,7 +49,7 @@ export default function LLCOwnerPersonalLiabilityArticle() {
         The most common source of personal liability is not veil piercing.
       </p>
       <p className="mt-4 leading-8">
-        It is a personal guarantee.
+        It is a <Link href="/insights/personal-guarantee-for-a-business-loan">personal guarantee</Link>.
       </p>
       <p className="mt-4 leading-8">
         Landlords, banks, equipment lenders, and major vendors often require business owners to guarantee the LLC’s obligations. If the company defaults, the creditor can pursue the guarantor under that separate promise.

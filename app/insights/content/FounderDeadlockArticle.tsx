@@ -102,7 +102,7 @@ export default function FounderDeadlockArticle() {
         The Operating Agreement Should Create the Next Move
       </h2>
       <p className="mt-6 leading-8">
-        A carefully drafted operating agreement should distinguish between ordinary decisions and major decisions.
+        A carefully drafted <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link> should distinguish between ordinary decisions and major decisions.
       </p>
       <p className="mt-4 leading-8">
         Routine matters may be delegated to a manager, officer, or one of the owners. Major decisions may require both members’ approval.
