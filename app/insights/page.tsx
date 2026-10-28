@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "../page";
 import { insightPosts } from "./data";
+import { glossaryTerms } from "../glossary/data";
 import InsightsLibrary, { type InsightListItem } from "./InsightsLibrary";
 import {
   getDisplayCategoryLabel,
@@ -104,7 +105,7 @@ export default function InsightsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
       <Header />
-      <InsightsLibrary posts={indexedPosts} />
+      <InsightsLibrary posts={indexedPosts} glossaryTermCount={glossaryTerms.length} />
     </main>
   );
 }

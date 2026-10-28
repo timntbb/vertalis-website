@@ -436,7 +436,6 @@ export function Header() {
     ["About", "#about"],
     ["Services", "/services"],
     ["Insights", "/insights"],
-    ["Glossary", "/glossary"],
     ["Contact", "#contact"],
     ["Attorney", "/about/tim-nichols"],
   ];
@@ -542,7 +541,7 @@ export function Header() {
           </Link>
 
           <nav
-            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-5"
+            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
             style={{ marginLeft: navOffset }}
           >
             {navItems.map(([label, href]) =>

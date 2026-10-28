@@ -8,7 +8,7 @@ Each record contains a canonical `name` and `slug`, a category, a definition, op
 
 Individual pages retain a quiet single-column layout. Longer definitions can explain named subtopics under “Types and key distinctions.” A URL such as `/glossary/safe#post-money-safe` opens that section automatically. On the hub, search includes acronyms and consolidated subtopic titles. Related-term links expand the destination on the hub and remain normal crawlable URLs for modified clicks and search engines.
 
-Every primary Insight links back to its terms through the shared `RelatedGlossaryTerms` component. Relevant existing article passages also include curated contextual glossary links; existing article-to-article links remain in place. Adding the Glossary navigation item exposes the hub throughout the existing site.
+Every primary Insight links back to its terms through the shared `RelatedGlossaryTerms` component. Relevant existing article passages also include curated contextual glossary links; existing article-to-article links remain in place. The main Insights page groups Articles and the Business Law Glossary in an Insights resources navigation above search. The global banner retains its existing links without a separate Glossary item.
 
 ## Validation
 
