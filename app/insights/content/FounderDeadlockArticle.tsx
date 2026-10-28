@@ -4,7 +4,7 @@ export default function FounderDeadlockArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        A 50/50 LLC deadlock occurs when two owners with equal voting power cannot agree on a decision requiring approval from both of them.
+        A 50/50 LLC <Link href="/glossary/deadlock">deadlock</Link> occurs when two owners with equal voting power cannot agree on a decision requiring approval from both of them.
       </p>
       <p className="mt-4 leading-8">
         Neither owner automatically wins. Neither receives an extra vote. And Texas law does not provide a universal tie-breaker for every LLC.
@@ -87,7 +87,7 @@ export default function FounderDeadlockArticle() {
         Other actions carry different statutory approval requirements. The operating agreement can also modify many default rules by changing voting power, approval thresholds, and management authority.
       </p>
       <p className="mt-4 leading-8">
-        When two members have equal voting rights, a one-to-one split does not produce a majority.
+        When two members have equal <Link href="/glossary/voting-rights">voting rights</Link>, a one-to-one split does not produce a majority.
       </p>
       <p className="mt-4 leading-8">
         Texas law does not automatically appoint a neutral person to resolve the dispute. The Secretary of State does not choose which owner has the better business plan. A court does not ordinarily take over routine strategy and decide whether the company should hire an executive, enter a market, or accept a particular offer.
@@ -123,7 +123,7 @@ export default function FounderDeadlockArticle() {
         Escalation and Mediation
       </h3>
       <p className="mt-6 leading-8">
-        The agreement can require the owners to exchange written positions, meet within a defined period, and participate in mediation.
+        The agreement can require the owners to exchange written positions, meet within a defined period, and participate in <Link href="/glossary/mediation">mediation</Link>.
       </p>
       <p className="mt-4 leading-8">
         This structure works when the disagreement comes from poor communication, incomplete information, or a damaged but repairable relationship.

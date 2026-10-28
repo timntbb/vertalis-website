@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CanBusinessCancelContractArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -8,7 +9,7 @@ export default function CanBusinessCancelContractArticle() {
         Once a valid contract has been signed, both parties are ordinarily expected to perform.
       </p>
       <p className="mt-4 leading-8">
-        Cancellation may still be possible if the contract provides a termination right, both parties agree to end the relationship, the other party materially breaches, or a recognized legal ground supports rescission.
+        Cancellation may still be possible if the contract provides a termination right, both parties agree to end the relationship, the other party materially breaches, or a recognized legal ground supports <Link href="/glossary/rescission">rescission</Link>.
       </p>
       <p className="mt-4 leading-8">
         The answer starts with the contract itself.
@@ -130,7 +131,7 @@ export default function CanBusinessCancelContractArticle() {
         Termination generally ends obligations going forward. Rescission seeks to unwind the transaction and restore the parties, as much as possible, to their pre-contract positions.
       </p>
       <p className="mt-4 leading-8">
-        Potential grounds may include fraudulent inducement, material misrepresentation, duress, certain forms of mistake, illegality, or failure of a required condition.
+        Potential grounds may include <Link href="/glossary/fraudulent-inducement">fraudulent inducement</Link>, material misrepresentation, duress, certain forms of mistake, illegality, or failure of a required condition.
       </p>
       <p className="mt-4 leading-8">
         These grounds are fact-specific.
@@ -181,7 +182,7 @@ export default function CanBusinessCancelContractArticle() {
       </p>
       <ul className="mt-4 ml-6 list-disc space-y-2 leading-8">
         <li>Early-termination fees</li>
-        <li>Liquidated damages</li>
+        <li><Link href="/glossary/liquidated-damages">Liquidated damages</Link></li>
         <li>Loss of a deposit</li>
         <li>Repayment of discounts</li>
         <li>Acceleration of remaining charges</li>

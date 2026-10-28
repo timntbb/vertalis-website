@@ -29,7 +29,7 @@ export default function ContractChaosArticle() {
           governance, compliance, intellectual property ownership, employment
           structures, fundraising readiness, operational obligations, and risk
           allocation. Over time, these inconsistencies can expose businesses to
-          litigation, regulatory scrutiny, failed investor due diligence,
+          litigation, regulatory scrutiny, failed investor <Link href="/glossary/due-diligence">due diligence</Link>,
           operational inefficiency, and internal disputes.
         </p>
 
@@ -103,7 +103,7 @@ export default function ContractChaosArticle() {
 
           <ul className="mt-4 ml-6 list-disc space-y-2 leading-8">
             <li>contradictory obligations,</li>
-            <li>inconsistent indemnification provisions,</li>
+            <li>inconsistent <Link href="/glossary/indemnification">indemnification</Link> provisions,</li>
             <li>unclear ownership rights,</li>
             <li>or conflicting operational expectations.</li>
           </ul>
@@ -123,7 +123,7 @@ export default function ContractChaosArticle() {
           <p className="mt-4 leading-8">
             Many startups rely on freelancers, developers, consultants, and
             independent contractors during early growth. Without consistent
-            intellectual property assignment provisions across agreements, ownership
+            <Link href="/glossary/ip-assignment">intellectual property assignment</Link> provisions across agreements, ownership
             of critical business assets may become unclear.
           </p>
 

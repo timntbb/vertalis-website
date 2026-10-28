@@ -11,7 +11,7 @@ export default function LLCVsCCorpArticle() {
         Founders rarely struggle with ideas, they struggle with structure. One of
         the earliest and most important decisions you will make is whether to form
         an LLC or a C-Corporation. On its face, it looks like a simple filing
-        choice. In reality, the LLC vs C Corp decision is a foundational
+        choice. In reality, the LLC vs <Link href="/glossary/c-corporation">C Corp</Link> decision is a foundational
         structural decision that determines how your company handles ownership,
         capital, control, and risk from day one.
       </p>
@@ -58,7 +58,7 @@ export default function LLCVsCCorpArticle() {
       </p>
 
       <p className="mt-4 leading-8">
-        An LLC, or Limited Liability Company, is built for flexibility and
+        An LLC, or <Link href="/glossary/limited-liability-company">Limited Liability Company</Link>, is built for flexibility and
         internal customization. A C-Corporation is built for standardization,
         predictability, and scalability. Neither is inherently better, but each is
         designed to serve a different type of business trajectory. The decision is
@@ -190,7 +190,7 @@ export default function LLCVsCCorpArticle() {
       <p className="mt-4 leading-8">
         Where founders encounter problems is not in choosing one structure over
         the other, but in choosing one and attempting to operate as if they had
-        chosen the other. Using an LLC without a well-defined Operating Agreement
+        chosen the other. Using an LLC without a well-defined <Link href="/glossary/operating-agreement">Operating Agreement</Link>
         or attempting to raise institutional capital through a loosely structured
         LLC introduces friction that is difficult and often expensive to unwind
         later.

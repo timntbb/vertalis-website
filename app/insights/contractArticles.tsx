@@ -6,6 +6,10 @@ import type { InsightPost } from "./data";
 // Markdown-style internal link markers in the editorial copy become real Next.js links.
 type Section = { heading: string; paragraphs?: string[]; bullets?: string[] };
 const linkTargets: Record<string, string> = {
+  "Master Services Agreement (MSA)": "/glossary/master-services-agreement",
+  "Statement of Work (SOW)": "/glossary/statement-of-work",
+  "customer order form": "/glossary/customer-order-form",
+  "Customer Order Form": "/glossary/customer-order-form",
   "Contract Chaos": "/insights/contract-chaos",
   "Customer Order Form Drafting": "/insights/customer-order-form-drafting",
   "Statement of Work Drafting": "/insights/statement-of-work-drafting",
@@ -44,7 +48,7 @@ export const contractArticles: InsightPost[] = [
     sections: [],
     content: body([
       {heading: "What Is a Master Services Agreement?", paragraphs: [
-        "A Master Services Agreement (MSA) is a standardized contract that establishes the general terms and conditions under which a business provides services to its customers. Rather than drafting an entirely new contract for each transaction, a company can develop an MSA that defines the rights, responsibilities, and obligations of both parties throughout their business relationship.",
+        "A {{Master Services Agreement (MSA)}} is a standardized contract that establishes the general terms and conditions under which a business provides services to its customers. Rather than drafting an entirely new contract for each transaction, a company can develop an MSA that defines the rights, responsibilities, and obligations of both parties throughout their business relationship.",
         "An MSA provides a consistent contractual framework that can be used across multiple customers and transactions. Although the agreement may be standardized, its provisions should be tailored to the company's business model, services, operational capabilities, and potential risks."
       ]},
       {heading: "Why Does Your Business Need an MSA?", paragraphs: [
@@ -113,7 +117,7 @@ export const contractArticles: InsightPost[] = [
     sections: [],
     content: body([
       {heading: "What Is a Statement of Work?", paragraphs: [
-        "A Statement of Work (SOW) is a contractual document that defines the specific services, deliverables, responsibilities, and performance expectations associated with a project or engagement. It establishes what the service provider is expected to accomplish, what the customer must provide, and how the parties will determine whether the agreed work has been completed.",
+        "A {{Statement of Work (SOW)}} is a contractual document that defines the specific services, deliverables, responsibilities, and performance expectations associated with a project or engagement. It establishes what the service provider is expected to accomplish, what the customer must provide, and how the parties will determine whether the agreed work has been completed.",
         "Unlike a standardized contract governing an ongoing customer relationship, an SOW focuses on the particular work being performed. It may address project specifications, deadlines, milestones, acceptance procedures, payment arrangements, and other requirements specific to the engagement.",
         "For businesses providing customized services, a properly drafted SOW can help establish clear expectations before work begins and reduce disagreements concerning what was originally promised."
       ]},
@@ -174,7 +178,7 @@ export const contractArticles: InsightPost[] = [
     sections: [],
     content: body([
       {heading: "What Is a Customer Order Form?", paragraphs: [
-        "A customer order form is a contractual document that identifies the specific products or services a customer agrees to purchase from a business. It typically establishes the selected services, pricing, billing arrangements, service periods, and other transaction-specific details.",
+        "A {{customer order form}} is a contractual document that identifies the specific products or services a customer agrees to purchase from a business. It typically establishes the selected services, pricing, billing arrangements, service periods, and other transaction-specific details.",
         "Rather than negotiating a separate agreement for every customer, businesses can use standardized order forms to document individual purchases while maintaining consistent contractual terms.",
         "Order forms are particularly useful for businesses offering recurring services, subscription packages, or multiple service options at different price points."
       ]},
@@ -228,7 +232,7 @@ export const contractArticles: InsightPost[] = [
       {heading: "Before Signing Your First Customer", paragraphs: [
         "Signing your first customer is an important milestone for any growing business. Whether you are launching a marketing agency, consulting firm, software company, or professional services business, obtaining that first customer represents an opportunity to begin generating revenue and building long-term business relationships.",
         "However, before providing services, businesses should consider how those relationships will be documented. A handshake, informal email exchange, or basic invoice may leave important questions unanswered concerning payment, service obligations, intellectual property, and what happens when disagreements arise.",
-        "For many service-based businesses, three contractual documents can help establish a more organized approach to customer relationships: a Master Services Agreement (MSA), Customer Order Form, and Statement of Work (SOW).",
+        "For many service-based businesses, three contractual documents can help establish a more organized approach to customer relationships: a {{Master Services Agreement (MSA)}}, {{Customer Order Form}}, and {{Statement of Work (SOW)}}.",
         "Not every business requires all three documents. Depending on the services offered, the appropriate contractual structure may involve one agreement or several coordinated documents."
       ]},
       {heading: "1. Master Services Agreement: Establishing the Legal Relationship", paragraphs: [

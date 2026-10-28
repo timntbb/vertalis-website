@@ -13,7 +13,7 @@ export default function IpEmployeesOwnershipArticle() {
         covenants, and startup intellectual property protections are written, and
         more importantly, how they apply to founders, contractors, and employees.
         Most founders never think about startup IP ownership until someone asks a
-        single question during investor due diligence:
+        single question during investor <Link href="/glossary/due-diligence">due diligence</Link>:
       </p>
 
       <p className="mt-6 text-lg font-semibold text-white">

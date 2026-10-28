@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function OralWrittenContractsArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
@@ -8,7 +9,7 @@ export default function OralWrittenContractsArticle() {
         A traditional document with formal signature blocks is not always required.
       </p>
       <p className="mt-4 leading-8">
-        But the communications must still show that the parties reached a sufficiently definite agreement and intended to be bound. Certain transactions must also satisfy a legal writing requirement known as the statute of frauds.
+        But the communications must still show that the parties reached a sufficiently definite agreement and intended to be bound. Certain transactions must also satisfy a legal writing requirement known as the <Link href="/glossary/statute-of-frauds">statute of frauds</Link>.
       </p>
       <p className="mt-4 leading-8">
         The format matters less than what the communications actually prove.
@@ -122,7 +123,7 @@ export default function OralWrittenContractsArticle() {
         <li>Communicate an offer</li>
         <li>Accept proposed terms</li>
         <li>Supply a required writing</li>
-        <li>Provide an electronic signature</li>
+        <li>Provide an <Link href="/glossary/electronic-signature">electronic signature</Link></li>
         <li>Confirm an earlier oral agreement</li>
         <li>Modify an existing contract</li>
       </ul>

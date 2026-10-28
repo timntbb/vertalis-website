@@ -1,0 +1,2188 @@
+[
+  {
+    "name": "Arbitration",
+    "slug": "arbitration",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A private dispute-resolution process in which an arbitrator or panel decides a dispute under an agreement or applicable law. An award is often binding and subject to limited judicial review. The arbitration clause can determine which claims are covered, the procedures, location, costs, and decision-maker.",
+    "sections": [],
+    "relatedSlugs": [
+      "mediation",
+      "governing-law",
+      "breach-of-contract"
+    ],
+    "insightSlug": "client-wont-pay-invoice-texas",
+    "searchTerms": [
+      "Arbitration"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Authority to Bind a Company",
+    "slug": "authority-to-bind-a-company",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "The legal power to commit a company to a contract or other obligation. It may come from actual authorization or from the company’s conduct creating reasonable apparent authority. A person’s ownership percentage or claimed title alone does not resolve whether they can bind the business.",
+    "sections": [
+      {
+        "id": "actual-authority",
+        "title": "Actual Authority",
+        "text": "Authority a company or other principal has actually given someone to act on its behalf. It can be express, such as a written signing authorization, or implied from an assigned role and responsibilities. Its scope may be limited by governing documents, resolutions, or instructions."
+      },
+      {
+        "id": "apparent-authority",
+        "title": "Apparent Authority",
+        "text": "Authority a third party reasonably believes a person has because of the principal's words or conduct. The person's own claim of authority is not enough by itself. A company may face an external obligation even when its representative violated an internal limit the other party did not know about."
+      },
+      {
+        "id": "representative-capacity",
+        "title": "Representative Capacity",
+        "text": "The role in which a person acts for another person or entity rather than individually. A contract should identify the legal entity and the signer's authorized title or role. Clear capacity language helps establish who undertook the obligation, although separate guarantees or personal promises can still create individual liability."
+      }
+    ],
+    "relatedSlugs": [
+      "llc-management-structure",
+      "reserved-matters",
+      "personal-guarantee"
+    ],
+    "insightSlug": "can-my-business-partner-make-decisions-without-me",
+    "searchTerms": [
+      "Authority to Bind a Company",
+      "Actual Authority",
+      "Apparent Authority",
+      "Representative Capacity"
+    ],
+    "additionalInsightSlugs": [
+      "when-can-a-texas-llc-owner-be-held-personally-liable"
+    ]
+  },
+  {
+    "name": "Breach of Contract",
+    "slug": "breach-of-contract",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A failure to perform an obligation required by an enforceable contract without a legally sufficient excuse. The available remedy depends on the promise, performance, resulting harm, and applicable law. Some breaches justify damages; a sufficiently material breach may also affect the other party's duty to continue performing.",
+    "sections": [
+      {
+        "id": "material-breach",
+        "title": "Material Breach",
+        "text": "A breach serious enough, under the applicable law and circumstances, to affect the core benefit of the bargain. It may excuse further performance or support termination, while a lesser breach may justify damages only. Contractual notice and cure requirements still require attention before a party stops performing."
+      }
+    ],
+    "relatedSlugs": [
+      "cure-period",
+      "contract-termination",
+      "fraudulent-inducement"
+    ],
+    "insightSlug": "client-wont-pay-invoice-texas",
+    "searchTerms": [
+      "Breach of Contract",
+      "Material Breach"
+    ],
+    "additionalInsightSlugs": [
+      "can-a-business-cancel-a-contract-after-signing-it-in-texas"
+    ]
+  },
+  {
+    "name": "Buy-Sell Agreement",
+    "slug": "buy-sell-agreement",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "An agreement establishing when and how an ownership interest may or must be purchased. It may address death, disability, departure, misconduct, or deadlock, together with valuation, payment, and funding. It can be a standalone agreement or part of an operating or shareholder agreement.",
+    "sections": [],
+    "relatedSlugs": [
+      "buyout",
+      "deadlock",
+      "operating-agreement"
+    ],
+    "insightSlug": "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+    "searchTerms": [
+      "Buy-Sell Agreement"
+    ],
+    "additionalInsightSlugs": [
+      "operating-agreement-backbone-of-your-company",
+      "what-happens-to-a-texas-llc-when-a-member-dies"
+    ]
+  },
+  {
+    "name": "Buyout",
+    "slug": "buyout",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A transaction in which an owner sells all or part of their interest to another owner, the company, or a third party. Price, payment, releases, guarantees, and continuing obligations must be addressed. A desire to leave a business does not automatically create a right to demand a buyout.",
+    "sections": [
+      {
+        "id": "mandatory-buyout",
+        "title": "Mandatory Buyout",
+        "text": "A required purchase or sale of an ownership interest after a defined triggering event. The governing agreement should establish who buys, how value is determined, payment terms, and procedures. Misconduct, departure, or a majority vote does not automatically create a mandatory buyout unless a valid legal basis supports it."
+      },
+      {
+        "id": "redemption",
+        "title": "Redemption",
+        "text": "A transaction in which a company purchases its own outstanding ownership interest from an owner. It differs from a purchase by another owner or third party. Authority, solvency restrictions, tax treatment, price, and payment terms must be considered; redemption does not necessarily release the seller's personal guarantees."
+      },
+      {
+        "id": "fair-market-value",
+        "title": "Fair Market Value",
+        "text": "Generally, the price property would command between a willing buyer and willing seller who are informed and not compelled to transact. In an ownership buyout, the agreement may adopt a specific definition or valuation method. Fair market value is not automatically the same as statutory fair value or a fixed contractual price."
+      },
+      {
+        "id": "valuation-discount",
+        "title": "Valuation Discount",
+        "text": "A reduction applied to an estimated ownership-interest value for a stated reason, such as lack of marketability or lack of control. Its availability depends on the valuation purpose, legal standard, and agreement. It is different from a SAFE conversion discount, which adjusts a financing conversion price."
+      }
+    ],
+    "relatedSlugs": [
+      "buy-sell-agreement",
+      "member-withdrawal",
+      "member-expulsion",
+      "personal-guarantee"
+    ],
+    "insightSlug": "how-can-a-member-leave-a-texas-llc",
+    "searchTerms": [
+      "Buyout",
+      "Mandatory Buyout",
+      "Redemption",
+      "Fair Market Value",
+      "Valuation Discount"
+    ],
+    "additionalInsightSlugs": [
+      "what-happens-to-a-texas-llc-when-a-member-dies",
+      "how-to-remove-a-member-from-a-texas-llc"
+    ]
+  },
+  {
+    "name": "C Corporation",
+    "slug": "c-corporation",
+    "category": "Formation & Liability",
+    "aliases": [
+      "C Corp",
+      "C-Corp"
+    ],
+    "definition": "A corporation taxed under Subchapter C of the Internal Revenue Code. It generally pays federal income tax on its taxable income, and shareholders may also owe tax on dividends. The corporate structure supports stock ownership and board governance; tax classification and state-law entity form remain distinct concepts.",
+    "sections": [
+      {
+        "id": "double-taxation",
+        "title": "Double Taxation",
+        "text": "Taxation of the same corporate earnings at two levels: first as corporate income and again when distributed to shareholders as taxable dividends. This can occur with C corporations. The actual burden depends on the transaction, deductions, tax attributes, and applicable federal and state rules."
+      }
+    ],
+    "relatedSlugs": [
+      "priced-round",
+      "disregarded-entity",
+      "distribution"
+    ],
+    "insightSlug": "llc-vs-c-corp",
+    "searchTerms": [
+      "C Corporation",
+      "C Corp",
+      "C-Corp",
+      "Double Taxation"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Cap Table",
+    "slug": "cap-table",
+    "category": "Equity & Capital",
+    "aliases": [
+      "Capitalization Table"
+    ],
+    "definition": "Short for capitalization table: a record of a company's ownership and securities, such as shares, options, and convertible instruments. A cap table can show current ownership and modeled ownership after financing events. Whether percentages include unissued options or convertible securities depends on the assumptions used.",
+    "sections": [],
+    "relatedSlugs": [
+      "dilution",
+      "option-pool",
+      "safe"
+    ],
+    "insightSlug": "what-is-vesting-and-why-founders-should-implement-it-early",
+    "searchTerms": [
+      "Cap Table",
+      "Capitalization Table"
+    ],
+    "additionalInsightSlugs": [
+      "post-money-safe-ownership-dilution"
+    ]
+  },
+  {
+    "name": "Capital Contribution",
+    "slug": "capital-contribution",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Money, property, services, or another permitted contribution supplied or promised to a company in exchange for an ownership interest or to satisfy an ownership obligation. The governing agreement should identify its value and treatment. A contribution is different from a loan, which ordinarily creates a repayment obligation.",
+    "sections": [],
+    "relatedSlugs": [
+      "membership-interest",
+      "distribution",
+      "operating-agreement"
+    ],
+    "insightSlug": "operating-agreement-backbone-of-your-company",
+    "searchTerms": [
+      "Capital Contribution"
+    ],
+    "additionalInsightSlugs": [
+      "series-llc-vs-separate-llcs-in-texas"
+    ]
+  },
+  {
+    "name": "Certificate of Formation",
+    "slug": "certificate-of-formation",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "The document filed with the Texas Secretary of State to create an LLC or certain other entities. It identifies required organizational information and may contain provisions affecting governance. Filing the certificate establishes the entity; it does not replace a company agreement governing the owners' relationship.",
+    "sections": [],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "operating-agreement",
+      "llc-management-structure"
+    ],
+    "insightSlug": "what-is-a-series-llc-in-texas",
+    "searchTerms": [
+      "Certificate of Formation"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Collateral",
+    "slug": "collateral",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "Property pledged to secure an obligation. A creditor with an enforceable security interest or lien may have rights against that property if the debtor defaults. Collateral provides a source of repayment but does not necessarily limit the debt or eliminate a separate personal guarantee.",
+    "sections": [
+      {
+        "id": "cross-collateralization",
+        "title": "Cross-Collateralization",
+        "text": "An arrangement in which property secures more than one debt or supports obligations beyond a single transaction. It can connect risks that owners intended to keep separate across assets or entities. Reviewing collateral and guarantee provisions together is essential to understanding the actual reach of the lender's rights."
+      }
+    ],
+    "relatedSlugs": [
+      "personal-guarantee",
+      "series-llc",
+      "cap-table"
+    ],
+    "insightSlug": "personal-guarantee-for-a-business-loan",
+    "searchTerms": [
+      "Collateral",
+      "Cross-Collateralization"
+    ],
+    "additionalInsightSlugs": [
+      "series-llc-vs-separate-llcs-in-texas"
+    ]
+  },
+  {
+    "name": "Commercial Lease",
+    "slug": "commercial-lease",
+    "category": "Commercial Leases",
+    "aliases": [],
+    "definition": "A contract giving a business the right to occupy property for permitted business purposes in exchange for rent and other obligations. It allocates responsibilities such as repairs, operating expenses, insurance, use, and default remedies. Many protections that apply to residential tenants do not apply in the same way to commercial leases.",
+    "sections": [
+      {
+        "id": "permitted-use",
+        "title": "Permitted Use",
+        "text": "The activities a tenant is authorized to conduct under a lease. This provision may be narrower than the tenant's overall business and is separate from zoning, licensing, or occupancy approval. A lease should address whether the intended operation is allowed and who bears the risk if approvals cannot be obtained."
+      },
+      {
+        "id": "tenant-improvements",
+        "title": "Tenant Improvements",
+        "text": "Changes or build-out work made to leased premises for the tenant's business needs. A lease or work letter should allocate costs, allowances, approvals, ownership, delays, and removal or restoration duties. A landlord's contribution to construction costs does not necessarily cover overruns or postpone the tenant's rent obligation."
+      }
+    ],
+    "relatedSlugs": [
+      "triple-net-lease",
+      "personal-guarantee",
+      "lease-assignment",
+      "lease-surrender"
+    ],
+    "insightSlug": "what-to-review-before-signing-a-commercial-lease-in-texas",
+    "searchTerms": [
+      "Commercial Lease",
+      "Permitted Use",
+      "Tenant Improvements"
+    ],
+    "additionalInsightSlugs": [
+      "can-a-business-get-out-of-a-commercial-lease-in-texas"
+    ]
+  },
+  {
+    "name": "Commingling",
+    "slug": "commingling",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "Mixing money or assets that should be kept separately identified, such as an owner's personal funds and company funds. It can obscure ownership, complicate taxes, and support claims concerning misuse of money. Commingling alone does not automatically make an owner liable for every Texas LLC debt.",
+    "sections": [],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "piercing-the-corporate-veil",
+      "c-corporation"
+    ],
+    "insightSlug": "when-can-a-texas-llc-owner-be-held-personally-liable",
+    "searchTerms": [
+      "Commingling"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Confidentiality Agreement",
+    "slug": "confidentiality-agreement",
+    "category": "Contracts",
+    "aliases": [
+      "NDA",
+      "Nondisclosure Agreement"
+    ],
+    "definition": "An agreement restricting the use or disclosure of specified information, often called an NDA. It should identify protected information, permitted uses, exclusions, authorized recipients, and duration. Confidentiality obligations protect information but do not, by themselves, transfer ownership of intellectual property.",
+    "sections": [],
+    "relatedSlugs": [
+      "ip-assignment",
+      "restrictive-covenant",
+      "contract-formation"
+    ],
+    "insightSlug": "intellectual-property-employees-ownership-problem",
+    "searchTerms": [
+      "Confidentiality Agreement",
+      "NDA",
+      "Nondisclosure Agreement"
+    ],
+    "additionalInsightSlugs": [
+      "master-services-agreement-drafting"
+    ]
+  },
+  {
+    "name": "Contract Formation",
+    "slug": "contract-formation",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The process by which parties create an enforceable agreement. It generally involves an offer, acceptance, sufficiently definite terms, intent to be bound, and consideration, subject to applicable law. Some transactions also require a sufficient signed writing; a formal-looking document alone does not establish every requirement.",
+    "sections": [
+      {
+        "id": "consideration",
+        "title": "Consideration",
+        "text": "Something of legal value exchanged for a contractual promise, such as payment, services, property, or a return promise. It helps distinguish an enforceable bargain from a gratuitous promise. Whether consideration is sufficient depends on the agreement and law, rather than whether the exchange later appears financially favorable."
+      },
+      {
+        "id": "offer-and-acceptance",
+        "title": "Offer and Acceptance",
+        "text": "The proposal of sufficiently definite contract terms and the other party's agreement to them in a manner recognized by law. These are central parts of contract formation, but consideration, intent, capacity, and required formalities can also matter. Negotiations or an acknowledgment of receipt do not necessarily establish acceptance."
+      }
+    ],
+    "relatedSlugs": [
+      "electronic-signature",
+      "statute-of-frauds",
+      "breach-of-contract",
+      "contract-modification"
+    ],
+    "insightSlug": "are-oral-email-and-text-agreements-enforceable-in-texas",
+    "searchTerms": [
+      "Contract Formation",
+      "Consideration",
+      "Offer and Acceptance"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Contract Modification",
+    "slug": "contract-modification",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A change to an existing agreement's terms, such as scope, price, timing, or responsibilities. Its validity depends on applicable law and any required approval or form. Informal conduct or communications may create disputes over modification or waiver even when the contract calls for signed written amendments.",
+    "sections": [
+      {
+        "id": "change-order",
+        "title": "Change Order",
+        "text": "A documented modification to an existing project's scope, price, schedule, or other requirements. The underlying agreement should specify who can approve changes and when approval becomes effective. A change order helps ensure additional requests become agreed obligations rather than disputed assumptions about the original fee."
+      },
+      {
+        "id": "waiver",
+        "title": "Waiver",
+        "text": "The relinquishment of a known right, which may be express or inferred from conduct under applicable law. Repeatedly accepting performance that differs from the contract can create waiver arguments. A nonwaiver clause can help preserve rights, but its effect still depends on the facts, documents, and law."
+      }
+    ],
+    "relatedSlugs": [
+      "statement-of-work",
+      "contract-formation",
+      "contract-termination",
+      "electronic-signature"
+    ],
+    "insightSlug": "are-oral-email-and-text-agreements-enforceable-in-texas",
+    "searchTerms": [
+      "Contract Modification",
+      "Change Order",
+      "Waiver"
+    ],
+    "additionalInsightSlugs": [
+      "statement-of-work-drafting"
+    ]
+  },
+  {
+    "name": "Contract Renewal",
+    "slug": "contract-renewal",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The continuation of an agreement for an additional period under its terms or a new agreement. Renewal may be automatic, optional, or subject to negotiation. Notice deadlines, pricing adjustments, and cancellation requirements determine whether a party can prevent renewal or change the terms of the next period.",
+    "sections": [],
+    "relatedSlugs": [
+      "contract-termination",
+      "payment-terms",
+      "customer-order-form"
+    ],
+    "insightSlug": "customer-order-form-drafting",
+    "searchTerms": [
+      "Contract Renewal"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Contract Termination",
+    "slug": "contract-termination",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The ending of a contractual relationship under a contractual right, mutual agreement, or applicable law. It generally stops specified future performance but may leave accrued payments, claims, and surviving obligations in place. Termination is different from rescission, which seeks to unwind the transaction.",
+    "sections": [
+      {
+        "id": "termination-for-cause",
+        "title": "Termination for Cause",
+        "text": "Ending an agreement because a defined breach, misconduct, or other qualifying event has occurred. The meaning of cause depends on the contract and context. Notice, cure, decision procedures, and supporting evidence may be required before the right is exercised."
+      },
+      {
+        "id": "termination-for-convenience",
+        "title": "Termination for Convenience",
+        "text": "A contractual right to end an agreement without proving the other party breached it. It may require advance notice, payment, completion of committed work, or other conditions. The right exists only to the extent the agreement or applicable law provides it and does not necessarily cancel accrued obligations."
+      },
+      {
+        "id": "survival-clause",
+        "title": "Survival Clause",
+        "text": "A provision specifying obligations intended to continue after an agreement ends, such as confidentiality, payment, IP, indemnity, or dispute procedures. Some obligations may also survive under their nature or applicable law. The clause should clarify duration and scope rather than assume termination erases every remaining responsibility."
+      }
+    ],
+    "relatedSlugs": [
+      "breach-of-contract",
+      "cure-period",
+      "payment-terms",
+      "confidentiality-agreement"
+    ],
+    "insightSlug": "master-services-agreement-drafting",
+    "searchTerms": [
+      "Contract Termination",
+      "Termination for Cause",
+      "Termination for Convenience",
+      "Survival Clause"
+    ],
+    "additionalInsightSlugs": [
+      "can-a-business-cancel-a-contract-after-signing-it-in-texas"
+    ]
+  },
+  {
+    "name": "Copyright",
+    "slug": "copyright",
+    "category": "Intellectual Property",
+    "aliases": [],
+    "definition": "Legal protection for original works of authorship fixed in a tangible medium, including qualifying software, text, images, and music. It protects expression rather than ideas, methods, or systems themselves. Ownership, permission to use a copy, and registration are separate issues that can affect a company's rights.",
+    "sections": [],
+    "relatedSlugs": [
+      "work-made-for-hire",
+      "ip-assignment",
+      "open-source-license"
+    ],
+    "insightSlug": "you-paid-a-developer-to-build-your-app",
+    "searchTerms": [
+      "Copyright"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Cure Period",
+    "slug": "cure-period",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A period allowed to correct a default before specified remedies may be exercised. A contract may require notice describing the problem and a particular delivery method before the period starts. Having a valid complaint does not necessarily permit immediate termination when an applicable cure process remains unfinished.",
+    "sections": [],
+    "relatedSlugs": [
+      "breach-of-contract",
+      "contract-termination",
+      "demand-letter"
+    ],
+    "insightSlug": "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    "searchTerms": [
+      "Cure Period"
+    ],
+    "additionalInsightSlugs": [
+      "client-wont-pay-invoice-texas",
+      "what-to-review-before-signing-a-commercial-lease-in-texas"
+    ]
+  },
+  {
+    "name": "Customer Order Form",
+    "slug": "customer-order-form",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A document identifying the products or services a particular customer purchases and the associated commercial terms. It commonly states pricing, quantities, billing, service period, and negotiated exceptions. When used with an MSA, it should identify the governing agreement and explain how conflicting terms are resolved.",
+    "sections": [],
+    "relatedSlugs": [
+      "master-services-agreement",
+      "incorporation-by-reference-and-order-of-precedence",
+      "contract-formation"
+    ],
+    "insightSlug": "customer-order-form-drafting",
+    "searchTerms": [
+      "Customer Order Form"
+    ],
+    "additionalInsightSlugs": [
+      "three-contracts-before-your-first-customer"
+    ]
+  },
+  {
+    "name": "Deadlock",
+    "slug": "deadlock",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A failure to obtain the approval needed for a company decision because the required voters cannot agree. A 50/50 ownership split can create deadlock when neither side can secure the necessary vote. Operational disagreements are not always legal deadlocks, and resolution depends on the governing agreement and available remedies.",
+    "sections": [],
+    "relatedSlugs": [
+      "voting-rights",
+      "reserved-matters",
+      "buy-sell-agreement",
+      "judicial-winding-up"
+    ],
+    "insightSlug": "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+    "searchTerms": [
+      "Deadlock"
+    ],
+    "additionalInsightSlugs": [
+      "operating-agreement-backbone-of-your-company"
+    ]
+  },
+  {
+    "name": "Demand Letter",
+    "slug": "demand-letter",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A written communication asserting a claim and requesting payment, performance, or another response by a stated deadline. It can document the dispute and satisfy some contractual or statutory prerequisites when properly prepared. Sending a demand does not establish that the claim is valid or automatically stop a limitations period.",
+    "sections": [
+      {
+        "id": "presentment",
+        "title": "Presentment",
+        "text": "The presentation of a claim or demand to the party expected to pay or perform. In Texas contract litigation, proper presentment and the statutory payment opportunity can be prerequisites to recovering attorney's fees under Chapter 38. A demand letter may accomplish this, but its adequacy depends on the claim and circumstances."
+      }
+    ],
+    "relatedSlugs": [
+      "cure-period",
+      "statute-of-limitations",
+      "breach-of-contract",
+      "payment-terms"
+    ],
+    "insightSlug": "client-wont-pay-invoice-texas",
+    "searchTerms": [
+      "Demand Letter",
+      "Presentment"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Dilution",
+    "slug": "dilution",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "A reduction in an owner's percentage interest or other measured economic position, often when additional equity is issued or convertible instruments convert. A lower percentage does not necessarily mean a lower dollar value. The calculation depends on the securities, option pool, financing terms, and capitalization assumptions.",
+    "sections": [],
+    "relatedSlugs": [
+      "cap-table",
+      "safe",
+      "option-pool"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "Dilution"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Direct vs. Derivative Claims",
+    "slug": "direct-vs-derivative-claims",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A direct claim addresses an injury to the claimant personally. A derivative claim is brought on behalf of a company for an injury belonging to that company, with recovery generally belonging to it. The distinction affects who may sue, the required procedures, and who receives the recovery.",
+    "sections": [
+      {
+        "id": "direct-action",
+        "title": "Direct Action",
+        "text": "A claim asserted to remedy an injury to the claimant personally, rather than an injury belonging only to the company. An owner may have direct contractual or other rights even when related conduct also harms the entity. The distinction affects standing, available procedures, and who receives a recovery."
+      },
+      {
+        "id": "derivative-action",
+        "title": "Derivative Action",
+        "text": "A claim brought by an owner on behalf of a company to address an injury belonging to the company. Recovery generally belongs to the company rather than automatically to the suing owner. Standing, demand requirements, and other procedures depend on the entity, governing law, and any applicable closely held-company provisions."
+      }
+    ],
+    "relatedSlugs": [
+      "fiduciary-duty",
+      "inspection-rights",
+      "related-party-transaction",
+      "membership-interest"
+    ],
+    "insightSlug": "business-partner-taking-money-from-company-texas",
+    "searchTerms": [
+      "Direct vs. Derivative Claims",
+      "Direct Action",
+      "Derivative Action"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Disregarded Entity",
+    "slug": "disregarded-entity",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "An entity treated as not separate from its owner for a particular tax purpose. A single-member LLC is commonly disregarded for federal income tax unless it elects corporate treatment, but separate treatment can apply for employment and certain excise taxes. Tax disregard does not itself eliminate state-law liability protection.",
+    "sections": [
+      {
+        "id": "pass-through-taxation",
+        "title": "Pass-Through Taxation",
+        "text": "Tax treatment under which business income, losses, or other items are generally reported by owners rather than subjected to a separate federal entity-level income tax. Partnership and S corporation rules differ, and owner-level limitations can apply. Pass-through treatment does not eliminate employment taxes, state taxes, or all entity-level liabilities."
+      }
+    ],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "c-corporation",
+      "distribution"
+    ],
+    "insightSlug": "what-is-a-series-llc-in-texas",
+    "searchTerms": [
+      "Disregarded Entity",
+      "Pass-Through Taxation"
+    ],
+    "additionalInsightSlugs": [
+      "llc-vs-c-corp"
+    ]
+  },
+  {
+    "name": "Distribution",
+    "slug": "distribution",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A transfer of money or property by a company to an owner in their capacity as an owner. The right to receive distributions and the authority to approve them depend on governing documents and law. Distributions are distinct from wages, expense reimbursements, and repayment of owner loans.",
+    "sections": [],
+    "relatedSlugs": [
+      "capital-contribution",
+      "membership-interest",
+      "operating-agreement"
+    ],
+    "insightSlug": "business-partner-taking-money-from-company-texas",
+    "searchTerms": [
+      "Distribution"
+    ],
+    "additionalInsightSlugs": [
+      "operating-agreement-backbone-of-your-company",
+      "series-llc-vs-separate-llcs-in-texas",
+      "what-happens-to-a-texas-llc-when-a-member-dies"
+    ]
+  },
+  {
+    "name": "Due Diligence",
+    "slug": "due-diligence",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "The investigation of a business, asset, or transaction before a decision such as an investment or acquisition. It can cover ownership, finances, contracts, IP, employment, disputes, and compliance. Its scope depends on the deal; producing documents is only part of demonstrating that the underlying rights and obligations are sound.",
+    "sections": [],
+    "relatedSlugs": [
+      "ip-assignment",
+      "cap-table",
+      "fractional-general-counsel"
+    ],
+    "insightSlug": "intellectual-property-risks-startups",
+    "searchTerms": [
+      "Due Diligence"
+    ],
+    "additionalInsightSlugs": [
+      "intellectual-property-employees-ownership-problem",
+      "contract-chaos",
+      "fractional-general-counsel"
+    ]
+  },
+  {
+    "name": "Electronic Signature",
+    "slug": "electronic-signature",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "An electronic sound, symbol, or process associated with a record and adopted with intent to sign it. A typed name or acceptance click may qualify in the right circumstances. Intent, attribution, consent to transact electronically, and transaction-specific legal requirements still matter; electronic format does not cure missing contract terms.",
+    "sections": [],
+    "relatedSlugs": [
+      "contract-formation",
+      "statute-of-frauds",
+      "contract-modification"
+    ],
+    "insightSlug": "are-oral-email-and-text-agreements-enforceable-in-texas",
+    "searchTerms": [
+      "Electronic Signature"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Employment Agreement",
+    "slug": "employment-agreement",
+    "category": "People & Work",
+    "aliases": [],
+    "definition": "An agreement defining terms of an employment relationship, which may address duties, pay, incentives, confidentiality, IP, termination, and continuing obligations. It does not necessarily guarantee employment for a fixed term. Its provisions must be evaluated under applicable employment law, including any limits on restrictive covenants.",
+    "sections": [],
+    "relatedSlugs": [
+      "ip-assignment",
+      "confidentiality-agreement",
+      "vesting-acceleration"
+    ],
+    "insightSlug": "employee-vs-contractor-structure",
+    "searchTerms": [
+      "Employment Agreement"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Entity Conversion",
+    "slug": "entity-conversion",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "A legally authorized transaction changing a business from one entity form to another, such as an LLC to a corporation. It can affect governance, ownership documentation, taxes, and contractual consents. A state-law conversion is different from merely electing a different federal tax classification.",
+    "sections": [],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "c-corporation",
+      "certificate-of-formation"
+    ],
+    "insightSlug": "llc-vs-c-corp",
+    "searchTerms": [
+      "Entity Conversion"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Fiduciary Duty",
+    "slug": "fiduciary-duty",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A duty arising from a relationship of trust or a legally recognized role, which may require loyalty, care, or other obligations. Its existence, beneficiary, and scope depend on the role, documents, relationship, and law. Texas LLC co-members do not automatically owe each other every fiduciary duty merely because they own together.",
+    "sections": [],
+    "relatedSlugs": [
+      "related-party-transaction",
+      "direct-vs-derivative-claims",
+      "operating-agreement"
+    ],
+    "insightSlug": "business-partner-taking-money-from-company-texas",
+    "searchTerms": [
+      "Fiduciary Duty"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Force Majeure",
+    "slug": "force-majeure",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A contract provision allocating the consequences of specified events outside the affected party's control. Depending on its wording, it may excuse, suspend, or permit termination of performance. An unexpected event or increased expense does not automatically qualify; causation, notice, exclusions, and mitigation requirements can determine the result.",
+    "sections": [],
+    "relatedSlugs": [
+      "contract-termination",
+      "breach-of-contract",
+      "contract-formation"
+    ],
+    "insightSlug": "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    "searchTerms": [
+      "Force Majeure"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Founder Agreement",
+    "slug": "founder-agreement",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "An agreement defining the relationship among a business's founders, including contributions, roles, ownership, vesting, IP, decision-making, and departures. Its terms should coordinate with the company's governing documents and equity instruments. A founder title or informal understanding does not, by itself, resolve ownership or authority.",
+    "sections": [],
+    "relatedSlugs": [
+      "vesting",
+      "ip-assignment",
+      "operating-agreement"
+    ],
+    "insightSlug": "intellectual-property-risks-startups",
+    "searchTerms": [
+      "Founder Agreement"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Fractional General Counsel",
+    "slug": "fractional-general-counsel",
+    "category": "Business Counsel",
+    "aliases": [],
+    "definition": "An attorney or legal team engaged to provide ongoing, integrated company counsel for part of the time or capacity of a full-time legal department. The arrangement can cover contracts, governance, people, transactions, and legal risk. Its scope, availability, fees, and relationship to specialist counsel depend on the engagement.",
+    "sections": [
+      {
+        "id": "outside-general-counsel",
+        "title": "Outside General Counsel",
+        "text": "An external attorney or firm providing broad company legal advice across recurring business matters. The relationship may be ongoing or matter-based, depending on the engagement. Fractional general counsel commonly describes a more deliberately integrated service model, but neither label alone guarantees a particular scope or availability."
+      },
+      {
+        "id": "in-house-counsel",
+        "title": "In-House Counsel",
+        "text": "An attorney employed within an organization to advise it on legal matters. In-house counsel may manage contracts, governance, compliance, transactions, and disputes while coordinating outside specialists. The company is ordinarily the client; employment by the company does not make the lawyer personal counsel to every founder, officer, or employee."
+      },
+      {
+        "id": "contract-management",
+        "title": "Contract Management",
+        "text": "The process of organizing, approving, executing, tracking, and maintaining contracts throughout their life cycle. It includes monitoring obligations, renewal dates, amendments, and relationships between documents. Effective management helps a business perform the deal it actually signed and avoid inconsistent promises across teams."
+      }
+    ],
+    "relatedSlugs": [
+      "contract-renewal",
+      "incorporation-by-reference-and-order-of-precedence"
+    ],
+    "insightSlug": "fractional-general-counsel",
+    "searchTerms": [
+      "Fractional General Counsel",
+      "Outside General Counsel",
+      "In-House Counsel",
+      "Contract Management"
+    ],
+    "additionalInsightSlugs": [
+      "contract-chaos"
+    ]
+  },
+  {
+    "name": "Fraudulent Inducement",
+    "slug": "fraudulent-inducement",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "Fraud that causes a person to enter an agreement, typically through a qualifying misrepresentation, intended and justified reliance, and resulting injury. The elements depend on applicable law. A later failure to perform is not, by itself, proof that the party fraudulently induced the contract.",
+    "sections": [],
+    "relatedSlugs": [
+      "piercing-the-corporate-veil",
+      "rescission",
+      "breach-of-contract"
+    ],
+    "insightSlug": "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    "searchTerms": [
+      "Fraudulent Inducement"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Governing Law",
+    "slug": "governing-law",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The law selected to interpret an agreement and resolve specified legal questions. A governing-law clause is different from a clause choosing the court, location, or dispute process. Mandatory laws and conflict-of-laws rules can limit how far the parties' selection controls.",
+    "sections": [],
+    "relatedSlugs": [
+      "mediation",
+      "arbitration",
+      "commercial-lease"
+    ],
+    "insightSlug": "master-services-agreement-drafting",
+    "searchTerms": [
+      "Governing Law"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "IP Assignment",
+    "slug": "ip-assignment",
+    "category": "Intellectual Property",
+    "aliases": [
+      "Intellectual Property Assignment"
+    ],
+    "definition": "A transfer of ownership of identified intellectual property rights from one person or entity to another. It differs from a license, which grants permission to use rights without necessarily transferring ownership. The agreement should identify the rights, exclusions, effective transfer language, and any required further documentation.",
+    "sections": [
+      {
+        "id": "invention-assignment",
+        "title": "Invention Assignment",
+        "text": "An agreement transferring rights in specified inventions or requiring their transfer to an employer or other recipient. It should distinguish covered inventions from excluded prior work and address applicable legal limits. Invention ownership, copyright work-made-for-hire rules, and confidentiality are related but different questions."
+      },
+      {
+        "id": "confirmatory-assignment",
+        "title": "Confirmatory Assignment",
+        "text": "A document used to confirm or clarify a prior transfer of ownership rights, often intellectual property. It can help complete the record needed for diligence or registration. If no effective transfer occurred earlier, a new operative assignment may also be necessary; the document's title alone does not cure the gap."
+      },
+      {
+        "id": "background-ip",
+        "title": "Background IP",
+        "text": "Intellectual property a party already owns or develops independently of a particular engagement. A services agreement should distinguish background IP from newly created deliverables and specify any license the customer needs to use embedded tools or components. Paying for a project does not necessarily purchase the provider's preexisting technology."
+      },
+      {
+        "id": "implied-license",
+        "title": "Implied License",
+        "text": "Permission to use intellectual property inferred from conduct and circumstances rather than set out in an express license. Its existence and scope can be disputed, and it does not necessarily transfer ownership or permit every intended use. A written assignment or license provides clearer evidence of the company's rights."
+      },
+      {
+        "id": "chain-of-title",
+        "title": "Chain of Title",
+        "text": "The documented history showing how ownership rights moved from the original owner to the current owner. For startup IP, it may involve assignments from founders, employees, contractors, and subcontractors. A gap can leave a company unable to demonstrate that it owns the assets it uses or proposes to sell."
+      }
+    ],
+    "relatedSlugs": [
+      "work-made-for-hire",
+      "copyright",
+      "open-source-license",
+      "employment-agreement"
+    ],
+    "insightSlug": "you-paid-a-developer-to-build-your-app",
+    "searchTerms": [
+      "IP Assignment",
+      "Intellectual Property Assignment",
+      "Invention Assignment",
+      "Confirmatory Assignment",
+      "Background IP",
+      "Implied License",
+      "Chain of Title"
+    ],
+    "additionalInsightSlugs": [
+      "contract-chaos",
+      "intellectual-property-risks-startups",
+      "intellectual-property-employees-ownership-problem"
+    ]
+  },
+  {
+    "name": "Incorporation by Reference & Order of Precedence",
+    "slug": "incorporation-by-reference-and-order-of-precedence",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "Two drafting tools that help multiple contract documents work together. Incorporation by reference makes an identified document part of the agreement. An order-of-precedence clause establishes which terms control if the documents conflict. Both require clear language suited to the particular transaction.",
+    "sections": [
+      {
+        "id": "incorporation-by-reference",
+        "title": "Incorporation by Reference",
+        "text": "A drafting technique making another identified document part of an agreement without reproducing its full text. Effective incorporation requires sufficient clarity and depends on applicable law and the transaction. An order form should identify the applicable MSA or terms, rather than leave the governing version uncertain."
+      },
+      {
+        "id": "order-of-precedence",
+        "title": "Order of Precedence",
+        "text": "A clause establishing which document or provision controls when parts of a contractual arrangement conflict. It is particularly useful when an MSA, order form, SOW, and exhibits operate together. Without a clear hierarchy, an apparent customization can create uncertainty about which obligation the parties accepted."
+      }
+    ],
+    "relatedSlugs": [
+      "master-services-agreement",
+      "statement-of-work",
+      "customer-order-form"
+    ],
+    "insightSlug": "customer-order-form-drafting",
+    "searchTerms": [
+      "Incorporation by Reference & Order of Precedence",
+      "Incorporation by Reference",
+      "Order of Precedence"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Indemnification",
+    "slug": "indemnification",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "An obligation to cover specified losses, liabilities, or claims suffered by another party. A clause may also address defense obligations, procedures, and settlement control, but those duties should not be assumed from the label alone. Scope and enforceability depend on wording, context, and applicable law.",
+    "sections": [],
+    "relatedSlugs": [
+      "limitation-of-liability",
+      "master-services-agreement",
+      "release"
+    ],
+    "insightSlug": "master-services-agreement-drafting",
+    "searchTerms": [
+      "Indemnification"
+    ],
+    "additionalInsightSlugs": [
+      "three-contracts-before-your-first-customer",
+      "contract-chaos"
+    ]
+  },
+  {
+    "name": "Independent Contractor",
+    "slug": "independent-contractor",
+    "category": "People & Work",
+    "aliases": [],
+    "definition": "A person or business engaged to provide services while operating independently, rather than as an employee under the applicable legal test. A contract label, invoice, or tax form alone does not establish that status. Tax, unemployment, wage, and other laws may apply different classification standards.",
+    "sections": [],
+    "relatedSlugs": [
+      "worker-misclassification",
+      "ip-assignment",
+      "employment-agreement"
+    ],
+    "insightSlug": "employee-vs-contractor-structure",
+    "searchTerms": [
+      "Independent Contractor"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Inspection Rights",
+    "slug": "inspection-rights",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Rights to examine specified company books, records, or information under statute or governing documents. In a Texas LLC, the requesting person's status, stated purpose, scope, and required procedures can matter. Inspection rights provide access to information; they do not necessarily give the requester authority to manage the business.",
+    "sections": [],
+    "relatedSlugs": [
+      "membership-interest",
+      "operating-agreement",
+      "founder-agreement"
+    ],
+    "insightSlug": "business-partner-taking-money-from-company-texas",
+    "searchTerms": [
+      "Inspection Rights"
+    ],
+    "additionalInsightSlugs": [
+      "can-my-business-partner-force-me-out-of-a-texas-llc"
+    ]
+  },
+  {
+    "name": "Judicial Winding Up",
+    "slug": "judicial-winding-up",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A court-ordered process to conclude a company's affairs, address obligations, and distribute remaining assets before termination. Texas law permits it for LLCs on specified grounds. It can threaten the entire business and is different from simply removing one owner or ordering an ordinary negotiated buyout.",
+    "sections": [],
+    "relatedSlugs": [
+      "deadlock",
+      "member-expulsion",
+      "buyout"
+    ],
+    "insightSlug": "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+    "searchTerms": [
+      "Judicial Winding Up"
+    ],
+    "additionalInsightSlugs": [
+      "how-to-remove-a-member-from-a-texas-llc"
+    ]
+  },
+  {
+    "name": "Lease Assignment",
+    "slug": "lease-assignment",
+    "category": "Commercial Leases",
+    "aliases": [],
+    "definition": "A transfer of a tenant's lease interest to another party. Consent requirements and continuing liability depend on the lease and law. An assignment does not necessarily release the original tenant or a guarantor; an express release may be needed to end those obligations.",
+    "sections": [],
+    "relatedSlugs": [
+      "sublease",
+      "commercial-lease",
+      "personal-guarantee"
+    ],
+    "insightSlug": "can-a-business-get-out-of-a-commercial-lease-in-texas",
+    "searchTerms": [
+      "Lease Assignment"
+    ],
+    "additionalInsightSlugs": [
+      "what-to-review-before-signing-a-commercial-lease-in-texas"
+    ]
+  },
+  {
+    "name": "Lease Surrender",
+    "slug": "lease-surrender",
+    "category": "Commercial Leases",
+    "aliases": [],
+    "definition": "An agreement or legally effective arrangement by which a tenant gives up possession and the landlord accepts the ending of the tenancy. A negotiated surrender should specify payments, restoration, deposits, claims, and guarantee treatment. Returning keys alone does not necessarily end all lease liability.",
+    "sections": [],
+    "relatedSlugs": [
+      "commercial-lease",
+      "release",
+      "personal-guarantee"
+    ],
+    "insightSlug": "can-a-business-get-out-of-a-commercial-lease-in-texas",
+    "searchTerms": [
+      "Lease Surrender"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Limitation of Liability",
+    "slug": "limitation-of-liability",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A provision restricting specified financial exposure or categories of damages under a contract. It may establish a monetary cap, exclude certain losses, and create exceptions. It does not automatically eliminate liability; wording, interaction with indemnities, statutory rules, and enforceability limits must be considered.",
+    "sections": [],
+    "relatedSlugs": [
+      "indemnification",
+      "liquidated-damages",
+      "master-services-agreement"
+    ],
+    "insightSlug": "master-services-agreement-drafting",
+    "searchTerms": [
+      "Limitation of Liability"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Limited Liability Company",
+    "slug": "limited-liability-company",
+    "category": "Formation & Liability",
+    "aliases": [
+      "LLC"
+    ],
+    "definition": "A state-law business entity combining a separate legal identity and general owner liability protection with flexible governance. Its owners are members, and their rights are governed by applicable law and the company agreement. An LLC's federal tax treatment can vary; the entity form alone does not determine it.",
+    "sections": [
+      {
+        "id": "limited-liability",
+        "title": "Limited Liability",
+        "text": "The principle that owners generally are not personally responsible for entity obligations solely because they own the business. It does not protect against every risk: personal guarantees, individual wrongful conduct, and specific statutes can create personal exposure. The company's own assets remain available for its obligations."
+      }
+    ],
+    "relatedSlugs": [
+      "operating-agreement",
+      "membership-interest",
+      "disregarded-entity",
+      "personal-guarantee"
+    ],
+    "insightSlug": "llc-vs-c-corp",
+    "searchTerms": [
+      "Limited Liability Company",
+      "LLC",
+      "Limited Liability"
+    ],
+    "additionalInsightSlugs": [
+      "when-can-a-texas-llc-owner-be-held-personally-liable"
+    ]
+  },
+  {
+    "name": "Liquidated Damages",
+    "slug": "liquidated-damages",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "An amount or formula agreed in advance to compensate for a specified breach. Courts may refuse to enforce a provision that operates as an impermissible penalty rather than a valid damages estimate. Calling a fee liquidated damages does not establish its enforceability.",
+    "sections": [],
+    "relatedSlugs": [
+      "breach-of-contract",
+      "contract-termination",
+      "limitation-of-liability"
+    ],
+    "insightSlug": "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    "searchTerms": [
+      "Liquidated Damages"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Master Services Agreement",
+    "slug": "master-services-agreement",
+    "category": "Contracts",
+    "aliases": [
+      "MSA",
+      "Master Service Agreement"
+    ],
+    "definition": "A contract setting the general legal and commercial terms for a services relationship, often across multiple projects or purchases. Separate SOWs or order forms can define individual engagements. The documents should identify how they fit together and which terms control if they conflict.",
+    "sections": [
+      {
+        "id": "warranty-disclaimer",
+        "title": "Warranty Disclaimer",
+        "text": "A provision excluding or limiting specified warranties about goods, services, or performance. Applicable law may require particular language, conspicuousness, or other conditions, and some protections cannot be disclaimed. A disclaimer should be coordinated with express promises rather than assume that broad boilerplate overrides everything said elsewhere."
+      }
+    ],
+    "relatedSlugs": [
+      "statement-of-work",
+      "customer-order-form",
+      "incorporation-by-reference-and-order-of-precedence",
+      "limitation-of-liability"
+    ],
+    "insightSlug": "master-services-agreement-drafting",
+    "searchTerms": [
+      "Master Services Agreement",
+      "MSA",
+      "Master Service Agreement",
+      "Warranty Disclaimer"
+    ],
+    "additionalInsightSlugs": [
+      "three-contracts-before-your-first-customer"
+    ]
+  },
+  {
+    "name": "Mediation",
+    "slug": "mediation",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A facilitated negotiation in which a neutral mediator helps parties seek a voluntary resolution. The mediator generally does not decide the dispute or impose an outcome. A resulting settlement becomes binding through the parties' agreement and applicable legal requirements, rather than merely because mediation occurred.",
+    "sections": [
+      {
+        "id": "dispute-resolution",
+        "title": "Dispute Resolution",
+        "text": "The contractual or legal process used to address disagreements. It can include negotiation, mediation, arbitration, or court proceedings, with different consequences for cost, privacy, timing, and review. A well-drafted provision identifies which disputes it covers and how the selected process is initiated."
+      }
+    ],
+    "relatedSlugs": [
+      "arbitration",
+      "release",
+      "governing-law"
+    ],
+    "insightSlug": "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+    "searchTerms": [
+      "Mediation",
+      "Dispute Resolution"
+    ],
+    "additionalInsightSlugs": [
+      "master-services-agreement-drafting"
+    ]
+  },
+  {
+    "name": "Member Expulsion",
+    "slug": "member-expulsion",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "The involuntary ending of a person's status as an LLC member under an authorized mechanism. In Texas, the default prohibition and any modifications in the company agreement require close attention. Removing someone from employment or management does not, by itself, eliminate ownership or create a right to confiscate their interest.",
+    "sections": [],
+    "relatedSlugs": [
+      "buyout",
+      "membership-interest",
+      "member-withdrawal"
+    ],
+    "insightSlug": "how-to-remove-a-member-from-a-texas-llc",
+    "searchTerms": [
+      "Member Expulsion"
+    ],
+    "additionalInsightSlugs": [
+      "can-my-business-partner-force-me-out-of-a-texas-llc"
+    ]
+  },
+  {
+    "name": "Member Withdrawal",
+    "slug": "member-withdrawal",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "An LLC member's departure from membership under applicable law and the company agreement. It is different from quitting a job or ceasing daily work. A member may lack a unilateral withdrawal right, and withdrawal does not automatically require the company or other owners to purchase the interest.",
+    "sections": [],
+    "relatedSlugs": [
+      "buyout",
+      "membership-interest",
+      "member-expulsion"
+    ],
+    "insightSlug": "how-can-a-member-leave-a-texas-llc",
+    "searchTerms": [
+      "Member Withdrawal"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Member-Managed vs. Manager-Managed LLC",
+    "slug": "llc-management-structure",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Two ways to allocate an LLC’s governing authority. In a member-managed LLC, the members govern; in a manager-managed LLC, designated managers govern and may or may not be owners. The governing documents determine delegated responsibilities and which decisions still require owner approval.",
+    "sections": [
+      {
+        "id": "member-managed-llc",
+        "title": "Member-Managed LLC",
+        "text": "An LLC whose governing authority consists of its members under its organizational structure. The company agreement can allocate duties, votes, and delegated authority among them. Member management does not necessarily mean unanimous approval is required for every action or that every member can sign every contract."
+      },
+      {
+        "id": "manager-managed-llc",
+        "title": "Manager-Managed LLC",
+        "text": "An LLC whose governing authority is assigned to one or more managers under its organizational structure. Managers may or may not be owners. Members can retain approval rights over specified matters while managers direct operations, so owning an interest does not automatically confer day-to-day management authority."
+      }
+    ],
+    "relatedSlugs": [
+      "operating-agreement",
+      "voting-rights",
+      "authority-to-bind-a-company",
+      "reserved-matters"
+    ],
+    "insightSlug": "can-my-business-partner-make-decisions-without-me",
+    "searchTerms": [
+      "Member-Managed vs. Manager-Managed LLC",
+      "Member-Managed LLC",
+      "Manager-Managed LLC"
+    ],
+    "additionalInsightSlugs": [
+      "how-to-remove-a-member-from-a-texas-llc"
+    ]
+  },
+  {
+    "name": "Membership Interest",
+    "slug": "membership-interest",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "An owner's interest in an LLC, including the economic rights associated with ownership. In Texas, the transferable membership interest is distinguished from the member's right to participate in management. The company agreement and applicable law determine voting, distributions, transfer restrictions, and admission rights.",
+    "sections": [
+      {
+        "id": "assignee",
+        "title": "Assignee",
+        "text": "A person or entity that receives rights transferred by another. For a Texas LLC, receiving an assigned membership interest ordinarily does not, by itself, make the recipient a member or confer management rights. Admission and the scope of rights depend on the company agreement and applicable law."
+      },
+      {
+        "id": "assignment-of-membership-interest",
+        "title": "Assignment of Membership Interest",
+        "text": "A transfer of all or part of an owner's LLC interest to another person or entity. The transfer may be restricted by the company agreement. Transferring economic rights and admitting the recipient as a member are separate steps, so an assignment may not transfer voting or management authority."
+      },
+      {
+        "id": "successor-member",
+        "title": "Successor Member",
+        "text": "A person admitted to LLC membership following a prior member's death, transfer, or another succession event. Receiving an inherited economic interest does not necessarily complete admission or confer management rights. The company agreement, estate arrangements, and applicable statutory continuation rules should work together."
+      },
+      {
+        "id": "minority-owner",
+        "title": "Minority Owner",
+        "text": "An owner who holds less than a controlling interest under the company's actual voting and governance structure. Economic percentage alone may not determine control. Minority owners can have contractual approval, information, or exit rights, but ownership status does not automatically give a veto or a guaranteed buyout."
+      }
+    ],
+    "relatedSlugs": [
+      "voting-rights",
+      "distribution",
+      "transfer-restrictions",
+      "buyout"
+    ],
+    "insightSlug": "can-my-business-partner-force-me-out-of-a-texas-llc",
+    "searchTerms": [
+      "Membership Interest",
+      "Assignee",
+      "Assignment of Membership Interest",
+      "Successor Member",
+      "Minority Owner"
+    ],
+    "additionalInsightSlugs": [
+      "operating-agreement-backbone-of-your-company",
+      "how-to-remove-a-member-from-a-texas-llc",
+      "what-happens-to-a-texas-llc-when-a-member-dies",
+      "how-can-a-member-leave-a-texas-llc"
+    ]
+  },
+  {
+    "name": "Open-Source License",
+    "slug": "open-source-license",
+    "category": "Intellectual Property",
+    "aliases": [],
+    "definition": "Terms granting permissions to use, copy, modify, or distribute software made available under an open-source license. Conditions differ and may include notices, attribution, or source-disclosure obligations in particular circumstances. Open source is not the same as public domain, and using a component does not transfer its ownership to the business.",
+    "sections": [],
+    "relatedSlugs": [
+      "ip-assignment",
+      "copyright",
+      "work-made-for-hire"
+    ],
+    "insightSlug": "you-paid-a-developer-to-build-your-app",
+    "searchTerms": [
+      "Open-Source License"
+    ],
+    "additionalInsightSlugs": [
+      "intellectual-property-risks-startups"
+    ]
+  },
+  {
+    "name": "Operating Agreement",
+    "slug": "operating-agreement",
+    "category": "Ownership & Governance",
+    "aliases": [
+      "Company Agreement",
+      "LLC Agreement"
+    ],
+    "definition": "An operating agreement defines how an LLC is owned and operated. It sets the rules for management, voting, contributions, distributions, ownership transfers, and what happens when an owner leaves.",
+    "sections": [],
+    "relatedSlugs": [
+      "membership-interest",
+      "voting-rights",
+      "buy-sell-agreement"
+    ],
+    "insightSlug": "operating-agreement-backbone-of-your-company",
+    "searchTerms": [
+      "Operating Agreement",
+      "Company Agreement",
+      "LLC Agreement"
+    ],
+    "additionalInsightSlugs": [
+      "llc-vs-c-corp"
+    ],
+    "context": "In Texas, it is called a company agreement. It works alongside the certificate of formation and applicable law."
+  },
+  {
+    "name": "Option Pool",
+    "slug": "option-pool",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "Equity reserved for option grants or other incentive awards, usually for employees, advisors, or other contributors. A reserved pool is not necessarily currently issued stock. Its size and treatment in a financing can affect fully diluted ownership calculations and determine who bears dilution from an increase.",
+    "sections": [],
+    "relatedSlugs": [
+      "cap-table",
+      "dilution",
+      "vesting"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "Option Pool"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Payment Terms",
+    "slug": "payment-terms",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The agreed rules governing amounts owed, billing, due dates, deposits, expenses, late charges, and related payment procedures. They should coordinate with acceptance, suspension, and dispute provisions. Adding a new fee to an invoice does not necessarily make it enforceable if the customer never agreed to it.",
+    "sections": [
+      {
+        "id": "milestone-payments",
+        "title": "Milestone Payments",
+        "text": "Payments tied to specified stages, deliverables, or events in a project. The agreement should state what triggers payment, whether acceptance is required, and how delays or disputed work are handled. A schedule saying payment is due at completion is clearer when completion has an agreed meaning."
+      }
+    ],
+    "relatedSlugs": [
+      "customer-order-form",
+      "demand-letter",
+      "statement-of-work"
+    ],
+    "insightSlug": "three-contracts-before-your-first-customer",
+    "searchTerms": [
+      "Payment Terms",
+      "Milestone Payments"
+    ],
+    "additionalInsightSlugs": [
+      "customer-order-form-drafting",
+      "client-wont-pay-invoice-texas",
+      "statement-of-work-drafting"
+    ]
+  },
+  {
+    "name": "Personal Guarantee",
+    "slug": "personal-guarantee",
+    "category": "Formation & Liability",
+    "aliases": [
+      "Personal Guaranty"
+    ],
+    "definition": "A separate promise by an individual to answer for specified obligations of a business or another borrower. If the covered obligation is unpaid, the creditor may pursue the guarantor under its terms. Forming an LLC does not remove this voluntarily assumed liability, and selling or closing the business does not automatically release it.",
+    "sections": [
+      {
+        "id": "continuing-guarantee",
+        "title": "Continuing Guarantee",
+        "text": "A guarantee that can cover an ongoing series of obligations, rather than only a single identified debt. Its language may reach renewals, future advances, or other credit extended to the borrower. Any cap, expiration, or revocation right must be assessed under the document and applicable law."
+      },
+      {
+        "id": "guarantee-of-payment",
+        "title": "Guarantee of Payment",
+        "text": "A guarantee under which the guarantor promises payment when the covered debt becomes due and unpaid, subject to its terms. It may allow the creditor to proceed against the guarantor without first exhausting remedies against the borrower or collateral. Any notice requirements, limitations, and defenses require separate review."
+      },
+      {
+        "id": "guarantee-of-collection",
+        "title": "Guarantee of Collection",
+        "text": "A guarantee that conditions the guarantor's payment obligation on specified collection efforts or other prerequisites involving the borrower. The creditor may need to pursue the borrower before seeking payment from the guarantor. The document's actual terms determine the required steps, regardless of its heading."
+      },
+      {
+        "id": "joint-and-several-liability",
+        "title": "Joint and Several Liability",
+        "text": "Liability allowing a claimant, where applicable, to recover the full covered amount from any one of multiple responsible parties, subject to limits on total recovery. Contribution rights may allocate the burden among those parties afterward. Equal ownership does not necessarily mean equal collection exposure under a guarantee."
+      },
+      {
+        "id": "deficiency",
+        "title": "Deficiency",
+        "text": "The unpaid balance remaining after collateral proceeds or other credited recoveries are applied to a debt and permitted charges. A borrower or guarantor may remain responsible for it, subject to the documents and applicable defenses. Selling the collateral does not necessarily satisfy the entire obligation."
+      },
+      {
+        "id": "acceleration-clause",
+        "title": "Acceleration Clause",
+        "text": "A contract provision allowing a creditor to declare future installments immediately due after a specified event, commonly a payment default. Acceleration may require notice or an opportunity to cure. It concerns the timing of debt repayment, which is different from accelerating the vesting of equity."
+      }
+    ],
+    "relatedSlugs": [
+      "collateral",
+      "piercing-the-corporate-veil",
+      "release",
+      "cure-period"
+    ],
+    "insightSlug": "personal-guarantee-for-a-business-loan",
+    "searchTerms": [
+      "Personal Guarantee",
+      "Personal Guaranty",
+      "Guarantor",
+      "Continuing Guarantee",
+      "Guarantee of Payment",
+      "Guarantee of Collection",
+      "Joint and Several Liability",
+      "Deficiency",
+      "Acceleration Clause"
+    ],
+    "additionalInsightSlugs": [
+      "can-a-business-get-out-of-a-commercial-lease-in-texas",
+      "when-can-a-texas-llc-owner-be-held-personally-liable",
+      "what-to-review-before-signing-a-commercial-lease-in-texas"
+    ]
+  },
+  {
+    "name": "Piercing the Corporate Veil",
+    "slug": "piercing-the-corporate-veil",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "A legal basis for disregarding an entity's liability boundary and holding an owner responsible for an obligation otherwise belonging to the entity. The requirements vary by jurisdiction and claim. Texas places significant statutory limits on contract-related veil piercing; poor records or ownership control alone do not automatically satisfy them.",
+    "sections": [
+      {
+        "id": "alter-ego",
+        "title": "Alter Ego",
+        "text": "A theory that an entity and the person controlling it have been operated without meaningful separation. It can arise in efforts to disregard an entity's separate existence, but it does not automatically establish owner liability. Texas imposes additional statutory limits, particularly for claims involving contractual obligations."
+      },
+      {
+        "id": "actual-fraud",
+        "title": "Actual Fraud",
+        "text": "Fraud involving intentional deception, rather than liability inferred solely from a relationship or legal duty. The required proof depends on the claim. In Texas veil-piercing disputes over contractual obligations, actual fraud and direct personal benefit can be central statutory requirements; ordinary business failure alone does not establish them."
+      }
+    ],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "commingling",
+      "fraudulent-inducement"
+    ],
+    "insightSlug": "when-can-a-texas-llc-owner-be-held-personally-liable",
+    "searchTerms": [
+      "Piercing the Corporate Veil",
+      "Alter Ego",
+      "Actual Fraud"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Priced Round",
+    "slug": "priced-round",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "An equity financing in which the parties establish a share price or valuation framework for issuing stock. It often involves preferred stock and can trigger conversion of outstanding SAFEs or other convertible securities. The ownership result depends on both new investment and the treatment of existing instruments and the option pool.",
+    "sections": [
+      {
+        "id": "preferred-stock",
+        "title": "Preferred Stock",
+        "text": "Stock carrying rights or preferences different from common stock, as established in the governing documents. Those rights may address liquidation proceeds, dividends, conversion, voting, or protective approvals. Preferred does not mean every investor is guaranteed repayment or that every class carries the same protections."
+      }
+    ],
+    "relatedSlugs": [
+      "safe",
+      "cap-table",
+      "c-corporation",
+      "voting-rights"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "Priced Round",
+      "Preferred Stock"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Pro Rata Rights",
+    "slug": "pro-rata-rights",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "Contractual rights allowing an investor to participate in a later financing to preserve a specified proportional ownership position, subject to the agreement. They are usually an opportunity to invest additional money, not free additional shares. Eligibility, calculation, exclusions, and waiver provisions determine the right's actual reach.",
+    "sections": [],
+    "relatedSlugs": [
+      "dilution",
+      "priced-round",
+      "safe"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "Pro Rata Rights"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Related-Party Transaction",
+    "slug": "related-party-transaction",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "A transaction involving a company and someone connected to it, such as an owner, manager, affiliate, or family member. It can create conflicts of interest even when the deal is commercially reasonable. Disclosure, approval procedures, fairness, and governing-document requirements help determine whether the transaction was authorized and defensible.",
+    "sections": [],
+    "relatedSlugs": [
+      "fiduciary-duty",
+      "reserved-matters",
+      "voting-rights"
+    ],
+    "insightSlug": "business-partner-taking-money-from-company-texas",
+    "searchTerms": [
+      "Related-Party Transaction"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Release",
+    "slug": "release",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "An agreement relinquishing specified claims or obligations. Its scope depends on the language, parties, timing, and law, including any claims that cannot lawfully be waived. A release between departing owners does not bind a landlord or lender that did not agree to release its own rights.",
+    "sections": [],
+    "relatedSlugs": [
+      "buyout",
+      "personal-guarantee",
+      "lease-surrender"
+    ],
+    "insightSlug": "how-can-a-member-leave-a-texas-llc",
+    "searchTerms": [
+      "Release"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Rescission",
+    "slug": "rescission",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A remedy or agreement seeking to unwind a transaction and restore the parties, as far as practicable, to their prior positions. It differs from ending future performance through termination. Grounds, restoration requirements, timing, and competing remedies depend on the law and facts; regret about a deal is not enough.",
+    "sections": [],
+    "relatedSlugs": [
+      "fraudulent-inducement",
+      "contract-termination",
+      "release"
+    ],
+    "insightSlug": "can-a-business-cancel-a-contract-after-signing-it-in-texas",
+    "searchTerms": [
+      "Rescission"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Reserved Matters",
+    "slug": "reserved-matters",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Decisions withheld from ordinary management authority and made subject to specified owner, board, or investor approval. Examples include major borrowing, new equity, related-party deals, or a sale of the business. The governing agreement should identify the matters and voting thresholds clearly to avoid accidental vetoes or unauthorized action.",
+    "sections": [],
+    "relatedSlugs": [
+      "voting-rights",
+      "deadlock",
+      "operating-agreement"
+    ],
+    "insightSlug": "can-my-business-partner-make-decisions-without-me",
+    "searchTerms": [
+      "Reserved Matters"
+    ],
+    "additionalInsightSlugs": [
+      "50-50-founder-equity-splits-hidden-risk-startup-deadlocks"
+    ]
+  },
+  {
+    "name": "Restrictive Covenant",
+    "slug": "restrictive-covenant",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A contractual restriction on specified conduct, often involving competition, solicitation, confidentiality, or use of business information. Different restrictions have different enforceability standards, and jurisdiction matters. A clause should be assessed for its actual scope and legal requirements rather than assumed valid because an employee signed it.",
+    "sections": [],
+    "relatedSlugs": [
+      "confidentiality-agreement",
+      "employment-agreement",
+      "ip-assignment"
+    ],
+    "insightSlug": "intellectual-property-employees-ownership-problem",
+    "searchTerms": [
+      "Restrictive Covenant"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Right of First Refusal",
+    "slug": "right-of-first-refusal",
+    "category": "Ownership & Governance",
+    "aliases": [
+      "ROFR"
+    ],
+    "definition": "A contractual opportunity to purchase an interest or asset on specified terms before its owner completes a sale to someone else. It commonly arises after a third-party offer, unlike a right of first offer. Notice, matching requirements, deadlines, and covered transfers depend on the agreement.",
+    "sections": [],
+    "relatedSlugs": [
+      "transfer-restrictions",
+      "membership-interest",
+      "buyout"
+    ],
+    "insightSlug": "how-can-a-member-leave-a-texas-llc",
+    "searchTerms": [
+      "Right of First Refusal",
+      "ROFR"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "SAFE",
+    "slug": "safe",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "Short for Simple Agreement for Future Equity: a financing contract providing specified rights to future equity or payments upon defined events. A standard YC SAFE generally has no interest or maturity date, unlike a conventional convertible note. Variants differ, and a SAFE investment ordinarily does not immediately issue stock.",
+    "sections": [
+      {
+        "id": "post-money-safe",
+        "title": "Post-Money SAFE",
+        "text": "A SAFE structured so its capitalization definitions include the SAFE financing in the post-money valuation-cap calculation. It can make the estimated ownership sold at the cap easier to model before the next priced round. The holder generally has contractual rights to future equity, rather than immediately issued shares; actual conversion follows the instrument."
+      },
+      {
+        "id": "pre-money-safe",
+        "title": "Pre-Money SAFE",
+        "text": "A SAFE whose valuation-cap mechanics use a pre-money capitalization framework rather than the post-money SAFE structure. Additional convertible instruments and later financing terms can affect the ownership ultimately received. A founder should model the actual documents instead of assuming investment divided by cap fixes the final percentage."
+      }
+    ],
+    "relatedSlugs": [
+      "valuation-cap",
+      "dilution",
+      "priced-round",
+      "cap-table"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "SAFE",
+      "Post-Money SAFE",
+      "Pre-Money SAFE"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Scope Creep",
+    "slug": "scope-creep",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "The gradual expansion of requested work beyond the originally agreed scope without a corresponding agreed adjustment to price, resources, or timing. It is an operational problem that can become a contract dispute. Defined deliverables and consistent change-order procedures help distinguish included work from additional services.",
+    "sections": [],
+    "relatedSlugs": [
+      "statement-of-work",
+      "contract-modification",
+      "contract-formation"
+    ],
+    "insightSlug": "statement-of-work-drafting",
+    "searchTerms": [
+      "Scope Creep"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Series LLC",
+    "slug": "series-llc",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "An LLC structure authorized to establish separate series associated with particular assets, members, or business activities. Under Texas law, qualifying series can have internal liability separation when statutory requirements are satisfied. The structure requires appropriate documents and records and may receive different treatment for taxes, financing, or operations in other states.",
+    "sections": [
+      {
+        "id": "protected-series",
+        "title": "Protected Series",
+        "text": "A Texas LLC series established as a protected series under the company's governing framework without a separate certificate of registered series for that series. Statutory liability separation depends on satisfying the applicable formation, agreement, notice, and separate-record requirements. The label alone does not create a complete asset barrier."
+      },
+      {
+        "id": "registered-series",
+        "title": "Registered Series",
+        "text": "A Texas LLC series created through the required filing of a certificate of registered series with the Secretary of State. Its public filing distinguishes it from a protected series. Liability separation still depends on statutory requirements and proper operation; registration does not make every series an independent domestic entity."
+      },
+      {
+        "id": "liability-segregation",
+        "title": "Liability Segregation",
+        "text": "Organizing assets and obligations so that risk associated with one business, asset, or activity is separated from others where law permits. Separate entities or properly maintained series can support that objective. Guarantees, shared obligations, asset handling, and actual operations can reconnect risks the structure was intended to separate."
+      }
+    ],
+    "relatedSlugs": [
+      "certificate-of-formation",
+      "collateral",
+      "limited-liability-company"
+    ],
+    "insightSlug": "what-is-a-series-llc-in-texas",
+    "searchTerms": [
+      "Series LLC",
+      "Protected Series",
+      "Registered Series",
+      "Liability Segregation"
+    ],
+    "additionalInsightSlugs": [
+      "series-llc-vs-separate-llcs-in-texas"
+    ]
+  },
+  {
+    "name": "Statement of Work",
+    "slug": "statement-of-work",
+    "category": "Contracts",
+    "aliases": [
+      "SOW"
+    ],
+    "definition": "A project-specific document describing services, deliverables, responsibilities, milestones, acceptance, and related terms. It can operate under an MSA or serve within another contracting structure. A useful SOW explains both what is included and how changes are approved, rather than relying only on a general description of the project.",
+    "sections": [
+      {
+        "id": "scope-of-work",
+        "title": "Scope of Work",
+        "text": "The description of the services or activities a provider agrees to perform. It should identify boundaries, assumptions, exclusions, and required customer cooperation where relevant. Scope of work is the substantive description; a statement of work is a document that may contain that description and additional project terms."
+      },
+      {
+        "id": "deliverables",
+        "title": "Deliverables",
+        "text": "The specific work products or results a provider must supply under an agreement, such as software, designs, reports, or documentation. The contract should identify their required characteristics, timing, and acceptance process. Delivering a usable product and transferring ownership rights in that product are separate contractual questions."
+      },
+      {
+        "id": "acceptance-criteria",
+        "title": "Acceptance Criteria",
+        "text": "The agreed standards and procedures used to determine whether a deliverable satisfies a contract. They may specify required features, testing, review deadlines, rejection procedures, and correction rights. Clear criteria help distinguish unfinished work from requests for additional work outside the original scope."
+      }
+    ],
+    "relatedSlugs": [
+      "master-services-agreement",
+      "customer-order-form",
+      "scope-creep",
+      "contract-modification"
+    ],
+    "insightSlug": "statement-of-work-drafting",
+    "searchTerms": [
+      "Statement of Work",
+      "SOW",
+      "Scope of Work",
+      "Deliverables",
+      "Acceptance Criteria"
+    ],
+    "additionalInsightSlugs": [
+      "three-contracts-before-your-first-customer"
+    ]
+  },
+  {
+    "name": "Statute of Frauds",
+    "slug": "statute-of-frauds",
+    "category": "Contracts",
+    "aliases": [],
+    "definition": "A law requiring certain agreements to be supported by a sufficient signed writing to be enforceable against the relevant party. Covered transactions and exceptions vary. Emails or other electronic records may sometimes satisfy the requirement, but an electronic format does not supply essential terms that were never agreed.",
+    "sections": [
+      {
+        "id": "oral-contract",
+        "title": "Oral Contract",
+        "text": "An agreement formed through spoken words rather than a complete signed written document. It can be enforceable when the necessary contract elements exist and no applicable law requires a sufficient writing. Proving the exact terms is often harder than establishing that the parties had a business conversation."
+      }
+    ],
+    "relatedSlugs": [
+      "electronic-signature",
+      "personal-guarantee",
+      "contract-formation"
+    ],
+    "insightSlug": "are-oral-email-and-text-agreements-enforceable-in-texas",
+    "searchTerms": [
+      "Statute of Frauds",
+      "Oral Contract"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Statute of Limitations",
+    "slug": "statute-of-limitations",
+    "category": "Business Disputes",
+    "aliases": [],
+    "definition": "A legal deadline for filing a particular type of claim, generally measured from an accrual event subject to applicable rules and exceptions. The correct period depends on the claim and transaction. Sending demands or negotiating does not ordinarily suspend the deadline without a valid legal basis or agreement.",
+    "sections": [],
+    "relatedSlugs": [
+      "demand-letter",
+      "breach-of-contract",
+      "fraudulent-inducement"
+    ],
+    "insightSlug": "client-wont-pay-invoice-texas",
+    "searchTerms": [
+      "Statute of Limitations"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Sublease",
+    "slug": "sublease",
+    "category": "Commercial Leases",
+    "aliases": [],
+    "definition": "An arrangement in which a tenant grants another occupant rights to use all or part of leased premises while retaining an interest under the original lease. The original tenant generally remains obligated to the landlord unless released. Consent, permitted use, duration, and default consequences depend on the lease and sublease.",
+    "sections": [],
+    "relatedSlugs": [
+      "lease-assignment",
+      "commercial-lease",
+      "release"
+    ],
+    "insightSlug": "can-a-business-get-out-of-a-commercial-lease-in-texas",
+    "searchTerms": [
+      "Sublease"
+    ],
+    "additionalInsightSlugs": [
+      "what-to-review-before-signing-a-commercial-lease-in-texas"
+    ]
+  },
+  {
+    "name": "Texas Franchise Tax",
+    "slug": "texas-franchise-tax",
+    "category": "Formation & Liability",
+    "aliases": [],
+    "definition": "A Texas privilege tax applying to taxable entities formed in Texas or doing business in the state, subject to exemptions and other rules. Liability and reporting depend on the entity and applicable requirements. Owing no tax does not necessarily eliminate required information reports or the need to maintain the account.",
+    "sections": [
+      {
+        "id": "tax-forfeiture",
+        "title": "Tax Forfeiture",
+        "text": "A loss of specified entity rights or privileges resulting from failure to satisfy applicable tax or reporting requirements. In Texas, franchise-tax noncompliance can lead to forfeiture processes and potential personal liability for certain debts. Forfeiture of tax privileges and later forfeiture of an entity's charter or registration are related but distinct steps."
+      }
+    ],
+    "relatedSlugs": [
+      "limited-liability-company",
+      "vetcert",
+      "authority-to-bind-a-company"
+    ],
+    "insightSlug": "what-is-a-series-llc-in-texas",
+    "searchTerms": [
+      "Texas Franchise Tax",
+      "Tax Forfeiture"
+    ],
+    "additionalInsightSlugs": [
+      "when-can-a-texas-llc-owner-be-held-personally-liable"
+    ]
+  },
+  {
+    "name": "Transfer Restrictions",
+    "slug": "transfer-restrictions",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Rules limiting when, how, or to whom an ownership interest or contractual right may be transferred. They may require consent, create purchase rights, or prohibit specified transactions. An attempted transfer's effect depends on the wording and law; economic transfer rights and admission to management may be treated separately.",
+    "sections": [],
+    "relatedSlugs": [
+      "right-of-first-refusal",
+      "membership-interest",
+      "operating-agreement"
+    ],
+    "insightSlug": "can-my-business-partner-force-me-out-of-a-texas-llc",
+    "searchTerms": [
+      "Transfer Restrictions"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Triple-Net Lease",
+    "slug": "triple-net-lease",
+    "category": "Commercial Leases",
+    "aliases": [
+      "NNN Lease",
+      "CAM"
+    ],
+    "definition": "A commercial lease commonly requiring the tenant to pay allocated property taxes, building insurance, and maintenance expenses in addition to base rent. The label does not establish the precise allocation of costs. The actual lease determines exclusions, repair responsibilities, capital costs, caps, and reimbursement procedures.",
+    "sections": [
+      {
+        "id": "common-area-maintenance",
+        "title": "Common Area Maintenance",
+        "text": "Expenses associated with maintaining shared areas of commercial property, often called CAM charges. A lease may allocate some of these expenses to tenants in addition to base rent. The definition, exclusions, allocation formula, caps, and audit rights determine which costs the tenant actually bears."
+      }
+    ],
+    "relatedSlugs": [
+      "commercial-lease",
+      "payment-terms",
+      "lease-assignment"
+    ],
+    "insightSlug": "what-to-review-before-signing-a-commercial-lease-in-texas",
+    "searchTerms": [
+      "Triple-Net Lease",
+      "NNN Lease",
+      "CAM",
+      "Common Area Maintenance"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Valuation Cap",
+    "slug": "valuation-cap",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "A contractual ceiling used to calculate a convertible instrument's conversion price under specified circumstances. It can give an early investor a more favorable conversion price when a later financing valuation exceeds the cap. It is not necessarily the company's present market value or a guarantee of a fixed ultimate ownership percentage.",
+    "sections": [],
+    "relatedSlugs": [
+      "safe",
+      "priced-round",
+      "cap-table"
+    ],
+    "insightSlug": "post-money-safe-ownership-dilution",
+    "searchTerms": [
+      "Valuation Cap"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Vesting",
+    "slug": "vesting",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "The process by which an equity award or other benefit becomes earned or no longer subject to specified forfeiture or repurchase conditions. Founder stock can be issued upfront while remaining subject to a repurchase right that lapses over time. The schedule, service requirements, departures, and acceleration terms determine what the person retains.",
+    "sections": [
+      {
+        "id": "cliff-vesting",
+        "title": "Cliff Vesting",
+        "text": "A vesting arrangement under which no portion of a grant vests until a specified initial period has been completed. At the cliff, an agreed portion vests at once, with the rest following the schedule. A one-year cliff in a four-year schedule commonly releases the first year's portion after twelve months."
+      },
+      {
+        "id": "dead-equity",
+        "title": "Dead Equity",
+        "text": "An informal term for ownership held by someone who is no longer contributing to the business, particularly a departed founder. The interest may still carry economic or voting rights. It does not disappear simply because the owner stopped working; vesting and repurchase arrangements must create any agreed adjustment."
+      }
+    ],
+    "relatedSlugs": [
+      "vesting-acceleration",
+      "buyout",
+      "cap-table"
+    ],
+    "insightSlug": "what-is-vesting-and-why-founders-should-implement-it-early",
+    "searchTerms": [
+      "Vesting",
+      "Cliff Vesting",
+      "Dead Equity"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Vesting Acceleration",
+    "slug": "vesting-acceleration",
+    "category": "Equity & Capital",
+    "aliases": [],
+    "definition": "A contractual provision causing equity to vest sooner after specified events. Single-trigger acceleration requires one qualifying event; double-trigger acceleration requires two, commonly a change of control and a qualifying employment departure. The documents determine the events, timing, and portion of the award affected.",
+    "sections": [
+      {
+        "id": "single-trigger-acceleration",
+        "title": "Single-Trigger Acceleration",
+        "text": "A provision accelerating equity vesting after one defined event, often a change of control. The trigger and the portion accelerated depend on the agreement. It differs from double-trigger acceleration, which requires an additional qualifying event, and from accelerating repayment of a loan."
+      },
+      {
+        "id": "double-trigger-acceleration",
+        "title": "Double-Trigger Acceleration",
+        "text": "A provision accelerating equity vesting only after two specified events occur, commonly a change of control followed by termination without cause or resignation for defined good reason. The agreement determines the timing window and amount accelerated. A company sale alone may not satisfy the provision."
+      },
+      {
+        "id": "good-reason",
+        "title": "Good Reason",
+        "text": "A contractually defined basis for an employee to resign and receive specified benefits, such as severance or vesting acceleration. It commonly addresses substantial reductions in duties, pay, or required relocation. Notice, an employer cure opportunity, and resignation deadlines may be necessary; personal dissatisfaction alone may not qualify."
+      },
+      {
+        "id": "termination-without-cause",
+        "title": "Termination Without Cause",
+        "text": "An employment termination that does not meet the agreement's definition of cause, or is expressly treated as without cause. It may trigger severance or vesting rights when the documents provide them. The phrase does not necessarily mean the termination was unlawful, unjustified, or prohibited under employment law."
+      },
+      {
+        "id": "change-of-control",
+        "title": "Change of Control",
+        "text": "An event that shifts control of a business, as defined in the relevant agreement. It may include a merger, stock sale, or sale of substantially all assets, but definitions vary. It can trigger consent rights, contract termination, payouts, or vesting acceleration."
+      }
+    ],
+    "relatedSlugs": [
+      "vesting",
+      "employment-agreement",
+      "buyout",
+      "cure-period"
+    ],
+    "insightSlug": "what-is-vesting-and-why-founders-should-implement-it-early",
+    "searchTerms": [
+      "Vesting Acceleration",
+      "Single-Trigger Acceleration",
+      "Double-Trigger Acceleration",
+      "Good Reason",
+      "Termination Without Cause",
+      "Change of Control"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "VetCert",
+    "slug": "vetcert",
+    "category": "Veteran Businesses",
+    "aliases": [
+      "Veteran Small Business Certification",
+      "VOSB",
+      "SDVOSB"
+    ],
+    "definition": "The SBA's Veteran Small Business Certification program for eligible VOSBs and SDVOSBs. Certification concerns federal program eligibility, including qualifying ownership and control, and is distinct from forming a veteran-owned company or receiving Texas benefits. Certification can support access to specified contracting opportunities but does not guarantee an award.",
+    "sections": [
+      {
+        "id": "veteran-owned-small-business",
+        "title": "Veteran-Owned Small Business",
+        "text": "A small business owned and controlled by qualifying veterans under the relevant program, commonly abbreviated VOSB in federal contracting. SBA certification generally requires at least 51 percent qualifying ownership and control plus other conditions. Texas veteran-business benefits use separate eligibility rules, so the same label does not establish eligibility everywhere."
+      },
+      {
+        "id": "service-disabled-veteran-owned-small-business",
+        "title": "Service-Disabled Veteran-Owned Small Business",
+        "text": "A small business meeting the applicable program's requirements for ownership and control by qualifying service-disabled veterans, commonly called an SDVOSB. Federal SBA certification generally requires at least 51 percent qualifying ownership and control, plus other eligibility conditions. The federal status is distinct from Texas veteran-business benefits."
+      },
+      {
+        "id": "ownership-and-control",
+        "title": "Ownership and Control",
+        "text": "Two related but distinct concepts: ownership concerns the economic or equity stake, while control concerns the ability to direct decisions. Voting provisions, management appointments, and veto rights can separate them. Certification programs may impose their own requirements for both, so meeting an ownership percentage may not be sufficient."
+      }
+    ],
+    "relatedSlugs": [
+      "operating-agreement",
+      "voting-rights",
+      "capital-contribution",
+      "reserved-matters"
+    ],
+    "insightSlug": "veteran-owned-business-texas-legal-guide",
+    "searchTerms": [
+      "VetCert",
+      "Veteran Small Business Certification",
+      "VOSB",
+      "SDVOSB",
+      "Veteran-Owned Small Business",
+      "Service-Disabled Veteran-Owned Small Business",
+      "Ownership and Control"
+    ],
+    "additionalInsightSlugs": []
+  },
+  {
+    "name": "Voting Rights",
+    "slug": "voting-rights",
+    "category": "Ownership & Governance",
+    "aliases": [],
+    "definition": "Rights to approve, reject, or otherwise participate in specified company decisions. They may be allocated by person, ownership, class, or another agreed formula and need not match economic percentages. Management authority and voting rights are also distinct, so an owner may have approval rights without directing daily operations.",
+    "sections": [
+      {
+        "id": "supermajority-vote",
+        "title": "Supermajority Vote",
+        "text": "Approval requiring more than a simple majority, such as two-thirds or 75 percent, as defined by governing documents or law. The calculation may be based on ownership, voting interests, persons, or classes. A high threshold can protect owners while also creating veto power or deadlock."
+      },
+      {
+        "id": "written-consent",
+        "title": "Written Consent",
+        "text": "A documented approval of company action taken without holding a conventional meeting, where law and governing documents permit it. The required voters, signatures, notice, and recordkeeping still matter. Using a written consent does not reduce the approval threshold or allow one person to act for votes they do not control."
+      }
+    ],
+    "relatedSlugs": [
+      "membership-interest",
+      "reserved-matters",
+      "deadlock",
+      "authority-to-bind-a-company"
+    ],
+    "insightSlug": "can-my-business-partner-make-decisions-without-me",
+    "searchTerms": [
+      "Voting Rights",
+      "Supermajority Vote",
+      "Written Consent"
+    ],
+    "additionalInsightSlugs": [
+      "operating-agreement-backbone-of-your-company",
+      "50-50-founder-equity-splits-hidden-risk-startup-deadlocks"
+    ]
+  },
+  {
+    "name": "Work Made for Hire",
+    "slug": "work-made-for-hire",
+    "category": "Intellectual Property",
+    "aliases": [],
+    "definition": "A copyright category in which the employer or qualifying commissioning party is treated as the legal author. It can apply to employee work within the scope of employment and certain specially commissioned categories with the required signed agreement. Hiring and paying an independent developer does not automatically make all software work made for hire.",
+    "sections": [],
+    "relatedSlugs": [
+      "copyright",
+      "ip-assignment",
+      "independent-contractor"
+    ],
+    "insightSlug": "you-paid-a-developer-to-build-your-app",
+    "searchTerms": [
+      "Work Made for Hire"
+    ],
+    "additionalInsightSlugs": [
+      "intellectual-property-employees-ownership-problem"
+    ]
+  },
+  {
+    "name": "Worker Misclassification",
+    "slug": "worker-misclassification",
+    "category": "People & Work",
+    "aliases": [],
+    "definition": "Treating a worker as an independent contractor or another category when the applicable law treats the person differently. Consequences can include tax, unemployment, wage, benefit, or other liabilities. Different laws use different tests, so a contract label or result under one statute does not settle classification for every purpose.",
+    "sections": [
+      {
+        "id": "behavioral-control",
+        "title": "Behavioral Control",
+        "text": "A category of factors examining whether a business has the right to direct how a worker performs services, including instructions, training, methods, and evaluation. It is relevant to some worker-classification tests, particularly federal tax analysis. No single factor or contract label determines status under every employment law."
+      },
+      {
+        "id": "financial-control",
+        "title": "Financial Control",
+        "text": "A category of worker-classification factors addressing the economic aspects of the relationship, such as investment, expenses, payment method, and opportunity for profit or loss. It is relevant to federal tax analysis but is not a universal standalone test. Other laws may apply different standards to the same worker."
+      },
+      {
+        "id": "right-of-control",
+        "title": "Right of Control",
+        "text": "The legal or practical ability to direct how work is performed, rather than merely specify the desired outcome. It is central to several employee-classification analyses, including Texas unemployment law. An unexercised right can still matter, and other employment statutes may use different or additional tests."
+      }
+    ],
+    "relatedSlugs": [
+      "independent-contractor",
+      "employment-agreement",
+      "ip-assignment"
+    ],
+    "insightSlug": "employee-vs-contractor-structure",
+    "searchTerms": [
+      "Worker Misclassification",
+      "Behavioral Control",
+      "Financial Control",
+      "Right of Control"
+    ],
+    "additionalInsightSlugs": [
+      "contract-chaos"
+    ]
+  }
+]

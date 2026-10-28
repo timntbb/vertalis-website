@@ -4,7 +4,7 @@ export default function SeriesVsSeparateLLCsTexasArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        If you own multiple rental properties, investment assets, or business operations in Texas, one of the most important structural decisions is whether those assets should sit inside separate LLCs or be organized through a Series LLC.
+        If you own multiple rental properties, investment assets, or business operations in Texas, one of the most important structural decisions is whether those assets should sit inside separate LLCs or be organized through a <Link href="/glossary/series-llc">Series LLC</Link>.
       </p>
 
       <p className="mt-4 leading-8">
@@ -87,7 +87,7 @@ export default function SeriesVsSeparateLLCsTexasArticle() {
       </p>
 
       <p className="mt-4 leading-8">
-        Financing can also change the analysis. A lender may be more comfortable making a loan to 101 Main Street LLC because the borrower and collateral are easy to identify. With a Series LLC, the lender may want additional confirmation that the correct series owns the property, has authority to borrow, and is properly separated from the other series. Guarantees and cross-collateralization can further reduce the benefit of separate liability compartments if one series becomes responsible for another series&apos;s debt.
+        Financing can also change the analysis. A lender may be more comfortable making a loan to 101 Main Street LLC because the borrower and <Link href="/glossary/collateral">collateral</Link> are easy to identify. With a Series LLC, the lender may want additional confirmation that the correct series owns the property, has authority to borrow, and is properly separated from the other series. Guarantees and cross-collateralization can further reduce the benefit of separate liability compartments if one series becomes responsible for another series&apos;s debt.
       </p>
 
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">

@@ -4,7 +4,7 @@ export default function FounderVestingArticle() {
   return (
     <article className="mx-auto max-w-4xl text-neutral-300 leading-relaxed">
       <p className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
-        Vesting is not about distrust. It is about protecting the company and ensuring ownership reflects contribution over time.
+        <Link href="/glossary/vesting">Vesting</Link> is not about distrust. It is about protecting the company and ensuring ownership reflects contribution over time.
       </p>
 
       <p className="mt-6 leading-8">
@@ -140,7 +140,7 @@ export default function FounderVestingArticle() {
 
         <p className="mt-6 leading-8">
           As the company grows, founders will likely need equity for executives,
-          employees, advisors, and investors. A clean cap table with founder
+          employees, advisors, and investors. A clean <Link href="/glossary/cap-table">cap table</Link> with founder
           vesting is often viewed as a sign of good corporate governance and
           thoughtful planning.
         </p>

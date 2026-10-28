@@ -75,7 +75,7 @@ export const insightPosts: InsightPost[] = [
             I. The Post-Money SAFE and the Shift to Ownership Clarity
           </h3>
           <p className="mt-4 leading-8">
-            The post-money SAFE changed early-stage financing by making ownership
+            The <Link href="/glossary/safe">post-money SAFE</Link> changed early-stage financing by making ownership
             visible. Under pre-money SAFEs, founders were navigating dilution through
             variables they could not control, including future fundraising, option
             pool adjustments, and the interaction between multiple SAFEs. The result
@@ -207,7 +207,7 @@ export const insightPosts: InsightPost[] = [
       {
         heading: "What Is an Operating Agreement?",
         paragraphs: [
-          "An operating agreement is your company’s constitution. It defines who makes decisions, how those decisions get made, what happens when members disagree, and how the business actually operates day to day.",
+          <>An <Link href="/glossary/operating-agreement">operating agreement</Link> is your company’s constitution. It defines who makes decisions, how those decisions get made, what happens when members disagree, and how the business actually operates day to day.</>,
           "Without it, your company falls back on default state rules, rules that were not written for your business, your capital strategy, or your founder dynamics.",
         ],
         emphasis:
@@ -310,7 +310,7 @@ export const insightPosts: InsightPost[] = [
           Intellectual property ownership in startups does not automatically vest in
           the company simply because work was created for its benefit. Ownership
           depends on who created the work and whether there was a legally effective
-          IP assignment agreement transferring that ownership.
+          <Link href="/glossary/ip-assignment">IP assignment agreement</Link> transferring that ownership.
         </p>
         <p className="mt-4">This issue commonly arises in early-stage development:</p>
         <ul className="mt-4 ml-6 list-disc">

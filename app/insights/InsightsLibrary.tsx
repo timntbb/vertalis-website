@@ -24,6 +24,7 @@ export type InsightListItem = {
 
 type InsightsLibraryProps = {
   posts: InsightListItem[];
+  glossaryTermCount: number;
 };
 
 const validCategorySlugs = new Set<string>(
@@ -44,7 +45,7 @@ function ArticleMeta({ post }: { post: InsightListItem }) {
   );
 }
 
-export default function InsightsLibrary({ posts }: InsightsLibraryProps) {
+export default function InsightsLibrary({ posts, glossaryTermCount }: InsightsLibraryProps) {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] =
     useState<InsightCategorySlug>("all");
@@ -155,7 +156,18 @@ export default function InsightsLibrary({ posts }: InsightsLibraryProps) {
             decisions that shape a business as it grows.
           </p>
 
-          <div className="relative mt-8 max-w-3xl">
+          <nav aria-label="Insights resources" className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 border-b border-white/10 pb-4">
+            <a href="/insights" aria-current="page" className="border-b-2 border-[#d77938] pb-2 text-sm font-medium text-white">
+              Articles
+            </a>
+            <Link href="/glossary" className="group inline-flex items-center gap-3 pb-2 text-sm text-neutral-400 transition-colors hover:text-[#e38a4e] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d77938]">
+              Business Law Glossary
+              <span className="text-xs text-neutral-500">{glossaryTermCount} terms</span>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 text-[#d77938] transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </nav>
+
+          <div className="relative mt-6 max-w-3xl">
             <label htmlFor="insights-search" className="sr-only">
               Search Vertalis insights
             </label>

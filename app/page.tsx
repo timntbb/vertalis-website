@@ -222,7 +222,7 @@ export function NavLink({ href, label }: { href: string; label: string }) {
   };
 
   const finalHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
-  const isActive = !href.startsWith("#") && pathname === href;
+  const isActive = !href.startsWith("#") && (pathname === href || pathname.startsWith(`${href}/`));
 
   return (
     <a
