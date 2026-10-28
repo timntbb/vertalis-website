@@ -1,8 +1,9 @@
+import Link from "next/link";
 export default function PersonalGuaranteeArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        A personal guarantee makes you individually responsible for a debt owed by your company.
+        A <Link href="/glossary/personal-guarantee">personal guarantee</Link> makes you individually responsible for a debt owed by your company.
       </p>
       <p className="mt-4 leading-8">
         If the business cannot repay the loan, the lender may pursue your personal assets according to the guarantee’s terms. The protection normally provided by an LLC or corporation does not eliminate that obligation.
@@ -50,7 +51,7 @@ export default function PersonalGuaranteeArticle() {
         That is not always true.
       </p>
       <p className="mt-4 leading-8">
-        A guarantee of payment may allow the lender to proceed directly against the guarantor once the borrower defaults. The document may waive any requirement that the lender first sue the company, foreclose on collateral, or pursue another responsible party.
+        A guarantee of payment may allow the lender to proceed directly against the guarantor once the borrower defaults. The document may waive any requirement that the lender first sue the company, foreclose on <Link href="/glossary/collateral">collateral</Link>, or pursue another responsible party.
       </p>
       <p className="mt-4 leading-8">
         A guarantee of collection can operate differently by requiring the lender to take specified collection steps before turning to the guarantor.

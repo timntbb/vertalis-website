@@ -4,7 +4,7 @@ export default function TexasSeriesLLCArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        A Texas Series LLC allows one limited liability company to create separate series for different assets, properties, investments, or business operations. Each series can hold its own assets, enter contracts, have its own business purpose, and incur its own liabilities. If the structure is properly formed and maintained, liabilities associated with one series generally cannot be enforced against the assets of another series or against the assets of the LLC generally.
+        A Texas <Link href="/glossary/series-llc">Series LLC</Link> allows one limited liability company to create separate series for different assets, properties, investments, or business operations. Each series can hold its own assets, enter contracts, have its own business purpose, and incur its own liabilities. If the structure is properly formed and maintained, liabilities associated with one series generally cannot be enforced against the assets of another series or against the assets of the LLC generally.
       </p>
       <p className="mt-4 leading-8">
         For a business owner or investor managing multiple assets, that can create an alternative to forming a completely separate LLC for every property or business activity. The benefit is not simply that there is one filing instead of several. The real value is the ability to create separate liability compartments inside a larger company structure while keeping those assets under one organizational umbrella.
@@ -86,7 +86,7 @@ export default function TexasSeriesLLCArticle() {
         The Separation Has to Exist in Practice
       </h2>
       <p className="mt-6 leading-8">
-        The internal liability protection of a Series LLC depends on more than simply creating several series on paper. Texas law requires specific language in the company's certificate of formation and <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link>, and the company must maintain records that separately account for the assets associated with each series.
+        The internal liability protection of a Series LLC depends on more than simply creating several series on paper. Texas law requires specific language in the company's <Link href="/glossary/certificate-of-formation">certificate of formation</Link> and <Link href="/insights/operating-agreement-backbone-of-your-company">operating agreement</Link>, and the company must maintain records that separately account for the assets associated with each series.
       </p>
       <p className="mt-4 leading-8">
         That means the day-to-day operation of the business matters. If Series A owns one property and Series B owns another, the company's records should clearly identify which property belongs to which series, which income is attributable to each series, and which expenses were incurred by each one.
@@ -122,7 +122,7 @@ export default function TexasSeriesLLCArticle() {
         The important point is that forming a new Texas series does not automatically mean a separate EIN is required, nor should an owner assume that one is unnecessary. The tax treatment should be evaluated as part of the initial setup rather than after the company has already begun operating.
       </p>
       <p className="mt-4 leading-8">
-        Texas franchise tax treatment is somewhat simpler. The Texas Comptroller generally treats a Series LLC as a single legal entity for franchise tax purposes, which means the company files one franchise tax report and one Public Information Report under its Texas taxpayer identification number.
+        <Link href="/glossary/texas-franchise-tax">Texas franchise tax</Link> treatment is somewhat simpler. The Texas Comptroller generally treats a Series LLC as a single legal entity for franchise tax purposes, which means the company files one franchise tax report and one Public Information Report under its Texas taxpayer identification number.
       </p>
 
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">

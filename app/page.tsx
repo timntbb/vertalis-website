@@ -222,7 +222,7 @@ export function NavLink({ href, label }: { href: string; label: string }) {
   };
 
   const finalHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
-  const isActive = !href.startsWith("#") && pathname === href;
+  const isActive = !href.startsWith("#") && (pathname === href || pathname.startsWith(`${href}/`));
 
   return (
     <a
@@ -436,6 +436,7 @@ export function Header() {
     ["About", "#about"],
     ["Services", "/services"],
     ["Insights", "/insights"],
+    ["Glossary", "/glossary"],
     ["Contact", "#contact"],
     ["Attorney", "/about/tim-nichols"],
   ];
@@ -541,7 +542,7 @@ export function Header() {
           </Link>
 
           <nav
-            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
+            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-5"
             style={{ marginLeft: navOffset }}
           >
             {navItems.map(([label, href]) =>

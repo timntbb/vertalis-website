@@ -1,8 +1,9 @@
+import Link from "next/link";
 export default function ExitCommercialLeaseArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        A Texas business may be able to exit a commercial lease, but closing the location or returning the keys does not automatically end the lease.
+        A Texas business may be able to exit a <Link href="/glossary/commercial-lease">commercial lease</Link>, but closing the location or returning the keys does not automatically end the lease.
       </p>
       <p className="mt-4 leading-8">
         Commercial tenants generally remain responsible for their contractual obligations unless the lease provides a termination right, the landlord agrees to a surrender, another tenant assumes the lease with an effective release, or the landlord commits a breach that legally supports termination.
@@ -30,7 +31,7 @@ export default function ExitCommercialLeaseArticle() {
         <li>Base rent and additional rent</li>
         <li>Early-termination provisions</li>
         <li>Default and cure periods</li>
-        <li>Assignment and sublease rights</li>
+        <li>Assignment and <Link href="/glossary/sublease">sublease</Link> rights</li>
         <li>Continuous-operation requirements</li>
         <li>Personal guarantees</li>
         <li>Casualty and condemnation provisions</li>
@@ -99,7 +100,7 @@ export default function ExitCommercialLeaseArticle() {
         The agreement should be written and should clearly state when the lease ends.
       </p>
       <p className="mt-4 leading-8">
-        It should also address unpaid rent, operating expenses, repairs, personal property, restoration obligations, the security deposit, attorney’s fees, and any personal guarantee.
+        It should also address unpaid rent, operating expenses, repairs, personal property, restoration obligations, the security deposit, attorney’s fees, and any <Link href="/glossary/personal-guarantee">personal guarantee</Link>.
       </p>
       <p className="mt-4 leading-8">
         Turning over the keys is not enough.

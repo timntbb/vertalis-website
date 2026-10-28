@@ -53,7 +53,7 @@ export default function PartnerForceMeOutArticle() {
         Your partner may have authority to terminate your employment, remove you as an officer, or revoke your access to company accounts. Depending on the operating agreement, they may also be able to remove you from management.
       </p>
       <p className="mt-4 leading-8">
-        But those actions do not automatically cancel your membership interest.
+        But those actions do not automatically cancel your <Link href="/glossary/membership-interest">membership interest</Link>.
       </p>
       <p className="mt-4 leading-8">
         Texas law treats economic ownership separately from management authority. You can lose your salary, title, and involvement in daily operations while continuing to own part of the LLC.

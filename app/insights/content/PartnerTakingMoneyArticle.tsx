@@ -10,7 +10,7 @@ export default function PartnerTakingMoneyArticle() {
         But the first step is determining what actually happened.
       </p>
       <p className="mt-4 leading-8">
-        Not every questionable withdrawal is legally theft. The payment could be compensation, a distribution, reimbursement, repayment of a member loan, or another transaction the partner was authorized to approve.
+        Not every questionable withdrawal is legally theft. The payment could be compensation, a <Link href="/glossary/distribution">distribution</Link>, reimbursement, repayment of a member loan, or another transaction the partner was authorized to approve.
       </p>
       <p className="mt-4 leading-8">
         The real question is whether the payment was permitted by the operating agreement, company approvals, and the partner’s authority.
@@ -151,7 +151,7 @@ export default function PartnerTakingMoneyArticle() {
         The Available Claims Depend on the Relationship
       </h2>
       <p className="mt-6 leading-8">
-        Potential claims may include breach of the operating agreement, breach of fiduciary duty, fraud, conversion, an accounting, or requests for declaratory and injunctive relief.
+        Potential claims may include breach of the operating agreement, breach of <Link href="/glossary/fiduciary-duty">fiduciary duty</Link>, fraud, conversion, an accounting, or requests for declaratory and injunctive relief.
       </p>
       <p className="mt-4 leading-8">
         But the labels should not be assumed.

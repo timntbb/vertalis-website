@@ -4,7 +4,7 @@ export default function CommercialLeaseReviewArticle() {
   return (
     <article className="text-neutral-300 leading-relaxed">
       <p className="mt-6 leading-8">
-        Before signing a commercial lease in Texas, a business owner should understand more than the monthly rent.
+        Before signing a <Link href="/glossary/commercial-lease">commercial lease</Link> in Texas, a business owner should understand more than the monthly rent.
       </p>
       <p className="mt-4 leading-8">
         The lease may determine who pays for major repairs, whether operating expenses can increase without a meaningful limit, what happens if the space cannot legally support the business, and whether the owner remains personally liable after the company closes.
@@ -219,7 +219,7 @@ export default function CommercialLeaseReviewArticle() {
         <li>A guaranty limited to obligations arising before surrender</li>
       </ul>
       <p className="mt-4 leading-8">
-        A lease signed by the company does not necessarily protect the owner if the owner also signs an unlimited personal guarantee.
+        A lease signed by the company does not necessarily protect the owner if the owner also signs an unlimited <Link href="/glossary/personal-guarantee">personal guarantee</Link>.
       </p>
       <h2 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
         Consider Assignment, Sale, and Change of Control
@@ -231,7 +231,7 @@ export default function CommercialLeaseReviewArticle() {
         The assignment provision determines whether the lease can move with it.
       </p>
       <p className="mt-4 leading-8">
-        Some leases require landlord consent not only for a traditional assignment or sublease, but also for ownership changes within the tenant. That can create problems during an acquisition, financing, or internal restructuring.
+        Some leases require landlord consent not only for a traditional assignment or <Link href="/glossary/sublease">sublease</Link>, but also for ownership changes within the tenant. That can create problems during an acquisition, financing, or internal restructuring.
       </p>
       <p className="mt-4 leading-8">
         The lease should state when consent is required, whether the landlord may withhold it unreasonably, and whether the original tenant and guarantor remain liable afterward.

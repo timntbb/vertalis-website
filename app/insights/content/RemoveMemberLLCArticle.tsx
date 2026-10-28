@@ -7,7 +7,7 @@ export default function RemoveMemberLLCArticle() {
         A Texas LLC cannot ordinarily remove a member simply because the other owners want them gone.
       </p>
       <p className="mt-4 leading-8">
-        The first place to look is the company agreement, called an operating agreement. If it contains a valid expulsion, buyout, or transfer mechanism, the company may have a path forward. If it does not, Texas law generally does not give the other members an automatic right to vote away someone’s ownership.
+        The first place to look is the company agreement, called an operating agreement. If it contains a valid expulsion, <Link href="/glossary/buyout">buyout</Link>, or transfer mechanism, the company may have a path forward. If it does not, Texas law generally does not give the other members an automatic right to vote away someone’s ownership.
       </p>
       <p className="mt-4 leading-8">
         That distinction surprises business owners because control, employment, and ownership often feel like the same thing.
@@ -28,7 +28,7 @@ export default function RemoveMemberLLCArticle() {
         Those actions may end the person’s employment or management authority. They do not necessarily eliminate the person’s ownership interest.
       </p>
       <p className="mt-4 leading-8">
-        A membership interest is an economic interest in the LLC. A management position is the authority to participate in running it. Texas law treats those rights separately.
+        A <Link href="/glossary/membership-interest">membership interest</Link> is an economic interest in the LLC. A management position is the authority to participate in running it. Texas law treats those rights separately.
       </p>
       <p className="mt-4 leading-8">
         A member may therefore lose their position as president, manager, employee, or authorized signer while continuing to own part of the company.
@@ -166,7 +166,7 @@ export default function RemoveMemberLLCArticle() {
         Section 11.314 of the Texas Business Organizations Code permits that remedy under limited circumstances, including when another owner’s conduct makes it not reasonably practicable to continue the business with that owner or when the company cannot reasonably operate in conformity with its governing documents.
       </p>
       <p className="mt-4 leading-8">
-        But judicial winding up is not a routine method for expelling one member.
+        But <Link href="/glossary/judicial-winding-up">judicial winding up</Link> is not a routine method for expelling one member.
       </p>
       <p className="mt-4 leading-8">
         It places the company itself at risk of termination. It is pressure at the entity level, not a simple ownership-editing tool.

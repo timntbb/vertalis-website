@@ -40,7 +40,7 @@ export default function MemberDiesArticle() {
         An Heir Does Not Automatically Become a Voting Member
       </h2>
       <p className="mt-6 leading-8">
-        Texas law distinguishes between owning the economic rights associated with a membership interest and becoming a member with voting and management authority.
+        Texas law distinguishes between owning the economic rights associated with a <Link href="/glossary/membership-interest">membership interest</Link> and becoming a member with voting and management authority.
       </p>
       <p className="mt-4 leading-8">
         Under Texas Business Organizations Code § 101.1115, the surviving spouse, heir, devisee, personal representative, or other successor of a deceased member is generally treated as an assignee to the extent that person succeeds to the membership interest.
@@ -89,7 +89,7 @@ export default function MemberDiesArticle() {
         One common structure gives the LLC the first option to purchase the deceased member’s interest. If the company declines, the surviving members may receive a second option.
       </p>
       <p className="mt-4 leading-8">
-        Another structure requires a buyout automatically.
+        Another structure requires a <Link href="/glossary/buyout">buyout</Link> automatically.
       </p>
       <p className="mt-4 leading-8">
         A mandatory buyout can provide the deceased member’s family with liquidity while allowing the surviving owners to preserve control. But it can also place significant financial pressure on the business if the payment terms are not designed realistically.

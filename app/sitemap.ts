@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { insightPosts } from "./insights/data";
+import { glossaryTerms } from "./glossary/data";
 
 const siteUrl = "https://vertalislegal.com";
 
@@ -28,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "disputes-litigation",
     ].map((slug) => ({ url: `${siteUrl}/services/${slug}` })),
     { url: `${siteUrl}/insights` },
+    { url: `${siteUrl}/glossary` },
     { url: `${siteUrl}/terms-of-use` },
   ];
 
@@ -39,5 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticRoutes, ...articleRoutes];
+  const glossaryRoutes = glossaryTerms.map((term) => ({ url: `${siteUrl}/glossary/${term.slug}` }));
+  return [...staticRoutes, ...articleRoutes, ...glossaryRoutes];
 }

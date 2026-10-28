@@ -7,7 +7,7 @@ export default function DeveloperOwnershipArticle() {
         Paying a developer to build an application does not necessarily mean your company owns the resulting code.
       </p>
       <p className="mt-4 leading-8">
-        If the developer is an independent contractor, ownership depends heavily on the written agreement between the parties. Without an effective intellectual property assignment, the developer may retain ownership of important parts of the product—even after receiving full payment.
+        If the developer is an independent contractor, ownership depends heavily on the written agreement between the parties. Without an effective <Link href="/glossary/ip-assignment">intellectual property assignment</Link>, the developer may retain ownership of important parts of the product—even after receiving full payment.
       </p>
       <p className="mt-4 leading-8">
         That distinction can remain invisible while the relationship is working.
@@ -22,7 +22,7 @@ export default function DeveloperOwnershipArticle() {
         A development invoice ordinarily proves that the company paid for services. It does not, by itself, establish that the developer transferred every intellectual property right created while performing those services.
       </p>
       <p className="mt-4 leading-8">
-        Under federal copyright law, ownership generally begins with the author of the work. For qualifying work created by an employee within the scope of employment, the employer is generally considered the author. Independent contractors are treated differently.
+        Under federal <Link href="/glossary/copyright">copyright</Link> law, ownership generally begins with the author of the work. For qualifying work created by an employee within the scope of employment, the employer is generally considered the author. Independent contractors are treated differently.
       </p>
       <p className="mt-4 leading-8">
         A transfer of copyright ownership generally must be documented in a writing signed by the copyright owner. That requirement appears in 17 U.S.C. § 204.
@@ -37,7 +37,7 @@ export default function DeveloperOwnershipArticle() {
         Employees and Independent Developers Are Not the Same
       </h2>
       <p className="mt-6 leading-8">
-        Software created by an <Link href="/insights/intellectual-property-employees-ownership-problem">employee within the scope of employment</Link> can qualify as a “work made for hire.” In that situation, the employer is generally treated as the original copyright owner under 17 U.S.C. § 201.
+        Software created by an <Link href="/insights/intellectual-property-employees-ownership-problem">employee within the scope of employment</Link> can qualify as a “<Link href="/glossary/work-made-for-hire">work made for hire</Link>.” In that situation, the employer is generally treated as the original copyright owner under 17 U.S.C. § 201.
       </p>
       <p className="mt-4 leading-8">
         That rule does not automatically apply to freelancers, development agencies, or other independent contractors.

@@ -145,7 +145,7 @@ export default function LLCOwnerPersonalLiabilityArticle() {
         Not necessarily.
       </p>
       <p className="mt-4 leading-8">
-        Mixing personal and company funds is poor practice, but commingling alone does not automatically make an LLC owner personally responsible for every contractual debt.
+        Mixing personal and company funds is poor practice, but <Link href="/glossary/commingling">commingling</Link> alone does not automatically make an LLC owner personally responsible for every contractual debt.
       </p>
       <p className="mt-4 leading-8">
         Texas law makes veil piercing more difficult than the simplified version business owners often hear.

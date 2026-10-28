@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/check-insight-h1.mjs",
+    "prebuild": "node scripts/check-insight-h1.mjs && node scripts/check-glossary.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:h1": "node scripts/check-insight-h1.mjs"
+    "check:h1": "node scripts/check-insight-h1.mjs",
+    "check:glossary": "node scripts/check-glossary.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

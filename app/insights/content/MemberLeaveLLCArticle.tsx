@@ -10,7 +10,7 @@ export default function MemberLeaveLLCArticle() {
         Texas law generally does not give an LLC member an automatic right to withdraw. It also does not create a universal right to force the company or the other owners to purchase the member’s interest.
       </p>
       <p className="mt-4 leading-8">
-        A member may have a withdrawal or buyout right under the operating agreement. Otherwise, leaving usually requires a negotiated sale, an authorized transfer, or another agreed exit.
+        A member may have a withdrawal or <Link href="/glossary/buyout">buyout</Link> right under the operating agreement. Otherwise, leaving usually requires a negotiated sale, an authorized transfer, or another agreed exit.
       </p>
       <p className="mt-4 leading-8">
         Wanting out and having a right to be bought out are two different things.
@@ -80,7 +80,7 @@ export default function MemberLeaveLLCArticle() {
         If the operating agreement grants a withdrawal right and the member validly exercises it, Texas law may provide a right to payment.
       </p>
       <p className="mt-4 leading-8">
-        Under Section 101.205 of the Texas Business Organizations Code, a member who validly exercises a withdrawal right granted by the operating agreement is entitled to receive the fair value of the membership interest within a reasonable time after withdrawal.
+        Under Section 101.205 of the Texas Business Organizations Code, a member who validly exercises a withdrawal right granted by the operating agreement is entitled to receive the fair value of the <Link href="/glossary/membership-interest">membership interest</Link> within a reasonable time after withdrawal.
       </p>
       <p className="mt-4 leading-8">
         But the starting point is still a withdrawal right created by the agreement.
@@ -213,7 +213,7 @@ export default function MemberLeaveLLCArticle() {
         <li>Tax allocations for the year of departure</li>
       </ul>
       <p className="mt-4 leading-8">
-        A transfer between the owners does not automatically release the departing member from obligations owed to a landlord, bank, or other creditor.
+        A transfer between the owners does not automatically <Link href="/glossary/release">release</Link> the departing member from obligations owed to a landlord, bank, or other creditor.
       </p>
       <p className="mt-4 leading-8">
         If the member guaranteed the company’s lease, the landlord must ordinarily agree to release the guarantee. An indemnity from the company may provide protection between the parties, but it does not prevent the creditor from pursuing the guarantor.

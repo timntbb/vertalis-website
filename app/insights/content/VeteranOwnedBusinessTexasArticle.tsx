@@ -64,7 +64,7 @@ export default function VeteranOwnedBusinessTexasArticle() {
         One source of confusion is that there is no single veteran-owned-business percentage that applies to every program.
       </p>
       <p className="mt-4 leading-8">
-        For example, Texas new veteran-owned business benefits generally require 100 percent veteran ownership. Federal SBA Veteran Small Business Certification, commonly called VetCert, generally requires at least 51 percent veteran ownership and control.
+        For example, Texas new veteran-owned business benefits generally require 100 percent veteran ownership. Federal SBA <Link href="/glossary/vetcert">Veteran Small Business Certification</Link>, commonly called VetCert, generally requires at least 51 percent veteran ownership and control.
       </p>
       <p className="mt-4 leading-8">
         For a Service-Disabled Veteran-Owned Small Business, or SDVOSB, the SBA generally requires at least 51 percent ownership and control by one or more qualifying service-disabled veterans.

@@ -42,7 +42,7 @@ export default function ClientWontPayArticle() {
         Confirm the <Link href="/insights/customer-order-form-drafting">payment terms</Link>, due date, scope of work, and any conditions that had to occur before payment became due.
       </p>
       <p className="mt-4 leading-8">
-        Also review whether the contract requires notice, an opportunity to cure, mediation, arbitration, or litigation in a particular county or state.
+        Also review whether the contract requires notice, an opportunity to cure, mediation, <Link href="/glossary/arbitration">arbitration</Link>, or litigation in a particular county or state.
       </p>
       <p className="mt-4 leading-8">
         An invoice does not override the contract. Adding “1.5% monthly interest” to an invoice after the work is complete may not create an enforceable late fee if the client never agreed to it.
@@ -84,7 +84,7 @@ export default function ClientWontPayArticle() {
         That can turn one unpaid invoice into several.
       </p>
       <p className="mt-4 leading-8">
-        Review the agreement before suspending work. Some contracts permit suspension following nonpayment, but they may require written notice or a cure period. Stopping performance without following the contract could create a separate breach allegation.
+        Review the agreement before suspending work. Some contracts permit suspension following nonpayment, but they may require written notice or a <Link href="/glossary/cure-period">cure period</Link>. Stopping performance without following the contract could create a separate breach allegation.
       </p>
       <p className="mt-4 leading-8">
         If suspension is allowed, communicate it clearly:

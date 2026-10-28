@@ -7,7 +7,7 @@ export default function PartnerDecisionsWithoutMeArticle() {
         Yes. A business partner may be able to make certain decisions without your approval—even if you both own the company.
       </p>
       <p className="mt-4 leading-8">
-        Whether they have that authority depends on how the LLC is managed, how voting rights are allocated, what authority has been delegated, and what the operating agreement requires for that particular decision.
+        Whether they have that authority depends on how the LLC is managed, how <Link href="/glossary/voting-rights">voting rights</Link> are allocated, what authority has been delegated, and what the operating agreement requires for that particular decision.
       </p>
       <p className="mt-4 leading-8">
         Ownership does not automatically give every member a veto over every company action.
@@ -144,7 +144,7 @@ export default function PartnerDecisionsWithoutMeArticle() {
         <li>Winding up the business</li>
       </ul>
       <p className="mt-4 leading-8">
-        Section 101.356 of the Texas Business Organizations Code establishes default approval requirements for certain company actions. The operating agreement may also identify reserved matters requiring a majority, supermajority, or unanimous vote.
+        Section 101.356 of the Texas Business Organizations Code establishes default approval requirements for certain company actions. The operating agreement may also identify <Link href="/glossary/reserved-matters">reserved matters</Link> requiring a majority, supermajority, or unanimous vote.
       </p>
       <p className="mt-4 leading-8">
         The substance of the transaction matters.

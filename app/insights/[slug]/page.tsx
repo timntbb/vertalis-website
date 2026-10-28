@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Home } from "lucide-react";
 import VertalisWord from "@/components/VertalisWord";
+import RelatedGlossaryTerms from "@/components/RelatedGlossaryTerms";
 import VertalisTextBox from "@/components/VertalisTextBox";
 import { getArticleAuthor, getArticlePublisher } from "@/components/StructuredData";
 import { Header } from "../../page";
@@ -304,6 +305,8 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
           </div>
         </section>
       )}
+
+      <RelatedGlossaryTerms insightSlug={post.slug} />
 
       <section className="border-y border-white/[0.07] py-10 md:py-12" aria-labelledby="related-services-heading">
         <div className="mx-auto w-full max-w-7xl px-6">

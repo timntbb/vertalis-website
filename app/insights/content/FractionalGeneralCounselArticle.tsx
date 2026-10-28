@@ -30,7 +30,7 @@ export default function FractionalGeneralCounselArticle() {
         </p>
 
         <p className="mt-4 leading-8">
-          That is where fractional general counsel comes in.
+          That is where <Link href="/glossary/fractional-general-counsel">fractional general counsel</Link> comes in.
         </p>
       </section>
 
