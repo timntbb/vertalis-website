@@ -532,7 +532,7 @@ export function Header() {
                 Vertalis
               </VertalisWord>
               <div
-                className="tracking-wide text-neutral-500"
+                className="tracking-wide text-neutral-300"
                 style={{ fontSize: subTextSize }}
               >
                 Legal Counsel, PLLC

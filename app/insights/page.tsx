@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import { Header } from "../page";
 import { insightPosts } from "./data";
@@ -20,18 +21,18 @@ export const metadata: Metadata = {
     canonical: canonicalUrl,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title,
     description,
     url: canonicalUrl,
     siteName: "Vertalis",
     type: "website",
-    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
   twitter: {
+    ...sharedTwitter,
     card: "summary_large_image",
     title,
     description,
-    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
 };
 

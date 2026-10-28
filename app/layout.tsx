@@ -1,6 +1,8 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  ...(process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production"
+    ? { robots: { index: false, follow: false } }
+    : {}),
   metadataBase: new URL("https://vertalislegal.com"),
   title: "Frisco Business Attorney for Growing Companies | Vertalis",
   description:
@@ -22,11 +27,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
+    ...sharedOpenGraph,
   },
   twitter: {
+    ...sharedTwitter,
     card: "summary_large_image",
-    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
   icons: {
     icon: [{ url: "/icon.png?v=2", type: "image/png" }],
@@ -59,6 +64,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnalyticsEvents />
         {children}
       </body>
     </html>

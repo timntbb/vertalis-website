@@ -3,9 +3,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import VertalisWord from "@/components/VertalisWord";
+import { trackEvent } from "@/lib/analytics";
 
 type ContactFormState = {
   name: string;
@@ -26,6 +27,7 @@ const initialForm: ContactFormState = {
 export default function VertalisTextBox() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const sending = useRef(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [form, setForm] = useState<ContactFormState>(initialForm);
@@ -47,6 +49,7 @@ export default function VertalisTextBox() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (sending.current || submitted) return;
     setError("");
 
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
@@ -55,6 +58,7 @@ export default function VertalisTextBox() {
     }
 
     try {
+      sending.current = true;
       setIsSubmitting(true);
 
       const res = await fetch("/api/contact", {
@@ -67,17 +71,19 @@ export default function VertalisTextBox() {
 
       const data = await res.json();
 
-      if (!res.ok) {
+      if (!res.ok || data.success !== true) {
         throw new Error(data?.error || "Something went wrong.");
       }
 
       setSubmitted(true);
+      if (!form.website) trackEvent("generate_lead", { source: "contact_box", method: "contact_form" });
       setForm(initialForm);
     } catch (err) {
       const message =
         err instanceof Error ? err.message : "Unable to send message.";
       setError(message);
     } finally {
+      sending.current = false;
       setIsSubmitting(false);
     }
   };

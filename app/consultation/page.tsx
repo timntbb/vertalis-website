@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import { Header } from "../page";
 import ConsultationClient from "./ConsultationClient";
@@ -8,8 +9,9 @@ const description = "Send a message or schedule a free business-law consultation
 export const metadata: Metadata = {
   title,
   description,
+  twitter: { ...sharedTwitter, title, description },
   alternates: { canonical: "/consultation" },
-  openGraph: { title, description, url: "https://vertalislegal.com/consultation", siteName: "Vertalis", type: "website" },
+  openGraph: { ...sharedOpenGraph, title, description, url: "https://vertalislegal.com/consultation", siteName: "Vertalis", type: "website" },
 };
 
 export default function ConsultationPage() {

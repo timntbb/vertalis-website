@@ -1,3 +1,5 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -19,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${term.name}: Definition | Vertalis Glossary`;
   const description = glossaryDescription(term);
   const url = `${siteUrl}/glossary/${term.slug}`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website" }, twitter: { card: "summary_large_image", title, description } };
+  return { title, description, alternates: { canonical: url }, openGraph: { ...sharedOpenGraph, title, description, url, type: "website" }, twitter: { ...sharedTwitter, card: "summary_large_image", title, description } };
 }
 export default async function GlossaryTermPage({ params }: Props) {
   const term = getGlossaryTerm((await params).slug);
@@ -33,13 +35,13 @@ export default async function GlossaryTermPage({ params }: Props) {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [
         { "@type": "DefinedTerm", "@id": `${url}#term`, name: term.name, alternateName: term.aliases, description: term.definition, url, inDefinedTermSet: { "@id": `${siteUrl}/glossary#terms` } },
         { "@type": "WebPage", "@id": url, url, name: term.name, description: glossaryDescription(term), mainEntity: { "@id": `${url}#term` }, author: getArticleAuthor(), breadcrumb: { "@id": `${url}#breadcrumb` } },
-        { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-          { "@type": "ListItem", position: 2, name: "Glossary", item: `${siteUrl}/glossary` },
-          { "@type": "ListItem", position: 3, name: term.name, item: url },
-        ] },
       ] }} />
       <main id="main-content" className="mx-auto min-h-[calc(100vh-84px)] max-w-[860px] px-6 pb-20 pt-36 md:pb-24 md:pt-40">
+        <Breadcrumbs items={[
+          { name: "Home", url: `${siteUrl}/` },
+          { name: "Glossary", url: `${siteUrl}/glossary` },
+          { name: term.name, url },
+        ]} />
         <Link href={`/glossary#${term.slug}`} className="inline-flex items-center gap-2 text-sm text-[#e38a4e] underline decoration-[#c06020]/50 underline-offset-4 transition-colors hover:text-[#ffb37f]"><ArrowLeft className="h-4 w-4" aria-hidden="true" />Back to glossary</Link>
         <article className="mt-10 md:mt-12">
           <header>

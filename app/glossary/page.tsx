@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import { Header } from "../page";
 import { insightPosts } from "../insights/data";
@@ -11,8 +12,8 @@ const title = "Business Law Glossary | Vertalis Legal Counsel";
 const description = "Plain-language definitions of 84 business law terms covering Texas LLCs, contracts, ownership, intellectual property, financing, and business disputes.";
 export const metadata: Metadata = {
   title, description, alternates: { canonical: "/glossary" },
-  openGraph: { title, description, url: `${siteUrl}/glossary`, type: "website" },
-  twitter: { card: "summary_large_image", title, description },
+  openGraph: { ...sharedOpenGraph, title, description, url: `${siteUrl}/glossary`, type: "website" },
+  twitter: { ...sharedTwitter, card: "summary_large_image", title, description },
 };
 export default function GlossaryPage() {
   const insights = Object.fromEntries(insightPosts.map((post) => [post.slug, post.title]));

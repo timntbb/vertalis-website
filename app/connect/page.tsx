@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Tim Nichols | Vertalis Legal Counsel",
   description:
     "Connect with Tim Nichols, attorney and founder of Vertalis Legal Counsel.",
+  alternates: { canonical: "/connect" },
   robots: { index: false, follow: false },
 };
 

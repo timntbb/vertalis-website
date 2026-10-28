@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { JsonLd, buildOrganizationSchema } from "@/components/StructuredData";
 import { Header } from "../../page";
 import { getPractice, practices } from "../data";
 import { getInsightPost } from "../../insights/data";
+import { organizationId, siteInfo } from "@/lib/site";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -24,14 +26,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: practice.seoDescription,
     alternates: { canonical: `/services/${practice.slug}` },
     openGraph: {
+      ...sharedOpenGraph,
       title: practice.seoTitle,
       description: practice.seoDescription,
       url: `https://vertalislegal.com/services/${practice.slug}`,
       siteName: "Vertalis",
       type: "website",
-      images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
     },
     twitter: {
+      ...sharedTwitter,
       card: "summary_large_image",
       title: practice.seoTitle,
       description: practice.seoDescription,
@@ -61,16 +64,20 @@ export default async function PracticePage({ params }: PageProps) {
     ],
   };
   const serviceSchema = {
-    ...buildOrganizationSchema(),
-    "@type": ["Organization", "LegalService"],
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
     url: pageUrl,
-    name: `${practice.title} | ${"Vertalis Legal Counsel, PLLC"}`,
+    name: practice.title,
     description: practice.seoDescription,
+    provider: { "@id": organizationId },
+    areaServed: siteInfo.areaServed,
   };
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0a0a0c] text-neutral-100">
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={buildOrganizationSchema()} />
       <JsonLd data={serviceSchema} />
       <Header />
 
