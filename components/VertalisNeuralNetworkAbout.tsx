@@ -151,7 +151,7 @@ export default function VertalisNeuralNetworkAbout() {
                   href={`/about/${node.slug}`}
                   className="text-sm font-medium text-[#d59a73] transition-colors duration-150 hover:text-[#e9b18a]"
                 >
-                  Learn more
+                  Explore {node.label}
                 </Link>
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function VertalisNeuralNetworkAbout() {
                     href={`/about/${activeNodeData.slug}`}
                     className="pointer-events-auto text-base font-medium text-[#d59a73] transition-colors duration-150 hover:text-[#e9b18a]"
                   >
-                    Learn more
+                    Explore {activeNodeData.label}
                   </Link>
                 </div>
               </>

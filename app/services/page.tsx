@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,14 +15,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/services" },
   openGraph: {
+    ...sharedOpenGraph,
     title,
     description,
     url: "https://vertalislegal.com/services",
     siteName: "Vertalis",
     type: "website",
-    images: ["https://vertalislegal.com/vertalis-shield-preview.png"],
   },
-  twitter: { card: "summary_large_image", title, description },
+  twitter: { ...sharedTwitter, card: "summary_large_image", title, description },
 };
 
 export default function ServicesPage() {

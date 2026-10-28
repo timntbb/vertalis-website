@@ -1,3 +1,5 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -75,14 +77,14 @@ export async function generateMetadata({
     alternates: {
       canonical,
     },
-    openGraph: {
+    openGraph: { ...sharedOpenGraph,
       title,
       description,
       type: "article",
       url: canonical,
       siteName: "Vertalis",
     },
-    twitter: {
+    twitter: { ...sharedTwitter,
       card: "summary_large_image",
       title,
       description,
@@ -161,6 +163,11 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
 
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-12 pt-16 md:pb-14 md:pt-20">
           <div className="max-w-5xl">
+            <Breadcrumbs items={[
+              { name: "Home", url: `${siteUrl}/` },
+              { name: "Insights", url: `${siteUrl}/insights` },
+              { name: post.title, url: articleUrl },
+            ]} />
             <p className="inline-flex rounded-full border border-[#c06020]/30 bg-[#c06020]/10 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-[#d37a43]">
               {post.category}
             </p>

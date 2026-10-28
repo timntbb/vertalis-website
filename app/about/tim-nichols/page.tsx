@@ -1,3 +1,4 @@
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
@@ -10,7 +11,6 @@ import ExpandableCard from "./ExpandableCard";
 const title = "Tim Nichols | Frisco Business Attorney | Vertalis";
 const description =
   "Texas business attorney Tim Nichols advises companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW on contracts and governance.";
-const ogImage = "https://vertalislegal.com/vertalis-shield-preview.png";
 
 export const metadata: Metadata = {
   title,
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
     canonical: "/about/tim-nichols",
   },
   openGraph: {
+    ...sharedOpenGraph,
     title,
     description,
-    images: [ogImage],
   },
   twitter: {
+    ...sharedTwitter,
     card: "summary_large_image",
     title,
     description,
-    images: [ogImage],
   },
 };
 

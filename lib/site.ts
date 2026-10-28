@@ -16,13 +16,13 @@ export const siteInfo = {
     "Dallas-Fort Worth Metroplex",
   ],
   sameAs: [
-    "https://www.linkedin.com/in/timntbb/",
     "https://www.instagram.com/tim_vertalis/",
     "https://www.youtube.com/channel/UCU0w5QzeDottl1T10P5kbcQ",
   ],
   founder: {
     name: "Tim Nichols",
     url: `${siteUrl}/about/tim-nichols`,
+    sameAs: ["https://www.linkedin.com/in/timntbb/"],
   },
 } as const;
 

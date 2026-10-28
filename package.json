@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "eslint",
     "check:h1": "node scripts/check-insight-h1.mjs",
-    "check:glossary": "node scripts/check-glossary.mjs"
+    "check:glossary": "node scripts/check-glossary.mjs",
+    "test:analytics": "node --test tests/analytics.test.mjs",
+    "check:seo": "node scripts/check-built-seo.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

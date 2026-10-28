@@ -31,7 +31,7 @@ export function buildOrganizationSchema() {
 
 // Person schema for Tim Nichols, linked back to the Organization via @id.
 // Only verified, visibly published information is included (no bar number,
-// address, phone number, award, rating, review, or social-media URL).
+// address, phone number, award, rating, or review).
 export function buildPersonSchema() {
   return {
     "@context": "https://schema.org",
@@ -39,6 +39,7 @@ export function buildPersonSchema() {
     "@id": personId,
     name: siteInfo.founder.name,
     url: siteInfo.founder.url,
+    sameAs: siteInfo.founder.sameAs,
     email: siteInfo.email,
     jobTitle: "Business Attorney",
     worksFor: { "@id": organizationId },
