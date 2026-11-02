@@ -11,6 +11,8 @@ import { JsonLd, buildOrganizationSchema } from "@/components/StructuredData";
 import { practices } from "./services/data";
 import {
   ArrowRight,
+  ArrowUpRight,
+  ChevronDown,
   Check,
   Menu,
   X,
@@ -53,6 +55,40 @@ const introPoints: IntroPoint[] = [
     icon: <FileText className="h-5 w-5" />,
   },
 ];
+
+
+const aboutNavigationLinks: Array<[string, string]> = [
+  ["Our Approach", "/#about"],
+  ["Meet the Attorney", "/about/tim-nichols"],
+  ["Founders", "/about/founders"],
+  ["Governance", "/about/governance"],
+  ["Capital Strategy", "/about/investors"],
+  ["Employees", "/about/employees"],
+  ["Intellectual Property", "/about/ip"],
+];
+
+const homepageServiceCopy: Record<string, { description: string; examples: string[] }> = {
+  "company-ownership": {
+    description: "Build a clear foundation for ownership, management, and the future of your business.",
+    examples: ["Operating agreements", "LLC formation & restructuring", "Ownership changes & buy-sell agreements"],
+  },
+  "contracts-transactions": {
+    description: "Protect your business when entering, negotiating, or ending commercial agreements.",
+    examples: ["Contract drafting & review", "Commercial leases", "Vendor & customer agreements"],
+  },
+  "people-operations": {
+    description: "Navigate the legal decisions involved in hiring, managing, and protecting your team.",
+    examples: ["Employment agreements", "Independent contractors", "Employee terminations & workplace issues"],
+  },
+  "growth-capital": {
+    description: "Structure investment and expansion while protecting your company's ownership and control.",
+    examples: ["SAFEs & convertible instruments", "Investor agreements & equity", "Business purchases & acquisitions"],
+  },
+  "disputes-litigation": {
+    description: "Address commercial conflicts and protect your business when relationships break down.",
+    examples: ["Unpaid invoices & collections", "Breach of contract", "Business partner disputes"],
+  },
+};
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -243,30 +279,32 @@ export function NavLink({ href, label }: { href: string; label: string }) {
   );
 }
 
-function CapabilitiesNavItem() {
+function AboutNavItem() {
   const [isHovered, setIsHovered] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const [isFocusedWithin, setIsFocusedWithin] = React.useState(false);
-
-  const showMenu = isOpen || isHovered || isFocusedWithin;
-
-  const items: Array<[string, string]> = [
-    ["Founders", "/about/founders"],
-    ["Governance", "/about/governance"],
-    ["Capital Strategy", "/about/investors"],
-    ["Employees", "/about/employees"],
-    ["Intellectual Property", "/about/ip"],
-  ];
+  const showMenu = isHovered || isOpen || isFocusedWithin;
 
   return (
     <div
       className="relative"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setIsOpen(false);
+      }}
       onFocus={() => setIsFocusedWithin(true)}
-      onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
           setIsFocusedWithin(false);
+          setIsOpen(false);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setIsOpen(false);
+          setIsHovered(false);
+          (event.currentTarget.querySelector("button") as HTMLButtonElement | null)?.focus();
         }
       }}
     >
@@ -274,41 +312,38 @@ function CapabilitiesNavItem() {
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={showMenu}
-        aria-haspopup="menu"
+        aria-controls="vertalis-about-menu"
         className={cx(
-          "relative focus:outline-none focus-visible:ring-2 focus-visible:ring-white/15",
-          showMenu
-            ? "text-[15px] font-medium tracking-[0.08em] text-white hover:text-[#e26a2c] transition-all duration-300 ease-out"
-            : "text-[15px] font-medium tracking-[0.08em] text-white/70 hover:text-[#e26a2c] hover:-translate-y-[1px] transition-all duration-300 ease-out"
+          "inline-flex items-center gap-1.5 text-[15px] font-medium tracking-[0.08em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24]/50",
+          showMenu ? "text-[#e26a2c]" : "text-white/70 hover:text-[#e26a2c]"
         )}
       >
-        Capabilities
-        {showMenu ? (
-          <div className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-[#e26a2c] to-[#c7521e] shadow-[0_0_8px_rgba(226,106,44,0.5)]"></div>
-        ) : null}
+        About
+        <ChevronDown className={cx("h-3.5 w-3.5 transition-transform duration-200", showMenu && "rotate-180")} aria-hidden="true" />
       </button>
-
       <div
+        id="vertalis-about-menu"
         className={cx(
-          "absolute left-1/2 top-full z-50 mt-0 w-56 -translate-x-1/2 pt-2",
-          "transition-all duration-150",
+          "absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 transition-all duration-150",
           showMenu ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
         )}
+        aria-hidden={!showMenu}
       >
-        <div className="rounded-2xl border border-white/12 bg-[linear-gradient(180deg,rgba(18,18,22,0.94),rgba(10,10,13,0.96))] shadow-[0_20px_55px_-32px_rgba(0,0,0,0.95)] backdrop-blur-xl">
-          <div className="p-2" role="menu" aria-label="Capabilities">
-            {items.map(([label, href]) => (
+        <nav aria-label="About Vertalis" className="rounded-2xl border border-white/12 bg-[#101013]/95 p-2 shadow-[0_20px_55px_-25px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+          {aboutNavigationLinks.map(([label, href], index) => (
+            <React.Fragment key={href}>
+              {index === 2 ? <div className="mx-3 my-2 h-px bg-white/10" aria-hidden="true" /> : null}
               <a
-                key={href}
                 href={href}
-                role="menuitem"
-                className="block rounded-xl px-3 py-2.5 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c] hover:[text-shadow:0_0_12px_rgba(226,106,44,0.38)] focus:outline-none focus-visible:text-[#e26a2c] focus-visible:[text-shadow:0_0_12px_rgba(226,106,44,0.38)]"
+                onClick={() => setIsOpen(false)}
+                tabIndex={showMenu ? 0 : -1}
+                className="block rounded-xl px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/[0.05] hover:text-[#e9a778] focus-visible:bg-white/[0.05] focus-visible:text-[#e9a778] focus-visible:outline-none"
               >
                 {label}
               </a>
-            ))}
-          </div>
-        </div>
+            </React.Fragment>
+          ))}
+        </nav>
       </div>
     </div>
   );
@@ -426,16 +461,14 @@ function Section({
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = React.useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
   const navItems: Array<[string, string]> = [
-    ["Home", "#top"],
-    ["About", "#about"],
+    ["About", "/#about"],
     ["Services", "/services"],
     ["Insights", "/insights"],
     ["Contact", "#contact"],
-    ["Attorney", "/about/tim-nichols"],
   ];
 
   const headerScale = 0.8;
@@ -446,21 +479,6 @@ export function Header() {
   const logoTextSize = scaled(28, 22);
   const subTextSize = scaled(16, 12);
   const brandGap = scaled(24, 18);
-  const navGap = scaled(16, 12);
-  const navOffset = scaled(76, 56);
-  const ctaPx = scaled(16, 12);
-  const ctaPy = scaled(8, 6);
-  const ctaTextSize = scaled(14, 12);
-
-  const mobileLinks: Array<[string, string]> = [...navItems];
-
-  const mobileCapabilityLinks: Array<[string, string]> = [
-    ["Founders", "/about/founders"],
-    ["Governance", "/about/governance"],
-    ["Capital Strategy", "/about/investors"],
-    ["Employees", "/about/employees"],
-    ["Intellectual Property", "/about/ip"],
-  ];
 
   const mobileServiceLinks: Array<[string, string]> = [
     ["Company & Ownership", "/services/company-ownership"],
@@ -473,7 +491,7 @@ export function Header() {
   const onMobileLinkClick = (href: string): React.MouseEventHandler<HTMLAnchorElement> => {
     return (e) => {
       setMobileOpen(false);
-      setMobileCapabilitiesOpen(false);
+      setMobileAboutOpen(false);
       setMobileServicesOpen(false);
 
       if (!href.startsWith("#")) return;
@@ -539,20 +557,20 @@ export function Header() {
           </Link>
 
           <nav
-            className="absolute left-1/2 hidden -translate-x-1/2 transform whitespace-nowrap lg:flex items-center gap-10"
-            style={{ marginLeft: navOffset }}
+            className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 whitespace-nowrap lg:flex xl:gap-9"
           >
             {navItems.map(([label, href]) =>
               label === "Services" ? (
                 <ServicesNavItem key={href} />
+              ) : label === "About" ? (
+                <AboutNavItem key={href} />
               ) : (
                 <NavLink key={href} href={href} label={label} />
               )
             )}
-            <CapabilitiesNavItem />
           </nav>
 
-          <div className="relative left-[78px] hidden shrink-0 lg:block xl:left-[90px]">
+          <div className="hidden shrink-0 lg:block">
             <Button
               href="/consultation"
               className="rounded-full px-6 py-2 text-sm tracking-[0.12em]"
@@ -569,7 +587,10 @@ export function Header() {
               onClick={() => {
                 setMobileOpen((prev) => {
                   const next = !prev;
-                  if (!next) setMobileCapabilitiesOpen(false);
+                  if (!next) {
+                    setMobileAboutOpen(false);
+                    setMobileServicesOpen(false);
+                  }
                   return next;
                 });
               }}
@@ -582,30 +603,52 @@ export function Header() {
 
           <div
             className={cx(
-              "absolute left-0 right-0 top-full border-b border-neutral-800 bg-[#0a0a0c]/98 px-6 pb-5 pt-3 backdrop-blur-md lg:hidden",
+              "absolute left-0 right-0 top-full max-h-[calc(100dvh-92px)] overflow-y-auto border-b border-neutral-800 bg-[#0a0a0c]/98 px-6 pb-5 pt-3 backdrop-blur-md lg:hidden",
               mobileOpen ? "block" : "hidden"
             )}
           >
-            <nav className="grid gap-1">
-              {mobileLinks.map(([label, href]) =>
-                label === "Services" ? null : (
-                  <a
-                    key={`mobile-${href}`}
-                    href={toHref(href)}
-                    onClick={onMobileLinkClick(href)}
-                    className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
-                  >
-                    {label}
-                  </a>
-                )
-              )}
+            <nav className="grid gap-2" aria-label="Mobile navigation">
+              <a
+                href={toHref("#top")}
+                onClick={onMobileLinkClick("#top")}
+                className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.16em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                Home
+              </a>
+
+              <div className="rounded-lg border border-white/10 bg-white/[0.02]">
+                <button
+                  type="button"
+                  onClick={() => setMobileAboutOpen((prev) => !prev)}
+                  aria-expanded={mobileAboutOpen}
+                  aria-controls="vertalis-mobile-about"
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.16em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  <span>About</span>
+                  <ChevronDown className={cx("h-4 w-4 transition-transform duration-200", mobileAboutOpen && "rotate-180")} aria-hidden="true" />
+                </button>
+                {mobileAboutOpen ? (
+                  <div id="vertalis-mobile-about" className="grid gap-1 px-2 pb-2">
+                    {aboutNavigationLinks.map(([label, href]) => (
+                      <a
+                        key={href}
+                        href={toHref(href)}
+                        onClick={onMobileLinkClick(href)}
+                        className="rounded-md px-3 py-2 text-[15px] font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-[#e9a778]"
+                      >
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
 
               <div className="rounded-lg border border-white/10 bg-white/[0.02]">
                 <div className="flex items-center justify-between">
                   <a
-                    href={toHref("/services")}
+                    href="/services"
                     onClick={onMobileLinkClick("/services")}
-                    className="flex-1 rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+                    className="flex-1 rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.16em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     Services
                   </a>
@@ -613,61 +656,39 @@ export function Header() {
                     type="button"
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
                     aria-label="Show service links"
+                    aria-controls="vertalis-mobile-services"
                     aria-expanded={mobileServicesOpen}
                     className="rounded-lg px-3 py-2.5 text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
                   >
-                    <ArrowRight
-                      className={cx(
-                        "h-4 w-4 transition-transform duration-200",
-                        mobileServicesOpen ? "rotate-90" : "rotate-0"
-                      )}
-                    />
+                    <ChevronDown className={cx("h-4 w-4 transition-transform duration-200", mobileServicesOpen && "rotate-180")} aria-hidden="true" />
                   </button>
                 </div>
-
-                <div className={cx("grid gap-1 px-2 pb-2", mobileServicesOpen ? "block" : "hidden")}>
-                  {mobileServiceLinks.map(([label, href]) => (
-                    <a
-                      key={`mobile-service-${href}`}
-                      href={toHref(href)}
-                      onClick={onMobileLinkClick(href)}
-                      className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[0.04em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c]"
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </div>
+                {mobileServicesOpen ? (
+                  <div id="vertalis-mobile-services" className="grid gap-1 px-2 pb-2">
+                    {mobileServiceLinks.map(([label, href]) => (
+                      <a
+                        key={href}
+                        href={href}
+                        onClick={onMobileLinkClick(href)}
+                        className="rounded-md px-3 py-2 text-[15px] font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-[#e9a778]"
+                      >
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-white/[0.02]">
-                <button
-                  type="button"
-                  onClick={() => setMobileCapabilitiesOpen((prev) => !prev)}
-                  aria-expanded={mobileCapabilitiesOpen}
-                  className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
+              {([["Insights", "/insights"], ["Contact", "#contact"]] as Array<[string, string]>).map(([label, href]) => (
+                <a
+                  key={label}
+                  href={toHref(href)}
+                  onClick={onMobileLinkClick(href)}
+                  className="rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.16em] text-neutral-300 transition-colors hover:bg-white/5 hover:text-white"
                 >
-                  <span>Capabilities</span>
-                  <ArrowRight
-                    className={cx(
-                      "h-4 w-4 transition-transform duration-200",
-                      mobileCapabilitiesOpen ? "rotate-90" : "rotate-0"
-                    )}
-                  />
-                </button>
-
-                <div className={cx("grid gap-1 px-2 pb-2", mobileCapabilitiesOpen ? "block" : "hidden")}>
-                  {mobileCapabilityLinks.map(([label, href]) => (
-                    <a
-                      key={`mobile-cap-${href}`}
-                      href={toHref(href)}
-                      onClick={onMobileLinkClick(href)}
-                      className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[0.08em] text-white/70 transition-all duration-300 ease-out hover:-translate-y-[1px] hover:text-[#e26a2c]"
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+                  {label}
+                </a>
+              ))}
             </nav>
 
             <div className="mt-4">
@@ -691,7 +712,7 @@ export default function Home() {
 
       <section className="relative isolate overflow-hidden" id="top">
         <div
-          className="relative min-h-[calc(100vh-120px)] overflow-hidden md:min-h-[calc(100vh-140px)]"
+          className="relative min-h-[560px] overflow-hidden md:min-h-[clamp(590px,calc(80vh-96px),800px)]"
           style={{
             background:
               "radial-gradient(circle at 70% 42%, rgba(214,111,36,.08), transparent 32%), radial-gradient(circle at 50% 50%, rgba(255,255,255,.02), transparent 42%), #07080a",
@@ -708,9 +729,9 @@ export default function Home() {
           />
 
           <Container>
-            <div className="relative z-10 flex min-h-[calc(100vh-120px)] items-center justify-center py-20 text-center md:min-h-[calc(100vh-140px)]">
-              <div className="w-full max-w-[900px] pt-10 md:pt-14">
-                <p className="mb-7 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#cbc5bf] md:text-[13px]">
+            <div className="relative z-10 flex min-h-[560px] items-center justify-center pb-20 pt-12 text-center md:min-h-[clamp(590px,calc(80vh-96px),800px)] md:pb-24 md:pt-14">
+              <div className="w-full max-w-[900px] pt-4 md:pt-6">
+                <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#cbc5bf] md:text-[13px]">
                   Business counsel for growing companies across North Texas
                 </p>
 
@@ -718,16 +739,23 @@ export default function Home() {
                   Modern Counsel for <span className="text-[#d66f24]">Growing Companies.</span>
                 </h1>
 
-                <p className="mx-auto mt-8 max-w-[720px] text-[clamp(17px,1.45vw,21px)] font-semibold leading-[1.62] text-[#b8b3ae]">
+                <p className="mx-auto mt-6 max-w-[720px] text-[clamp(17px,1.45vw,21px)] font-semibold leading-[1.62] text-[#b8b3ae]">
                   Vertalis helps growing companies structure deals, navigate contracts, raise capital, resolve disputes, and make the legal decisions that shape what comes next.
                 </p>
 
-                <div className="mt-9">
+                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                   <a
                     href="/consultation"
-                    className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-[rgba(214,111,36,.60)] bg-[rgba(214,111,36,.12)] px-7 text-[15px] font-semibold text-white backdrop-blur-[8px] transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-[rgba(214,111,36,.20)] hover:border-[rgba(214,111,36,.90)]"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-[rgba(214,111,36,.65)] bg-[rgba(214,111,36,.16)] px-7 text-[15px] font-semibold text-white backdrop-blur-[8px] transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:border-[rgba(214,111,36,.9)] hover:bg-[rgba(214,111,36,.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24] sm:w-auto"
                   >
                     Schedule a Free Consultation
+                  </a>
+                  <a
+                    href="#services"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.025] px-7 text-[15px] font-semibold text-neutral-200 transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:w-auto"
+                  >
+                    Explore Legal Services
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -746,50 +774,108 @@ export default function Home() {
 
       <Divider />
 
-      <section id="services" className="scroll-mt-28 border-b border-white/[0.07] py-16 md:scroll-mt-32 md:py-20">
+      <section
+        id="services"
+        aria-labelledby="home-services-title"
+        className="relative isolate scroll-mt-28 overflow-hidden border-b border-white/[0.07] bg-[#0b0b0e] py-14 md:scroll-mt-32 md:py-20"
+      >
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_2%_18%,rgba(192,96,32,0.10),transparent_37%),radial-gradient(ellipse_at_95%_85%,rgba(192,96,32,0.045),transparent_34%)]" />
+          <div className="absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_75%,transparent)]" />
+        </div>
         <Container>
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">Business Legal Services</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
-              Legal counsel for the decisions that shape your business.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-neutral-300">
-              From operating agreements and commercial contracts to hiring, financing, and business disputes,
-              Vertalis provides practical legal guidance to growing companies across North Texas.
-            </p>
-          </div>
+          <div className="relative">
+            <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-start lg:gap-12">
+              <div className="max-w-[790px]">
+                <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#d98b58]">
+                  <span className="h-px w-8 bg-[#c06020]" aria-hidden="true" />
+                  Business Legal Services
+                </p>
+                <h2 id="home-services-title" className="mt-4 text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-[#f4f1ed] md:text-[2.65rem]">
+                  Legal support for the <span className="text-[#d66f24]">decisions, deals, and disputes</span> that shape your business.
+                </h2>
+                <p className="mt-4 max-w-[730px] text-[15px] leading-7 text-neutral-300 md:text-base">
+                  From operating agreements and commercial contracts to hiring, financing, and business disputes,
+                  Vertalis provides practical legal guidance to growing companies across North Texas.
+                </p>
+              </div>
+              <div className="hidden shrink-0 items-center gap-3 rounded-2xl border border-[#c06020]/20 bg-[linear-gradient(135deg,rgba(192,96,32,0.12),rgba(255,255,255,0.015))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] lg:flex">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={46}
+                  height={46}
+                  className="h-11 w-auto object-contain"
+                />
+                <div className="leading-tight">
+                  <VertalisWord as="span" className="block text-[22px] font-semibold tracking-tight">Vertalis</VertalisWord>
+                  <span className="mt-1 block text-[9px] uppercase tracking-[0.21em] text-neutral-400">Legal Counsel, PLLC</span>
+                </div>
+              </div>
+            </div>
 
-          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
-            {practices.map((practice, index) => (
-              <Link
-                key={practice.slug}
-                href={"/services/" + practice.slug}
-                className={cx(
-                  "group flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6 transition duration-200 hover:-translate-y-0.5 hover:border-[#d66f24]/45 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24]/70",
-                  index < 3 ? "lg:col-span-2" : "lg:col-span-3"
-                )}
-              >
-                <h3 className="text-xl font-semibold leading-7 tracking-tight text-white transition-colors group-hover:text-[#e26a2c]">
-                  {practice.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-neutral-300">{practice.shortDescription}</p>
-                <ul className="mt-5 space-y-2 border-t border-white/10 pt-4 text-sm text-neutral-400">
-                  {practice.matters.slice(0, 2).map((matter) => (
-                    <li key={matter.title} className="flex items-start gap-2">
-                      <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-[#d66f24]" aria-hidden="true" />
-                      <span>{matter.title}</span>
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#e9a778]">
-                  Explore this service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
+            <div className="mt-8 grid gap-3.5">
+              {practices.map((practice) => {
+                const copy = homepageServiceCopy[practice.slug];
+                return (
+                  <Link
+                    key={practice.slug}
+                    href={`/services/${practice.slug}`}
+                    aria-label={`Explore ${practice.title} legal services`}
+                    className="group relative isolate block overflow-hidden rounded-[22px] border border-white/[0.16] bg-[#141316] px-4 py-4 shadow-[0_12px_34px_-26px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-[1px] hover:border-[#B65E2E]/75 hover:bg-[#191416] hover:shadow-[0_18px_45px_-27px_rgba(192,96,32,0.30),inset_0_1px_0_rgba(255,255,255,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B65E2E] sm:px-5 md:px-6 md:py-5"
+                  >
+                    <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(182,94,46,0.15),rgba(182,94,46,0.03)_26%,transparent_65%)] opacity-85 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+                    <span className="pointer-events-none absolute bottom-[16%] left-0 top-[16%] w-[2px] rounded-full bg-[#B65E2E] shadow-[0_0_14px_rgba(182,94,46,0.28)] transition-[background-color,box-shadow] group-hover:bg-[#e68b56] group-hover:shadow-[0_0_18px_rgba(182,94,46,0.48)]" aria-hidden="true" />
+
+                    <div className="relative flex items-center gap-4 pr-6 sm:gap-5 sm:pr-12">
+                      <div className="hidden h-[82px] w-[82px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#B65E2E]/30 bg-[linear-gradient(155deg,rgba(182,94,46,0.16),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
+                        <Image
+                          src={practice.image}
+                          alt=""
+                          width={88}
+                          height={88}
+                          className="h-[76px] w-[76px] object-contain opacity-95 [filter:grayscale(1)_sepia(1)_saturate(2.8)_hue-rotate(-12deg)_brightness(0.96)] transition-[transform,opacity] duration-300 group-hover:scale-[1.055] group-hover:opacity-100"
+                        />
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-3">
+                          <span className="hidden h-[2px] w-5 shrink-0 rounded-full bg-[#B65E2E] sm:block" aria-hidden="true" />
+                          <h3 className="text-[20px] font-bold leading-tight tracking-[-0.032em] text-[#f4f1ed] transition-colors group-hover:text-white md:text-[23px]">
+                            {practice.title}
+                          </h3>
+                        </div>
+
+                        <p className="mt-2 max-w-[870px] text-[15px] font-medium leading-[1.65] text-[#ded9d5] md:text-[16px]">
+                          {copy.description}
+                        </p>
+                        <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[14px] font-medium leading-6 text-[#ebe4df] md:gap-x-7 md:text-[15px]">
+                          {copy.examples.map((example) => (
+                            <li key={example} className="inline-flex items-center gap-2.5">
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#cf7541]" aria-hidden="true" />
+                              {example}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <span
+                      className="pointer-events-none absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#B65E2E]/45 bg-[#B65E2E]/[0.08] text-[#df8a57] opacity-80 transition-[background-color,border-color,color,opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#B65E2E]/80 group-hover:bg-[#B65E2E]/20 group-hover:text-[#f2b48d] group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-5 sm:top-1/2 sm:-translate-y-1/2 sm:group-hover:-translate-y-[calc(50%+2px)]"
+                      aria-hidden="true"
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <Link
+              href="/services"
+              className="mt-7 inline-flex items-center gap-2 border-b border-[#c06020]/35 pb-1 text-sm font-semibold text-[#e9a778] transition-[gap,color,border-color] hover:gap-3 hover:border-[#c06020] hover:text-[#f0c4a3]"
+            >
+              Explore all legal services <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
-          <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">
-            View All Services <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
         </Container>
       </section>
 
