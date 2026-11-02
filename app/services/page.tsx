@@ -1,6 +1,6 @@
 import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
-import Image from "next/image";
+import PracticeArtwork from "@/components/PracticeArtwork";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "../page";
@@ -81,13 +81,7 @@ export default function ServicesPage() {
                 className={`group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#131316] shadow-[0_14px_38px_-28px_rgba(0,0,0,0.78)] transition duration-300 hover:-translate-y-0.5 hover:border-[#e26a2c]/50 hover:bg-[#17171b] hover:shadow-[0_18px_42px_-25px_rgba(192,96,32,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24] ${index < 3 ? "md:col-span-2" : "md:col-span-3"}`}
               >
                 <div className="relative flex h-36 items-center justify-center border-b border-white/[0.07] bg-[linear-gradient(160deg,rgba(192,96,32,0.10),rgba(255,255,255,0.025)_44%,rgba(8,8,10,0.82))] md:h-[118px]">
-                  <Image
-                    src={practice.image}
-                    alt={practice.imageAlt}
-                    width={512}
-                    height={512}
-                    className="h-[106px] w-[106px] object-contain transition duration-500 group-hover:scale-[1.035]"
-                  />
+                  <PracticeArtwork slug={practice.slug} variant="tile" />
                   <span className="absolute bottom-3 right-3 grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-sm text-white transition group-hover:border-[#c06020] group-hover:bg-[#c06020]" aria-hidden="true">
                     ↗
                   </span>
