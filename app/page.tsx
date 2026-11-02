@@ -829,12 +829,10 @@ export default function Home() {
 
                     <div className="relative flex items-center gap-4 pr-6 sm:gap-5 sm:pr-12">
                       <div className="hidden h-[82px] w-[82px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#B65E2E]/30 bg-[linear-gradient(155deg,rgba(182,94,46,0.16),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
-                        <Image
-                          src={practice.image}
-                          alt=""
-                          width={88}
-                          height={88}
-                          className="h-[76px] w-[76px] object-contain opacity-95 [filter:grayscale(1)_sepia(1)_saturate(2.8)_hue-rotate(-12deg)_brightness(0.96)] transition-[transform,opacity] duration-300 group-hover:scale-[1.055] group-hover:opacity-100"
+                        <span
+                          aria-hidden="true"
+                          className="block h-[74px] w-[84px] shrink-0 bg-[url('/services/vertalis-practice-icons.avif')] bg-[length:84px_365px] bg-no-repeat transition-transform duration-300 group-hover:scale-[1.045]"
+                          style={{ backgroundPosition: `center -${practices.findIndex((p) => p.slug === practice.slug) * 73}px` }}
                         />
                       </div>
 
