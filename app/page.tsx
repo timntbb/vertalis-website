@@ -815,42 +815,44 @@ export default function Home() {
             </div>
 
             <div className="mt-8 grid gap-3.5">
-              {practices.map((practice, index) => {
+              {practices.map((practice) => {
                 const copy = homepageServiceCopy[practice.slug];
                 return (
                   <Link
                     key={practice.slug}
                     href={`/services/${practice.slug}`}
                     aria-label={`Explore ${practice.title} legal services`}
-                    className="group relative isolate block overflow-hidden rounded-[22px] border border-white/[0.13] bg-[#141316] px-4 py-4 shadow-[0_12px_34px_-26px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-250 ease-out hover:-translate-y-[1px] hover:border-[#c06020]/65 hover:bg-[#191416] hover:shadow-[0_18px_45px_-27px_rgba(192,96,32,0.28),inset_0_1px_0_rgba(255,255,255,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24] sm:px-5 md:px-6 md:py-[18px]"
+                    className="group relative isolate block overflow-hidden rounded-[22px] border border-white/[0.16] bg-[#141316] px-4 py-4 shadow-[0_12px_34px_-26px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-[1px] hover:border-[#B65E2E]/75 hover:bg-[#191416] hover:shadow-[0_18px_45px_-27px_rgba(192,96,32,0.30),inset_0_1px_0_rgba(255,255,255,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B65E2E] sm:px-5 md:px-6 md:py-5"
                   >
-                    <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(192,96,32,0.11),rgba(192,96,32,0.025)_25%,transparent_58%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
-                    <span className="pointer-events-none absolute bottom-[18%] left-0 top-[18%] w-[2px] rounded-full bg-[#b65e2e]/70 transition-colors group-hover:bg-[#ed965c]" aria-hidden="true" />
-                    <div className="relative flex items-center gap-4 pr-8 sm:gap-5 sm:pr-10">
-                      <div className="hidden h-[74px] w-[74px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#c06020]/20 bg-[linear-gradient(155deg,rgba(192,96,32,0.14),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
+                    <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(182,94,46,0.15),rgba(182,94,46,0.03)_26%,transparent_65%)] opacity-85 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+                    <span className="pointer-events-none absolute bottom-[16%] left-0 top-[16%] w-[2px] rounded-full bg-[#B65E2E] shadow-[0_0_14px_rgba(182,94,46,0.28)] transition-[background-color,box-shadow] group-hover:bg-[#e68b56] group-hover:shadow-[0_0_18px_rgba(182,94,46,0.48)]" aria-hidden="true" />
+
+                    <div className="relative flex items-center gap-4 pr-6 sm:gap-5 sm:pr-12">
+                      <div className="hidden h-[82px] w-[82px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#B65E2E]/30 bg-[linear-gradient(155deg,rgba(182,94,46,0.16),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
                         <Image
                           src={practice.image}
                           alt=""
-                          width={84}
-                          height={84}
-                          className="h-[68px] w-[68px] object-contain opacity-85 transition-[transform,opacity] duration-300 group-hover:scale-[1.06] group-hover:opacity-100"
+                          width={88}
+                          height={88}
+                          className="h-[76px] w-[76px] object-contain opacity-95 [filter:grayscale(1)_sepia(1)_saturate(2.8)_hue-rotate(-12deg)_brightness(0.96)] transition-[transform,opacity] duration-300 group-hover:scale-[1.055] group-hover:opacity-100"
                         />
                       </div>
+
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-[11px] font-semibold tabular-nums tracking-[0.09em] text-[#d58e62]">{String(index + 1).padStart(2, "0")}</span>
-                          <span className="hidden h-px w-4 bg-[#c06020]/55 sm:block" aria-hidden="true" />
-                          <h3 className="text-lg font-semibold leading-6 tracking-[-0.03em] text-[#f4f1ed] transition-colors group-hover:text-white md:text-[20px]">
+                        <div className="flex items-center gap-3">
+                          <span className="hidden h-[2px] w-5 shrink-0 rounded-full bg-[#B65E2E] sm:block" aria-hidden="true" />
+                          <h3 className="text-[20px] font-bold leading-tight tracking-[-0.032em] text-[#f4f1ed] transition-colors group-hover:text-white md:text-[23px]">
                             {practice.title}
                           </h3>
                         </div>
-                        <p className="mt-1.5 max-w-[850px] text-[13px] leading-[1.65] text-neutral-300 md:text-sm">
+
+                        <p className="mt-2 max-w-[870px] text-[15px] font-medium leading-[1.65] text-[#ded9d5] md:text-[16px]">
                           {copy.description}
                         </p>
-                        <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[12px] leading-5 text-[#d8d0cb] md:text-[13px]">
+                        <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[14px] font-medium leading-6 text-[#ebe4df] md:gap-x-7 md:text-[15px]">
                           {copy.examples.map((example) => (
-                            <li key={example} className="inline-flex items-center gap-2">
-                              <span className="h-1 w-1 shrink-0 rounded-full bg-[#c77b4b]" aria-hidden="true" />
+                            <li key={example} className="inline-flex items-center gap-2.5">
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#cf7541]" aria-hidden="true" />
                               {example}
                             </li>
                           ))}
@@ -858,7 +860,7 @@ export default function Home() {
                       </div>
                     </div>
                     <span
-                      className="pointer-events-none absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#c06020]/20 bg-[#c06020]/[0.055] text-[#d68a58] opacity-65 transition-[background-color,border-color,color,opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#c06020]/65 group-hover:bg-[#c06020]/15 group-hover:text-[#f2b48d] group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-5 sm:top-1/2 sm:-translate-y-1/2 sm:group-hover:-translate-y-[calc(50%+2px)]"
+                      className="pointer-events-none absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#B65E2E]/45 bg-[#B65E2E]/[0.08] text-[#df8a57] opacity-80 transition-[background-color,border-color,color,opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#B65E2E]/80 group-hover:bg-[#B65E2E]/20 group-hover:text-[#f2b48d] group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-5 sm:top-1/2 sm:-translate-y-1/2 sm:group-hover:-translate-y-[calc(50%+2px)]"
                       aria-hidden="true"
                     >
                       <ArrowUpRight className="h-4 w-4" />
