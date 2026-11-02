@@ -128,13 +128,13 @@ export default function VertalisNeuralNetworkAbout() {
     <section className="relative overflow-hidden bg-transparent px-0 py-0 text-white">
       <div className="lg:hidden rounded-[28px] border border-white/10 bg-[#060608] px-5 py-6 shadow-[0_20px_70px_rgba(0,0,0,0.5)]">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#c06020]/25 bg-[#c06020]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#e9b18a]">
-          Interactive founder-side Architecture
+          Explore the founder-side legal framework
         </div>
         <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white">
-          What is <VertalisWord as="span">Vertalis</VertalisWord>?
+          A business is a connected system.
         </h2>
         <p className="mt-3 text-sm leading-7 text-white/70">
-          Core legal systems for founder momentum, presented in a mobile-friendly structure.
+          The legal strategy behind a growing business should account for how ownership, governance, people, capital, and intellectual property affect one another.
         </p>
 
         <div className="mt-5 grid gap-3">
@@ -159,7 +159,7 @@ export default function VertalisNeuralNetworkAbout() {
         </div>
       </div>
 
-      <div className="relative hidden origin-top scale-[0.92] overflow-hidden rounded-[36px] border border-white/10 bg-[#060608] px-6 py-8 shadow-[0_30px_120px_rgba(0,0,0,0.58)] md:px-10 md:py-10 lg:block">
+      <div className="relative hidden origin-top overflow-hidden rounded-[36px] border border-white/10 bg-[#060608] px-6 py-8 shadow-[0_30px_120px_rgba(0,0,0,0.58)] md:px-10 md:py-10 lg:block">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_10%,rgba(192,96,32,0.24),transparent_28%),radial-gradient(circle_at_50%_48%,rgba(192,96,32,0.10),transparent_26%),radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.035),transparent_58%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_32%,transparent_74%,rgba(255,255,255,0.018))]" />
         <div className="absolute inset-0 opacity-[0.055] [background-image:linear-gradient(rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:38px_38px]" />
@@ -167,17 +167,17 @@ export default function VertalisNeuralNetworkAbout() {
 
       <div className="relative z-10 mb-8 max-w-2xl">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#c06020]/25 bg-[#c06020]/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.28em] text-[#e9b18a]">
-          Interactive founder-side Architecture
+          Explore the founder-side legal framework
         </div>
-        <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
-          What is <VertalisWord as="span">Vertalis</VertalisWord>?
+        <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-[2.6rem]">
+          A business is a connected system.
         </h2>
         <p className="mt-3 max-w-xl text-base leading-7 text-white/62 md:text-lg">
-          Vertalis is legal architecture for growing companies. We design the structure behind ownership, governance, capital, and teams. So founders can scale what they are building with clarity and control.
+          Ownership, governance, capital, people, and intellectual property shape one another as a business grows. Explore each area to see how founder-side legal counsel helps make those connections clearer.
         </p>
       </div>
 
-      <div className="relative z-10 h-[640px] w-full overflow-hidden rounded-[36px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,15,18,0.98),rgba(8,8,10,0.99))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_120px_rgba(0,0,0,0.58)]">
+      <div className="relative z-10 h-[560px] w-full overflow-hidden rounded-[36px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,15,18,0.98),rgba(8,8,10,0.99))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_120px_rgba(0,0,0,0.58)]">
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-[0] h-[66%] w-[56%] min-w-[420px] max-w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#c06020]/16" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-[0] h-[52%] w-[68%] min-w-[560px] max-w-[980px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/8" />
 
@@ -236,9 +236,9 @@ export default function VertalisNeuralNetworkAbout() {
                     Vertalis
                   </VertalisWord>
                   <div className="mt-5 text-[24px] font-semibold leading-[1.08] tracking-[-0.04em] text-white text-center">
-                    Legal
+                    Founder-Side
                     <br />
-                    Architecture
+                    Counsel
                   </div>
                 </div>
                 
@@ -336,7 +336,7 @@ export default function VertalisNeuralNetworkAbout() {
         </div>
 
         <div className="pointer-events-none absolute inset-x-8 bottom-8 z-[4] flex max-w-[360px] items-center justify-between rounded-full border border-white/10 bg-white/[0.04] px-6 py-4 text-[11px] uppercase tracking-[0.32em] text-white/46 backdrop-blur-md">
-          <span>Hover the system</span>
+          <span>Hover or select a topic</span>
         </div>
       </div>
       <style jsx>{`
