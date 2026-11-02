@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "../page";
 import { practices } from "./data";
 
-const title = "Business Legal Services | Vertalis Legal Counsel";
+const title = "Business Attorney Services in Frisco, TX | Vertalis";
 const description =
-  "Business legal services for growing companies in Frisco, McKinney, Prosper, Plano, North Dallas, and throughout the Dallas-Fort Worth area.";
+  "Business attorney services for growing companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW. Contracts, LLC ownership, and litigation.";
 
 export const metadata: Metadata = {
   title,
@@ -57,7 +57,7 @@ export default function ServicesPage() {
             </h1>
           </div>
           <p className="max-w-lg text-sm font-medium leading-6 text-neutral-400 md:text-[0.95rem]">
-            Vertalis advises companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW on ownership, contracts, employment, financing, transactions, and commercial disputes.
+            Vertalis is a Frisco-area business law firm advising companies throughout North Texas on ownership, contracts, employment, financing, transactions, and commercial disputes.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-2xl px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d66f24]">A clearer next step</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">Not sure where your issue fits?</h2>
-          <p className="mt-3 text-sm leading-6 text-neutral-400">Start with the business problem. Vertalis can help identify the legal path forward.</p>
+          <p className="mt-3 text-sm leading-6 text-neutral-400">Start with the business problem. Talk with a Texas business attorney about the legal path forward.</p>
           <Link href="/consultation" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(180deg,#d2844e_0%,#bf6017_100%)] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:brightness-110">
             Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
           </Link>

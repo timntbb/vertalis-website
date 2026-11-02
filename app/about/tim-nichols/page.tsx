@@ -118,7 +118,7 @@ export default function TimNicholsPage() {
             <div className="mt-9">
               <h2 className="text-xl font-semibold tracking-[-0.02em] text-white">Start the Conversation</h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-300">
-                If your company is facing an important contract, ownership decision, business dispute, or structural issue, schedule a free consultation with Vertalis Legal Counsel.
+                If your company is facing an important contract, ownership decision, business dispute, or structural issue, speak with a Texas business lawyer at Vertalis Legal Counsel.
               </p>
               <div className="mt-5">
                 <Link

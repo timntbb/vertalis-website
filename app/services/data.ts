@@ -4,6 +4,7 @@ export type Practice = {
   seoTitle: string;
   seoDescription: string;
   h1: string;
+  seoH2: string;
   shortDescription: string;
   intro: string;
   situations: string[];
@@ -19,8 +20,9 @@ export const practices: Practice[] = [
     slug: "company-ownership",
     title: "Company & Ownership",
     seoTitle: "Business Formation & Ownership Attorney Frisco, TX | Vertalis",
-    seoDescription: "Vertalis advises North Texas businesses on LLC formation, operating agreements, ownership changes, governance, buy-sell agreements, and succession planning.",
+    seoDescription: "Texas LLC formation and operating agreement attorney for Frisco and North Texas businesses. Ownership changes, governance, buy-sell agreements, and succession planning.",
     h1: "Business Formation, Ownership & Governance Counsel",
+    seoH2: "Texas LLC Formation & Operating Agreement Attorney",
     shortDescription: "Clear structures for control, change, and succession.",
     intro:
       "Build a clear legal structure for who owns the company, who controls it, and what happens when the ownership group changes. Vertalis serves businesses in Frisco, McKinney, Prosper, Plano, North Dallas, and throughout DFW.",
@@ -61,8 +63,9 @@ export const practices: Practice[] = [
     slug: "contracts-transactions",
     title: "Contracts & Transactions",
     seoTitle: "Business Contract Attorney Frisco, TX | Vertalis",
-    seoDescription: "Business contract counsel for Frisco and North Texas companies handling drafting, MSAs, leases, licensing, indemnification, guarantees, and commercial transactions.",
+    seoDescription: "Business contract lawyer and commercial contract attorney serving Frisco and North Texas companies. Contract review, MSAs, commercial leases, and licensing.",
     h1: "Business Contracts & Commercial Transactions",
+    seoH2: "Business Contract Lawyer for Texas Companies",
     shortDescription: "Practical agreements that protect the deal and the relationship.",
     intro:
       "Turn business expectations into workable agreements that protect the deal, allocate risk, and preserve important commercial relationships for companies across Frisco, McKinney, Prosper, Plano, North Dallas, and DFW.",
@@ -103,8 +106,9 @@ export const practices: Practice[] = [
     slug: "people-operations",
     title: "People & Operations",
     seoTitle: "Employment & Business Operations Attorney | Vertalis",
-    seoDescription: "Employment and business operations counsel for agreements, contractors, confidentiality, IP assignment, restrictive covenants, policies, and ongoing legal risk.",
+    seoDescription: "Employment agreement attorney for North Texas businesses handling contractor agreements, confidentiality, IP assignments, restrictive covenants, and workplace policies.",
     h1: "Employment, Contractors & Business Operations Counsel",
+    seoH2: "Employment & Contractor Agreement Attorney",
     shortDescription: "Sound agreements for the people who move the business.",
     intro:
       "Put practical legal structure around the employees, contractors, information, and policies that keep companies in Frisco, McKinney, Prosper, Plano, North Dallas, and DFW operating.",
@@ -145,8 +149,9 @@ export const practices: Practice[] = [
     slug: "growth-capital",
     title: "Growth & Capital",
     seoTitle: "Startup Financing & M&A Attorney Frisco, TX | Vertalis",
-    seoDescription: "Vertalis advises North Texas companies on SAFEs, convertible instruments, equity investments, dilution, cap tables, acquisitions, and strategic transactions.",
+    seoDescription: "Texas startup lawyer advising Frisco and North Texas businesses on SAFEs, equity financing, cap tables, acquisitions, and strategic transactions.",
     h1: "Startup Financing, Investment & Strategic Transactions",
+    seoH2: "Texas Startup Lawyer for Growth & Capital",
     shortDescription: "Structure for investment, expansion, and strategic growth.",
     intro:
       "Structure investment and expansion so companies in Frisco, McKinney, Prosper, Plano, North Dallas, and DFW understand the economics, control rights, obligations, and long-term consequences of growth.",
@@ -187,8 +192,9 @@ export const practices: Practice[] = [
     slug: "disputes-litigation",
     title: "Disputes & Litigation",
     seoTitle: "Business Litigation Attorney Frisco, TX | Vertalis",
-    seoDescription: "Business litigation counsel for Frisco and North Texas companies handling contract enforcement, partner disputes, commercial claims, and pre-litigation strategy.",
+    seoDescription: "Business litigation attorney serving Frisco and North Texas companies with breach of contract, business partner disputes, commercial claims, and pre-suit strategy.",
     h1: "Business Disputes & Commercial Litigation",
+    seoH2: "Business Litigation Attorney in North Texas",
     shortDescription: "Focused strategy for resolving costly business conflict.",
     intro:
       "Assess the business problem early, preserve leverage, and pursue a resolution strategy for companies in Frisco, McKinney, Prosper, Plano, North Dallas, and DFW that accounts for both legal position and commercial cost.",

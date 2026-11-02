@@ -108,7 +108,7 @@ export default async function PracticePage({ params }: PageProps) {
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[.55fr_1.45fr] md:gap-20">
           <div className="md:sticky md:top-32 md:self-start">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d66f24]">Common matters</p>
-            <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-3xl">Practical counsel for the issues that move the business.</h2>
+            <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-3xl">{practice.seoH2}</h2>
             <Link href="/consultation" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">
               Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
             </Link>

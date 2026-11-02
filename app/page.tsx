@@ -70,11 +70,11 @@ const aboutNavigationLinks: Array<[string, string]> = [
 
 const homepageServiceCopy: Record<string, { description: string; examples: string[] }> = {
   "company-ownership": {
-    description: "Build a clear foundation for ownership, management, and the future of your business.",
+    description: "Attorney guidance for Texas LLC formation, operating agreements, ownership, and succession.",
     examples: ["Operating agreements", "LLC formation & restructuring", "Ownership changes & buy-sell agreements"],
   },
   "contracts-transactions": {
-    description: "Protect your business when entering, negotiating, or ending commercial agreements.",
+    description: "Business contract lawyer guidance for drafting, reviewing, and negotiating commercial agreements.",
     examples: ["Contract drafting & review", "Commercial leases", "Vendor & customer agreements"],
   },
   "people-operations": {
@@ -86,7 +86,7 @@ const homepageServiceCopy: Record<string, { description: string; examples: strin
     examples: ["SAFEs & convertible instruments", "Investor agreements & equity", "Business purchases & acquisitions"],
   },
   "disputes-litigation": {
-    description: "Address commercial conflicts and protect your business when relationships break down.",
+    description: "Business litigation attorney support for contract, partner, and commercial disputes.",
     examples: ["Unpaid invoices & collections", "Breach of contract", "Business partner disputes"],
   },
 };
@@ -733,7 +733,7 @@ export default function Home() {
             <div className="relative z-10 flex min-h-[560px] items-center justify-center pb-20 pt-12 text-center md:min-h-[clamp(590px,calc(80vh-96px),800px)] md:pb-24 md:pt-14">
               <div className="w-full max-w-[900px] pt-4 md:pt-6">
                 <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#cbc5bf] md:text-[13px]">
-                  Business counsel for growing companies across North Texas
+                  Business attorney serving growing companies across North Texas
                 </p>
 
                 <h1 className="mx-auto max-w-[850px] text-[clamp(43px,5.6vw,86px)] font-bold leading-[0.94] tracking-[-0.055em] text-[#f4f1ed]">
@@ -796,7 +796,7 @@ export default function Home() {
                   Legal support for the <span className="text-[#d66f24]">decisions, deals, and disputes</span> that shape your business.
                 </h2>
                 <p className="mt-4 max-w-[730px] text-[15px] leading-7 text-neutral-300 md:text-base">
-                  From operating agreements and commercial contracts to hiring, financing, and business disputes,
+                  From LLC operating agreements and business contract reviews to hiring, financing, and commercial disputes,
                   Vertalis provides practical legal guidance to growing companies across North Texas.
                 </p>
               </div>
