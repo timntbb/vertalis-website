@@ -774,54 +774,106 @@ export default function Home() {
 
       <Divider />
 
-      <section id="services" className="scroll-mt-28 border-b border-white/[0.07] py-16 md:scroll-mt-32 md:py-20">
+      <section
+        id="services"
+        aria-labelledby="home-services-title"
+        className="relative isolate scroll-mt-28 overflow-hidden border-b border-white/[0.07] bg-[#0b0b0e] py-14 md:scroll-mt-32 md:py-20"
+      >
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_2%_18%,rgba(192,96,32,0.10),transparent_37%),radial-gradient(ellipse_at_95%_85%,rgba(192,96,32,0.045),transparent_34%)]" />
+          <div className="absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_75%,transparent)]" />
+        </div>
         <Container>
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">Business Legal Services</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
-              Legal support for the decisions, deals, and disputes that shape your business.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-neutral-300">
-              From operating agreements and commercial contracts to hiring, financing, and business disputes,
-              Vertalis provides practical legal guidance to growing companies across North Texas.
-            </p>
-          </div>
+          <div className="relative">
+            <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-start lg:gap-12">
+              <div className="max-w-[790px]">
+                <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#d98b58]">
+                  <span className="h-px w-8 bg-[#c06020]" aria-hidden="true" />
+                  Business Legal Services
+                </p>
+                <h2 id="home-services-title" className="mt-4 text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-[#f4f1ed] md:text-[2.65rem]">
+                  Legal support for the <span className="text-[#d66f24]">decisions, deals, and disputes</span> that shape your business.
+                </h2>
+                <p className="mt-4 max-w-[730px] text-[15px] leading-7 text-neutral-300 md:text-base">
+                  From operating agreements and commercial contracts to hiring, financing, and business disputes,
+                  Vertalis provides practical legal guidance to growing companies across North Texas.
+                </p>
+              </div>
+              <div className="hidden shrink-0 items-center gap-3 rounded-2xl border border-[#c06020]/20 bg-[linear-gradient(135deg,rgba(192,96,32,0.12),rgba(255,255,255,0.015))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] lg:flex">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={46}
+                  height={46}
+                  className="h-11 w-auto object-contain"
+                />
+                <div className="leading-tight">
+                  <VertalisWord as="span" className="block text-[22px] font-semibold tracking-tight">Vertalis</VertalisWord>
+                  <span className="mt-1 block text-[9px] uppercase tracking-[0.21em] text-neutral-400">Legal Counsel, PLLC</span>
+                </div>
+              </div>
+            </div>
 
-          <div className="mt-8 grid gap-3">
-            {practices.map((practice, index) => {
-              const copy = homepageServiceCopy[practice.slug];
-              return (
-                <Link
-                  key={practice.slug}
-                  href={"/services/" + practice.slug}
-                  aria-label={"Explore " + practice.title + " legal services"}
-                  className="group relative block rounded-2xl border border-white/15 bg-[#101012] px-5 py-4 transition-[border-color,background-color] duration-200 hover:border-[#B65E2E]/65 hover:bg-[#141214] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B65E2E] md:px-6 md:py-5"
-                >
-                  <div className="flex items-center gap-2.5 pr-8">
-                    <span className="text-xs tabular-nums text-neutral-500">{String(index + 1).padStart(2, "0")}</span>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-white transition-colors group-hover:text-[#F2ECE8]">
-                      {practice.title}
-                    </h3>
-                  </div>
-                  <p className="mt-2 pr-8 text-sm leading-6 text-neutral-300 md:text-[15px]">
-                    {copy.description}
-                  </p>
-                  <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[13px] leading-5 text-neutral-200 md:text-sm">
-                    {copy.examples.map((example) => (
-                      <li key={example}>{example}</li>
-                    ))}
-                  </ul>
-                  <ArrowUpRight
-                    className="absolute right-5 top-5 h-4 w-4 text-[#D98A58] opacity-35 transition-[opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100"
-                    aria-hidden="true"
-                  />
-                </Link>
-              );
-            })}
+            <div className="mt-8 grid gap-3.5">
+              {practices.map((practice, index) => {
+                const copy = homepageServiceCopy[practice.slug];
+                return (
+                  <Link
+                    key={practice.slug}
+                    href={`/services/${practice.slug}`}
+                    aria-label={`Explore ${practice.title} legal services`}
+                    className="group relative isolate block overflow-hidden rounded-[22px] border border-white/[0.13] bg-[#141316] px-4 py-4 shadow-[0_12px_34px_-26px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-250 ease-out hover:-translate-y-[1px] hover:border-[#c06020]/65 hover:bg-[#191416] hover:shadow-[0_18px_45px_-27px_rgba(192,96,32,0.28),inset_0_1px_0_rgba(255,255,255,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24] sm:px-5 md:px-6 md:py-[18px]"
+                  >
+                    <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(192,96,32,0.11),rgba(192,96,32,0.025)_25%,transparent_58%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+                    <span className="pointer-events-none absolute bottom-[18%] left-0 top-[18%] w-[2px] rounded-full bg-[#b65e2e]/70 transition-colors group-hover:bg-[#ed965c]" aria-hidden="true" />
+                    <div className="relative flex items-center gap-4 pr-8 sm:gap-5 sm:pr-10">
+                      <div className="hidden h-[74px] w-[74px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#c06020]/20 bg-[linear-gradient(155deg,rgba(192,96,32,0.14),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
+                        <Image
+                          src={practice.image}
+                          alt=""
+                          width={84}
+                          height={84}
+                          className="h-[68px] w-[68px] object-contain opacity-85 transition-[transform,opacity] duration-300 group-hover:scale-[1.06] group-hover:opacity-100"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-[11px] font-semibold tabular-nums tracking-[0.09em] text-[#d58e62]">{String(index + 1).padStart(2, "0")}</span>
+                          <span className="hidden h-px w-4 bg-[#c06020]/55 sm:block" aria-hidden="true" />
+                          <h3 className="text-lg font-semibold leading-6 tracking-[-0.03em] text-[#f4f1ed] transition-colors group-hover:text-white md:text-[20px]">
+                            {practice.title}
+                          </h3>
+                        </div>
+                        <p className="mt-1.5 max-w-[850px] text-[13px] leading-[1.65] text-neutral-300 md:text-sm">
+                          {copy.description}
+                        </p>
+                        <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[12px] leading-5 text-[#d8d0cb] md:text-[13px]">
+                          {copy.examples.map((example) => (
+                            <li key={example} className="inline-flex items-center gap-2">
+                              <span className="h-1 w-1 shrink-0 rounded-full bg-[#c77b4b]" aria-hidden="true" />
+                              {example}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <span
+                      className="pointer-events-none absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#c06020]/20 bg-[#c06020]/[0.055] text-[#d68a58] opacity-65 transition-[background-color,border-color,color,opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#c06020]/65 group-hover:bg-[#c06020]/15 group-hover:text-[#f2b48d] group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-5 sm:top-1/2 sm:-translate-y-1/2 sm:group-hover:-translate-y-[calc(50%+2px)]"
+                      aria-hidden="true"
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <Link
+              href="/services"
+              className="mt-7 inline-flex items-center gap-2 border-b border-[#c06020]/35 pb-1 text-sm font-semibold text-[#e9a778] transition-[gap,color,border-color] hover:gap-3 hover:border-[#c06020] hover:text-[#f0c4a3]"
+            >
+              Explore all legal services <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
-          <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">
-            View All Services <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
         </Container>
       </section>
 
