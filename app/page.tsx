@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
+import PracticeArtwork from "@/components/PracticeArtwork";
 import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
 import { JsonLd, buildOrganizationSchema } from "@/components/StructuredData";
 import { practices } from "./services/data";
@@ -828,13 +829,7 @@ export default function Home() {
                     <span className="pointer-events-none absolute bottom-[16%] left-0 top-[16%] w-[2px] rounded-full bg-[#B65E2E] shadow-[0_0_14px_rgba(182,94,46,0.28)] transition-[background-color,box-shadow] group-hover:bg-[#e68b56] group-hover:shadow-[0_0_18px_rgba(182,94,46,0.48)]" aria-hidden="true" />
 
                     <div className="relative flex items-center gap-4 pr-6 sm:gap-5 sm:pr-12">
-                      <div className="hidden h-[82px] w-[82px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#B65E2E]/30 bg-[linear-gradient(155deg,rgba(182,94,46,0.16),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:flex">
-                        <span
-                          aria-hidden="true"
-                          className="block h-[74px] w-[84px] shrink-0 bg-[url('/services/vertalis-practice-icons.avif')] bg-[length:84px_365px] bg-no-repeat transition-transform duration-300 group-hover:scale-[1.045]"
-                          style={{ backgroundPosition: `center -${practices.findIndex((p) => p.slug === practice.slug) * 73}px` }}
-                        />
-                      </div>
+                      <PracticeArtwork slug={practice.slug} />
 
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-3">
@@ -877,41 +872,90 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="about" className="scroll-mt-28 py-16 md:scroll-mt-32 md:py-20">
+      <section
+        id="about"
+        aria-labelledby="vertalis-approach-heading"
+        className="relative isolate scroll-mt-28 overflow-hidden py-12 md:scroll-mt-32 md:py-16"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_92%_18%,rgba(182,94,46,0.08),transparent_36%)]"
+          aria-hidden="true"
+        />
         <Container>
-          <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">
-                The Vertalis Approach
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
-                Business-minded counsel, built around how companies operate.
-              </h2>
-              <p className="mt-5 text-base leading-8 text-neutral-300">
-                Legal issues rarely exist in isolation. A decision about ownership can affect governance,
-                a new hire can raise intellectual property questions, and a commercial agreement can
-                change the risk a company carries. Vertalis considers those connections while focusing
-                on the practical issue in front of you.
-              </p>
-              <Link
-                href="/about/founders"
-                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#e9a778] transition hover:text-[#f0c4a3]"
-              >
-                Explore our founder-side approach <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+          <div className="relative isolate overflow-hidden rounded-[30px] border border-white/[0.12] bg-[linear-gradient(115deg,#171316_0%,#101013_48%,#101014_100%)] p-6 shadow-[0_30px_85px_-46px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.055)] sm:p-8 lg:p-10">
+            <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+              <div className="absolute -left-32 -top-40 h-[490px] w-[490px] rounded-full bg-[#B65E2E]/[0.13] blur-[110px]" />
+              <div className="absolute -bottom-48 right-[-8%] h-[490px] w-[490px] rounded-full bg-[#B65E2E]/[0.055] blur-[110px]" />
+              <div className="absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:50px_50px] [mask-image:linear-gradient(90deg,transparent_5%,black_55%,transparent_100%)]" />
             </div>
-            <div className="grid gap-3">
-              {introPoints.map((point) => (
-                <div key={point.title} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d66f24]/25 bg-[#d66f24]/10 text-[#e9a778]">
-                    {point.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-white">{point.title}</h3>
-                    <p className="mt-1 text-sm leading-6 text-neutral-300">{point.desc}</p>
-                  </div>
+            <div className="absolute left-8 right-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(214,111,36,0.65),transparent)]" aria-hidden="true" />
+            <div className="grid gap-9 lg:grid-cols-[0.98fr_1.02fr] lg:items-center lg:gap-14">
+              <div className="max-w-[530px]">
+                <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#e09a6a]">
+                  <span className="h-px w-7 bg-[#B65E2E]" aria-hidden="true" />
+                  The Vertalis Approach
+                </p>
+                <h2
+                  id="vertalis-approach-heading"
+                  className="mt-5 text-3xl font-semibold leading-[1.13] tracking-[-0.045em] text-[#f5f1ed] sm:text-[2.2rem] lg:text-[2.6rem]"
+                >
+                  Business-minded counsel, built around{" "}
+                  <span className="text-[#d67a42]">how companies operate.</span>
+                </h2>
+                <p className="mt-5 text-[15px] leading-[1.85] text-[#d5d0cc] md:text-base">
+                  Legal issues rarely exist in isolation. A decision about ownership can affect governance,
+                  a new hire can raise intellectual property questions, and a commercial agreement can
+                  change the risk a company carries.
+                </p>
+                <p className="mt-3 text-[15px] leading-[1.85] text-[#d5d0cc] md:text-base">
+                  Vertalis considers those connections while staying focused on the practical legal issue
+                  in front of you.
+                </p>
+                <Link
+                  href="/about/founders"
+                  className="group mt-7 inline-flex items-center gap-3 border-b border-[#B65E2E]/40 pb-2 text-sm font-semibold text-[#efa877] transition-[gap,color,border-color] hover:gap-4 hover:border-[#B65E2E] hover:text-[#ffd0aa] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B65E2E]"
+                >
+                  Explore our founder-side approach
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </Link>
+              </div>
+
+              <div className="relative overflow-hidden rounded-[26px] border border-[#B65E2E]/20 bg-[linear-gradient(145deg,rgba(9,9,12,0.82),rgba(20,16,18,0.92))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.045),0_20px_55px_-38px_rgba(0,0,0,0.9)] sm:p-6">
+                <div className="pointer-events-none absolute right-[-20%] top-[-40%] h-72 w-72 rounded-full bg-[#B65E2E]/[0.11] blur-[90px]" aria-hidden="true" />
+                <div className="relative mb-3 flex items-center gap-3 border-b border-white/[0.09] pb-4">
+                  <span className="h-[6px] w-[6px] rounded-full bg-[#d47a45] shadow-[0_0_12px_rgba(182,94,46,0.55)]" aria-hidden="true" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#d9a17b]">
+                    Connected counsel, practical decisions
+                  </span>
                 </div>
-              ))}
+                <div className="relative">
+                  <div
+                    className="pointer-events-none absolute bottom-[52px] left-[23px] top-[41px] w-px bg-[linear-gradient(to_bottom,rgba(182,94,46,0.65),rgba(182,94,46,0.18),rgba(182,94,46,0.65))]"
+                    aria-hidden="true"
+                  />
+                  {introPoints.map((point, index) => (
+                    <div
+                      key={point.title}
+                      className={cx(
+                        "group relative flex items-start gap-4 py-[18px] sm:gap-5",
+                        index < introPoints.length - 1 && "border-b border-white/[0.07]"
+                      )}
+                    >
+                      <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-[15px] border border-[#B65E2E]/45 bg-[linear-gradient(145deg,rgba(182,94,46,0.25),rgba(182,94,46,0.055))] text-[#e6a172] shadow-[0_0_20px_-12px_rgba(182,94,46,0.55),inset_0_1px_0_rgba(255,255,255,0.075)] transition-[border-color,background-color] duration-300 group-hover:border-[#d98554]/70 group-hover:bg-[#B65E2E]/20">
+                        {point.icon}
+                      </div>
+                      <div className="min-w-0 pt-0.5">
+                        <h3 className="text-[17px] font-semibold leading-6 text-[#f5f1ed] md:text-lg">
+                          {point.title}
+                        </h3>
+                        <p className="mt-1 text-[14px] leading-[1.65] text-[#c9c4bf] md:text-[15px]">
+                          {point.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </Container>
