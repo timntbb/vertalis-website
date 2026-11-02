@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout";
 import VertalisTextBox from "@/components/VertalisTextBox";
 import VertalisWord from "@/components/VertalisWord";
 import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
@@ -16,7 +15,6 @@ import {
   Menu,
   X,
   Scale,
-  Cpu,
   Lock,
   BadgeCheck,
   FileText,
@@ -50,9 +48,9 @@ const introPoints: IntroPoint[] = [
     icon: <Scale className="h-5 w-5" />,
   },
   {
-    title: "AI-aware legal strategy",
-    desc: "A modern practice with a sharp eye on contracts, governance, and real-world AI risk.",
-    icon: <Cpu className="h-5 w-5" />,
+    title: "Clear legal execution",
+    desc: "Direct advice and practical documents that support the business decisions at hand.",
+    icon: <FileText className="h-5 w-5" />,
   },
 ];
 
@@ -748,29 +746,90 @@ export default function Home() {
 
       <Divider />
 
-      <section id="about" className="scroll-mt-28 py-10 md:scroll-mt-32 md:py-14">
-        <div className="mx-auto w-full max-w-[1320px] px-6">
-          <VertalisNeuralNetworkAbout />
-        </div>
-      </section>
-
-      <section id="services" className="scroll-mt-28 border-y border-white/[0.07] py-12 md:scroll-mt-32 md:py-16">
+      <section id="services" className="scroll-mt-28 border-b border-white/[0.07] py-16 md:scroll-mt-32 md:py-20">
         <Container>
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">Business Legal Services</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">The work Vertalis performs for growing companies.</h2>
-            <p className="mt-4 text-base leading-7 text-neutral-300">The neural network above describes how Vertalis thinks about a business. These five service areas describe the legal work Vertalis performs for companies throughout North Texas, including ownership, contracts, employment, financing, transactions, and commercial disputes.</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
+              Legal counsel for the decisions that shape your business.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-neutral-300">
+              From operating agreements and commercial contracts to hiring, financing, and business disputes,
+              Vertalis provides practical legal guidance to growing companies across North Texas.
+            </p>
           </div>
-          <div className="mt-8 grid gap-3 md:grid-cols-5">
-            {practices.map((practice) => (
-              <Link key={practice.slug} href={`/services/${practice.slug}`} className="group rounded-2xl border border-white/10 bg-white/[0.025] p-4 transition hover:-translate-y-0.5 hover:border-[#d66f24]/50 hover:bg-white/[0.05]">
-                <h3 className="text-base font-semibold leading-6 text-white group-hover:text-[#e26a2c]">{practice.title}</h3>
-                <p className="mt-2 text-xs leading-5 text-neutral-400">{practice.shortDescription}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#d66f24]">Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+            {practices.map((practice, index) => (
+              <Link
+                key={practice.slug}
+                href={"/services/" + practice.slug}
+                className={cx(
+                  "group flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6 transition duration-200 hover:-translate-y-0.5 hover:border-[#d66f24]/45 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d66f24]/70",
+                  index < 3 ? "lg:col-span-2" : "lg:col-span-3"
+                )}
+              >
+                <h3 className="text-xl font-semibold leading-7 tracking-tight text-white transition-colors group-hover:text-[#e26a2c]">
+                  {practice.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-neutral-300">{practice.shortDescription}</p>
+                <ul className="mt-5 space-y-2 border-t border-white/10 pt-4 text-sm text-neutral-400">
+                  {practice.matters.slice(0, 2).map((matter) => (
+                    <li key={matter.title} className="flex items-start gap-2">
+                      <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-[#d66f24]" aria-hidden="true" />
+                      <span>{matter.title}</span>
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#e9a778]">
+                  Explore this service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
               </Link>
             ))}
           </div>
-          <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">View All Services <ArrowRight className="h-4 w-4" /></Link>
+          <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#e26a2c]">
+            View All Services <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </Container>
+      </section>
+
+      <section id="about" className="scroll-mt-28 py-16 md:scroll-mt-32 md:py-20">
+        <Container>
+          <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d66f24]">
+                The Vertalis Approach
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
+                Business-minded counsel, built around how companies operate.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-neutral-300">
+                Legal issues rarely exist in isolation. A decision about ownership can affect governance,
+                a new hire can raise intellectual property questions, and a commercial agreement can
+                change the risk a company carries. Vertalis considers those connections while focusing
+                on the practical issue in front of you.
+              </p>
+              <Link
+                href="/about/founders"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#e9a778] transition hover:text-[#f0c4a3]"
+              >
+                Explore our founder-side approach <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="grid gap-3">
+              {introPoints.map((point) => (
+                <div key={point.title} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d66f24]/25 bg-[#d66f24]/10 text-[#e9a778]">
+                    {point.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">{point.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-neutral-300">{point.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 

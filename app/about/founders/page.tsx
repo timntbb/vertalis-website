@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Header, Button } from "@/app/page";
 import VertalisTextBox from "@/components/VertalisTextBox";
+import VertalisNeuralNetworkAbout from "@/components/VertalisNeuralNetworkAbout";
 import VertalisWord from "@/components/VertalisWord";
 import {
   ArrowLeft,
@@ -356,6 +357,14 @@ export default function FoundersPage() {
               </div>
             </Card>
           </div>
+        </Container>
+      </section>
+
+      <section aria-label="Interactive founder-side legal framework" className="py-5 md:py-8">
+        <Container>
+          <FadeIn>
+            <VertalisNeuralNetworkAbout />
+          </FadeIn>
         </Container>
       </section>
 
