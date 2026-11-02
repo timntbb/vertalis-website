@@ -15,7 +15,6 @@ import {
   Menu,
   X,
   Scale,
-  Cpu,
   Lock,
   BadgeCheck,
   FileText,
