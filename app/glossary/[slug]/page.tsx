@@ -6,9 +6,10 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Header } from "../../page";
 import { getInsightPost } from "../../insights/data";
+import { practices } from "../../services/data";
 import { JsonLd, getArticleAuthor } from "@/components/StructuredData";
 import { siteUrl } from "@/lib/site";
-import { glossaryTerms, getGlossaryTerm, getRelatedTerms, glossaryDescription } from "../data";
+import { glossaryTerms, getGlossaryTerm, getRelatedTerms, glossaryDescription, getGlossaryServiceSlug } from "../data";
 import GlossaryFooter from "../GlossaryFooter";
 import TermSections from "../TermSections";
 
@@ -28,6 +29,7 @@ export default async function GlossaryTermPage({ params }: Props) {
   if (!term) notFound();
   const insight = getInsightPost(term.insightSlug);
   const related = getRelatedTerms(term);
+  const relatedService = practices.find((practice) => practice.slug === getGlossaryServiceSlug(term));
   const url = `${siteUrl}/glossary/${term.slug}`;
   return (
     <div className="min-h-screen bg-[#0a0a0c] font-sans text-white">
@@ -61,6 +63,12 @@ export default async function GlossaryTermPage({ params }: Props) {
               {related.map((item) => <li key={item.slug}><Link href={`/glossary/${item.slug}`} className="text-sm text-[#e38a4e] underline decoration-[#c06020]/40 underline-offset-4 hover:text-[#ffb37f]">{item.name}</Link></li>)}
             </ul>
           </section>
+          {relatedService && <section aria-labelledby="related-glossary-service-heading" className="mt-8 border-t border-white/15 pt-7 md:mt-10">
+            <h2 id="related-glossary-service-heading" className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-neutral-500">Related Legal Services</h2>
+            <Link href={`/services/${relatedService.slug}`} className="mt-4 inline-flex items-center gap-3 text-sm font-medium text-[#e38a4e] underline decoration-[#c06020]/50 underline-offset-4 transition-colors hover:text-[#ffb37f]">
+              {relatedService.title} <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </section>}
           {insight && <section aria-labelledby="related-insight-heading" className="mt-8 border-t border-white/15 pt-7 md:mt-10">
             <h2 id="related-insight-heading" className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-neutral-500">Related Insight</h2>
             <Link href={`/insights/${insight.slug}`} className="mt-4 block text-lg font-medium leading-7 text-neutral-200 transition-colors hover:text-white sm:text-xl">{insight.title}</Link>
