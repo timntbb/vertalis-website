@@ -2,7 +2,7 @@ import React from "react";
 
 type PracticeArtworkProps = {
   slug: string;
-  variant?: "row" | "tile";
+  variant?: "row" | "tile" | "hero";
 };
 
 const iconOrder: Record<string, number> = {
@@ -20,6 +20,7 @@ const iconOrder: Record<string, number> = {
 export default function PracticeArtwork({ slug, variant = "row" }: PracticeArtworkProps) {
   const position = iconOrder[slug] ?? 0;
   const tile = variant === "tile";
+  const hero = variant === "hero";
 
   return (
     <span
@@ -28,7 +29,7 @@ export default function PracticeArtwork({ slug, variant = "row" }: PracticeArtwo
         "relative shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#B65E2E]/30",
         "bg-[linear-gradient(155deg,rgba(182,94,46,0.16),rgba(255,255,255,0.025)_65%,rgba(5,5,7,0.3))]",
         "shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
-        tile ? "flex h-[112px] w-[112px]" : "hidden h-[82px] w-[82px] sm:flex",
+        hero ? "flex h-[196px] w-[196px] rounded-[2rem]" : tile ? "flex h-[112px] w-[112px]" : "hidden h-[82px] w-[82px] sm:flex",
       ].join(" ")}
     >
       <span
@@ -36,7 +37,7 @@ export default function PracticeArtwork({ slug, variant = "row" }: PracticeArtwo
           "block h-[74px] w-[84px] shrink-0 bg-[url('/services/vertalis-practice-icons.avif')]",
           "bg-[length:84px_365px] bg-no-repeat",
           "transition-transform duration-300",
-          tile ? "scale-[1.22] group-hover:scale-[1.27]" : "group-hover:scale-[1.045]",
+          hero ? "scale-[1.9]" : tile ? "scale-[1.22] group-hover:scale-[1.27]" : "group-hover:scale-[1.045]",
         ].join(" ")}
         style={{ backgroundPosition: `center -${position * 73}px` }}
       />
