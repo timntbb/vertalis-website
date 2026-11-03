@@ -19,17 +19,17 @@ export default function TermSections({ sections }: { sections: GlossarySection[]
   }, [sections]);
   if (!sections.length) return null;
   return (
-    <details ref={disclosure} className="group mt-9 border-t border-white/10 pt-5">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm text-neutral-400 transition-colors hover:text-white [&::-webkit-details-marker]:hidden">
+    <details ref={disclosure} className="group mt-8 overflow-hidden rounded-[1.5rem] border border-white/[0.12] bg-[#151316] p-6 sm:p-8">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white transition-colors hover:text-[#f0a678] [&::-webkit-details-marker]:hidden">
         <span>Types and key distinctions</span>
-        <span aria-hidden="true" className="text-lg text-[#d77938] group-open:hidden">+</span>
-        <span aria-hidden="true" className="hidden text-lg text-[#d77938] group-open:inline">−</span>
+        <span aria-hidden="true" className="text-2xl text-[#d77938] group-open:hidden">+</span>
+        <span aria-hidden="true" className="hidden text-2xl text-[#d77938] group-open:inline">−</span>
       </summary>
-      <div className="mt-6 space-y-7">
+      <div className="mt-7 space-y-5 border-t border-white/[0.10] pt-6">
         {sections.map((section) => (
-          <section id={section.id} key={section.id} className="scroll-mt-32">
-            <h2 className="text-base font-medium text-white md:text-lg">{section.title}</h2>
-            <p className="mt-2 text-base leading-8 text-neutral-400">{section.text}</p>
+          <section id={section.id} key={section.id} className="scroll-mt-32 rounded-xl border-l-2 border-[#B65E2E]/70 bg-white/[0.025] p-5">
+            <h2 className="text-lg font-semibold text-white md:text-xl">{section.title}</h2>
+            <p className="mt-3 text-base leading-8 text-neutral-300 md:text-lg">{section.text}</p>
           </section>
         ))}
       </div>
