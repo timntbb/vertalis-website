@@ -47,7 +47,7 @@ const glossaryPageSource = readFileSync("app/glossary/[slug]/page.tsx", "utf8");
 const serviceSlugs = new Set([...serviceSource.matchAll(/slug:\\s*"([^"]+)"/g)].map((match) => match[1]));
 for (const category of new Set(terms.map((term) => term.category))) {
   const categoryEntry = JSON.stringify(category) + ": ";
-  const matchedLine = glossarySource.split("\\n").find((line) => line.trim().startsWith(categoryEntry));
+  const matchedLine = glossarySource.split("\n").find((line) => line.trim().startsWith(categoryEntry));
   assert.ok(matchedLine, `Missing service mapping for glossary category ${category}`);
   const service = matchedLine.match(/:\\s*"([^"]+)"/)?.[1];
   assert.ok(serviceSlugs.has(service), `Invalid service mapping for glossary category ${category}`);
