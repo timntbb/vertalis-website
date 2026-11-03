@@ -36,3 +36,31 @@ export function getTermsForInsight(insightSlug: string) {
 export function glossaryDescription(term: GlossaryTerm) {
   return term.definition.length <= 160 ? term.definition : `${term.definition.slice(0, 157).replace(/\s+\S*$/, "")}…`;
 }
+
+/**
+ * Each glossary category maps to the closest published Vertalis service.
+ * Keeping this centralized gives all definitions a consistent service path
+ * without maintaining 84 separate links or changing their editorial copy.
+ */
+export const glossaryServiceByCategory: Record<string, string> = {
+  "Formation & Liability": "company-ownership",
+  "Ownership & Governance": "company-ownership",
+  "Contracts": "contracts-transactions",
+  "Commercial Leases": "contracts-transactions",
+  "Business Disputes": "disputes-litigation",
+  "Equity & Capital": "growth-capital",
+  "Intellectual Property": "contracts-transactions",
+  "People & Work": "people-operations",
+  "Business Counsel": "company-ownership",
+  "Veteran Businesses": "company-ownership",
+};
+
+export const glossaryServiceOverrides: Record<string, string> = {
+  "fractional-general-counsel": "people-operations",
+  "independent-contractor": "people-operations",
+  "ip-assignment": "contracts-transactions",
+};
+
+export function getGlossaryServiceSlug(term: GlossaryTerm): string | undefined {
+  return glossaryServiceOverrides[term.slug] ?? glossaryServiceByCategory[term.category];
+}
