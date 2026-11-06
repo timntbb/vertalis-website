@@ -148,7 +148,9 @@
     ],
     "additionalInsightSlugs": [
       "what-happens-to-a-texas-llc-when-a-member-dies",
-      "how-to-remove-a-member-from-a-texas-llc"
+      "how-to-remove-a-member-from-a-texas-llc",
+      "texas-llc-operating-agreement-checklist",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -221,7 +223,8 @@
       "Capital Contribution"
     ],
     "additionalInsightSlugs": [
-      "series-llc-vs-separate-llcs-in-texas"
+      "series-llc-vs-separate-llcs-in-texas",
+      "texas-llc-operating-agreement-checklist"
     ]
   },
   {
@@ -343,7 +346,8 @@
       "Nondisclosure Agreement"
     ],
     "additionalInsightSlugs": [
-      "master-services-agreement-drafting"
+      "master-services-agreement-drafting",
+      "first-employee-texas-legal-checklist"
     ]
   },
   {
@@ -428,7 +432,9 @@
     "searchTerms": [
       "Contract Renewal"
     ],
-    "additionalInsightSlugs": []
+    "additionalInsightSlugs": [
+      "contract-red-flags-texas-business-owners"
+    ]
   },
   {
     "name": "Contract Termination",
@@ -547,7 +553,8 @@
       "Deadlock"
     ],
     "additionalInsightSlugs": [
-      "operating-agreement-backbone-of-your-company"
+      "operating-agreement-backbone-of-your-company",
+      "texas-llc-operating-agreement-checklist"
     ]
   },
   {
@@ -731,7 +738,9 @@
     "searchTerms": [
       "Employment Agreement"
     ],
-    "additionalInsightSlugs": []
+    "additionalInsightSlugs": [
+      "first-employee-texas-legal-checklist"
+    ]
   },
   {
     "name": "Entity Conversion",
@@ -877,7 +886,9 @@
     "searchTerms": [
       "Governing Law"
     ],
-    "additionalInsightSlugs": []
+    "additionalInsightSlugs": [
+      "contract-red-flags-texas-business-owners"
+    ]
   },
   {
     "name": "IP Assignment",
@@ -933,7 +944,8 @@
     "additionalInsightSlugs": [
       "contract-chaos",
       "intellectual-property-risks-startups",
-      "intellectual-property-employees-ownership-problem"
+      "intellectual-property-employees-ownership-problem",
+      "first-employee-texas-legal-checklist"
     ]
   },
   {
@@ -985,7 +997,8 @@
     ],
     "additionalInsightSlugs": [
       "three-contracts-before-your-first-customer",
-      "contract-chaos"
+      "contract-chaos",
+      "contract-red-flags-texas-business-owners"
     ]
   },
   {
@@ -1004,7 +1017,9 @@
     "searchTerms": [
       "Independent Contractor"
     ],
-    "additionalInsightSlugs": []
+    "additionalInsightSlugs": [
+      "first-employee-texas-legal-checklist"
+    ]
   },
   {
     "name": "Inspection Rights",
@@ -1023,7 +1038,8 @@
       "Inspection Rights"
     ],
     "additionalInsightSlugs": [
-      "can-my-business-partner-force-me-out-of-a-texas-llc"
+      "can-my-business-partner-force-me-out-of-a-texas-llc",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -1043,7 +1059,8 @@
       "Judicial Winding Up"
     ],
     "additionalInsightSlugs": [
-      "how-to-remove-a-member-from-a-texas-llc"
+      "how-to-remove-a-member-from-a-texas-llc",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -1100,7 +1117,9 @@
     "searchTerms": [
       "Limitation of Liability"
     ],
-    "additionalInsightSlugs": []
+    "additionalInsightSlugs": [
+      "contract-red-flags-texas-business-owners"
+    ]
   },
   {
     "name": "Limited Liability Company",
@@ -1208,7 +1227,8 @@
       "Dispute Resolution"
     ],
     "additionalInsightSlugs": [
-      "master-services-agreement-drafting"
+      "master-services-agreement-drafting",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -1228,7 +1248,9 @@
       "Member Expulsion"
     ],
     "additionalInsightSlugs": [
-      "can-my-business-partner-force-me-out-of-a-texas-llc"
+      "can-my-business-partner-force-me-out-of-a-texas-llc",
+      "texas-llc-operating-agreement-checklist",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -1280,7 +1302,8 @@
       "Manager-Managed LLC"
     ],
     "additionalInsightSlugs": [
-      "how-to-remove-a-member-from-a-texas-llc"
+      "how-to-remove-a-member-from-a-texas-llc",
+      "business-partnership-falling-apart-texas"
     ]
   },
   {
@@ -1329,7 +1352,8 @@
       "operating-agreement-backbone-of-your-company",
       "how-to-remove-a-member-from-a-texas-llc",
       "what-happens-to-a-texas-llc-when-a-member-dies",
-      "how-can-a-member-leave-a-texas-llc"
+      "how-can-a-member-leave-a-texas-llc",
+      "texas-llc-operating-agreement-checklist"
     ]
   },
   {
@@ -1374,7 +1398,8 @@
       "LLC Agreement"
     ],
     "additionalInsightSlugs": [
-      "llc-vs-c-corp"
+      "llc-vs-c-corp",
+      "texas-llc-operating-agreement-checklist"
     ],
     "context": "In Texas, it is called a company agreement. It works alongside the certificate of formation and applicable law."
   },
@@ -1486,7 +1511,8 @@
     "additionalInsightSlugs": [
       "can-a-business-get-out-of-a-commercial-lease-in-texas",
       "when-can-a-texas-llc-owner-be-held-personally-liable",
-      "what-to-review-before-signing-a-commercial-lease-in-texas"
+      "what-to-review-before-signing-a-commercial-lease-in-texas",
+      "contract-red-flags-texas-business-owners"
     ]
   },
   {
@@ -1806,7 +1832,8 @@
       "Acceptance Criteria"
     ],
     "additionalInsightSlugs": [
-      "three-contracts-before-your-first-customer"
+      "three-contracts-before-your-first-customer",
+      "contract-red-flags-texas-business-owners"
     ]
   },
   {
@@ -2123,7 +2150,8 @@
     ],
     "additionalInsightSlugs": [
       "operating-agreement-backbone-of-your-company",
-      "50-50-founder-equity-splits-hidden-risk-startup-deadlocks"
+      "50-50-founder-equity-splits-hidden-risk-startup-deadlocks",
+      "texas-llc-operating-agreement-checklist"
     ]
   },
   {
@@ -2182,7 +2210,8 @@
       "Right of Control"
     ],
     "additionalInsightSlugs": [
-      "contract-chaos"
+      "contract-chaos",
+      "first-employee-texas-legal-checklist"
     ]
   }
 ]
