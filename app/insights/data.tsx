@@ -1,4 +1,9 @@
 import Link from "next/link";
+import ContractRedFlagsChecklistArticle from "./content/ContractRedFlagsChecklistArticle";
+import TexasLLCAgreementChecklistArticle from "./content/TexasLLCAgreementChecklistArticle";
+import FirstEmployeeTexasChecklistArticle from "./content/FirstEmployeeTexasChecklistArticle";
+import TexasPartnershipDisputeChecklistArticle from "./content/TexasPartnershipDisputeChecklistArticle";
+
 import { contractArticles } from "./contractArticles";
 import VertalisSAFETableCard from "@/components/VertalisSAFETableCard";
 import LLCVsCCorpArticle from "./content/LLCVsCCorpArticle";
@@ -48,6 +53,58 @@ export type InsightPost = {
 };
 
 export const insightPosts: InsightPost[] = [
+  {
+    slug: "contract-red-flags-texas-business-owners",
+    category: "Contract Strategy",
+    title: "10 Contract Red Flags Every Texas Business Owner Should Recognize",
+    excerpt: "Ten contract warning signs for Texas business owners, from unclear scope and automatic renewals to indemnification, personal guarantees, and costly dispute terms.",
+    seoTitle: "10 Contract Red Flags for Texas Business Owners | Vertalis",
+    seoDescription: "Review 10 contract red flags Texas business owners should understand before signing, including scope, renewals, liability, indemnity, and guarantees.",
+    date: "November 6, 2026",
+    readTime: "6 min read",
+    subtitle: "Ten provisions worth reviewing before signing a customer, vendor, or commercial services agreement.",
+    sections: [],
+    content: <ContractRedFlagsChecklistArticle />,
+  },
+  {
+    slug: "texas-llc-operating-agreement-checklist",
+    category: "Governance",
+    title: "12 Things Every Texas LLC Operating Agreement Should Address",
+    excerpt: "A practical checklist of twelve Texas LLC operating agreement provisions covering ownership, management, voting, capital calls, buyouts, deadlocks, and succession.",
+    seoTitle: "Texas LLC Operating Agreement Checklist: 12 Key Provisions",
+    seoDescription: "Explore 12 provisions to address in a Texas LLC operating agreement, including ownership, management, capital calls, member exits, and deadlocks.",
+    date: "November 6, 2026",
+    readTime: "7 min read",
+    subtitle: "Twelve governance issues Texas LLC owners should settle before a disagreement makes them difficult to resolve.",
+    sections: [],
+    content: <TexasLLCAgreementChecklistArticle />,
+  },
+  {
+    slug: "first-employee-texas-legal-checklist",
+    category: "Employment",
+    title: "9 Legal Steps to Take Before Hiring Your First Employee in Texas",
+    excerpt: "Nine legal steps to take before hiring your first Texas employee, including classification, payroll, verification, compensation, intellectual property, and workplace policies.",
+    seoTitle: "Hiring Your First Employee in Texas: 9 Legal Steps",
+    seoDescription: "Before hiring your first employee in Texas, review worker classification, payroll, wage compliance, I-9 verification, IP protection, and workplace policies.",
+    date: "November 6, 2026",
+    readTime: "6 min read",
+    subtitle: "Nine practical compliance and documentation steps for a Texas business preparing to hire its first employee.",
+    sections: [],
+    content: <FirstEmployeeTexasChecklistArticle />,
+  },
+  {
+    slug: "business-partnership-falling-apart-texas",
+    category: "Disputes",
+    title: "8 Steps to Take When a Business Partnership Starts Falling Apart in Texas",
+    excerpt: "Eight steps for a Texas business owner facing a partnership breakdown, including governing documents, records, management authority, buyout options, and dispute resolution.",
+    seoTitle: "Business Partnership Falling Apart in Texas? 8 Steps",
+    seoDescription: "What should you do when a business partnership falls apart in Texas? Review eight steps on documents, ownership, records, buyouts, and litigation options.",
+    date: "November 6, 2026",
+    readTime: "6 min read",
+    subtitle: "Eight steps to evaluate before an ownership disagreement disrupts the company or leads to litigation.",
+    sections: [],
+    content: <TexasPartnershipDisputeChecklistArticle />,
+  },
   ...contractArticles,
   {
     slug: "post-money-safe-ownership-dilution",

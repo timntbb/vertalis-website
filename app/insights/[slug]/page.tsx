@@ -14,6 +14,11 @@ import { practices } from "../../services/data";
 
 // Curated relationships: only show relevant published articles, never generic recent posts.
 const relatedInsightSlugs: Record<string, string[]> = {
+  "contract-red-flags-texas-business-owners": ["contract-chaos", "master-services-agreement-drafting", "can-a-business-cancel-a-contract-after-signing-it-in-texas"],
+  "texas-llc-operating-agreement-checklist": ["operating-agreement-backbone-of-your-company", "how-to-remove-a-member-from-a-texas-llc", "50-50-founder-equity-splits-hidden-risk-startup-deadlocks"],
+  "first-employee-texas-legal-checklist": ["employee-vs-contractor-structure", "intellectual-property-employees-ownership-problem"],
+  "business-partnership-falling-apart-texas": ["can-my-business-partner-force-me-out-of-a-texas-llc", "how-to-remove-a-member-from-a-texas-llc", "business-partner-taking-money-from-company-texas"],
+
   "operating-agreement-backbone-of-your-company": ["50-50-founder-equity-splits-hidden-risk-startup-deadlocks", "how-to-remove-a-member-from-a-texas-llc"],
   "50-50-founder-equity-splits-hidden-risk-startup-deadlocks": ["operating-agreement-backbone-of-your-company", "can-my-business-partner-make-decisions-without-me"],
   "how-to-remove-a-member-from-a-texas-llc": ["operating-agreement-backbone-of-your-company", "can-my-business-partner-force-me-out-of-a-texas-llc"],
@@ -136,7 +141,11 @@ export default async function InsightPostPage({ params }: InsightPostPageProps) 
     author: getArticleAuthor(),
     publisher: getArticlePublisher(),
   };
-  const relatedServiceSlugs = post.category === "Contract Strategy"
+  const relatedServiceSlugs = post.category === "Employment"
+    ? ["people-operations"]
+    : post.category === "Disputes"
+      ? ["disputes-litigation", "company-ownership"]
+      : post.category === "Contract Strategy"
     ? ["contracts-transactions"]
     : post.category === "Intellectual Property"
       ? ["people-operations", "contracts-transactions"]

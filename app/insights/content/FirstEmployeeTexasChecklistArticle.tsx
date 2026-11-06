@@ -1,0 +1,57 @@
+import Link from "next/link";
+
+export default function FirstEmployeeTexasChecklistArticle() {
+  return (
+    <article className="text-neutral-300 leading-relaxed">
+      <p className="mt-2 leading-8">Hiring your first employee is an important milestone. It also changes your business's legal responsibilities in ways that many founders underestimate.</p>
+      <p className="mt-5 leading-8">For an early-stage business, the first hire often represents a meaningful transition. The owner is no longer responsible for every aspect of daily operations, and the company can begin building capacity beyond what one person can accomplish. But hiring also introduces payroll obligations, wage and hour requirements, tax reporting, workplace responsibilities, and potential liability for another person's conduct. The policies and documentation that worked when the owner handled every task personally may therefore need to change before the first employee starts. Before bringing on your first employee in Texas, consider these nine steps.</p>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">1. Determine Whether the Position Is Employment or Independent Contracting</h2>
+        <p className="mt-5 leading-8">One of the earliest decisions is whether the company needs an employee or an independent contractor. Employees typically work within the company's operations, subject to the employer's direction and control. Independent contractors generally operate separate businesses and maintain greater independence in how their services are performed. Calling someone a contractor in an agreement or issuing a Form 1099 does not, by itself, determine that person's legal classification. Federal and Texas authorities evaluate the actual relationship using applicable classification standards. Misclassification can create exposure for unpaid employment taxes, unemployment contributions, wage claims, and penalties.</p>
+        <p className="mt-8 text-sm leading-7 text-neutral-300">
+          Further reading: <Link href="/insights/employee-vs-contractor-structure" className="font-medium text-[#d37a43] underline decoration-[#d37a43]/40 underline-offset-4">Employee vs. Independent Contractor: Structure, Not Labels</Link>
+        </p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">2. Establish Your Employer Tax and Payroll Accounts</h2>
+        <p className="mt-5 leading-8">Before processing payroll, a business should confirm that it has the necessary federal employer identification number and employment tax arrangements. Employers generally must withhold applicable federal income and employment taxes, pay the employer's share of certain payroll taxes, maintain required records, and submit appropriate reports. Texas employers must also determine their state unemployment tax responsibilities and register with the Texas Workforce Commission when required. A payroll service can simplify administration, but outsourcing payroll does not automatically eliminate the employer's legal responsibility for compliance. These systems should be established before the first paycheck becomes due.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">3. Determine the Employee's Pay Structure and Classification</h2>
+        <p className="mt-5 leading-8">The company should determine whether the employee will be paid hourly, by salary, or through an arrangement involving commissions or bonuses. It must also evaluate whether the position is exempt or nonexempt under applicable wage and hour laws. Paying someone a salary does not automatically exempt that employee from overtime requirements. Under the Texas Payday Law, nonexempt employees generally must be paid at least twice a month, while exempt employees must be paid at least monthly. Compensation terms should clearly address pay frequency, eligibility for bonuses or commissions, and any applicable overtime obligations. Ambiguity in compensation arrangements frequently becomes a problem when employment ends.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">4. Prepare a Clear Written Offer or Employment Agreement</h2>
+        <p className="mt-5 leading-8">Texas generally recognizes at-will employment, meaning either party may ordinarily end the employment relationship without cause, subject to contractual restrictions and applicable law. That does not eliminate the value of written terms. An offer letter or employment agreement should identify the position, compensation, work location, expected responsibilities, start date, and any applicable conditions of employment. It should also be consistent with the intended at-will relationship unless the parties deliberately negotiate different terms. Carelessly drafted language can create disputes about guaranteed employment periods, compensation, or termination rights. Clear expectations reduce avoidable uncertainty.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">5. Complete Employment Eligibility Verification and New-Hire Reporting</h2>
+        <p className="mt-5 leading-8">Federal law generally requires employers to complete Form I-9 for employees hired to work in the United States. The employee must ordinarily complete Section 1 no later than the first day of employment, and the employer must complete Section 2 within three business days after employment begins, subject to applicable rules and exceptions. Employers must follow the required verification process without improperly demanding particular documents. New employees also generally complete Form W-4 for federal income tax withholding. Texas employers must report newly hired and rehired employees to the state's new-hire reporting system within the applicable deadline, generally 20 calendar days. These are ongoing compliance obligations, not optional administrative preferences.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">6. Protect Confidential Information and Intellectual Property</h2>
+        <p className="mt-5 leading-8">Employees frequently gain access to customer information, internal documents, financial records, business processes, software, and other valuable company resources. Employment documentation should address confidentiality, appropriate information use, and the return of company property when employment ends. For employees developing software, designs, marketing materials, inventions, or other intellectual property, the company should also consider written invention and intellectual property assignment provisions. The agreement should be properly tailored to the position and applicable law. A company should not assume that every creation connected to an employee automatically belongs to the business.</p>
+        <p className="mt-8 text-sm leading-7 text-neutral-300">
+          Further reading: <Link href="/insights/intellectual-property-employees-ownership-problem" className="font-medium text-[#d37a43] underline decoration-[#d37a43]/40 underline-offset-4">Intellectual Property, Employees, and the Ownership Problem That Can Kill a Startup</Link>
+        </p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">7. Establish Workplace Policies Before Problems Develop</h2>
+        <p className="mt-5 leading-8">A business with only one employee may not need an extensive employee handbook, but it still needs clear operating expectations. Depending on the role and workplace, relevant policies may address attendance, timekeeping, overtime authorization, confidentiality, workplace conduct, discrimination, harassment, safety, and the use of company systems. As the company grows, additional legal requirements may apply based on workforce size, industry, and location. Policies should reflect how the business actually operates and should not contradict employment agreements or applicable law. A policy that exists only on paper provides limited protection if the company routinely ignores it.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">8. Evaluate Workers' Compensation and Other Insurance Needs</h2>
+        <p className="mt-5 leading-8">Texas is unusual because most private employers are not required to carry workers' compensation insurance, although exceptions exist. That flexibility does not mean operating without coverage is risk-free. Employers without workers' compensation coverage can face additional legal exposure and have specific notification and reporting responsibilities. A growing business should evaluate workers' compensation, employment practices liability coverage, general liability, and other insurance based on its industry and operations. The appropriate coverage depends on the company's actual risk, not simply the number of employees.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">9. Build a Repeatable Hiring and Offboarding Process</h2>
+        <p className="mt-5 leading-8">The first hire should not be treated as a one-time transaction. The company should establish a repeatable process for onboarding, compensation records, employee access, performance documentation, policy acknowledgments, and separation procedures. Offboarding deserves particular attention. When an employee leaves, the company may need to recover equipment, disable access, preserve records, address outstanding compensation, and reinforce continuing confidentiality obligations. Texas also establishes specific final-pay deadlines depending on how the employment relationship ends. Building this process early is considerably easier than reconstructing it during an employment dispute.</p>
+      </section>
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">The Vertalis View: Your First Employee Changes the Business</h2>
+        <p className="mt-5 leading-8">Hiring is not simply the addition of another person to the payroll. It creates a new set of obligations that should be integrated into the company's contracts, policies, financial systems, and operational structure. Many employment problems begin with informal arrangements that seemed reasonable when the business was small. Clear documentation and consistent procedures allow companies to grow without carrying avoidable legal uncertainty into every new hire. At Vertalis Legal Counsel, we help Texas businesses structure employment agreements, contractor relationships, confidentiality protections, and workplace policies that support day-to-day operations.</p>
+        <p className="mt-8"><Link href="/consultation" className="font-semibold text-[#d37a43] underline decoration-[#d37a43]/40 underline-offset-4">Schedule a consultation with Vertalis Legal Counsel</Link></p>
+      </section>
+    </article>
+  );
+}
