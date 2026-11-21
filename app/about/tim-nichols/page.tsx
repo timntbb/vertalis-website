@@ -1,138 +1,36 @@
-import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import type { Metadata } from "next";
-import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { sharedOpenGraph, sharedTwitter } from "@/lib/social-metadata";
 import { Header } from "@/app/page";
-import VertalisWord from "@/components/VertalisWord";
 import { JsonLd, buildPersonSchema } from "@/components/StructuredData";
-import ExpandableCard from "./ExpandableCard";
+import "./bio-editorial.css";
 
 const title = "Tim Nichols | Frisco Business Attorney | Vertalis";
-const description =
-  "Texas business attorney Tim Nichols advises companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW on contracts and governance.";
+const description = "Texas business attorney Tim Nichols advises companies in Frisco, McKinney, Prosper, Plano, North Dallas, and across DFW on contracts and governance.";
 
 export const metadata: Metadata = {
-  title,
-  description,
-  alternates: {
-    canonical: "/about/tim-nichols",
-  },
-  openGraph: {
-    ...sharedOpenGraph,
-    title,
-    description,
-  },
-  twitter: {
-    ...sharedTwitter,
-    card: "summary_large_image",
-    title,
-    description,
-  },
+  title, description,
+  alternates: { canonical: "/about/tim-nichols" },
+  openGraph: { ...sharedOpenGraph, title, description },
+  twitter: { ...sharedTwitter, card: "summary_large_image", title, description },
 };
+
+// This is trusted, static editorial page markup. No user-controlled content is injected.
+const editorialMarkup = String.raw`<main>
+<section class="hero"><div class="wrap"><div class="topline">The person behind the counsel</div><div class="hero-grid"><div class="hero-copy"><p class="hero-number">Founder / Texas Business Attorney</p><h1>Tim<br/><span class="last">Nichols.</span></h1><p class="hero-role">Vertalis Legal Counsel, PLLC</p><p class="hero-intro">Legal counsel shaped by experience in business operations, military leadership, and litigation. Practical guidance for the people making consequential business decisions.</p><div class="hero-bottom"><a class="button" href="/consultation">Schedule a Consultation <span aria-hidden="true">→</span></a><a class="inline-link" href="#perspective">Get to know Tim ↓</a></div></div><div class="hero-image"><div class="portrait-frame"><img alt="Black and white portrait of Tim Nichols" fetchpriority="high" src="/about/tim-nichols/tim-headshot.jpg"/></div><div class="headshot-caption">TIM NICHOLS / FOUNDER</div></div></div><div class="credential-bar"><span><b>●</b> Licensed in Texas</span><span><b>●</b> JD + MBA</span><span><b>●</b> U.S. Air Force Veteran</span><span><b>●</b> North Texas</span></div></div></section>
+<section class="statement" id="perspective"><div class="wrap"><div class="number-row"><span>01 / PERSPECTIVE</span></div><div class="statement-layout"><h2 class="editorial-title">Before there is a legal issue, there is a <em>business decision.</em></h2><div class="statement-copy"><p>Tim Nichols founded Vertalis to provide business owners with counsel that considers the reality behind the paperwork: the people, competing priorities, operational pressures, and uncertainty that come with running a company.</p><p>His approach is informed by a career that began in the U.S. Air Force and continued through corporate quality engineering and technical project management before he entered legal practice. He brings that practical perspective to contracts, ownership issues, growth plans, and commercial disputes.</p><a href="/services">Explore Vertalis services →</a></div></div></div></section>
+<section aria-label="Business-minded attorney approach" class="photo-story"><img alt="Tim Nichols speaking in front of a projection screen at an entrepreneurship workshop" class="story-image" src="/about/tim-nichols/talk-frisco.jpg"/><div class="wrap"><div class="story-content"><div class="mini-kicker">From the room to the conference table</div><h2>Clear guidance.<br/>Useful decisions.</h2><p>Tim works with founders and established business owners to translate legal complexity into decisions they can act on. The objective is to protect the business while keeping its work moving.</p><div class="little-rule"></div><p>The same straightforward approach guides his presentations to entrepreneurs and business communities across North Texas.</p></div></div><span class="photo-credit">In practice / Speaking with entrepreneurs</span></section>
+<section class="focus"><div class="wrap"><div class="number-row"><span>02 / PRACTICE</span></div><div class="focus-head"><h2>The work behind a stronger business.</h2><p>Strategic legal support at the moments when structure, clarity, and judgment matter.</p></div><div class="practice-list"><a class="practice-row" href="/services/company-ownership"><span class="index">01</span><strong>Company &amp; Ownership</strong><span class="arrow">↗</span></a><a class="practice-row" href="/services/contracts-transactions"><span class="index">02</span><strong>Contracts &amp; Transactions</strong><span class="arrow">↗</span></a><a class="practice-row" href="/services/people-operations"><span class="index">03</span><strong>People &amp; Operations</strong><span class="arrow">↗</span></a><a class="practice-row" href="/services/growth-capital"><span class="index">04</span><strong>Growth &amp; Capital</strong><span class="arrow">↗</span></a><a class="practice-row" href="/services/disputes-litigation"><span class="index">05</span><strong>Disputes &amp; Litigation</strong><span class="arrow">↗</span></a><a class="practice-row" href="/consultation"><span class="index">06</span><strong>Outside General Counsel</strong><span class="arrow">↗</span></a></div></div></section>
+<section class="bio-stripe"><img alt="Tim Nichols discussing legal readiness for entrepreneurs in a conference room" class="stripe-image" src="/about/tim-nichols/talk-legal-readiness.jpg"/><div class="wrap bio-stripe-grid"><div class="bio-stripe-copy"><div class="mini-kicker">03 / A PRACTICAL APPROACH</div><h2>Experience beyond the legal profession.</h2><p>Leading teams, managing complex projects, and working in operational environments taught Tim that the best solution on paper is not always the best one for a business.</p><p>In his practice, he aims to give clients direct advice, meaningful options, and an understanding of both the risk and the next step.</p><div class="micro">BUSINESS-MINDED. DIRECT. PRACTICAL.</div></div></div></section>
+<section class="credentials"><div class="wrap"><div class="number-row"><span>04 / BACKGROUND</span></div><div class="credentials-grid"><div><h2 class="editorial-title">The experience behind the advice.</h2><p class="under-title">A combination of legal training, commercial experience, and service that informs how Tim advises growing companies.</p></div><ol class="cred-list"><li><span class="date">Practice</span><div class="fact">Texas attorney<span>Licensed to practice law in Texas</span></div></li><li><span class="date">Education</span><div class="fact">Juris Doctor<span>University of Missouri–Kansas City School of Law</span></div></li><li><span class="date">Education</span><div class="fact">Master of Business Administration<span>Rockhurst University</span></div></li><li><span class="date">Education</span><div class="fact">Bachelor of Science in Public Administration<span>Northern Arizona University</span></div></li><li><span class="date">Earlier career</span><div class="fact">U.S. Air Force · Corporate operations<span>Military leadership, quality engineering, and technical project management</span></div></li></ol></div></div></section>
+<section class="final-photo"><img alt="Tim Nichols presenting on commercial disputes" src="/about/tim-nichols/talk-disputes.jpg"/><div class="wrap"><div class="final-copy"><div class="mini-kicker">Start the conversation</div><h2>Legal counsel should move your business forward.</h2><p>Whether you are facing an important agreement, ownership question, growth decision, or dispute, start with a conversation about what matters to your company.</p><a class="button" href="/consultation">Schedule a Free Consultation <span aria-hidden="true">→</span></a></div></div></section>
+</main>`;
 
 export default function TimNicholsPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-neutral-100">
       <JsonLd data={buildPersonSchema()} />
       <Header />
-
-      <section className="relative overflow-hidden py-14 md:py-16">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[-8%] top-[8%] h-[420px] w-[420px] rounded-full blur-3xl bg-[rgba(192,96,32,0.14)]" />
-          <div className="absolute right-[-6%] top-[24%] h-[360px] w-[360px] rounded-full blur-3xl bg-[rgba(72,90,120,0.12)]" />
-        </div>
-
-        <div className="relative mx-auto w-full max-w-5xl px-6">
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-7 shadow-[0_28px_90px_-46px_rgba(0,0,0,0.82)] md:p-10">
-            <p className="text-[0.78rem] uppercase tracking-[0.25em] text-neutral-400">
-              The attorney behind{" "}
-              <VertalisWord
-                as="span"
-                className="inline-block align-baseline font-semibold tracking-tight normal-case"
-                style={{ fontSize: "156.25%", lineHeight: "inherit" }}
-              >
-                Vertalis
-              </VertalisWord>
-            </p>
-
-            <h1 className="mt-3 text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-              Tim Nichols
-            </h1>
-
-            <p className="mt-3 text-lg leading-8 text-neutral-300">
-              Texas business attorney serving growing companies across Frisco, McKinney, Prosper, Plano, North Dallas, and the greater Dallas–Fort Worth area.
-            </p>
-
-            <div className="mt-6 max-w-3xl space-y-6 text-[1.02rem] leading-8 text-neutral-300">
-              <p>
-                Tim Nichols is the founder of Vertalis Legal Counsel, PLLC, a Frisco-area business law firm serving entrepreneurs, established businesses, and growing companies throughout North Texas. He helps clients navigate the contracts, ownership structures, governance systems, and disputes that shape how a business operates and grows.
-              </p>
-
-              <p>
-                Tim’s practice includes commercial contract drafting and negotiation, business formation and restructuring, operating agreements, founder and ownership issues, employment and contractor matters, intellectual property ownership, startup financing, outside general counsel, and business disputes. His role is not simply to produce legal documents. It is to help business owners understand their options, evaluate risk, and make sound decisions before uncertainty becomes an expensive problem.
-              </p>
-
-              <p>
-                His approach to legal counsel is shaped by a background spanning military leadership, business operations, and litigation. Before practicing law, Tim served as a Non-Commissioned Officer in the United States Air Force, supporting global operations during the post-9/11 era. He later worked in high-growth corporate environments, managing complex operational initiatives and cross-functional teams.
-              </p>
-
-              <p>
-                That experience gives Tim a practical understanding of how businesses actually function—the operational pressure, competing priorities, and imperfect information behind important decisions. He approaches legal problems from both a legal and business perspective, helping clients find solutions that protect the company without unnecessarily slowing it down.
-              </p>
-
-              <p>
-                Tim is licensed to practice law in Texas. He earned his Juris Doctor from the University of Missouri–Kansas City School of Law, his Master of Business Administration from Rockhurst University, and his Bachelor of Science in Public Administration from Northern Arizona University.
-              </p>
-            </div>
-
-            <div className="mt-9 grid items-start gap-5 md:grid-cols-2">
-              <div className="grid gap-5">
-                <ExpandableCard title="Approach">
-                  <p>Strategic, direct, and business-minded.</p>
-                  <p>
-                    Tim provides legal advice in plain language, with clear explanations of the available options, meaningful risks, and practical next steps. The objective is to give business owners the legal structure and judgment they need to move forward confidently—not layers of unnecessary complexity.
-                  </p>
-                  <p>
-                    Whether the issue involves negotiating an important contract, restructuring ownership, managing a partner dispute, protecting intellectual property, hiring employees and contractors, or preparing the company for its next stage, Vertalis focuses on legal solutions that fit how the business actually operates.
-                  </p>
-                </ExpandableCard>
-
-                <ExpandableCard title="Focus">
-                  <p>
-                    Business law, commercial contracts, operating agreements, ownership and governance, business disputes, employment and contractor agreements, intellectual property ownership, startup financing, and outside general counsel.
-                  </p>
-                </ExpandableCard>
-              </div>
-
-              <ExpandableCard title="Serving Businesses Across North Texas">
-                <p>
-                  Vertalis is based in the Frisco area and serves businesses throughout Frisco, McKinney, Prosper, Plano, North Dallas, and the broader Dallas–Fort Worth region.
-                </p>
-                <p>
-                  Tim works with small businesses, entrepreneurs, founders, executives, and growing companies that need responsive legal counsel for important business decisions, ongoing legal needs, or commercial disputes.
-                </p>
-              </ExpandableCard>
-            </div>
-
-            <div className="mt-9">
-              <h2 className="text-xl font-semibold tracking-[-0.02em] text-white">Start the Conversation</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-300">
-                If your company is facing an important contract, ownership decision, business dispute, or structural issue, speak with a Texas business lawyer at Vertalis Legal Counsel.
-              </p>
-              <div className="mt-5">
-                <Link
-                  href="/consultation"
-                  className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-[linear-gradient(180deg,rgba(210,132,78,1)_0%,rgba(191,96,23,1)_100%)] px-6 py-3 text-sm font-bold text-white shadow-[0_12px_28px_-18px_rgba(191,96,23,0.55),inset_0_1px_0_rgba(255,255,255,0.26)] transition-[transform,background,box-shadow] duration-200 ease-out hover:-translate-y-[2px] hover:bg-[linear-gradient(180deg,rgba(218,140,84,1)_0%,rgba(199,104,30,1)_100%)] hover:shadow-[0_16px_32px_-18px_rgba(191,96,23,0.62),inset_0_1px_0_rgba(255,255,255,0.3)] before:pointer-events-none before:absolute before:left-[8%] before:right-[8%] before:top-0 before:h-px before:bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.42),rgba(255,255,255,0))] before:content-['']"
-                >
-                  Schedule a Free Consultation
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="tim-editorial-bio" dangerouslySetInnerHTML={{ __html: editorialMarkup }} />
     </main>
   );
 }
